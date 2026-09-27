@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-27T12:46:02Z",
+ "updated": "2026-09-27T13:02:01Z",
  "sources": [
   {
    "id": "techcrunch-ai",
@@ -9,11 +9,12 @@
     "industry",
     "models"
    ],
-   "url": "https://techcrunch.com/category/artificial-intelligence/",
    "enabled": true,
+   "url": "https://techcrunch.com/category/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 6
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 2
   },
   {
    "id": "verge-ai",
@@ -23,12 +24,12 @@
     "industry",
     "models"
    ],
-   "url": "https://www.theverge.com/ai-artificial-intelligence",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://www.theverge.com/ai-artificial-intelligence",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 8
   },
   {
    "id": "mit-tr-ai",
@@ -38,10 +39,11 @@
     "industry",
     "research"
    ],
-   "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
    "enabled": true,
+   "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
    "lastNew": 4
   },
   {
@@ -52,12 +54,12 @@
     "industry",
     "models"
    ],
-   "url": "https://arstechnica.com/ai/",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://arstechnica.com/ai/",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 8
   },
   {
    "id": "openai",
@@ -67,11 +69,12 @@
     "models",
     "industry"
    ],
-   "url": "https://openai.com/news/",
    "enabled": true,
+   "url": "https://openai.com/news/",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 5
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 3
   },
   {
    "id": "anthropic",
@@ -81,11 +84,12 @@
     "models",
     "industry"
    ],
-   "url": "https://www.anthropic.com/news",
    "enabled": true,
+   "url": "https://www.anthropic.com/news",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 3
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 5
   },
   {
    "id": "deepmind",
@@ -95,11 +99,12 @@
     "models",
     "research"
    ],
-   "url": "https://deepmind.google/blog/",
    "enabled": true,
+   "url": "https://deepmind.google/blog/",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 5
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 3
   },
   {
    "id": "huggingface",
@@ -109,11 +114,12 @@
     "dev",
     "models"
    ],
-   "url": "https://huggingface.co/blog",
    "enabled": true,
+   "url": "https://huggingface.co/blog",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 5
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 3
   },
   {
    "id": "arxiv-ai",
@@ -122,11 +128,12 @@
    "topics": [
     "research"
    ],
-   "url": "https://arxiv.org/list/cs.AI/recent",
    "enabled": true,
+   "url": "https://arxiv.org/list/cs.AI/recent",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 7
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 5
   },
   {
    "id": "arxiv-cl",
@@ -135,12 +142,12 @@
    "topics": [
     "research"
    ],
-   "url": "https://arxiv.org/list/cs.CL/recent",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://arxiv.org/list/cs.CL/recent",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 4
   },
   {
    "id": "github-new-llm",
@@ -149,11 +156,12 @@
    "topics": [
     "dev"
    ],
-   "url": "https://github.com/topics/llm",
    "enabled": true,
+   "url": "https://github.com/topics/llm",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
-   "lastNew": 4
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 6
   },
   {
    "id": "gh-transformers",
@@ -162,12 +170,12 @@
    "topics": [
     "dev"
    ],
-   "url": "https://github.com/huggingface/transformers/releases",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://github.com/huggingface/transformers/releases",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 2
   },
   {
    "id": "gh-vllm",
@@ -176,12 +184,12 @@
    "topics": [
     "dev"
    ],
-   "url": "https://github.com/vllm-project/vllm/releases",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://github.com/vllm-project/vllm/releases",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 2
   },
   {
    "id": "gh-ollama",
@@ -190,12 +198,12 @@
    "topics": [
     "dev"
    ],
-   "url": "https://github.com/ollama/ollama/releases",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://github.com/ollama/ollama/releases",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 2
   },
   {
    "id": "yt-two-minute-papers",
@@ -205,12 +213,12 @@
     "research",
     "models"
    ],
-   "url": "https://www.youtube.com/@TwoMinutePapers",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://www.youtube.com/@TwoMinutePapers",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 3
   },
   {
    "id": "yt-ai-explained",
@@ -219,12 +227,12 @@
    "topics": [
     "models"
    ],
-   "url": "https://www.youtube.com/@aiexplained-official",
    "enabled": true,
-   "status": "pending",
-   "lastChecked": null,
-   "lastNew": 0,
-   "error": "Not checked yet. Runs on the first GitHub refresh."
+   "url": "https://www.youtube.com/@aiexplained-official",
+   "status": "ok",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
+   "lastNew": 3
   },
   {
    "id": "hackernews",
@@ -235,10 +243,11 @@
     "models",
     "industry"
    ],
-   "url": "https://news.ycombinator.com/",
    "enabled": true,
+   "url": "https://news.ycombinator.com/",
    "status": "ok",
-   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastChecked": "2026-09-27T13:02:01Z",
+   "lastOk": "2026-09-27T13:02:01Z",
    "lastNew": 6
   }
  ]
