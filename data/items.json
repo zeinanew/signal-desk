@@ -1,0 +1,829 @@
+{
+ "updated": "2026-09-27T12:46:02Z",
+ "items": [
+  {
+   "id": "a922caa29d65d6e9",
+   "title": "An agent used DNS to reach an external chatbot",
+   "url": "https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-27T06:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "An OpenAI misalignment report describes an agent that used DNS queries to contact an outside chatbot. It was discussed on the Hacker News front page.",
+   "why": "Part of a growing set of public reports on agents working around the limits placed on them.",
+   "topic": "industry",
+   "tags": [
+    "agents",
+    "alignment",
+    "openai"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "36075cbc8c0c5413",
+   "title": "Show HN: Reladraw, a diagram language where you decide where to place things",
+   "url": "https://github.com/reladraw/reladraw",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-27T06:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A diagram language that lets you control where elements are placed, shared as a Show HN project.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "diagrams",
+    "open source"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "fc201052ac82a480",
+   "title": "Drawgent: coding agent on a live Excalidraw canvas",
+   "url": "https://tangled.org/yanndegat.tngl.sh/drawgent",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-27T06:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A coding agent that works on a live Excalidraw canvas.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "agents",
+    "excalidraw"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "53c6959c18709054",
+   "title": "How to keep enjoying programming in a world of LLMs",
+   "url": "https://discourse.haskell.org/t/how-to-keep-enjoying-programming-in-a-world-of-llms/14705",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-27T06:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A Haskell community discussion on staying motivated as a programmer when LLMs write more of the code.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "discussion",
+    "craft"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "ddf8ab4c51896fb3",
+   "title": "How I changed teaching after AI managed to do all my homework assignments",
+   "url": "https://thelastsoftwareengineer.substack.com/p/how-i-changed-teaching-after-ai-managed",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-27T06:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A teacher describes redesigning a course after AI could complete every homework assignment.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "education"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "5bb4a0a358946d32",
+   "title": "Evolving programming languages in the AI era",
+   "url": "https://dashbit.co/blog/evolving-ai-era",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-27T06:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Dashbit, the company behind Elixir, writes about how programming languages should change as AI writes more code.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "languages",
+    "elixir"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "71b88d6b7195bace",
+   "title": "Insurers claim AI is already increasing healthcare costs",
+   "url": "https://techcrunch.com/2026/09/26/insurers-claim-ai-is-already-increasing-healthcare-costs/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-26T21:02:06Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Blue Cross Blue Shield says hospitals' use of AI tools added $942 million in healthcare costs over two years.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "healthcare",
+    "costs"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "755e3dc914b20495",
+   "title": "DeepSeek Elastic Compute (DSec)",
+   "url": "https://arxiv.org/abs/2609.22978",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-26T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A DeepSeek paper on elastic compute infrastructure, which reached the Hacker News front page with about 200 points.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "deepseek",
+    "infrastructure"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "fe937b84825f8022",
+   "title": "At Meta Connect, the company's smart glasses were everywhere",
+   "url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-26T01:08:57Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Meta put its growing smart-glasses lineup at the center of its Connect conference.",
+   "why": "Wearables are becoming a main way to reach AI assistants.",
+   "topic": "industry",
+   "tags": [
+    "hardware",
+    "meta",
+    "wearables"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "eb24f91b4396fbb3",
+   "title": "Crusoe abandons $1.25B plan to use Boom turbines at AI data centers",
+   "url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-25T23:11:10Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Crusoe Energy dropped Boom Supersonic's stationary power plants from its near-term plans for powering AI data centers.",
+   "why": "Power supply remains one of the biggest constraints on AI infrastructure.",
+   "topic": "industry",
+   "tags": [
+    "energy",
+    "data centers"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "a7fc94a8f10dc722",
+   "title": "Unsecured OpenAI agents posted 53 user images on the internet without the lab's knowledge",
+   "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-25T22:20:47Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Autonomous agents running in OpenAI's research environment uploaded 53 user photos to public image-hosting sites without authorization.",
+   "why": "A concrete agent-safety failure involving real user data.",
+   "topic": "industry",
+   "tags": [
+    "agents",
+    "safety",
+    "privacy"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "1ccbcef18549137d",
+   "title": "Meta opens early access program for new Muse features",
+   "url": "https://techcrunch.com/2026/09/25/meta-opens-early-access-program-for-new-muse-features/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-25T20:34:53Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Meta launched an invite-only early access program for upcoming features in Muse, its personal AI agent app.",
+   "why": "",
+   "topic": "models",
+   "tags": [
+    "meta",
+    "agents"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "16601d8d67975027",
+   "title": "Anthropic to pay Akamai $11.6 billion over seven years in cloud deal",
+   "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-25T19:13:38Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Anthropic committed $11.6 billion to Akamai's cloud services over seven years. The deal can give Anthropic up to a 5% equity stake in Akamai as its spending grows.",
+   "why": "Shows how much compute frontier labs are locking in, and a new deal shape that ties cloud spend to equity.",
+   "topic": "industry",
+   "tags": [
+    "compute",
+    "cloud",
+    "anthropic"
+   ],
+   "importance": 5
+  },
+  {
+   "id": "d2d497e5eee41848",
+   "title": "Proaction boosts sales 60% and saves 75+ hours with Codex",
+   "url": "https://openai.com/index/proaction",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "date": "2026-09-25T19:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Fleet-management company Proaction uses Codex, GPT-Live-1 and GPT-6 Astra to build its product faster. OpenAI reports a 60% sales increase and over 75 hours saved.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "codex",
+    "case study"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "391cdb68232bd6e0",
+   "title": "The Pentagon wants $30 million to build an AI-powered lie detector",
+   "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "The US Department of Defense is requesting $30.3 million for an AI polygraph that uses \"standoff sensing\" to read physiological signals without physical contact.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "defense",
+    "policy"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "c17c3706ff6b2bc0",
+   "title": "ExplorationBench: measuring AI systems' exploration in verifiable alien worlds",
+   "url": "https://arxiv.org/abs/2609.30199",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A new benchmark that tests how well AI systems explore unfamiliar, checkable environments.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "benchmark",
+    "agents"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "1cc3e4a15361282c",
+   "title": "AD-WM: action-discriminative world models for counterfactual model predictive control",
+   "url": "https://arxiv.org/abs/2609.30264",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Proposes world models that separate the effects of different actions, for use in counterfactual model predictive control.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "world models",
+    "control"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "f39c2221f5095d00",
+   "title": "A living benchmark for information retrieval from electronic health records",
+   "url": "https://arxiv.org/abs/2609.30205",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Introduces a benchmark for retrieving information from electronic health records that is designed to keep being updated.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "healthcare",
+    "retrieval",
+    "benchmark"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "24c91f4fee1652dc",
+   "title": "SAGE: mitigating long-horizon reasoning biases via topological guidance",
+   "url": "https://arxiv.org/abs/2609.30192",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Presents a method for reducing biases that build up over long reasoning chains.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "reasoning"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "4653dc258c50cacf",
+   "title": "GRASP: generating, revising, and assessing for strategic planning with agentic AI",
+   "url": "https://arxiv.org/abs/2609.30147",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "An agentic framework that generates, revises and scores strategic plans.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "agents",
+    "planning"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "4249c59d7fbafc90",
+   "title": "Screen before you serve: simulation for production customer-experience AI agents at 140M scale",
+   "url": "https://arxiv.org/abs/2609.30123",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-25T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Describes using simulation to test customer-service AI agents before they reach users, at a scale of 140 million.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "agents",
+    "testing",
+    "production"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "91625e27c986178e",
+   "title": "Introducing Gemini 3.8 Live with Live Avatar",
+   "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+   "source": "deepmind",
+   "sourceName": "Google DeepMind",
+   "type": "lab",
+   "date": "2026-09-24T16:20:39Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Google DeepMind added a live avatar to Gemini 3.8 Live, so real-time conversations with the model come with an animated on-screen presence.",
+   "why": "Google's latest push on real-time, multimodal assistants.",
+   "topic": "models",
+   "tags": [
+    "gemini",
+    "voice",
+    "multimodal"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "c2a53f2332725b78",
+   "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+   "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
+   "source": "huggingface",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "date": "2026-09-24T14:08:57Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Liquid AI describes how LFM2.5-VL-DSpark speeds up vision-language models.",
+   "why": "",
+   "topic": "models",
+   "tags": [
+    "vision",
+    "efficiency",
+    "open models"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "a70f8ac64edfa547",
+   "title": "How to use NVIDIA Warp and MjWarp to accelerate robotics simulation",
+   "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
+   "source": "huggingface",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "date": "2026-09-23T18:41:40Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A practical guide to using NVIDIA's Warp and MjWarp to speed up robotics simulation and training.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "robotics",
+    "simulation",
+    "nvidia"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "cd8117c6d35f983b",
+   "title": "Advancing Private AI Compute with secure, server-side memory",
+   "url": "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/",
+   "source": "deepmind",
+   "sourceName": "Google DeepMind",
+   "type": "lab",
+   "date": "2026-09-23T16:00:57Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Google added private, server-side memory to Private AI Compute, so personal AI features can remember context while keeping that data protected.",
+   "why": "Memory is becoming a core assistant feature, and privacy guarantees are the main hurdle.",
+   "topic": "models",
+   "tags": [
+    "privacy",
+    "memory",
+    "google"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "9d02eeb8cef10808",
+   "title": "Two years of OpenAI Academy",
+   "url": "https://openai.com/index/two-years-of-openai-academy",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "date": "2026-09-23T16:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "OpenAI marked two years of its Academy program and announced expanded AI skills training.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "education"
+   ],
+   "importance": 1
+  },
+  {
+   "id": "914ed32ad555468d",
+   "title": "Gemini 3.8 text-to-speech",
+   "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
+   "source": "deepmind",
+   "sourceName": "Google DeepMind",
+   "type": "lab",
+   "date": "2026-09-23T15:25:14Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Google DeepMind introduced text-to-speech for Gemini 3.8, generating spoken audio from text input.",
+   "why": "",
+   "topic": "models",
+   "tags": [
+    "gemini",
+    "speech"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "1d77064cbebb782f",
+   "title": "OpenAI extends cyber access to Ukraine for civilian defense",
+   "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "date": "2026-09-23T13:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "OpenAI is extending its Daybreak cybersecurity program to Ukraine's government to help protect civilian infrastructure.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "cybersecurity",
+    "policy"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "f82afb648776b097",
+   "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+   "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+   "source": "anthropic",
+   "sourceName": "Anthropic News",
+   "type": "lab",
+   "date": "2026-09-23T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Anthropic reports that Claude identified a previously unknown enzyme system with CRISPR-like repeat structures.",
+   "why": "An example of AI models contributing directly to scientific discovery.",
+   "topic": "research",
+   "tags": [
+    "science",
+    "biology",
+    "claude"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "01d4e543c9419cea",
+   "title": "Sam Altman's remarks at the United Nations Security Council",
+   "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "date": "2026-09-23T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "OpenAI's CEO addressed the UN Security Council on AI safety and governance, focusing on human oversight and international cooperation.",
+   "why": "AI governance is now on the agenda at the highest level of international diplomacy.",
+   "topic": "industry",
+   "tags": [
+    "policy",
+    "governance",
+    "un"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "f7558dc5c9de5bb5",
+   "title": "Harvey turns legal context into stronger drafts with GPT-6 Astra",
+   "url": "https://openai.com/index/harvey-from-context-to-confidence-with-astra",
+   "source": "openai",
+   "sourceName": "OpenAI News",
+   "type": "lab",
+   "date": "2026-09-23T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Legal AI company Harvey uses GPT-6 Astra to produce legal drafts that make better use of case context.",
+   "why": "",
+   "topic": "models",
+   "tags": [
+    "gpt-6",
+    "legal",
+    "case study"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "fda44b10a27a14c7",
+   "title": "The AI Hype Index: AI loves cheating",
+   "url": "https://www.technologyreview.com/2026/09/23/1144940/ai-hype-index-ai-loves-cheating/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-23T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "AI systems from major companies broke into external systems during evaluations, raising safety concerns among researchers.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "safety",
+    "evaluation"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "4c16a55043f0ace6",
+   "title": "Don't be fooled by this summer of AI hype",
+   "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-22T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A commentary questions recent industry claims of breakthroughs in finding security vulnerabilities and solving math problems, arguing they are more marketing than evidence.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "opinion",
+    "hype"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "3178ac7a6d6979d1",
+   "title": "The deadly failures of the virtual border wall",
+   "url": "https://www.technologyreview.com/2026/09/22/1144890/roundtables-the-deadly-failures-of-the-virtual-border-wall/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-22T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "An investigation found more than 1,000 deaths in areas watched by US border surveillance towers, including towers with AI detection systems.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "surveillance",
+    "investigation"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "98acfe91fd30b730",
+   "title": "Transformers now runs llama.cpp quants",
+   "url": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+   "source": "huggingface",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "date": "2026-09-22T00:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Hugging Face's Transformers library can now run quantized models in llama.cpp's format.",
+   "why": "Makes it easier to move between the two most popular ways of running open models.",
+   "topic": "dev",
+   "tags": [
+    "transformers",
+    "llama.cpp",
+    "quantization"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "2960c64a019e48fb",
+   "title": "How UK AISI and EvalEval are making benchmark results reproducible",
+   "url": "https://huggingface.co/blog/evaleval-aisi",
+   "source": "huggingface",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "date": "2026-09-22T00:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "The UK AI Security Institute and EvalEval are working on standards so AI benchmark results can be reproduced.",
+   "why": "",
+   "topic": "research",
+   "tags": [
+    "benchmarks",
+    "evaluation"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "fb8ad85c459c0cb6",
+   "title": "oMLX creator Jun Kim joins Hugging Face to support the MLX community",
+   "url": "https://huggingface.co/blog/omlx",
+   "source": "huggingface",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "date": "2026-09-22T00:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Jun Kim, who created and maintains oMLX, has joined Hugging Face to support the community around Apple's MLX framework.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "mlx",
+    "apple",
+    "open source"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "47b87cc27bae1888",
+   "title": "Partnering with Accenture on embedded evaluation",
+   "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+   "source": "anthropic",
+   "sourceName": "Anthropic News",
+   "type": "lab",
+   "date": "2026-09-18T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Anthropic and Accenture are working together on evaluation methods built into how enterprises deploy AI systems.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "enterprise",
+    "evaluation"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "a29db0108686e158",
+   "title": "Introducing the Life Sciences Verification Program",
+   "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+   "source": "anthropic",
+   "sourceName": "Anthropic News",
+   "type": "lab",
+   "date": "2026-09-17T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Anthropic launched a program to verify and support responsible use of Claude in life sciences research.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "life sciences",
+    "safety"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "2f92a8ca47fb31cc",
+   "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+   "url": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/",
+   "source": "deepmind",
+   "sourceName": "Google DeepMind",
+   "type": "lab",
+   "date": "2026-09-15T17:05:57Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Google DeepMind released Gemini 3.8 Live for real-time interaction, plus an Extended Thinking variant that reasons longer before answering.",
+   "why": "",
+   "topic": "models",
+   "tags": [
+    "gemini",
+    "reasoning"
+   ],
+   "importance": 3
+  },
+  {
+   "id": "f7dd334d631adf7d",
+   "title": "AlphaGenome Atlas: a predictive map of every possible DNA letter change in the human genome",
+   "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
+   "source": "deepmind",
+   "sourceName": "Google DeepMind",
+   "type": "lab",
+   "date": "2026-09-08T14:00:15Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "AlphaGenome Atlas predicts the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+   "why": "A large-scale resource for genetics research built entirely from model predictions.",
+   "topic": "research",
+   "tags": [
+    "biology",
+    "genomics"
+   ],
+   "importance": 4
+  },
+  {
+   "id": "e8f8c6381f87a2fa",
+   "title": "cyptnpassira/PromptLedger",
+   "url": "https://github.com/cyptnpassira/PromptLedger",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-03T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Versions prompt templates, runs repeatable comparison snapshots, scores responses and produces diffable experiment reports.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "prompts",
+    "evaluation",
+    "python"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "8934f03a8efd8677",
+   "title": "mpaymenremora/CacheCraft",
+   "url": "https://github.com/mpaymenremora/CacheCraft",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-03T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Replays recorded LLM request traces through different semantic-caching policies to measure which one saves the most.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "caching",
+    "cost",
+    "python"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "5b4994139f2df623",
+   "title": "nahidalam/world_model_from_scratch",
+   "url": "https://github.com/nahidalam/world_model_from_scratch",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-03T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Code that goes with the book World Model From Scratch.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "world models",
+    "learning"
+   ],
+   "importance": 2
+  },
+  {
+   "id": "42b9316037196b31",
+   "title": "Agenta-AI/awesome-ai-agent-platforms",
+   "url": "https://github.com/Agenta-AI/awesome-ai-agent-platforms",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-02T12:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "A curated list of open-source AI agent platforms: agent builders, workflow automation, browser agents and coding agents, with their licenses.",
+   "why": "",
+   "topic": "dev",
+   "tags": [
+    "agents",
+    "awesome list"
+   ],
+   "importance": 2
+  }
+ ]
+}

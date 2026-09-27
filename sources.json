@@ -1,0 +1,42 @@
+[
+  {"id": "techcrunch-ai", "name": "TechCrunch AI", "type": "news", "kind": "rss", "topics": ["industry", "models"], "enabled": true,
+   "url": "https://techcrunch.com/category/artificial-intelligence/", "feed": "https://techcrunch.com/category/artificial-intelligence/feed/"},
+  {"id": "verge-ai", "name": "The Verge AI", "type": "news", "kind": "rss", "topics": ["industry", "models"], "enabled": true,
+   "url": "https://www.theverge.com/ai-artificial-intelligence", "feed": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"},
+  {"id": "mit-tr-ai", "name": "MIT Technology Review", "type": "news", "kind": "rss", "topics": ["industry", "research"], "enabled": true,
+   "url": "https://www.technologyreview.com/topic/artificial-intelligence/", "feed": "https://www.technologyreview.com/topic/artificial-intelligence/feed"},
+  {"id": "ars-ai", "name": "Ars Technica AI", "type": "news", "kind": "rss", "topics": ["industry", "models"], "enabled": true,
+   "url": "https://arstechnica.com/ai/", "feed": "https://arstechnica.com/ai/feed/"},
+
+  {"id": "openai", "name": "OpenAI News", "type": "lab", "kind": "rss", "topics": ["models", "industry"], "enabled": true,
+   "url": "https://openai.com/news/", "feed": "https://openai.com/news/rss.xml"},
+  {"id": "anthropic", "name": "Anthropic News", "type": "lab", "kind": "html_links", "topics": ["models", "industry"], "enabled": true,
+   "url": "https://www.anthropic.com/news", "feed": "https://www.anthropic.com/news", "link_pattern": "^/news/[a-z0-9-]+$", "base": "https://www.anthropic.com"},
+  {"id": "deepmind", "name": "Google DeepMind", "type": "lab", "kind": "rss", "topics": ["models", "research"], "enabled": true,
+   "url": "https://deepmind.google/blog/", "feed": "https://deepmind.google/blog/rss.xml"},
+  {"id": "huggingface", "name": "Hugging Face Blog", "type": "lab", "kind": "rss", "topics": ["dev", "models"], "enabled": true,
+   "url": "https://huggingface.co/blog", "feed": "https://huggingface.co/blog/feed.xml"},
+
+  {"id": "arxiv-ai", "name": "arXiv cs.AI", "type": "research", "kind": "rss", "topics": ["research"], "enabled": true, "limit": 6,
+   "url": "https://arxiv.org/list/cs.AI/recent", "feed": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&max_results=25"},
+  {"id": "arxiv-cl", "name": "arXiv cs.CL (language models)", "type": "research", "kind": "rss", "topics": ["research"], "enabled": true, "limit": 6,
+   "url": "https://arxiv.org/list/cs.CL/recent", "feed": "https://export.arxiv.org/api/query?search_query=cat:cs.CL&sortBy=submittedDate&sortOrder=descending&max_results=25"},
+
+  {"id": "github-new-llm", "name": "GitHub: new LLM repos", "type": "github", "kind": "github_search", "topics": ["dev"], "enabled": true, "limit": 6,
+   "url": "https://github.com/topics/llm", "query": "topic:llm created:>{since}", "since_days": 7},
+  {"id": "gh-transformers", "name": "GitHub: transformers releases", "type": "github", "kind": "rss", "topics": ["dev"], "enabled": true, "limit": 2,
+   "url": "https://github.com/huggingface/transformers/releases", "feed": "https://github.com/huggingface/transformers/releases.atom"},
+  {"id": "gh-vllm", "name": "GitHub: vLLM releases", "type": "github", "kind": "rss", "topics": ["dev"], "enabled": true, "limit": 2,
+   "url": "https://github.com/vllm-project/vllm/releases", "feed": "https://github.com/vllm-project/vllm/releases.atom"},
+  {"id": "gh-ollama", "name": "GitHub: Ollama releases", "type": "github", "kind": "rss", "topics": ["dev"], "enabled": true, "limit": 2,
+   "url": "https://github.com/ollama/ollama/releases", "feed": "https://github.com/ollama/ollama/releases.atom"},
+
+  {"id": "yt-two-minute-papers", "name": "YouTube: Two Minute Papers", "type": "video", "kind": "rss", "topics": ["research", "models"], "enabled": true, "limit": 3,
+   "url": "https://www.youtube.com/@TwoMinutePapers", "feed": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg"},
+  {"id": "yt-ai-explained", "name": "YouTube: AI Explained", "type": "video", "kind": "rss", "topics": ["models"], "enabled": true, "limit": 3,
+   "url": "https://www.youtube.com/@aiexplained-official", "feed": "https://www.youtube.com/feeds/videos.xml?channel_id=UCNJ1Ymd5yFuUPtn21xtRbbw"},
+
+  {"id": "hackernews", "name": "Hacker News", "type": "community", "kind": "hn", "topics": ["dev", "models", "industry"], "enabled": true, "limit": 8,
+   "url": "https://news.ycombinator.com/", "min_points": 100,
+   "keywords": ["ai", "llm", "gpt", "claude", "gemini", "openai", "anthropic", "deepmind", "model", "agent", "neural", "machine learning", "transformer", "inference", "gpu", "nvidia", "copilot", "codex", "diffusion", "rag", "fine-tun", "benchmark"]}
+]

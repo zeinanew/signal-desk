@@ -1,0 +1,245 @@
+{
+ "updated": "2026-09-27T12:46:02Z",
+ "sources": [
+  {
+   "id": "techcrunch-ai",
+   "name": "TechCrunch AI",
+   "type": "news",
+   "topics": [
+    "industry",
+    "models"
+   ],
+   "url": "https://techcrunch.com/category/artificial-intelligence/",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 6
+  },
+  {
+   "id": "verge-ai",
+   "name": "The Verge AI",
+   "type": "news",
+   "topics": [
+    "industry",
+    "models"
+   ],
+   "url": "https://www.theverge.com/ai-artificial-intelligence",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "mit-tr-ai",
+   "name": "MIT Technology Review",
+   "type": "news",
+   "topics": [
+    "industry",
+    "research"
+   ],
+   "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 4
+  },
+  {
+   "id": "ars-ai",
+   "name": "Ars Technica AI",
+   "type": "news",
+   "topics": [
+    "industry",
+    "models"
+   ],
+   "url": "https://arstechnica.com/ai/",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI News",
+   "type": "lab",
+   "topics": [
+    "models",
+    "industry"
+   ],
+   "url": "https://openai.com/news/",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 5
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic News",
+   "type": "lab",
+   "topics": [
+    "models",
+    "industry"
+   ],
+   "url": "https://www.anthropic.com/news",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 3
+  },
+  {
+   "id": "deepmind",
+   "name": "Google DeepMind",
+   "type": "lab",
+   "topics": [
+    "models",
+    "research"
+   ],
+   "url": "https://deepmind.google/blog/",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 5
+  },
+  {
+   "id": "huggingface",
+   "name": "Hugging Face Blog",
+   "type": "lab",
+   "topics": [
+    "dev",
+    "models"
+   ],
+   "url": "https://huggingface.co/blog",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 5
+  },
+  {
+   "id": "arxiv-ai",
+   "name": "arXiv cs.AI",
+   "type": "research",
+   "topics": [
+    "research"
+   ],
+   "url": "https://arxiv.org/list/cs.AI/recent",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 7
+  },
+  {
+   "id": "arxiv-cl",
+   "name": "arXiv cs.CL (language models)",
+   "type": "research",
+   "topics": [
+    "research"
+   ],
+   "url": "https://arxiv.org/list/cs.CL/recent",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "github-new-llm",
+   "name": "GitHub: new LLM repos",
+   "type": "github",
+   "topics": [
+    "dev"
+   ],
+   "url": "https://github.com/topics/llm",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 4
+  },
+  {
+   "id": "gh-transformers",
+   "name": "GitHub: transformers releases",
+   "type": "github",
+   "topics": [
+    "dev"
+   ],
+   "url": "https://github.com/huggingface/transformers/releases",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "gh-vllm",
+   "name": "GitHub: vLLM releases",
+   "type": "github",
+   "topics": [
+    "dev"
+   ],
+   "url": "https://github.com/vllm-project/vllm/releases",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "gh-ollama",
+   "name": "GitHub: Ollama releases",
+   "type": "github",
+   "topics": [
+    "dev"
+   ],
+   "url": "https://github.com/ollama/ollama/releases",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "yt-two-minute-papers",
+   "name": "YouTube: Two Minute Papers",
+   "type": "video",
+   "topics": [
+    "research",
+    "models"
+   ],
+   "url": "https://www.youtube.com/@TwoMinutePapers",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "yt-ai-explained",
+   "name": "YouTube: AI Explained",
+   "type": "video",
+   "topics": [
+    "models"
+   ],
+   "url": "https://www.youtube.com/@aiexplained-official",
+   "enabled": true,
+   "status": "pending",
+   "lastChecked": null,
+   "lastNew": 0,
+   "error": "Not checked yet. Runs on the first GitHub refresh."
+  },
+  {
+   "id": "hackernews",
+   "name": "Hacker News",
+   "type": "community",
+   "topics": [
+    "dev",
+    "models",
+    "industry"
+   ],
+   "url": "https://news.ycombinator.com/",
+   "enabled": true,
+   "status": "ok",
+   "lastChecked": "2026-09-27T12:46:02Z",
+   "lastNew": 6
+  }
+ ]
+}
