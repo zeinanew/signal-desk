@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T11:25:17Z",
+ "updated": "2026-09-28T11:38:27Z",
  "sources": [
   {
    "id": "techcrunch-ai",
@@ -12,8 +12,8 @@
    "enabled": true,
    "url": "https://techcrunch.com/category/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -27,8 +27,8 @@
    "enabled": true,
    "url": "https://www.theverge.com/ai-artificial-intelligence",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -42,8 +42,8 @@
    "enabled": true,
    "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -57,9 +57,54 @@
    "enabled": true,
    "url": "https://arstechnica.com/ai/",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
-   "lastNew": 1
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 0
+  },
+  {
+   "id": "simonw",
+   "name": "Simon Willison",
+   "type": "news",
+   "topics": [
+    "dev",
+    "models"
+   ],
+   "enabled": true,
+   "url": "https://simonwillison.net/",
+   "status": "ok",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 8
+  },
+  {
+   "id": "the-rundown-ai",
+   "name": "The Rundown AI",
+   "type": "news",
+   "topics": [
+    "industry",
+    "models"
+   ],
+   "enabled": true,
+   "url": "https://www.therundown.ai/",
+   "status": "ok",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 8
+  },
+  {
+   "id": "bens-bites",
+   "name": "Ben's Bites",
+   "type": "news",
+   "topics": [
+    "industry",
+    "dev"
+   ],
+   "enabled": true,
+   "url": "https://www.bensbites.com/",
+   "status": "ok",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 8
   },
   {
    "id": "openai",
@@ -72,8 +117,8 @@
    "enabled": true,
    "url": "https://openai.com/news/",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -87,8 +132,8 @@
    "enabled": true,
    "url": "https://www.anthropic.com/news",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -102,8 +147,8 @@
    "enabled": true,
    "url": "https://deepmind.google/blog/",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -117,9 +162,53 @@
    "enabled": true,
    "url": "https://huggingface.co/blog",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
-   "lastNew": 1
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 0
+  },
+  {
+   "id": "langchain",
+   "name": "LangChain Blog",
+   "type": "lab",
+   "topics": [
+    "dev"
+   ],
+   "enabled": true,
+   "url": "https://www.langchain.com/blog",
+   "status": "ok",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 0
+  },
+  {
+   "id": "msft-research",
+   "name": "Microsoft Research",
+   "type": "lab",
+   "topics": [
+    "research",
+    "models"
+   ],
+   "enabled": true,
+   "url": "https://www.microsoft.com/en-us/research/",
+   "status": "ok",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 0
+  },
+  {
+   "id": "nvidia-blog",
+   "name": "NVIDIA Blog",
+   "type": "lab",
+   "topics": [
+    "industry",
+    "dev"
+   ],
+   "enabled": true,
+   "url": "https://blogs.nvidia.com/",
+   "status": "ok",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 0
   },
   {
    "id": "arxiv-ai",
@@ -131,8 +220,8 @@
    "enabled": true,
    "url": "https://arxiv.org/list/cs.AI/recent",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -145,8 +234,8 @@
    "enabled": true,
    "url": "https://arxiv.org/list/cs.CL/recent",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -159,8 +248,8 @@
    "enabled": true,
    "url": "https://github.com/topics/llm",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -173,8 +262,8 @@
    "enabled": true,
    "url": "https://github.com/huggingface/transformers/releases",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -187,8 +276,8 @@
    "enabled": true,
    "url": "https://github.com/vllm-project/vllm/releases",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -201,8 +290,8 @@
    "enabled": true,
    "url": "https://github.com/ollama/ollama/releases",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -216,8 +305,8 @@
    "enabled": true,
    "url": "https://www.youtube.com/@TwoMinutePapers",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -230,8 +319,8 @@
    "enabled": true,
    "url": "https://www.youtube.com/@aiexplained-official",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
    "lastNew": 0
   },
   {
@@ -246,9 +335,9 @@
    "enabled": true,
    "url": "https://news.ycombinator.com/",
    "status": "ok",
-   "lastChecked": "2026-09-28T11:25:17Z",
-   "lastOk": "2026-09-28T11:25:17Z",
-   "lastNew": 2
+   "lastChecked": "2026-09-28T11:38:27Z",
+   "lastOk": "2026-09-28T11:38:27Z",
+   "lastNew": 0
   }
  ]
 }

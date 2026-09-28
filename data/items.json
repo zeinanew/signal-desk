@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T11:25:17Z",
+ "updated": "2026-09-28T11:38:27Z",
  "items": [
   {
    "id": "ca6d89c27fc0a2e0",
@@ -14,7 +14,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "9552195c964ddb7b",
@@ -44,7 +45,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "9f284effa55e58c2",
@@ -61,6 +63,22 @@
    "tags": [],
    "importance": 2,
    "discussion": "https://news.ycombinator.com/item?id=49874728"
+  },
+  {
+   "id": "6d315f53d3ca3ddb",
+   "title": "Quoting Muse AI Agent",
+   "url": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-28T04:01:30Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Bad news on the MX Keys Mini pickup. Usman showed up at your building around 9:15 and waited, messaged a bunch of times, and nobody came down.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "f1d69bd4c8060c52",
@@ -95,6 +113,38 @@
    "discussion": "https://news.ycombinator.com/item?id=49872723"
   },
   {
+   "id": "193eb09a66e5b52a",
+   "title": "2026 in LLMs (so far)",
+   "url": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-27T23:54:15Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "On Friday I gave the closing keynote at the WeAreDevelopers World Congress North America in San Jose. I tied together the key trends from the past year into a chronological exploration of everything that happened in 2026.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "d4f007f6cf927f43",
+   "title": "S3 Is the Future, S3 Is the Past",
+   "url": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-27T23:09:19Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "My comment on S3 Is the Future, S3 Is the Past — Hacker News. One thing I find notable about S3 today is that, while it used to drop in price reasonably often, there hasn't been a price drop in a full decade : 2006-03-14 $0.150/GB-month 2010-11-01 $0.140/GB-month 2012-02-01 $0.125/GB-month 2012-12-01 $0.095/GB-month 20",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
    "id": "9c14e3f084274fca",
    "title": "Engram is a sampler that turns broken AI hallucinations into music",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music",
@@ -107,7 +157,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "63f85032962dd035",
@@ -122,7 +173,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "80032e73c06a7a2a",
@@ -137,7 +189,24 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "60ab98208b1a07c9",
+   "title": "Bluesky reply bot checker",
+   "url": "https://simonwillison.net/2026/Sep/27/bluesky-bot-check/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-27T18:41:44Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Tool: Bluesky reply bot checker Automated reply bots on Twitter are a scourge - as someone with a decent number of followers I attract a swarm of these, such that anything I post there attracts dozens of mindless automated replies. They've started manifesting on Bluesky as well.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "c6f1dde94675e0c3",
@@ -168,7 +237,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "39e6d83733f34b5b",
@@ -183,7 +253,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "4aa8cdc749d349a2",
@@ -385,7 +456,24 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "63394656335488e4",
+   "title": "Kākāpō Party",
+   "url": "https://simonwillison.net/2026/Sep/26/kakapo-party/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-26T23:39:06Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Tool: Kākāpō Party I presented a closing keynote for the WeAreDevelopers World Congress North America yesterday. As a STAR moment I decided to weave in references to the record breaking kākāpō breeding season we had in 2026.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "71b88d6b7195bace",
@@ -396,14 +484,12 @@
    "type": "news",
    "date": "2026-09-26T21:02:06Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Blue Cross Blue Shield says hospitals' use of AI tools added $942 million in healthcare costs over two years.",
+   "summary": "Blue Cross Blue Shield says hospital use of AI tools led to an additional $942M in healthcare spending over a two-year period.",
    "why": "",
    "topic": "industry",
-   "tags": [
-    "healthcare",
-    "costs"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "819e92326da0d8d2",
@@ -418,7 +504,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "a06eefcaabe44bbd",
@@ -465,7 +552,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "344d41dcb1d635bb",
@@ -480,7 +568,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "755e3dc914b20495",
@@ -565,22 +654,19 @@
   },
   {
    "id": "fe937b84825f8022",
-   "title": "At Meta Connect, the company's smart glasses were everywhere",
+   "title": "At Meta Connect, the company’s smart glasses were everywhere",
    "url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/",
    "source": "techcrunch-ai",
    "sourceName": "TechCrunch AI",
    "type": "news",
    "date": "2026-09-26T01:08:57Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Meta put its growing smart-glasses lineup at the center of its Connect conference.",
-   "why": "Wearables are becoming a main way to reach AI assistants.",
+   "summary": "The company behind Facebook and Instagram wants to keep consumers connected to the digital world via its ever-growing line of smart glasses.",
+   "why": "",
    "topic": "industry",
-   "tags": [
-    "hardware",
-    "meta",
-    "wearables"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "4c99a489e8da4949",
@@ -606,14 +692,12 @@
    "type": "news",
    "date": "2026-09-25T23:11:10Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Crusoe Energy dropped Boom Supersonic's stationary power plants from its near-term plans for powering AI data centers.",
-   "why": "Power supply remains one of the biggest constraints on AI infrastructure.",
+   "summary": "Boom Supersonic CEO Blake Scholl said the company's new stationary power plants were no longer in Crusoe's near-term plans.",
+   "why": "",
    "topic": "industry",
-   "tags": [
-    "energy",
-    "data centers"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "a7fc94a8f10dc722",
@@ -647,7 +731,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "be11f7d1d629dcf0",
@@ -662,7 +747,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "1ccbcef18549137d",
@@ -714,7 +800,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "d2d497e5eee41848",
@@ -725,14 +812,12 @@
    "type": "lab",
    "date": "2026-09-25T19:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Fleet-management company Proaction uses Codex, GPT-Live-1 and GPT-6 Astra to build its product faster. OpenAI reports a 60% sales increase and over 75 hours saved.",
+   "summary": "With Codex, GPT-Live-1, and GPT-6 Astra, Proaction builds, operates, and sells modern fleet management faster.",
    "why": "",
-   "topic": "dev",
-   "tags": [
-    "codex",
-    "case study"
-   ],
-   "importance": 2
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "4ae60f3ad564c59c",
@@ -762,7 +847,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "75f76fd5f6618777",
@@ -885,6 +971,22 @@
    "importance": 2
   },
   {
+   "id": "44842586bfdd27cf",
+   "title": "Quoting John Gruber",
+   "url": "https://simonwillison.net/2026/Sep/25/john-gruber/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-25T17:22:01Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Muse is getting a lot of attention — including mine — because it’s both groundbreaking technically (each user gets their own entire persistent Linux VM running in Meta’s cloud) and because it’s packaged in an easy-to-install easy-to-use way. It’s literally presented as a cute mascot .",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
    "id": "91b5cda5e6483b21",
    "title": "Two Conformal Constructions for Adaptive Within-Document AI-Text Screening",
    "url": "https://arxiv.org/abs/2609.31547v1",
@@ -912,7 +1014,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "706759721ffd238c",
@@ -927,7 +1030,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "637d4699a545ce92",
@@ -942,7 +1046,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "55849388fec790d1",
@@ -975,6 +1080,22 @@
    "importance": 2
   },
   {
+   "id": "907d5902295bf051",
+   "title": "50 years of tech devices",
+   "url": "https://www.bensbites.com/p/50-years-of-tech-devices",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-25T13:50:24Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Ben's session #7",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
    "id": "f5e0462c8aedb2aa",
    "title": "Can Apple Home’s AI camera features outsmart Amazon’s and Google’s? I put them to the test",
    "url": "https://www.theverge.com/tech/1000321/apple-intelligence-home-security-camera-amazon-ring-alexa-google-nest-gemini-home-review",
@@ -987,25 +1108,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
-  },
-  {
-   "id": "391cdb68232bd6e0",
-   "title": "The Pentagon wants $30 million to build an AI-powered lie detector",
-   "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
-   "source": "mit-tr-ai",
-   "sourceName": "MIT Technology Review",
-   "type": "news",
-   "date": "2026-09-25T12:00:00Z",
-   "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "The US Department of Defense is requesting $30.3 million for an AI polygraph that uses \"standoff sensing\" to read physiological signals without physical contact.",
-   "why": "",
-   "topic": "industry",
-   "tags": [
-    "defense",
-    "policy"
-   ],
-   "importance": 3
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "c17c3706ff6b2bc0",
@@ -1144,7 +1248,40 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "ba74c8a54318cdeb",
+   "title": "Meta's Connect turns into a Muse takeover",
+   "url": "https://www.therundown.ai/articles/meta-connect-turns-into-a-muse-takeover",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-25T10:00:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: Use Gemini Canvas to visualize Google Sheets",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "391cdb68232bd6e0",
+   "title": "The Pentagon wants $30 million to build an AI-powered lie detector",
+   "url": "https://www.technologyreview.com/2026/09/25/1145144/pentagon-ai-lie-detector/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-25T09:16:25Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "The US government wants to spend $30.3 million over the next five years on an improved form of lie detector, according to a Department of Defense budget request. The program, called Polygraph+ or Polygraph Next, will focus on scoring algorithms that use artificial intelligence and machine learning and on a technique ca",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "ed85f03ec56d2bde",
@@ -1177,6 +1314,22 @@
    "importance": 2
   },
   {
+   "id": "a58162400433be99",
+   "title": "Northern Gannet, Great Blue Heron, California Brown Pelican",
+   "url": "https://simonwillison.net/2026/Sep/25/sighting-403293902/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-25T02:07:04Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Northern Gannet, Great Blue Heron, California Brown Pelican, in Monterey Bay National Marine Sanctuary, CA, US, CA New 200-800mm Canon EF lens got me my best photo of Morris yet. They really like hanging out under that sign in the harbor!",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
    "id": "1071af02b64c5e81",
    "title": "architectds/collabosm",
    "url": "https://github.com/architectds/collabosm",
@@ -1190,6 +1343,22 @@
    "topic": "dev",
    "tags": [],
    "importance": 2
+  },
+  {
+   "id": "603669123c5dba12",
+   "title": "Note on 24th September 2026",
+   "url": "https://simonwillison.net/2026/Sep/24/harder/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-09-24T23:31:08Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "The more time I spend working with coding agents, the more convinced I am that they make software engineering even harder. We can do amazing things with them, but unlocking their full potential requires extraordinary discipline and knowledge.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "f3e294a0a839c153",
@@ -1279,7 +1448,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "52443e77bfe623ec",
@@ -1425,15 +1595,12 @@
    "type": "lab",
    "date": "2026-09-24T16:20:39Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Google DeepMind added a live avatar to Gemini 3.8 Live, so real-time conversations with the model come with an animated on-screen presence.",
-   "why": "Google's latest push on real-time, multimodal assistants.",
+   "summary": "",
+   "why": "",
    "topic": "models",
-   "tags": [
-    "gemini",
-    "voice",
-    "multimodal"
-   ],
-   "importance": 4
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "57771181a89797a1",
@@ -1448,7 +1615,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "fb199060212f3ebd",
@@ -1483,6 +1651,38 @@
     "open models"
    ],
    "importance": 2
+  },
+  {
+   "id": "e31b30769dfe667a",
+   "title": "Back to Claude",
+   "url": "https://www.bensbites.com/p/back-to-claude",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-24T13:04:08Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "GPT-6 Sol and Luna got cheaper",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "ea9e6f2635d5039a",
+   "title": "Anthropic's AI biology lab makes its first find",
+   "url": "https://www.therundown.ai/articles/anthropic-ai-biology-lab-makes-its-first-find",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-24T09:00:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: Your go-to guy lives in the browser",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "b7d9300382c57242",
@@ -1542,15 +1742,12 @@
    "type": "lab",
    "date": "2026-09-23T16:00:57Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Google added private, server-side memory to Private AI Compute, so personal AI features can remember context while keeping that data protected.",
-   "why": "Memory is becoming a core assistant feature, and privacy guarantees are the main hurdle.",
+   "summary": "Introducing private, server-side memory to Private AI Compute for personal AI.",
+   "why": "",
    "topic": "models",
-   "tags": [
-    "privacy",
-    "memory",
-    "google"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "9d02eeb8cef10808",
@@ -1561,31 +1758,28 @@
    "type": "lab",
    "date": "2026-09-23T16:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "OpenAI marked two years of its Academy program and announced expanded AI skills training.",
+   "summary": "Marking two years of OpenAI Academy and bringing AI skills to even more communities.",
    "why": "",
-   "topic": "industry",
-   "tags": [
-    "education"
-   ],
-   "importance": 1
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "914ed32ad555468d",
-   "title": "Gemini 3.8 text-to-speech",
+   "title": "Gemini 3.8 text-to-speech says hello",
    "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
    "source": "deepmind",
    "sourceName": "Google DeepMind",
    "type": "lab",
    "date": "2026-09-23T15:25:14Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Google DeepMind introduced text-to-speech for Gemini 3.8, generating spoken audio from text input.",
+   "summary": "",
    "why": "",
    "topic": "models",
-   "tags": [
-    "gemini",
-    "speech"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "1d77064cbebb782f",
@@ -1596,52 +1790,28 @@
    "type": "lab",
    "date": "2026-09-23T13:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "OpenAI is extending its Daybreak cybersecurity program to Ukraine's government to help protect civilian infrastructure.",
+   "summary": "OpenAI is extending access to its Daybreak program to the Government of Ukraine to support the cyber defense of civilian infrastructure.",
    "why": "",
-   "topic": "industry",
-   "tags": [
-    "cybersecurity",
-    "policy"
-   ],
-   "importance": 3
-  },
-  {
-   "id": "f82afb648776b097",
-   "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
-   "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
-   "source": "anthropic",
-   "sourceName": "Anthropic News",
-   "type": "lab",
-   "date": "2026-09-23T12:00:00Z",
-   "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Anthropic reports that Claude identified a previously unknown enzyme system with CRISPR-like repeat structures.",
-   "why": "An example of AI models contributing directly to scientific discovery.",
-   "topic": "research",
-   "tags": [
-    "science",
-    "biology",
-    "claude"
-   ],
-   "importance": 4
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "01d4e543c9419cea",
-   "title": "Sam Altman's remarks at the United Nations Security Council",
+   "title": "Sam Altman’s remarks at the United Nations Security Council",
    "url": "https://openai.com/index/sam-altman-un-security-council-remarks",
    "source": "openai",
    "sourceName": "OpenAI News",
    "type": "lab",
    "date": "2026-09-23T12:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "OpenAI's CEO addressed the UN Security Council on AI safety and governance, focusing on human oversight and international cooperation.",
-   "why": "AI governance is now on the agenda at the highest level of international diplomacy.",
-   "topic": "industry",
-   "tags": [
-    "policy",
-    "governance",
-    "un"
-   ],
-   "importance": 4
+   "summary": "OpenAI CEO Sam Altman discusses AI safety, human control, and international cooperation in remarks to the United Nations Security Council.",
+   "why": "",
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "f7558dc5c9de5bb5",
@@ -1652,33 +1822,12 @@
    "type": "lab",
    "date": "2026-09-23T12:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Legal AI company Harvey uses GPT-6 Astra to produce legal drafts that make better use of case context.",
+   "summary": "GPT-6 Astra produces more structured, context-aware legal documents, freeing lawyers to focus on strategy.",
    "why": "",
    "topic": "models",
-   "tags": [
-    "gpt-6",
-    "legal",
-    "case study"
-   ],
-   "importance": 2
-  },
-  {
-   "id": "fda44b10a27a14c7",
-   "title": "The AI Hype Index: AI loves cheating",
-   "url": "https://www.technologyreview.com/2026/09/23/1144940/ai-hype-index-ai-loves-cheating/",
-   "source": "mit-tr-ai",
-   "sourceName": "MIT Technology Review",
-   "type": "news",
-   "date": "2026-09-23T12:00:00Z",
-   "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "AI systems from major companies broke into external systems during evaluations, raising safety concerns among researchers.",
-   "why": "",
-   "topic": "industry",
-   "tags": [
-    "safety",
-    "evaluation"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "7357353a1f1d61a6",
@@ -1693,7 +1842,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "7cff1964bf19497f",
@@ -1708,7 +1858,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "1d5a9cc2d9509da8",
@@ -1723,7 +1874,40 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "fda44b10a27a14c7",
+   "title": "The AI Hype Index: AI loves cheating",
+   "url": "https://www.technologyreview.com/2026/09/23/1144940/ai-hype-index-ai-loves-cheating/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-23T09:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Brace yourself: It turns out AI is being optimized for cheating. OpenAI’s agents hacked into Hugging Face to get the answers to a cybersecurity test.",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "efcb1249c7943fd0",
+   "title": "The pacing era's first launch day",
+   "url": "https://www.therundown.ai/articles/the-pacing-era-s-first-launch-day",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-23T09:00:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: Build, test, and publish an app without leaving Codex",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "99856cab10394d54",
@@ -1741,40 +1925,84 @@
    "importance": 2
   },
   {
-   "id": "4c16a55043f0ace6",
-   "title": "Don't be fooled by this summer of AI hype",
-   "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/",
-   "source": "mit-tr-ai",
-   "sourceName": "MIT Technology Review",
-   "type": "news",
-   "date": "2026-09-22T12:00:00Z",
+   "id": "f82afb648776b097",
+   "title": "Sep 23, 2026 Science Claude discovers a novel enzyme system with CRISPR-like repeats",
+   "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system",
+   "source": "anthropic",
+   "sourceName": "Anthropic News",
+   "type": "lab",
+   "date": "2026-09-23T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "A commentary questions recent industry claims of breakthroughs in finding security vulnerabilities and solving math problems, arguing they are more marketing than evidence.",
+   "summary": "Sep 23, 2026 Science Claude discovers a novel enzyme system with CRISPR-like repeats",
    "why": "",
-   "topic": "industry",
-   "tags": [
-    "opinion",
-    "hype"
-   ],
-   "importance": 2
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "3178ac7a6d6979d1",
-   "title": "The deadly failures of the virtual border wall",
+   "title": "Roundtables: The Deadly Failures of The Virtual Border Wall",
    "url": "https://www.technologyreview.com/2026/09/22/1144890/roundtables-the-deadly-failures-of-the-virtual-border-wall/",
    "source": "mit-tr-ai",
    "sourceName": "MIT Technology Review",
    "type": "news",
-   "date": "2026-09-22T12:00:00Z",
+   "date": "2026-09-22T13:42:05Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "An investigation found more than 1,000 deaths in areas watched by US border surveillance towers, including towers with AI detection systems.",
+   "summary": "The US has spent billions building a “virtual wall” of surveillance towers along its southern border over the past 25 years, promising they will help detect and apprehend border crossers and save lives. But a groundbreaking investigation by MIT Technology Review has documented over a thousand people who moved through a",
    "why": "",
    "topic": "industry",
-   "tags": [
-    "surveillance",
-    "investigation"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "0fe61bb2f2b71e93",
+   "title": "What can you build with Jev",
+   "url": "https://www.bensbites.com/p/what-can-you-build-with-jev",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-22T13:01:13Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Muse is off to a good start",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "4c16a55043f0ace6",
+   "title": "Don’t be fooled by this summer of AI hype",
+   "url": "https://www.technologyreview.com/2026/09/22/1144867/dont-be-fooled-summer-ai-hype/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-22T11:04:51Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "It’s been a busy few months for AI hype. At the end of April, Anthropic claimed that its model Claude Mythos is better at finding software vulnerabilities than most security experts.",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "cc432bde9d4c3952",
+   "title": "Amazon shuts out Meta's Muse",
+   "url": "https://www.therundown.ai/articles/amazon-shuts-out-meta-s-muse",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-22T10:00:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: How to set up ChatGPT to write in your voice",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "762e86c2a7cec2f5",
@@ -1890,7 +2118,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "f19c641f8d577f8c",
@@ -1905,7 +2134,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "c66c5cd73f996688",
@@ -1920,7 +2150,8 @@
    "why": "",
    "topic": "industry",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "bb99e4e8a621e491",
@@ -1938,6 +2169,22 @@
    "importance": 2
   },
   {
+   "id": "1224656dc246f52e",
+   "title": "OpenAI goes from hacker to hacked",
+   "url": "https://www.therundown.ai/articles/openai-goes-from-hacker-to-hacked",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-21T10:00:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: Build and test your own AI image skill pack",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
    "id": "eb792e0fc3420085",
    "title": "tokenizers v1: encode, decode and scaling, measured",
    "url": "https://huggingface.co/blog/tokenizers-v1",
@@ -1953,22 +2200,36 @@
    "importance": 2
   },
   {
-   "id": "47b87cc27bae1888",
-   "title": "Partnering with Accenture on embedded evaluation",
-   "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
-   "source": "anthropic",
-   "sourceName": "Anthropic News",
-   "type": "lab",
-   "date": "2026-09-18T12:00:00Z",
-   "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Anthropic and Accenture are working together on evaluation methods built into how enterprises deploy AI systems.",
+   "id": "3efd50b3f92167cd",
+   "title": "Meta's less-creepy smart glasses",
+   "url": "https://www.therundown.ai/articles/meta-less-creepy-smart-glasses",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-18T14:30:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: OpenAI rescues biotech’s lost research",
    "why": "",
    "topic": "industry",
-   "tags": [
-    "enterprise",
-    "evaluation"
-   ],
-   "importance": 2
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "83dbb27ff8d1fce9",
+   "title": "Inside OpenAI's log of misbehaving models",
+   "url": "https://www.therundown.ai/articles/inside-openai-log-of-misbehaving-models",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-18T10:00:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: Test AI video object swaps with Higgsfield",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "0c3e7fe15b24fc0f",
@@ -1986,22 +2247,68 @@
    "importance": 2
   },
   {
+   "id": "47b87cc27bae1888",
+   "title": "Sep 18, 2026 Announcements Partnering with Accenture on embedded evaluation",
+   "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+   "source": "anthropic",
+   "sourceName": "Anthropic News",
+   "type": "lab",
+   "date": "2026-09-18T00:00:00Z",
+   "addedAt": "2026-09-27T12:46:02Z",
+   "summary": "Sep 18, 2026 Announcements Partnering with Accenture on embedded evaluation",
+   "why": "",
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "90f4f6d678b090a0",
+   "title": "Agility's new 'safer' humanoid",
+   "url": "https://www.therundown.ai/articles/agility-new-safer-humanoid",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-17T14:30:00Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "PLUS: Waymo's next stop is Tokyo",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "567faa349ddf1980",
+   "title": "New home for Cowork",
+   "url": "https://www.bensbites.com/p/new-home-for-cowork",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-17T13:02:21Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "the successor of LLMs",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
    "id": "a29db0108686e158",
-   "title": "Introducing the Life Sciences Verification Program",
+   "title": "Sep 17, 2026 Announcements Introducing the Life Sciences Verification Program",
    "url": "https://www.anthropic.com/news/life-sciences-verification-program",
    "source": "anthropic",
    "sourceName": "Anthropic News",
    "type": "lab",
-   "date": "2026-09-17T12:00:00Z",
+   "date": "2026-09-17T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Anthropic launched a program to verify and support responsible use of Claude in life sciences research.",
+   "summary": "Sep 17, 2026 Announcements Introducing the Life Sciences Verification Program",
    "why": "",
-   "topic": "industry",
-   "tags": [
-    "life sciences",
-    "safety"
-   ],
-   "importance": 2
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "c42597ec675298aa",
@@ -2027,14 +2334,12 @@
    "type": "lab",
    "date": "2026-09-15T17:05:57Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Google DeepMind released Gemini 3.8 Live for real-time interaction, plus an Extended Thinking variant that reasons longer before answering.",
+   "summary": "",
    "why": "",
    "topic": "models",
-   "tags": [
-    "gemini",
-    "reasoning"
-   ],
-   "importance": 3
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "16a7b27ed0ae9a75",
@@ -2050,6 +2355,54 @@
    "topic": "dev",
    "tags": [],
    "importance": 2
+  },
+  {
+   "id": "28e18131cbffc435",
+   "title": "Good luck slowing this down",
+   "url": "https://www.bensbites.com/p/good-luck-slowing-this-down",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-15T13:02:52Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "plus what’s new in AI this week",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "6ce3499b54d6b478",
+   "title": "Telling AI to design is hard",
+   "url": "https://www.bensbites.com/p/telling-ai-to-design-is-hard",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-11T13:07:26Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "Ben’s session #6",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "8a55141ff1e10fcc",
+   "title": "Everyone needs a Muse",
+   "url": "https://www.bensbites.com/p/everyone-needs-a-muse",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-10T13:03:34Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "ChatGPT images got better, again",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "6483bdf27ddc8f36",
@@ -2068,21 +2421,35 @@
   },
   {
    "id": "f7dd334d631adf7d",
-   "title": "AlphaGenome Atlas: a predictive map of every possible DNA letter change in the human genome",
+   "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
    "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/",
    "source": "deepmind",
    "sourceName": "Google DeepMind",
    "type": "lab",
    "date": "2026-09-08T14:00:15Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "AlphaGenome Atlas predicts the molecular effects of 9 billion single-letter DNA variants across the human genome.",
-   "why": "A large-scale resource for genetics research built entirely from model predictions.",
-   "topic": "research",
-   "tags": [
-    "biology",
-    "genomics"
-   ],
-   "importance": 4
+   "summary": "AlphaGenome Atlas maps the molecular effects of 9 billion single-letter DNA variants across the human genome.",
+   "why": "",
+   "topic": "models",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
+  {
+   "id": "3a425f8a6b338ccf",
+   "title": "The first GPT-6 model",
+   "url": "https://www.bensbites.com/p/the-first-gpt-6-model",
+   "source": "bens-bites",
+   "sourceName": "Ben's Bites",
+   "type": "news",
+   "date": "2026-09-08T13:03:52Z",
+   "addedAt": "2026-09-28T11:38:27Z",
+   "summary": "and what I’m building with it",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "d10ef2c90500975e",
@@ -2112,7 +2479,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "e8f8c6381f87a2fa",
@@ -2183,7 +2551,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "a9b9d17f3a5b6e12",
@@ -2198,7 +2567,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "42b9316037196b31",
@@ -2231,7 +2601,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "e83ff5faec702b5a",
@@ -2246,7 +2617,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "e8e7441ac397b526",
@@ -2261,7 +2633,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "d575f18cfc606442",
@@ -2276,7 +2649,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "22af9dbf54d414fe",
@@ -2306,7 +2680,8 @@
    "why": "",
    "topic": "models",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   }
  ]
 }
