@@ -1,6 +1,21 @@
 {
- "updated": "2026-09-28T05:38:32Z",
+ "updated": "2026-09-28T08:43:42Z",
  "items": [
+  {
+   "id": "7361429108c28003",
+   "title": "Who’s liable when AI agents go rogue?",
+   "url": "https://www.technologyreview.com/2026/09/28/1145197/whos-liable-when-ai-agents-go-rogue/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-09-28T08:06:22Z",
+   "addedAt": "2026-09-28T08:43:42Z",
+   "summary": "MIT Technology Review Explains: Let our writers untangle the complex, messy world of technology to help you understand what’s coming next. You can read more from the series here.",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2
+  },
   {
    "id": "0dc955c86c2b08ca",
    "title": "Owed a billion dollars in Nvidia stock",
@@ -155,6 +170,21 @@
    "tags": [],
    "importance": 2,
    "discussion": "https://news.ycombinator.com/item?id=49865343"
+  },
+  {
+   "id": "42cfebd3a04409ad",
+   "title": "ufo-ai/ufo-core",
+   "url": "https://github.com/ufo-ai/ufo-core",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-27T07:25:44Z",
+   "addedAt": "2026-09-28T08:43:42Z",
+   "summary": "Business agent operating system (Language: Python; 55 stars)",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2
   },
   {
    "id": "9fe0a063f817f4e3",
@@ -1051,6 +1081,21 @@
    "summary": "Vendors rolling out AI have an \"incentive to deny as many claims as possible.\"",
    "why": "",
    "topic": "industry",
+   "tags": [],
+   "importance": 2
+  },
+  {
+   "id": "ed85f03ec56d2bde",
+   "title": "Xuanwo/cida",
+   "url": "https://github.com/Xuanwo/cida",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-25T08:20:35Z",
+   "addedAt": "2026-09-28T08:43:42Z",
+   "summary": "辞达：用你选择的大模型，在 Mac 的任何地方翻译和润色文字。Translate and polish text anywhere on your Mac. (Language: Swift; 52 stars)",
+   "why": "",
+   "topic": "dev",
    "tags": [],
    "importance": 2
   },
