@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:08:17Z",
+ "updated": "2026-09-28T12:45:59Z",
  "items": [
   {
    "id": "ca6d89c27fc0a2e0",
@@ -178,35 +178,45 @@
   },
   {
    "id": "63f85032962dd035",
-   "title": "Anthropic’s CEO is about to have dinner with President Trump",
+   "title": "Anthropic’s CEO Is About to Have Dinner with President Trump",
    "url": "https://techcrunch.com/2026/09/27/anthropics-ceo-is-about-to-have-dinner-with-president-trump/",
    "source": "techcrunch-ai",
    "sourceName": "TechCrunch AI",
    "type": "news",
    "date": "2026-09-27T20:34:28Z",
    "addedAt": "2026-09-28T05:08:10Z",
-   "summary": "This will be the first one-on-one meeting between Dario Amodei and Donald Trump",
-   "why": "",
+   "summary": "Anthropic CEO Dario Amodei is set to have dinner with Donald Trump. This will mark the first one-on-one meeting between the AI executive and Trump.",
+   "why": "It signals high-level political engagement between major frontier AI lab leadership and US political leadership.",
    "topic": "industry",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "anthropic",
+    "dario amodei",
+    "ai policy",
+    "regulation"
+   ],
+   "importance": 3,
+   "ai": true
   },
   {
    "id": "80032e73c06a7a2a",
-   "title": "Can Muse overcome Meta’s trust issues?",
+   "title": "Can Muse Overcome Meta’s Trust Issues?",
    "url": "https://techcrunch.com/2026/09/27/can-muse-overcome-metas-trust-issues/",
    "source": "techcrunch-ai",
    "sourceName": "TechCrunch AI",
    "type": "news",
    "date": "2026-09-27T19:57:30Z",
    "addedAt": "2026-09-28T05:08:10Z",
-   "summary": "On Equity, we discussed how Meta's AI announcement managed to steal the spotlight from OpenAI and Anthropic.",
-   "why": "",
+   "summary": "Meta's latest AI announcement around Muse managed to draw significant attention away from rivals OpenAI and Anthropic. The discussion explores whether the product can succeed amidst ongoing trust challenges facing Meta.",
+   "why": "Meta is aggressively competing for market attention against established leaders OpenAI and Anthropic.",
    "topic": "industry",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "meta",
+    "muse",
+    "openai",
+    "anthropic"
+   ],
+   "importance": 3,
+   "ai": true
   },
   {
    "id": "60ab98208b1a07c9",
