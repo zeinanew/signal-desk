@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-27T13:06:47Z",
+ "updated": "2026-09-28T05:08:10Z",
  "sources": [
   {
    "id": "techcrunch-ai",
@@ -12,9 +12,9 @@
    "enabled": true,
    "url": "https://techcrunch.com/category/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
-   "lastNew": 0
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
+   "lastNew": 3
   },
   {
    "id": "verge-ai",
@@ -27,9 +27,9 @@
    "enabled": true,
    "url": "https://www.theverge.com/ai-artificial-intelligence",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
-   "lastNew": 0
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
+   "lastNew": 2
   },
   {
    "id": "mit-tr-ai",
@@ -42,8 +42,8 @@
    "enabled": true,
    "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -57,8 +57,8 @@
    "enabled": true,
    "url": "https://arstechnica.com/ai/",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -72,8 +72,8 @@
    "enabled": true,
    "url": "https://openai.com/news/",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -87,8 +87,8 @@
    "enabled": true,
    "url": "https://www.anthropic.com/news",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -102,8 +102,8 @@
    "enabled": true,
    "url": "https://deepmind.google/blog/",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -117,8 +117,8 @@
    "enabled": true,
    "url": "https://huggingface.co/blog",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -131,9 +131,9 @@
    "enabled": true,
    "url": "https://arxiv.org/list/cs.AI/recent",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
-   "lastNew": 0
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
+   "lastNew": 6
   },
   {
    "id": "arxiv-cl",
@@ -145,9 +145,9 @@
    "enabled": true,
    "url": "https://arxiv.org/list/cs.CL/recent",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
-   "lastNew": 0
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
+   "lastNew": 4
   },
   {
    "id": "github-new-llm",
@@ -159,9 +159,9 @@
    "enabled": true,
    "url": "https://github.com/topics/llm",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
-   "lastNew": 0
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
+   "lastNew": 2
   },
   {
    "id": "gh-transformers",
@@ -173,8 +173,8 @@
    "enabled": true,
    "url": "https://github.com/huggingface/transformers/releases",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -187,8 +187,8 @@
    "enabled": true,
    "url": "https://github.com/vllm-project/vllm/releases",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -201,8 +201,8 @@
    "enabled": true,
    "url": "https://github.com/ollama/ollama/releases",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
    "lastNew": 0
   },
   {
@@ -215,8 +215,9 @@
    ],
    "enabled": true,
    "url": "https://www.youtube.com/@TwoMinutePapers",
-   "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
+   "status": "error",
+   "error": "404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCbfYPyITQ-7l4upoX8nvctg",
+   "lastChecked": "2026-09-28T05:08:10Z",
    "lastOk": "2026-09-27T13:06:47Z",
    "lastNew": 0
   },
@@ -229,8 +230,9 @@
    ],
    "enabled": true,
    "url": "https://www.youtube.com/@aiexplained-official",
-   "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
+   "status": "error",
+   "error": "404 Client Error: Not Found for url: https://www.youtube.com/feeds/videos.xml?channel_id=UCNJ1Ymd5yFuUPtn21xtRbbw",
+   "lastChecked": "2026-09-28T05:08:10Z",
    "lastOk": "2026-09-27T13:06:47Z",
    "lastNew": 0
   },
@@ -246,9 +248,9 @@
    "enabled": true,
    "url": "https://news.ycombinator.com/",
    "status": "ok",
-   "lastChecked": "2026-09-27T13:06:47Z",
-   "lastOk": "2026-09-27T13:06:47Z",
-   "lastNew": 0
+   "lastChecked": "2026-09-28T05:08:10Z",
+   "lastOk": "2026-09-28T05:08:10Z",
+   "lastNew": 5
   }
  ]
 }
