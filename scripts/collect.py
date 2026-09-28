@@ -311,6 +311,8 @@ def main() -> None:
                 continue
             budget -= 1
             s = summarize(raw, src, client)
+            if client is not None:
+                time.sleep(4)  # stay well under the free-tier requests-per-minute limit
             if not s.get("relevant", True):
                 continue
             items[iid] = {
