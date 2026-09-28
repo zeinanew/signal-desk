@@ -36,7 +36,7 @@ MAX_AGE_DAYS = int(os.getenv("MAX_AGE_DAYS", "45"))       # drop stories older t
 DEFAULT_LIMIT = int(os.getenv("PER_SOURCE_LIMIT", "8"))   # newest N per source per run
 MAX_NEW_PER_RUN = int(os.getenv("MAX_NEW_PER_RUN", "80")) # cap on summarization calls
 MODELS = [m.strip() for m in (os.getenv("GEMINI_MODELS") or os.getenv("GEMINI_MODEL")
-                               or "gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash").split(",") if m.strip()]
+                               or "gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash").split(",") if m.strip()]
 TOPICS = ["models", "dev", "research", "industry"]
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
@@ -212,25 +212,28 @@ def fallback(raw: dict, src: dict) -> dict:
             "topic": src["topics"][0], "tags": [], "importance": 2, "ai": False}
 
 
-_model_state = {"idx": 0}  # sticks with the first working model; only advances on quota errors
+_model_state = {"idx": 0}  # sticks with the first working model; only advances when it's unusable
 
 
-def _is_quota_error(exc: Exception) -> bool:
+def _should_switch_model(exc: Exception) -> bool:
+    """True when retrying the same model won't help: quota exhausted, or the model
+    name itself is invalid/retired (so plain retries would just repeat the same error)."""
     text = str(exc)
-    return "RESOURCE_EXHAUSTED" in text or "429" in text or "quota" in text.lower()
+    return ("RESOURCE_EXHAUSTED" in text or "429" in text or "quota" in text.lower()
+            or "NOT_FOUND" in text or "404" in text)
 
 
 def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:
-    """Try one model with a few retries. Returns (data, exhausted); exhausted=True
-    means the model's quota is used up and the caller should move to the next one."""
+    """Try one model with a few retries. Returns (data, switch); switch=True
+    means this model is unusable and the caller should move to the next one."""
     for attempt in range(3):
         try:
             resp = client.models.generate_content(model=model, contents=msg)
             text = resp.text or ""
             return json.loads(re.search(r"\{.*\}", text, re.S).group(0)), False
         except Exception as exc:  # noqa: BLE001 - keep the run going
-            if _is_quota_error(exc):
-                print(f"    {model} quota hit: {exc}", file=sys.stderr)
+            if _should_switch_model(exc):
+                print(f"    {model} unusable: {exc}", file=sys.stderr)
                 return None, True
             print(f"    {model} retry {attempt + 1}: {exc}", file=sys.stderr)
             time.sleep(2 * (attempt + 1))
