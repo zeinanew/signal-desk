@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T11:38:27Z",
+ "updated": "2026-09-28T12:08:17Z",
  "items": [
   {
    "id": "ca6d89c27fc0a2e0",
@@ -31,6 +31,22 @@
    "topic": "dev",
    "tags": [],
    "importance": 2
+  },
+  {
+   "id": "661f394656184753",
+   "title": "OpenAI's agents went rogue on Washington",
+   "url": "https://www.therundown.ai/articles/openai-s-agents-went-rogue-on-washington",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-28T09:00:00Z",
+   "addedAt": "2026-09-28T12:08:17Z",
+   "summary": "PLUS: How to get started with Jev, TypeSafe's new AI",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "7361429108c28003",
