@@ -82,9 +82,18 @@ def strip_html(text: str, limit: int = 1200) -> str:
 
 
 def get(url: str, **kw) -> requests.Response:
-    r = requests.get(url, headers={**UA, **kw.pop("headers", {})}, timeout=25, **kw)
-    r.raise_for_status()
-    return r
+    """A couple of retries for transient errors - YouTube's feed endpoint in particular
+    intermittently 404s/500s on otherwise-working channel URLs."""
+    headers = {**UA, **kw.pop("headers", {})}
+    for attempt in range(3):
+        try:
+            r = requests.get(url, headers=headers, timeout=25, **kw)
+            r.raise_for_status()
+            return r
+        except (requests.exceptions.HTTPError, requests.exceptions.ConnectionError, requests.exceptions.Timeout):
+            if attempt == 2:
+                raise
+            time.sleep(2 * (attempt + 1))
 
 
 def load_json(path: Path, default):
@@ -177,6 +186,7 @@ FETCHERS = {"rss": fetch_rss, "html_links": fetch_html_links, "github_search": f
 
 # ---------------------------------------------------------------- summarizer
 PROMPT = """You summarize AI and technology news for a daily dashboard read by a technical professional.
+Always respond in English, even when the source text below is in another language - translate first, then summarize.
 
 Source: {source} ({stype})
 Title: {title}
@@ -185,8 +195,8 @@ Feed text: {desc}
 
 Return ONLY a JSON object with these keys:
 - "relevant": true if this is about AI, machine learning, developer tools, open source software, tech industry or tech policy; false for anything else (celebrity events, unrelated consumer news, sponsored posts).
-- "title": a clean headline (fix casing, remove site names, dates or category labels stuck to it). Keep the original wording where possible.
-- "summary": 1-2 plain sentences on what happened. Use only facts in the title and feed text; do not invent numbers or claims.
+- "title": a clean headline in English (fix casing, remove site names, dates or category labels stuck to it; translate it if the source isn't in English). Keep the original wording where possible.
+- "summary": 1-2 plain sentences in English on what happened. Use only facts in the title and feed text; do not invent numbers or claims.
 - "why": one short sentence on why it matters to someone following AI, or "" if you can't say without guessing.
 - "topic": one of "models" (LLMs, model releases, AI products), "dev" (developer tools, open source, libraries), "research" (papers, science, benchmarks), "industry" (business, funding, policy, safety incidents, regulation, hardware).
 - "tags": 2-4 short lowercase tags.
@@ -194,10 +204,12 @@ Return ONLY a JSON object with these keys:
 
 
 def fallback(raw: dict, src: dict) -> dict:
+    """Used when there's no AI client, or every model failed: reuses the feed's own
+    text verbatim (untranslated, no "why"), so it's marked as needing a retry later."""
     desc = raw.get("desc") or ""
     first = re.split(r"(?<=[.!?])\s", desc, maxsplit=2)
     return {"relevant": True, "title": raw["title"], "summary": " ".join(first[:2])[:320], "why": "",
-            "topic": src["topics"][0], "tags": [], "importance": 2}
+            "topic": src["topics"][0], "tags": [], "importance": 2, "ai": False}
 
 
 _model_state = {"idx": 0}  # sticks with the first working model; only advances on quota errors
@@ -236,6 +248,7 @@ def summarize(raw: dict, src: dict, client) -> dict:
             data["topic"] = data.get("topic") if data.get("topic") in TOPICS else src["topics"][0]
             data["tags"] = [str(t).lower()[:24] for t in (data.get("tags") or [])][:4]
             data["importance"] = max(1, min(5, int(data.get("importance") or 2)))
+            data["ai"] = True
             return data
         if not exhausted:
             break  # transient failure, retries used up - fall back for this item only
@@ -284,7 +297,14 @@ def main() -> None:
         fresh.sort(key=lambda r: r["date"] or NOW, reverse=True)
         for raw in fresh[: src.get("limit", DEFAULT_LIMIT)]:
             iid = item_id(raw["url"])
-            if iid in items or title_key(raw["title"]) in seen_titles or budget <= 0:
+            existing = items.get(iid)
+            # Retry items that only ever got the raw-feed fallback (no "ai" flag, or ai:false)
+            # once a working AI client is available, instead of leaving them stuck forever.
+            if existing and (client is None or existing.get("ai", False)):
+                continue
+            if not existing and (title_key(raw["title"]) in seen_titles or budget <= 0):
+                continue
+            if existing and budget <= 0:
                 continue
             budget -= 1
             s = summarize(raw, src, client)
@@ -293,13 +313,15 @@ def main() -> None:
             items[iid] = {
                 "id": iid, "title": s.get("title") or raw["title"], "url": raw["url"],
                 "source": src["id"], "sourceName": src["name"], "type": src["type"],
-                "date": iso(raw["date"] or NOW), "addedAt": iso(NOW),
+                "date": iso(raw["date"] or NOW), "addedAt": (existing or {}).get("addedAt", iso(NOW)),
                 "summary": s.get("summary", ""), "why": s.get("why", ""),
                 "topic": s["topic"], "tags": s.get("tags", []), "importance": s.get("importance", 2),
+                "ai": s.get("ai", False),
                 **({"discussion": raw["discussion"]} if raw.get("discussion") else {}),
             }
             seen_titles.add(title_key(items[iid]["title"]))
-            new_here += 1
+            if not existing:
+                new_here += 1
         added += new_here
         print(f"    {len(raw_items)} found, {new_here} new")
         status.append({**row, "status": "ok", "lastChecked": iso(NOW), "lastOk": iso(NOW), "lastNew": new_here})
@@ -308,7 +330,8 @@ def main() -> None:
     kept.sort(key=lambda it: it.get("date") or "", reverse=True)
     ITEMS_FILE.write_text(json.dumps({"updated": iso(NOW), "items": kept}, indent=1, ensure_ascii=False), encoding="utf-8")
     STATUS_FILE.write_text(json.dumps({"updated": iso(NOW), "sources": status}, indent=1, ensure_ascii=False), encoding="utf-8")
-    print(f"Done: {added} new, {len(kept)} stories in feed.")
+    fallback_count = sum(1 for it in kept if not it.get("ai"))
+    print(f"Done: {added} new, {len(kept)} stories in feed, {fallback_count} still on the raw-feed fallback (no AI client, or every model failed for them).")
 
 
 if __name__ == "__main__":
