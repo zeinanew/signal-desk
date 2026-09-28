@@ -38,6 +38,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODELS: ${{ vars.GEMINI_MODELS }}
+          XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+          XAI_MODELS: ${{ vars.XAI_MODELS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Save new data to the repo

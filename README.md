@@ -26,10 +26,14 @@ The repo already contains stories collected on 27 Sep 2026, so the site has cont
 ### 2. Add your Gemini API key
 The summaries are written by Gemini through the API. It costs a few cents a day (Google also offers a free tier).
 1. Get a key at [aistudio.google.com/apikey](https://aistudio.google.com/apikey).
-2. In your repo, go to **Settings → Secrets and variables → Actions → New repository secret**.
-3. Name: `GEMINI_API_KEY`. Value: your key. Click **Add secret**.
+2. In your repo, go to **Settings → Secrets and variables → Actions → Secrets tab → New repository secret** (not the Variables tab - the workflow only reads secrets).
+3. Name: `GEMINI_API_KEY`. Value: your key, no quotes around it. Click **Add secret**.
 
 Without a key the site still works, but it uses each feed's own description in place of an AI summary.
+
+**Optional: add Grok as a backup.** Free-tier Gemini keys are capped at a small number of requests per day per model, so once that's used up the rest of that day's stories fall back to the raw feed text. Adding an xAI key lets the script fall through to Grok once Gemini's quota is exhausted, instead of giving up:
+1. Get a key at [console.x.ai](https://console.x.ai).
+2. Add it the same way as above, as a repository secret named `XAI_API_KEY`.
 
 ### 3. Turn on the website
 1. **Settings → Pages**.
@@ -65,7 +69,8 @@ Every source also needs `id` (unique, lowercase), `name`, `type` (`news`, `lab`,
 ## Settings (optional)
 Set these under **Settings → Secrets and variables → Actions → Variables**:
 
-- `GEMINI_MODELS`: a comma-separated list of Gemini models to try, in order, e.g. `gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash` (the default). If a model's quota runs out mid-run, the script automatically moves on to the next one in the list and keeps using it for the rest of the run. See [the models list](https://ai.google.dev/gemini-api/docs/models) for current options.
+- `GEMINI_MODELS`: a comma-separated list of Gemini models to try, in order (default `gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash`). If a model's quota runs out or it's been retired, the script moves on to the next one in the list. Google renames/retires these fairly often - if summaries stop working, check the Action log for the exact error and see [the models list](https://ai.google.dev/gemini-api/docs/models) for current names.
+- `XAI_MODELS`: same idea, for the Grok backup (default `grok-4-fast`). Only used once every model in `GEMINI_MODELS` has failed for an item. See [xAI's models list](https://docs.x.ai/docs/models) for current names.
 
 In `scripts/collect.py` you can also change `MAX_AGE_DAYS` (default 45: older stories drop off) and `PER_SOURCE_LIMIT` (default 8 new stories per source per day).
 
@@ -74,7 +79,7 @@ To change the time: edit the `cron` line in `.github/workflows/refresh.yml`. It'
 ## Run it on your own computer (optional)
 ```bash
 pip install -r requirements.txt
-GEMINI_API_KEY=... python scripts/collect.py
+GEMINI_API_KEY=... XAI_API_KEY=... python scripts/collect.py   # XAI_API_KEY is optional
 python -m http.server 8000     # then open http://localhost:8000
 ```
 
