@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:48:41Z",
+ "updated": "2026-09-28T13:04:12Z",
  "items": [
   {
    "id": "ca6d89c27fc0a2e0",
@@ -1754,22 +1754,19 @@
   },
   {
    "id": "a70f8ac64edfa547",
-   "title": "How to use NVIDIA Warp and MjWarp to accelerate robotics simulation",
+   "title": "How to Use NVIDIA Warp and MjWarp to Accelerate Robotics Simulation and Learning Workflows",
    "url": "https://huggingface.co/blog/nvidia/how-to-use-nvidia-warp-and-mjwarp",
    "source": "huggingface",
    "sourceName": "Hugging Face Blog",
    "type": "lab",
    "date": "2026-09-23T18:41:40Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "A practical guide to using NVIDIA's Warp and MjWarp to speed up robotics simulation and training.",
+   "summary": "",
    "why": "",
    "topic": "dev",
-   "tags": [
-    "robotics",
-    "simulation",
-    "nvidia"
-   ],
-   "importance": 2
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "cd8117c6d35f983b",
@@ -2081,33 +2078,28 @@
    "type": "lab",
    "date": "2026-09-22T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Hugging Face's Transformers library can now run quantized models in llama.cpp's format.",
-   "why": "Makes it easier to move between the two most popular ways of running open models.",
+   "summary": "",
+   "why": "",
    "topic": "dev",
-   "tags": [
-    "transformers",
-    "llama.cpp",
-    "quantization"
-   ],
-   "importance": 4
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "2960c64a019e48fb",
-   "title": "How UK AISI and EvalEval are making benchmark results reproducible",
+   "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
    "url": "https://huggingface.co/blog/evaleval-aisi",
    "source": "huggingface",
    "sourceName": "Hugging Face Blog",
    "type": "lab",
    "date": "2026-09-22T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "The UK AI Security Institute and EvalEval are working on standards so AI benchmark results can be reproduced.",
+   "summary": "",
    "why": "",
-   "topic": "research",
-   "tags": [
-    "benchmarks",
-    "evaluation"
-   ],
-   "importance": 3
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "fb8ad85c459c0cb6",
