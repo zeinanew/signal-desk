@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-28T12:45:59Z",
+ "updated": "2026-09-28T12:48:41Z",
  "items": [
   {
    "id": "ca6d89c27fc0a2e0",
@@ -30,7 +30,8 @@
    "why": "",
    "topic": "dev",
    "tags": [],
-   "importance": 2
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "661f394656184753",
@@ -268,19 +269,23 @@
   },
   {
    "id": "39e6d83733f34b5b",
-   "title": "Anthropic’s Dario Amodei gets the SNL treatment",
+   "title": "Anthropic’s Dario Amodei Gets the SNL Treatment",
    "url": "https://techcrunch.com/2026/09/27/anthropics-dario-amodei-gets-the-snl-treatment/",
    "source": "techcrunch-ai",
    "sourceName": "TechCrunch AI",
    "type": "news",
    "date": "2026-09-27T16:30:00Z",
    "addedAt": "2026-09-28T05:08:10Z",
-   "summary": "\"AI is the devil and I its maker.\"",
-   "why": "",
+   "summary": "Anthropic CEO Dario Amodei was spoofed on Saturday Night Live, satirizing his position as an AI creator.",
+   "why": "It highlights how major AI figures and safety discourse have entered mainstream pop culture.",
    "topic": "industry",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "anthropic",
+    "dario amodei",
+    "media"
+   ],
+   "importance": 1,
+   "ai": true
   },
   {
    "id": "4aa8cdc749d349a2",
@@ -471,19 +476,24 @@
   },
   {
    "id": "7777e45713742871",
-   "title": "Google tests buying from Walmart-owned Flipkart through Gemini and AI Mode in India",
+   "title": "Google Tests Buying From Walmart-Owned Flipkart Through Gemini and AI Mode in India",
    "url": "https://techcrunch.com/2026/09/26/google-tests-buying-from-walmart-owned-flipkart-through-gemini-and-ai-mode-in-india/",
    "source": "techcrunch-ai",
    "sourceName": "TechCrunch AI",
    "type": "news",
    "date": "2026-09-27T01:30:00Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "The limited test covers select products and users, with a broader rollout planned for later in October.",
-   "why": "",
-   "topic": "industry",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "summary": "Google is conducting a limited test allowing select users in India to purchase products from Walmart-owned Flipkart directly via Gemini and AI Mode. The pilot covers select products, with a wider rollout expected later in October.",
+   "why": "It highlights Google's push to integrate agentic e-commerce transactions directly into consumer conversational AI interfaces.",
+   "topic": "models",
+   "tags": [
+    "google",
+    "gemini",
+    "flipkart",
+    "e-commerce"
+   ],
+   "importance": 3,
+   "ai": true
   },
   {
    "id": "63394656335488e4",
@@ -680,19 +690,24 @@
   },
   {
    "id": "fe937b84825f8022",
-   "title": "At Meta Connect, the company’s smart glasses were everywhere",
+   "title": "At Meta Connect, the Company’s Smart Glasses Were Everywhere",
    "url": "https://techcrunch.com/2026/09/25/at-meta-connect-the-companys-smart-glasses-were-everywhere/",
    "source": "techcrunch-ai",
    "sourceName": "TechCrunch AI",
    "type": "news",
    "date": "2026-09-26T01:08:57Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "The company behind Facebook and Instagram wants to keep consumers connected to the digital world via its ever-growing line of smart glasses.",
-   "why": "",
+   "summary": "Meta emphasized its expanding lineup of smart glasses at Meta Connect, aiming to keep consumers connected to the digital world.",
+   "why": "Smart glasses represent Meta's primary wearable hardware platform for deploying ambient and multimodal AI assistants.",
    "topic": "industry",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "meta",
+    "smart glasses",
+    "hardware",
+    "meta connect"
+   ],
+   "importance": 3,
+   "ai": true
   },
   {
    "id": "4c99a489e8da4949",
@@ -1668,15 +1683,12 @@
    "type": "lab",
    "date": "2026-09-24T14:08:57Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Liquid AI describes how LFM2.5-VL-DSpark speeds up vision-language models.",
+   "summary": "",
    "why": "",
-   "topic": "models",
-   "tags": [
-    "vision",
-    "efficiency",
-    "open models"
-   ],
-   "importance": 2
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "ai": false
   },
   {
    "id": "e31b30769dfe667a",
