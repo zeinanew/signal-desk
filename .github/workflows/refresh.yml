@@ -37,7 +37,7 @@ jobs:
         run: python scripts/collect.py
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+          GEMINI_MODELS: ${{ vars.GEMINI_MODELS }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Save new data to the repo

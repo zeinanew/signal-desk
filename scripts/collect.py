@@ -35,7 +35,8 @@ SOURCES_FILE = ROOT / "sources.json"
 MAX_AGE_DAYS = int(os.getenv("MAX_AGE_DAYS", "45"))       # drop stories older than this
 DEFAULT_LIMIT = int(os.getenv("PER_SOURCE_LIMIT", "8"))   # newest N per source per run
 MAX_NEW_PER_RUN = int(os.getenv("MAX_NEW_PER_RUN", "80")) # cap on summarization calls
-MODEL = os.getenv("GEMINI_MODEL") or "gemini-2.5-flash"
+MODELS = [m.strip() for m in (os.getenv("GEMINI_MODELS") or os.getenv("GEMINI_MODEL")
+                               or "gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash").split(",") if m.strip()]
 TOPICS = ["models", "dev", "research", "industry"]
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
@@ -199,22 +200,48 @@ def fallback(raw: dict, src: dict) -> dict:
             "topic": src["topics"][0], "tags": [], "importance": 2}
 
 
+_model_state = {"idx": 0}  # sticks with the first working model; only advances on quota errors
+
+
+def _is_quota_error(exc: Exception) -> bool:
+    text = str(exc)
+    return "RESOURCE_EXHAUSTED" in text or "429" in text or "quota" in text.lower()
+
+
+def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:
+    """Try one model with a few retries. Returns (data, exhausted); exhausted=True
+    means the model's quota is used up and the caller should move to the next one."""
+    for attempt in range(3):
+        try:
+            resp = client.models.generate_content(model=model, contents=msg)
+            text = resp.text or ""
+            return json.loads(re.search(r"\{.*\}", text, re.S).group(0)), False
+        except Exception as exc:  # noqa: BLE001 - keep the run going
+            if _is_quota_error(exc):
+                print(f"    {model} quota hit: {exc}", file=sys.stderr)
+                return None, True
+            print(f"    {model} retry {attempt + 1}: {exc}", file=sys.stderr)
+            time.sleep(2 * (attempt + 1))
+    return None, False
+
+
 def summarize(raw: dict, src: dict, client) -> dict:
     if client is None:
         return fallback(raw, src)
     msg = PROMPT.format(source=src["name"], stype=src["type"], title=raw["title"], url=raw["url"], desc=raw.get("desc") or "(none)")
-    for attempt in range(3):
-        try:
-            resp = client.models.generate_content(model=MODEL, contents=msg)
-            text = resp.text or ""
-            data = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
+    while _model_state["idx"] < len(MODELS):
+        model = MODELS[_model_state["idx"]]
+        data, exhausted = _call_model(client, model, msg)
+        if data is not None:
             data["topic"] = data.get("topic") if data.get("topic") in TOPICS else src["topics"][0]
             data["tags"] = [str(t).lower()[:24] for t in (data.get("tags") or [])][:4]
             data["importance"] = max(1, min(5, int(data.get("importance") or 2)))
             return data
-        except Exception as exc:  # noqa: BLE001 - keep the run going
-            print(f"    summarize retry {attempt + 1}: {exc}", file=sys.stderr)
-            time.sleep(2 * (attempt + 1))
+        if not exhausted:
+            break  # transient failure, retries used up - fall back for this item only
+        _model_state["idx"] += 1
+        if _model_state["idx"] < len(MODELS):
+            print(f"    switching to model {MODELS[_model_state['idx']]}", file=sys.stderr)
     return fallback(raw, src)
 
 

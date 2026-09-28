@@ -65,7 +65,7 @@ Every source also needs `id` (unique, lowercase), `name`, `type` (`news`, `lab`,
 ## Settings (optional)
 Set these under **Settings → Secrets and variables → Actions → Variables**:
 
-- `GEMINI_MODEL`: which Gemini model writes the summaries. The default is `gemini-2.5-flash`, which is fast and cheap. If Google retires it, set this to a current model from [the models list](https://ai.google.dev/gemini-api/docs/models).
+- `GEMINI_MODELS`: a comma-separated list of Gemini models to try, in order, e.g. `gemini-2.5-flash,gemini-2.5-flash-lite,gemini-2.0-flash` (the default). If a model's quota runs out mid-run, the script automatically moves on to the next one in the list and keeps using it for the rest of the run. See [the models list](https://ai.google.dev/gemini-api/docs/models) for current options.
 
 In `scripts/collect.py` you can also change `MAX_AGE_DAYS` (default 45: older stories drop off) and `PER_SOURCE_LIMIT` (default 8 new stories per source per day).
 
