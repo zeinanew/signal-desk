@@ -1,6 +1,36 @@
 {
- "updated": "2026-09-28T08:43:42Z",
+ "updated": "2026-09-28T11:25:17Z",
  "items": [
+  {
+   "id": "ca6d89c27fc0a2e0",
+   "title": "Microsoft goes quiet after church groups ask for 1% of data center costs",
+   "url": "https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/",
+   "source": "ars-ai",
+   "sourceName": "Ars Technica AI",
+   "type": "news",
+   "date": "2026-09-28T11:00:09Z",
+   "addedAt": "2026-09-28T11:25:17Z",
+   "summary": "“Microsoft claims to want to be a good neighbor, but the jury is still out.\"",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2
+  },
+  {
+   "id": "9552195c964ddb7b",
+   "title": "Holo4: powering generalist computer-use agents",
+   "url": "https://huggingface.co/blog/Hcompany/holo4",
+   "source": "huggingface",
+   "sourceName": "Hugging Face Blog",
+   "type": "lab",
+   "date": "2026-09-28T09:44:05Z",
+   "addedAt": "2026-09-28T11:25:17Z",
+   "summary": "",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2
+  },
   {
    "id": "7361429108c28003",
    "title": "Who’s liable when AI agents go rogue?",
@@ -15,6 +45,38 @@
    "topic": "industry",
    "tags": [],
    "importance": 2
+  },
+  {
+   "id": "9f284effa55e58c2",
+   "title": "Prompting Claude Opus 5.5",
+   "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T07:33:29Z",
+   "addedAt": "2026-09-28T11:25:17Z",
+   "summary": "Hacker News discussion with 118 points and 115 comments.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "discussion": "https://news.ycombinator.com/item?id=49874728"
+  },
+  {
+   "id": "f1d69bd4c8060c52",
+   "title": "Thinking fast and slow in AI: The role of metacognition (2021)",
+   "url": "https://arxiv.org/abs/2110.01834",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T03:23:53Z",
+   "addedAt": "2026-09-28T11:25:17Z",
+   "summary": "Hacker News discussion with 114 points and 38 comments.",
+   "why": "",
+   "topic": "dev",
+   "tags": [],
+   "importance": 2,
+   "discussion": "https://news.ycombinator.com/item?id=49873241"
   },
   {
    "id": "0dc955c86c2b08ca",
