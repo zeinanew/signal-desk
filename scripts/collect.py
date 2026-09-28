@@ -1,13 +1,13 @@
 """Signal Desk collector.
 
 Reads sources.json, pulls the newest items from each enabled source,
-skips anything already seen, asks Claude to summarize and tag the new
+skips anything already seen, asks Gemini to summarize and tag the new
 items, and writes:
 
   data/items.json    - the feed shown on the Feed tab
   data/sources.json  - each source plus its last check result (Sources tab)
 
-Run locally:  ANTHROPIC_API_KEY=sk-... python scripts/collect.py
+Run locally:  GEMINI_API_KEY=... python scripts/collect.py
 Without an API key it still runs, using the feed's own description as the summary.
 """
 from __future__ import annotations
@@ -35,7 +35,7 @@ SOURCES_FILE = ROOT / "sources.json"
 MAX_AGE_DAYS = int(os.getenv("MAX_AGE_DAYS", "45"))       # drop stories older than this
 DEFAULT_LIMIT = int(os.getenv("PER_SOURCE_LIMIT", "8"))   # newest N per source per run
 MAX_NEW_PER_RUN = int(os.getenv("MAX_NEW_PER_RUN", "80")) # cap on summarization calls
-MODEL = os.getenv("CLAUDE_MODEL") or "claude-haiku-4-5"
+MODEL = os.getenv("GEMINI_MODEL") or "gemini-2.5-flash"
 TOPICS = ["models", "dev", "research", "industry"]
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
@@ -205,8 +205,8 @@ def summarize(raw: dict, src: dict, client) -> dict:
     msg = PROMPT.format(source=src["name"], stype=src["type"], title=raw["title"], url=raw["url"], desc=raw.get("desc") or "(none)")
     for attempt in range(3):
         try:
-            resp = client.messages.create(model=MODEL, max_tokens=500, messages=[{"role": "user", "content": msg}])
-            text = "".join(b.text for b in resp.content if getattr(b, "type", "") == "text")
+            resp = client.models.generate_content(model=MODEL, contents=msg)
+            text = resp.text or ""
             data = json.loads(re.search(r"\{.*\}", text, re.S).group(0))
             data["topic"] = data.get("topic") if data.get("topic") in TOPICS else src["topics"][0]
             data["tags"] = [str(t).lower()[:24] for t in (data.get("tags") or [])][:4]
@@ -228,11 +228,11 @@ def main() -> None:
     old_status = {s["id"]: s for s in load_json(STATUS_FILE, {"sources": []}).get("sources", [])}
 
     client = None
-    if os.getenv("ANTHROPIC_API_KEY"):
-        import anthropic
-        client = anthropic.Anthropic()
+    if os.getenv("GEMINI_API_KEY"):
+        from google import genai
+        client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
     else:
-        print("ANTHROPIC_API_KEY not set - using feed descriptions instead of AI summaries.")
+        print("GEMINI_API_KEY not set - using feed descriptions instead of AI summaries.")
 
     status, budget, added = [], MAX_NEW_PER_RUN, 0
     cutoff = NOW - dt.timedelta(days=MAX_AGE_DAYS)
