@@ -355,14 +355,7 @@ def main() -> None:
         fresh.sort(key=lambda r: r["date"] or NOW, reverse=True)
         for raw in fresh[: src.get("limit", DEFAULT_LIMIT)]:
             iid = item_id(raw["url"])
-            existing = items.get(iid)
-            # Retry items that only ever got the raw-feed fallback (no "ai" flag, or ai:false)
-            # once a working AI client is available, instead of leaving them stuck forever.
-            if existing and (client is None or existing.get("ai", False)):
-                continue
-            if not existing and (title_key(raw["title"]) in seen_titles or budget <= 0):
-                continue
-            if existing and budget <= 0:
+            if iid in items or title_key(raw["title"]) in seen_titles or budget <= 0:
                 continue
             budget -= 1
             s = summarize(raw, src, client, groq_key)
@@ -373,18 +366,49 @@ def main() -> None:
             items[iid] = {
                 "id": iid, "title": s.get("title") or raw["title"], "url": raw["url"],
                 "source": src["id"], "sourceName": src["name"], "type": src["type"],
-                "date": iso(raw["date"] or NOW), "addedAt": (existing or {}).get("addedAt", iso(NOW)),
+                "date": iso(raw["date"] or NOW), "addedAt": iso(NOW),
                 "summary": s.get("summary", ""), "why": s.get("why", ""),
                 "topic": s["topic"], "tags": s.get("tags", []), "importance": s.get("importance", 2),
                 "ai": s.get("ai", False), "provider": s.get("provider", ""),
+                "desc": (raw.get("desc") or "")[:1200],  # kept so a fallback item can be retried later
                 **({"discussion": raw["discussion"]} if raw.get("discussion") else {}),
             }
             seen_titles.add(title_key(items[iid]["title"]))
-            if not existing:
-                new_here += 1
+            new_here += 1
         added += new_here
         print(f"    {len(raw_items)} found, {new_here} new")
         status.append({**row, "status": "ok", "lastChecked": iso(NOW), "lastOk": iso(NOW), "lastNew": new_here})
+
+    # Retry existing fallback items with whatever budget is left, using their own saved feed
+    # text - not just the ones still among each source's newest N (the loop above), which
+    # would otherwise strand anything that ages out of a fast-moving feed on the fallback
+    # text forever, since there'd be no later chance to see its raw description again.
+    src_by_id = {s["id"]: s for s in sources}
+    retried = 0
+    if client is not None or groq_key:
+        for iid, it in items.items():
+            if budget <= 0:
+                break
+            if it.get("ai") or (parse_date(it.get("date")) or NOW) < cutoff:
+                continue
+            src = src_by_id.get(it.get("source"))
+            if not src:
+                continue
+            raw = {"title": it["title"], "url": it["url"], "date": parse_date(it.get("date")), "desc": it.get("desc", "")}
+            budget -= 1
+            s = summarize(raw, src, client, groq_key)
+            time.sleep(4)
+            if not s.get("relevant", True):
+                continue
+            it.update({
+                "title": s.get("title") or it["title"], "summary": s.get("summary", it["summary"]),
+                "why": s.get("why", ""), "topic": s.get("topic", it["topic"]),
+                "tags": s.get("tags", it.get("tags", [])), "importance": s.get("importance", it.get("importance", 2)),
+                "ai": s.get("ai", False), "provider": s.get("provider", ""),
+            })
+            retried += 1
+    if retried:
+        print(f"- Backlog retry: upgraded {retried} previously-fallback stories")
 
     kept = [it for it in items.values() if (parse_date(it.get("date")) or NOW) >= cutoff]
     kept.sort(key=lambda it: it.get("date") or "", reverse=True)
