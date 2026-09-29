@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-29T06:38:16Z",
+ "updated": "2026-09-29T06:47:41Z",
  "items": [
   {
    "id": "a2410a708c1f7845",
@@ -22,6 +22,50 @@
    "ai": true
   },
   {
+   "id": "5c506b1aae8be300",
+   "title": "vLLM v0.31.0rc1: Skip Snapshot Runtime on CUDA 12.x Images",
+   "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0rc1",
+   "source": "gh-vllm",
+   "sourceName": "GitHub: vLLM releases",
+   "type": "github",
+   "date": "2026-09-29T03:18:39Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The v0.31.0rc1 release of the vLLM library updates its CI/build process to omit the snapshot runtime when building Docker images for CUDA 12.x. This change streamlines the build for newer CUDA versions.",
+   "why": "It speeds up and simplifies deployment of vLLM on CUDA 12.x platforms, benefiting developers using the library.",
+   "topic": "dev",
+   "tags": [
+    "vllm",
+    "cuda12",
+    "ci",
+    "release"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "3a6a0ee683ce9518",
+   "title": "Ollama 0.35.0 adds decision model support via /v1/systemone",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.0",
+   "source": "gh-ollama",
+   "sourceName": "GitHub: Ollama releases",
+   "type": "github",
+   "date": "2026-09-29T01:54:15Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The Ollama 0.35.0 release introduces decision models that return choices, probabilities, and scores instead of plain text, enabling use cases such as ticket triage, model routing, and content classification. It ships with Nimble (Bespoke Labs) and Tev1 (Together AI) models and provides a new API endpoint (/v1/systemone) with example usage.",
+   "why": "It lets developers embed structured decision‑making directly into LLM workflows, streamlining automation and classification tasks.",
+   "topic": "dev",
+   "tags": [
+    "ollama",
+    "decision-models",
+    "api",
+    "llm"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
    "id": "597975da49400eea",
    "title": "Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort",
    "url": "https://techcrunch.com/2026/09/28/peak-xv-goes-bigger-at-seed-with-new-surge-cohort-as-series-a-bar-rises/",
@@ -41,6 +85,27 @@
    ],
    "importance": 3,
    "ai": true
+  },
+  {
+   "id": "3abc31c9034e0ad4",
+   "title": "AIHOT – Self‑Curated Hotspot Daily Report Framework",
+   "url": "https://github.com/KKKKhazix/AIHOT",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-28T23:40:05Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "A TypeScript‑based open‑source framework that automatically discovers hot topics and generates daily reports, allowing users to replace the data sources and selection criteria to create a personalized industry news site. The repository has attracted 1,753 stars on GitHub.",
+   "why": "It enables AI and tech professionals to build a customized news aggregator, streamlining the tracking of industry trends.",
+   "topic": "dev",
+   "tags": [
+    "open-source",
+    "typescript",
+    "news-aggregator"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "39067a424f034e73",
@@ -147,6 +212,28 @@
    "ai": true
   },
   {
+   "id": "05d139314aaff171",
+   "title": "One year in: How Microsoft Research Asia – Singapore is advancing research, partnership and talent for real-world impact",
+   "url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
+   "source": "msft-research",
+   "sourceName": "Microsoft Research",
+   "type": "lab",
+   "date": "2026-09-28T21:00:00Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Microsoft Research Asia – Singapore lab has been operating for a year, building a foundation, deepening collaborations with government, academia, and industry, and exploring how frontier AI research can create real-world value.",
+   "why": "It demonstrates how a research lab can accelerate AI adoption through collaboration and talent development.",
+   "topic": "research",
+   "tags": [
+    "ai research",
+    "partnership",
+    "talent",
+    "singapore"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
    "id": "309d3a4f83f0a017",
    "title": "Florida Invokes Extinction Fears in Legal Bid to Halt OpenAI Development",
    "url": "https://arstechnica.com/ai/2026/09/florida-asks-court-to-put-the-brakes-on-openais-frontier-ai-development/",
@@ -187,6 +274,72 @@
    ],
    "importance": 5,
    "ai": true
+  },
+  {
+   "id": "bacdfebf19aaa8a7",
+   "title": "Ollama v0.35.0-rc1 released",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.35.0-rc1",
+   "source": "gh-ollama",
+   "sourceName": "GitHub: Ollama releases",
+   "type": "github",
+   "date": "2026-09-28T20:31:38Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The Ollama project published release candidate 0.35.0, adding a bound on pull‑stall retries and enabling the watchdog to interrupt them in the mlx backend.",
+   "why": "These changes improve the reliability and responsiveness of Ollama when serving AI models.",
+   "topic": "dev",
+   "tags": [
+    "ollama",
+    "mlx",
+    "release",
+    "stability"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "5e33c235053c0e89",
+   "title": "Jeff – Jev-compatible 0.8B decision models, trained at home, ~30 ms",
+   "url": "https://github.com/firelex/jeff",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T20:23:36Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The Jeff repository provides Jev‑compatible 0.8 billion‑parameter decision models that can be trained on a typical home machine and run inference in roughly 30 ms. The project is gaining attention on Hacker News with 445 points and 167 comments.",
+   "why": "It demonstrates that sizable decision models can be built and deployed quickly without large‑scale compute, expanding accessibility for developers and researchers.",
+   "topic": "models",
+   "tags": [
+    "decision-models",
+    "open-source",
+    "low-latency"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49883844"
+  },
+  {
+   "id": "a37b0826d6222c22",
+   "title": "It's Time to Investigate the AI Labs",
+   "url": "https://calnewport.com/its-time-to-investigate-the-ai-labs/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T19:53:35Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "A Hacker News discussion about Cal Newport's article \"It's Time to Investigate the AI Labs\" has garnered 430 points and 162 comments.",
+   "why": "Shows strong community interest and debate around the role and practices of AI research labs.",
+   "topic": "industry",
+   "tags": [
+    "ai-labs",
+    "hackernews",
+    "discussion"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49883471"
   },
   {
    "id": "342c492ea49cacef",
@@ -271,6 +424,29 @@
    "ai": true
   },
   {
+   "id": "5136b4775f01edba",
+   "title": "MicroLLM Lab: Try Seven Tiny LLMs in the Browser",
+   "url": "https://stateofutopia.com/experiments/microllmlab/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T18:58:53Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "MicroLLM Lab is a web experiment that lets users run seven small language models directly in their browser, requiring no server-side compute. The project sparked a Hacker News discussion that earned 211 points and 77 comments.",
+   "why": "It demonstrates client‑side LLM inference, lowering barriers for developers to experiment with language models.",
+   "topic": "dev",
+   "tags": [
+    "llm",
+    "browser",
+    "inference",
+    "open-source"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49882781"
+  },
+  {
    "id": "7627b64443e10e0d",
    "title": "OpenAI's AI agents need to catch up",
    "url": "https://www.theverge.com/ai-artificial-intelligence/1001590/openai-devday-2026-aeon-ai-agent",
@@ -348,6 +524,245 @@
    "tags": [],
    "importance": 2,
    "ai": false
+  },
+  {
+   "id": "b4b6fb02e11adfe4",
+   "title": "FurE: Efficient Instance-Specific 3D Fur Reconstruction without Animal-Fur Datasets",
+   "url": "https://arxiv.org/abs/2609.35770v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-28T17:59:58Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The authors present FurE, a strand‑based method that reconstructs editable animal fur from multi‑view images by optimizing a root‑conditioned latent field decoded with a PCA‑based decoder trained on human‑hair data, achieving a ten‑fold speedup over current dense per‑strand optimization while preserving fidelity across synthetic and real sequences.",
+   "why": "It demonstrates a fast, data‑efficient approach to high‑quality 3D fur modeling, addressing a key bottleneck in graphics and vision applications.",
+   "topic": "research",
+   "tags": [
+    "3d-reconstruction",
+    "computer-vision",
+    "graphics"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "eead37cf78dd0175",
+   "title": "Telescopic Language Models",
+   "url": "https://arxiv.org/abs/2609.35769v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-28T17:59:53Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Researchers introduce Telescopic Language Models (TLM), a nested‑capacity Transformer trained with stochastic prefix supervision so that every layer prefix functions as a valid language model, achieving a 43‑44% reduction in the quality‑budget curve compared to fixed‑exit models.",
+   "why": "It lets a single model serve many compute budgets without extra inference overhead, simplifying deployment and improving efficiency.",
+   "topic": "research",
+   "tags": [
+    "language models",
+    "efficiency",
+    "nested models",
+    "training"
+   ],
+   "importance": 4,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "027d77b79e0f5b73",
+   "title": "Learning Native Reflection in Unified Models via Interleaved Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2609.35767v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-28T17:59:36Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The authors present UMM-Reflection, a reinforcement‑learning framework that trains a single unified multimodal model to generate reflection text and iteratively revise images within the same trajectory, using group‑relative advantage to assign credit across rounds without an external verifier. Experiments on the BAGEL benchmark show measurable improvements over prior supervised fine‑tuning and naive RL approaches.",
+   "why": "It demonstrates a scalable way for multimodal models to self‑diagnose and repair their outputs, reducing reliance on separate evaluation modules.",
+   "topic": "research",
+   "tags": [
+    "multimodal",
+    "reinforcement-learning",
+    "self-correction"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "510c4182e8a3ec62",
+   "title": "Retrieving Biblical Intertextual References in Karen Blixen's Seven Gothic Tales",
+   "url": "https://arxiv.org/abs/2609.35765v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-09-28T17:59:27Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The paper builds a benchmark of 189 annotated biblical references in Karen Blixen's Seven Gothic Tales and evaluates retrieval methods—including TF‑IDF, BM25, and multilingual/Danish sentence encoders—against all 31,170 verses of plausible Danish Bible translations. Linguistically normalized BM25 achieves a zero‑shot R@10 of 0.365, while a fine‑tuned Danish dense encoder improves performance, especially on allusive references.",
+   "why": "It demonstrates how modern retrieval models and language encoders can tackle nuanced literary intertextuality, expanding NLP applications in the digital humanities.",
+   "topic": "research",
+   "tags": [
+    "nlp",
+    "information-retrieval",
+    "literary-analysis",
+    "benchmarks"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "6f0a35210e8abd61",
+   "title": "TokenCast: Forecasting Token Consumption During LLM Agent Execution",
+   "url": "https://arxiv.org/abs/2609.35760v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-28T17:59:09Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The authors present TokenCast, a composable cost model that predicts token usage and context growth for each segment of an LLM agent’s execution, updating forecasts online without extra LLM calls. Across four task suites and six agent models, TokenCast reduces mean absolute error by 14.5% versus the strongest baseline and cuts token usage by 21.3% in budget‑control replay.",
+   "why": "Accurate token‑usage forecasts let developers control costs and optimize performance of LLM‑driven agents.",
+   "topic": "research",
+   "tags": [
+    "token",
+    "forecasting",
+    "llm-agents",
+    "cost-prediction"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "78e65d3d91dfb2fe",
+   "title": "Scaling Long-Form Story Generation via Narrative State Tracking",
+   "url": "https://arxiv.org/abs/2609.35759v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-09-28T17:59:09Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Researchers introduced the Narrative State Tracking Agent (NstAgent), a training‑free framework that lets LLMs maintain a structured narrative state—including characters, past events, and future requirements—resulting in better narrative consistency and writing quality for stories ranging from 10,000 to 100,000 words without degradation as length increases.",
+   "why": "It provides a practical approach to scaling LLM‑driven creative writing to full‑length novels, expanding commercial and research possibilities for AI‑generated content.",
+   "topic": "research",
+   "tags": [
+    "story-generation",
+    "narrative-tracking",
+    "llm"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "13df74abf8e560c4",
+   "title": "How to Loop MoE: Flatten the Experts, Untie the Attention",
+   "url": "https://arxiv.org/abs/2609.35751v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-28T17:58:03Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The paper introduces Foil, a method for looping mixture‑of‑experts (MoE) models by flattening expert layers and untieing attention across loop passes, which doubles the number of experts per layer and gives each pass its own attention parameters. Experiments show Foil consistently lowers pre‑training loss and matches or improves downstream accuracy compared to an unflattened looped baseline.",
+   "why": "It offers a more efficient way to use MoE parameters, potentially boosting performance of large language models without extra compute.",
+   "topic": "research",
+   "tags": [
+    "moe",
+    "model-architecture",
+    "efficiency"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "0e7430bc11dc3976",
+   "title": "KV‑streams for Efficient Compaction in Agentic Reinforcement Learning",
+   "url": "https://arxiv.org/abs/2609.35750v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-09-28T17:57:42Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The authors introduce KV‑streams, a plug‑and‑play technique that streams the key‑value cache forward instead of flushing it after each context compaction, making it compatible with any compaction method. Experiments show 2.6–5× wall‑clock training speedups and reveal that the streamed KV cache can serve as a recurrent state, emerging solely from reinforcement learning.",
+   "why": "It dramatically speeds up training of long‑context agentic LLMs, a key bottleneck for scaling such models.",
+   "topic": "research",
+   "tags": [
+    "kv-cache",
+    "reinforcement-learning",
+    "efficiency",
+    "context-compaction"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "de454eb9773cbf76",
+   "title": "Towards Communication-Efficient Social Intelligence in Language Agents",
+   "url": "https://arxiv.org/abs/2609.35749v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-09-28T17:57:16Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The paper introduces Teacher-Assisted Communication Training (TACT), a method that revises a language agent’s actions and expressions using specialist modules and partner-response sampling to improve social goal achievement while cutting unnecessary communication. TACT selects the most helpful revision by testing candidate responses and distilling feedback into the agent.",
+   "why": "It offers a way to build language agents that negotiate and coordinate more effectively with less token usage, which is crucial for scalable, real‑world AI interactions.",
+   "topic": "research",
+   "tags": [
+    "communication",
+    "social-ai",
+    "language-models",
+    "training"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "7125bc6667cde5e6",
+   "title": "Improving Test-Time Scaling with Adaptive Looped Transformers",
+   "url": "https://arxiv.org/abs/2609.35748v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-09-28T17:56:55Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "The paper studies how looped transformers scale at inference time, showing they often have steeper accuracy‑vs‑compute curves but lag behind non‑looped models at equal compute. It introduces TaH2, a post‑training technique that adaptively applies extra iterations only to tokens that benefit, improving both efficiency and achievable accuracy on AIME benchmarks.",
+   "why": "It provides a practical method to get higher generation quality without proportionally higher compute, which is valuable for deploying large language models.",
+   "topic": "research",
+   "tags": [
+    "looped-transformers",
+    "adaptive-inference",
+    "test-time-scaling",
+    "tah2"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "4d987bc13622185d",
+   "title": "OpenAI still doesn't seem to have a handle on all of its rogue AI activity",
+   "url": "https://techcrunch.com/2026/09/28/openai-still-doesnt-seem-to-have-a-handle-on-all-of-its-rogue-ai-activity/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T17:33:34Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "A Hacker News discussion with 106 points and 108 comments highlighted concerns that OpenAI continues to struggle with managing unintended or rogue AI behavior.",
+   "why": "It signals ongoing safety and governance challenges for a leading AI provider.",
+   "topic": "industry",
+   "tags": [
+    "openai",
+    "ai-safety",
+    "governance",
+    "risk"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49881484"
   },
   {
    "id": "7238f9bc8ffac5b7",
@@ -453,6 +868,74 @@
    "ai": true
   },
   {
+   "id": "c1277762aa17ae49",
+   "title": "The problem is not AI code, but not knowing about system architecture or intent",
+   "url": "https://www.ssp.sh/brain/the-problem-is-not-the-ai-code-but-nobody-knows-anything-anymore/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T16:11:42Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "A Hacker News discussion that earned 358 points and 227 comments centered on the view that the real issue isn’t the AI code itself but a lack of understanding of system architecture and the intended purpose of AI systems.",
+   "why": "It underscores that AI safety and effectiveness hinge more on system design and clear intent than on the code alone, a key consideration for developers and policymakers.",
+   "topic": "industry",
+   "tags": [
+    "ai",
+    "system-architecture",
+    "intent"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49880312"
+  },
+  {
+   "id": "0f54998cd8495315",
+   "title": "Nvidia wants to put a watchdog chip next to every AI agent",
+   "url": "https://www.cnbc.com/2026/09/28/nvidia-releases.html",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T15:46:36Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Nvidia announced plans to develop a dedicated watchdog chip that would be placed alongside each AI agent to monitor its operation and improve safety.",
+   "why": "Hardware-level safety controls could shape how AI agents are deployed and trusted in production environments.",
+   "topic": "industry",
+   "tags": [
+    "nvidia",
+    "watchdog",
+    "ai",
+    "hardware"
+   ],
+   "importance": 4,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49879883"
+  },
+  {
+   "id": "ff1c78cd980c5796",
+   "title": "Cf: The Agentic CLI for the Cloudflare API",
+   "url": "https://blog.cloudflare.com/cloudflare-cf-cli-launch/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T15:28:13Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Cloudflare announced the launch of \"cf,\" an agentic command‑line interface that lets developers interact with the Cloudflare API to manage resources directly from the terminal. The announcement sparked a Hacker News discussion with 148 points and 71 comments.",
+   "why": "It provides a streamlined tool for developers to automate and simplify cloud infrastructure tasks.",
+   "topic": "dev",
+   "tags": [
+    "cloudflare",
+    "cli",
+    "api",
+    "devops"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49879577"
+  },
+  {
    "id": "0ed30c8df6bfb914",
    "title": "The SaaSpocalypse that wasn’t, with Atlassian CEO Mike Cannon-Brookes",
    "url": "https://www.theverge.com/podcast/1000914/atlassian-ceo-mike-cannon-brookes-saaspocalypse-ai-enterprise-software-trello-jira",
@@ -495,6 +978,94 @@
    "ai": true
   },
   {
+   "id": "f3be81ccd8a434b7",
+   "title": "Building Production Agents with Jev and LangGraph",
+   "url": "https://www.langchain.com/blog/building-prod-with-jev-and-langgraph",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-28T11:45:35Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangGraph uses Jev, a decision model from TypeSafe AI, to build production agents that are faster and cheaper.",
+   "why": "It demonstrates a more efficient way to develop production agents for developers.",
+   "topic": "dev",
+   "tags": [
+    "langgraph",
+    "jev",
+    "agents",
+    "typesafe"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "477267e3bac79f93",
+   "title": "New in LangSmith: Engine v2, Managed Deep Agents, Fine-Tuning, and more",
+   "url": "https://www.langchain.com/blog/langsmith-engine-agents-fine-tuning-trajectories",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-28T11:45:35Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangChain released updates to LangSmith, adding Engine v2 with red teaming and automatic testing. The update also includes a new version of Managed Deep Agents and trajectory tracking.",
+   "why": "It enhances developer productivity and safety when building and testing AI agents.",
+   "topic": "dev",
+   "tags": [
+    "langsmith",
+    "enginev2",
+    "deepagents",
+    "fine-tuning"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "2cd2afd12af2798b",
+   "title": "LangSmith Custom Apps: Build custom interfaces around your agent data",
+   "url": "https://www.langchain.com/blog/langsmith-custom-apps",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-28T11:45:35Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangSmith Custom Apps lets users create custom interfaces for their LangSmith data, publish them into their workspace, and skip the usual hosting, authentication, and permissions setup.",
+   "why": "It speeds up UI development for LangChain agents, making deployment easier for developers.",
+   "topic": "dev",
+   "tags": [
+    "langsmith",
+    "custom-apps",
+    "ui",
+    "langchain"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "8c79cd7d02d146b7",
+   "title": "What Would a Serious AI Product Look Like?",
+   "url": "https://blog.glyph.im/2026/09/serious-ai-product.html",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-28T11:02:12Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "A blog post titled “What would a serious AI product look like?” sparked a Hacker News discussion that received 144 points and 58 comments.",
+   "why": "It reflects community interest in defining practical, high‑impact AI products.",
+   "topic": "industry",
+   "tags": [
+    "ai-product",
+    "design",
+    "discussion"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "discussion": "https://news.ycombinator.com/item?id=49876148"
+  },
+  {
    "id": "ca6d89c27fc0a2e0",
    "title": "Microsoft goes quiet after church groups ask for 1% of data center costs",
    "url": "https://arstechnica.com/tech-policy/2026/09/microsoft-goes-quiet-after-church-groups-ask-for-1-of-data-center-costs/",
@@ -523,12 +1094,18 @@
    "type": "lab",
    "date": "2026-09-28T09:44:05Z",
    "addedAt": "2026-09-28T11:25:17Z",
-   "summary": "",
-   "why": "",
-   "topic": "dev",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "summary": "Hugging Face announces Holo4, a new open‑source generalist agent designed to interact with a variety of computer tools and perform diverse tasks.",
+   "why": "It demonstrates progress toward versatile AI agents that can handle many real‑world tasks, which is valuable for developers building complex applications.",
+   "topic": "models",
+   "tags": [
+    "agent",
+    "generalist",
+    "open-source",
+    "computer-use"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "661f394656184753",
@@ -905,6 +1482,28 @@
    "discussion": "https://news.ycombinator.com/item?id=49867775"
   },
   {
+   "id": "e1cf90e146250e6b",
+   "title": "Seiso: A Markdown Convention and Linter for AI‑Generated Project Docs",
+   "url": "https://github.com/scarletkc/seiso",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-09-27T13:27:28Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Seiso is an open‑source Rust tool that defines a Markdown convention and provides a linter for project documentation authored by AI, aimed at being readable by both humans and agents.",
+   "why": "It standardizes AI‑generated documentation, making it easier to integrate with existing development workflows.",
+   "topic": "dev",
+   "tags": [
+    "markdown",
+    "linter",
+    "rust",
+    "docs"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
    "id": "71ac5a164a1de7a9",
    "title": "\"As a Language Model\": Chat Template Switches LLM Self-Referential Voice",
    "url": "https://arxiv.org/abs/2609.25021",
@@ -922,18 +1521,25 @@
   },
   {
    "id": "42cfebd3a04409ad",
-   "title": "ufo-ai/ufo-core",
+   "title": "UFO-Core: Business Agent Operating System in Python",
    "url": "https://github.com/ufo-ai/ufo-core",
    "source": "github-new-llm",
    "sourceName": "GitHub: new LLM repos",
    "type": "github",
    "date": "2026-09-27T07:25:44Z",
    "addedAt": "2026-09-28T08:43:42Z",
-   "summary": "Business agent operating system (Language: Python; 55 stars)",
-   "why": "",
+   "summary": "The UFO‑AI organization released the UFO‑Core repository, a Python‑based business agent operating system, which has already earned 82 stars on GitHub.",
+   "why": "It offers an open‑source framework for building AI‑driven business agents, useful for developers building enterprise AI solutions.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "python",
+    "agent",
+    "opensource",
+    "business"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "9fe0a063f817f4e3",
@@ -1265,18 +1871,25 @@
   },
   {
    "id": "f9d621c2b15bc2e8",
-   "title": "Finderchangchang/brewreel",
+   "title": "BrewReel: Open‑source tool to generate vertical promo videos with cheap LLMs",
    "url": "https://github.com/Finderchangchang/brewreel",
    "source": "github-new-llm",
    "sourceName": "GitHub: new LLM repos",
    "type": "github",
    "date": "2026-09-26T01:52:24Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "精酿 BrewReel：让 DeepSeek 这类便宜模型也能做出好看的竖版宣传片。写一份产品简报，AI 挑镜头、写文案，一条命令出片。3 种配方、6 个行业、广告法校验，开源可商用。 (Language: TypeScript; 56 stars)",
-   "why": "",
+   "summary": "BrewReel is a TypeScript‑based open‑source library that lets low‑cost models like DeepSeek automatically create vertical promotional videos, handling shot selection, copywriting, and ad‑law compliance in a single command, with three templates for six industries.",
+   "why": "It enables developers to produce marketing videos using inexpensive LLMs, lowering the cost and technical barrier for AI‑generated content.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "video",
+    "llm",
+    "open-source",
+    "marketing"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "fe937b84825f8022",
@@ -1301,18 +1914,24 @@
   },
   {
    "id": "4c99a489e8da4949",
-   "title": "aaddrick/building-with-typesafe-jev",
+   "title": "Building with TypeSafe Jev",
    "url": "https://github.com/aaddrick/building-with-typesafe-jev",
    "source": "github-new-llm",
    "sourceName": "GitHub: new LLM repos",
    "type": "github",
    "date": "2026-09-26T00:01:19Z",
    "addedAt": "2026-09-28T05:08:10Z",
-   "summary": "Unofficial skill that teaches coding agents to build with TypeSafe AI's Jev: typed decisions, calibrated confidence, and prior art from 150+ community projects. (Language: Python; 93 stars)",
-   "why": "",
+   "summary": "An unofficial skill has been released that teaches coding agents to build with TypeSafe AI's Jev, offering typed decisions, calibrated confidence, and leveraging prior art from over 150 community projects. The Python repository has attracted 114 stars on GitHub.",
+   "why": "It provides developers with a type‑safe, confidence‑calibrated tool to improve AI‑driven code generation.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "type-safe",
+    "coding-agents",
+    "python"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "eb24f91b4396fbb3",
@@ -1726,18 +2345,25 @@
   },
   {
    "id": "450e6533b74e77bb",
-   "title": "UditAkhourii/quicksilver",
+   "title": "Quicksilver: Claude Code Skill Cuts Tokens by 86% and Boosts Speed up to 20×",
    "url": "https://github.com/UditAkhourii/quicksilver",
    "source": "github-new-llm",
    "sourceName": "GitHub: new LLM repos",
    "type": "github",
    "date": "2026-09-25T15:20:46Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "Claude Code skill: hand bulk judgment calls to Jev. 86% fewer Claude tokens on a 12-task benchmark, up to 20x faster.",
-   "why": "",
+   "summary": "The Quicksilver repo adds a Claude Code skill that makes bulk judgment calls to Jev, achieving 86% fewer Claude tokens on a 12‑task benchmark and up to 20× faster execution, installable with a single npx command.",
+   "why": "It lets developers use Claude more efficiently, reducing token costs and accelerating code‑related workflows.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "claude",
+    "code",
+    "efficiency",
+    "javascript"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "907d5902295bf051",
@@ -2257,6 +2883,27 @@
    "importance": 2
   },
   {
+   "id": "ef69d639175cec40",
+   "title": "New in LangSmith Engine: Red Teaming and Automated Testing",
+   "url": "https://www.langchain.com/blog/langsmith-engine-v2-redteam",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-24T17:22:02Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangSmith Engine v2 adds Red Teaming to proactively detect agent issues and introduces automated agent testing. The update expands the Engine's capabilities for safer and more reliable agent development.",
+   "why": "It helps developers identify and fix agent vulnerabilities early, improving safety and reliability of AI applications.",
+   "topic": "dev",
+   "tags": [
+    "langsmith",
+    "redteam",
+    "automation"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
    "id": "91625e27c986178e",
    "title": "Introducing Gemini 3.8 Live with Live Avatar",
    "url": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
@@ -2308,20 +2955,112 @@
    "importance": 2
   },
   {
+   "id": "db41a5294b4a4f76",
+   "title": "Introducing LangSmith Fine-Tuning",
+   "url": "https://www.langchain.com/blog/langsmith-fine-tuning",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-24T15:51:45Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangChain has launched LangSmith Fine-Tuning, a new feature that lets users fine‑tune models. It also introduces SmithTune, a command‑line interface that simplifies post‑training model customization without building data pipelines by hand.",
+   "why": "It streamlines model customization, reducing engineering overhead for developers.",
+   "topic": "dev",
+   "tags": [
+    "langsmith",
+    "fine-tuning",
+    "cli"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "f30dbc8d1456692a",
+   "title": "Managed Deep Agents delivers a better user experience for agents in production",
+   "url": "https://www.langchain.com/blog/langsmith-managed-deep-agents-whats-new",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-24T15:51:45Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangChain’s Managed Deep Agents simplifies building, deploying, and running agents in production. The 0.8 release adds support for user‑owned credentials, user‑level memory, HTTP channels, Slack file transfer, and a pre‑built web search tool.",
+   "why": "It makes agent deployment easier and more secure for developers.",
+   "topic": "dev",
+   "tags": [
+    "langchain",
+    "agents",
+    "deployment",
+    "slack"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "82e08ce6d6a85f19",
+   "title": "Trajectories now in LangSmith: A readable view of every agent session",
+   "url": "https://www.langchain.com/blog/langsmith-trajectories-tracing",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-24T15:51:45Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "LangSmith now includes Trajectories, which provide a conversational view of agent sessions, making trace data easier to navigate and speeding up debugging for long-running agents.",
+   "why": "It improves debugging and monitoring of AI agents, helping developers build more reliable systems.",
+   "topic": "dev",
+   "tags": [
+    "langsmith",
+    "trajectories",
+    "debugging",
+    "agents"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
    "id": "c2a53f2332725b78",
-   "title": "Accelerating vision-language models with LFM2.5-VL-DSpark",
+   "title": "Accelerating Vision-Language Models with LFM2.5-VL-DSpark",
    "url": "https://huggingface.co/blog/LiquidAI/lfm2-5-vl-dspark",
    "source": "huggingface",
    "sourceName": "Hugging Face Blog",
    "type": "lab",
    "date": "2026-09-24T14:08:57Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "",
-   "why": "",
-   "topic": "dev",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "summary": "Hugging Face introduces LFM2.5-VL-DSpark, a new technique designed to speed up vision‑language models.",
+   "why": "It can reduce inference latency for developers building vision‑language applications.",
+   "topic": "models",
+   "tags": [
+    "vision-language",
+    "model",
+    "performance"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "692ba329b6883f27",
+   "title": "How Open Science Can Help Researchers Prepare for the Next Pandemic",
+   "url": "https://blogs.nvidia.com/blog/open-protein-dataset/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-24T14:00:50Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "NVIDIA joined a coalition of global research organizations, including Google, to promote open science and improve preparedness for future pandemics. The initiative builds on lessons from COVID‑19, where prior coronavirus research enabled rapid vaccine development.",
+   "why": "It shows NVIDIA’s use of AI-driven research to support global health preparedness.",
+   "topic": "research",
+   "tags": [
+    "open-science",
+    "pandemic",
+    "research",
+    "ai"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "e31b30769dfe667a",
@@ -2403,12 +3142,39 @@
    "type": "lab",
    "date": "2026-09-23T18:41:40Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "",
-   "why": "",
+   "summary": "The blog explains how to integrate NVIDIA Warp and MjWarp into robotics simulation pipelines to speed up physics calculations and training loops. It provides step‑by‑step instructions and code snippets for setting up the tools with popular frameworks.",
+   "why": "It enables developers to train robotic agents faster, reducing compute costs and iteration time.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "robotics",
+    "simulation",
+    "warp",
+    "mjwarp"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "fc7b4c2bae45ce13",
+   "title": "Offloaded inference for real‑world physical AI robotics",
+   "url": "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/",
+   "source": "msft-research",
+   "sourceName": "Microsoft Research",
+   "type": "lab",
+   "date": "2026-09-23T16:01:36Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Microsoft Research demonstrates that moving AI inference from the robot to external hardware can improve task success, boost efficiency, and support more advanced physical AI workloads.",
+   "why": "It shows a practical way to scale AI capabilities on robots by leveraging external compute.",
+   "topic": "research",
+   "tags": [
+    "ai",
+    "robotics",
+    "inference"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "cd8117c6d35f983b",
@@ -2451,6 +3217,28 @@
    "ai": true
   },
   {
+   "id": "13132063a1918e82",
+   "title": "What Is Jev? A Guide to TypeSafe AI’s System One Model",
+   "url": "https://www.langchain.com/blog/building-a-harness-with-jev",
+   "source": "langchain",
+   "sourceName": "LangChain Blog",
+   "type": "lab",
+   "date": "2026-09-23T15:53:40Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "TypeSafe AI’s System One model, called Jev, enables fast, structured decision-making and can be integrated into LangChain agent loops. The blog explains its role and how to use Jev with LangChain.",
+   "why": "It shows how to incorporate a new decision‑making model into LangChain workflows.",
+   "topic": "dev",
+   "tags": [
+    "langchain",
+    "type-safe-ai",
+    "jev",
+    "systemone"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
    "id": "914ed32ad555468d",
    "title": "Gemini 3.8 text-to-speech says hello",
    "url": "https://deepmind.google/blog/say-hello-to-gemini-38-text-to-speech/",
@@ -2470,6 +3258,28 @@
    ],
    "importance": 3,
    "ai": true
+  },
+  {
+   "id": "526089110df3fe81",
+   "title": "Sakeena Fiza Helps NVIDIA Hardware Succeed at Scale",
+   "url": "https://blogs.nvidia.com/blog/nvidia-life-sakeena-fiza/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-23T15:00:32Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Sakeena Fiza, a validation engineer at NVIDIA, rigorously tests new hardware systems to ensure they meet performance and reliability standards, enabling the company to scale its hardware deployments.",
+   "why": "Her validation work ensures NVIDIA's hardware performs reliably in production, which is critical for AI workloads.",
+   "topic": "industry",
+   "tags": [
+    "validation",
+    "hardware",
+    "nvidia",
+    "engineering"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "1d77064cbebb782f",
@@ -2619,18 +3429,47 @@
   },
   {
    "id": "99856cab10394d54",
-   "title": "v0.30.1rc0: [ROCm][CI] Add MI355 dense NVFP4 and MoRI kernel mirrors (#58281)",
+   "title": "vLLM 0.30.1rc0 adds MI355 dense NVFP4 and MoRI kernel mirrors for ROCm",
    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.30.1rc0",
    "source": "gh-vllm",
    "sourceName": "GitHub: vLLM releases",
    "type": "github",
    "date": "2026-09-23T08:06:15Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "Signed-off-by: Andreas Karatzas akaratza@amd.com Co-authored-by: OpenAI Codex noreply@openai.com",
-   "why": "",
+   "summary": "The vLLM 0.30.1rc0 release candidate introduces support for AMD MI355 GPUs with dense NVFP4 and MoRI kernel mirrors, and updates the CI pipeline for ROCm compatibility.",
+   "why": "It broadens vLLM’s hardware support, enabling faster LLM inference on AMD GPUs.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "rocm",
+    "amd",
+    "vllm",
+    "gpu"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "4d5959d698eba06a",
+   "title": "At AI Day Singapore, NVIDIA and Partners Showcase AI Advancements Across Southeast Asia",
+   "url": "https://blogs.nvidia.com/blog/ai-day-singapore/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-23T02:30:22Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "NVIDIA AI Day Singapore, held September 22‑23 at Raffles City Convention Centre, offered hands‑on training, expert‑led sessions, and advanced tools to accelerate AI and high‑performance computing work. NVIDIA and partners showcased breakthrough AI advancements across the Southeast Asia region.",
+   "why": "It demonstrates NVIDIA’s support for regional AI development and the latest hardware and software tools available to practitioners.",
+   "topic": "industry",
+   "tags": [
+    "ai",
+    "nvidia",
+    "southeastasia",
+    "aiday"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "f82afb648776b097",
@@ -2689,6 +3528,28 @@
    ],
    "importance": 2,
    "ai": true
+  },
+  {
+   "id": "81bdeb67aab163b2",
+   "title": "NVIDIA Isaac ROS 5.0 Advances Agentic, Open Source Robotics Development",
+   "url": "https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-22T12:00:41Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "NVIDIA released Isaac ROS 5.0, a collection of GPU‑accelerated packages built on ROS, to help developers build and deploy robotics applications that perceive, reason, and act in dynamic environments.",
+   "why": "It gives developers a powerful, open‑source AI toolkit for robotics, speeding up the creation of agentic systems.",
+   "topic": "dev",
+   "tags": [
+    "robotics",
+    "ai",
+    "open-source",
+    "gpu"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "4c16a55043f0ace6",
@@ -2771,47 +3632,150 @@
    "type": "lab",
    "date": "2026-09-22T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "",
-   "why": "",
+   "summary": "The Hugging Face Transformers library has added support for running quantized models from llama.cpp, enabling efficient inference of LLaMA models on local hardware.",
+   "why": "It lets developers run LLaMA models faster and with lower memory usage on their own machines.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "transformers",
+    "llama.cpp",
+    "quantization",
+    "inference"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "2960c64a019e48fb",
-   "title": "How UK AISI and EvalEval Are Making Benchmark Results Reproducible",
+   "title": "UK AISI and EvalEval Make Benchmark Results Reproducible",
    "url": "https://huggingface.co/blog/evaleval-aisi",
    "source": "huggingface",
    "sourceName": "Hugging Face Blog",
    "type": "lab",
    "date": "2026-09-22T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "",
-   "why": "",
-   "topic": "dev",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "summary": "The UK AI Standards Institute (AISI) and EvalEval are collaborating to improve the reproducibility of AI benchmark results. They provide open‑source tools, standardized evaluation protocols, and transparent reporting frameworks to reduce variance and increase trust in model comparisons.",
+   "why": "Reproducible benchmarks are essential for fair model evaluation and building confidence in AI systems.",
+   "topic": "research",
+   "tags": [
+    "reproducibility",
+    "benchmarks",
+    "eval",
+    "open-source"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "fb8ad85c459c0cb6",
-   "title": "oMLX creator Jun Kim joins Hugging Face to support the MLX community",
+   "title": "Jun Kim, oMLX creator and maintainer, joins Hugging Face to support the MLX community",
    "url": "https://huggingface.co/blog/omlx",
    "source": "huggingface",
    "sourceName": "Hugging Face Blog",
    "type": "lab",
    "date": "2026-09-22T00:00:00Z",
    "addedAt": "2026-09-27T12:46:02Z",
-   "summary": "Jun Kim, who created and maintains oMLX, has joined Hugging Face to support the community around Apple's MLX framework.",
-   "why": "",
+   "summary": "Hugging Face has hired Jun Kim, the creator and maintainer of the oMLX library, to help develop and support the MLX community. Kim will focus on improving the library’s tooling and ecosystem for developers using MLX.",
+   "why": "It expands Hugging Face’s developer support for an open‑source ML framework, potentially accelerating adoption and innovation.",
    "topic": "dev",
    "tags": [
     "mlx",
-    "apple",
-    "open source"
+    "huggingface",
+    "opensource",
+    "developer"
    ],
-   "importance": 2
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "8b64befa04990cc1",
+   "title": "NVIDIA Launches DSX Ready to Qualify Power and Cooling Products for AI Factories",
+   "url": "https://blogs.nvidia.com/blog/dsx-ready-ai-factories-power-cooling/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-21T18:00:07Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "NVIDIA has introduced DSX, a tool designed to help AI factory builders evaluate and select power and cooling products that match their computing architecture. The platform aims to streamline decisions around site, grid, and water constraints, enabling more efficient conversion of computing capacity into AI output.",
+   "why": "It helps AI infrastructure operators optimize power and cooling, improving efficiency and scalability of AI factories.",
+   "topic": "industry",
+   "tags": [
+    "ai infrastructure",
+    "power",
+    "cooling",
+    "nvidia"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "1bb9769be8b378da",
+   "title": "Why Deploying Physical AI at Scale Demands Safety at Every Layer",
+   "url": "https://blogs.nvidia.com/blog/physical-ai-halos-safety/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-21T16:00:46Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "NVIDIA’s blog explains that as physical AI moves from research to mass deployment—projected to include 49 million level‑3 to‑5 autonomous vehicles by 2035 and 60 million industrial robots between 2026‑2035—safety must be built into every layer of hardware, software, and operations to protect people sharing those environments.",
+   "why": "Ensuring safety across all layers is essential for the reliable, trusted rollout of AI‑driven machines that will operate alongside humans.",
+   "topic": "industry",
+   "tags": [
+    "physical ai",
+    "safety",
+    "autonomous vehicles",
+    "industrial robots"
+   ],
+   "importance": 4,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "7755df424d41324f",
+   "title": "From Enablement to Execution, Egypt’s AI Ecosystem Reaches Production Scale",
+   "url": "https://blogs.nvidia.com/blog/egypt-africa-ai-ecosystem/",
+   "source": "nvidia-blog",
+   "sourceName": "NVIDIA Blog",
+   "type": "lab",
+   "date": "2026-09-21T16:00:10Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "AI builders from startups, research labs, and enterprises gathered at the Grand Egyptian Museum for a reception that showcased Egypt’s rapidly expanding AI ecosystem, with NVIDIA’s EMEA VP delivering the keynote. The event highlighted the shift from early enablement to production‑grade AI deployments across multiple industries in Egypt.",
+   "why": "It signals the scaling of AI adoption in Africa and potential new partnerships and market opportunities for AI vendors.",
+   "topic": "industry",
+   "tags": [
+    "egypt",
+    "ai ecosystem",
+    "nvidia",
+    "africa"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
+  },
+  {
+   "id": "3a10b48ae769cffe",
+   "title": "Improving synthesis prediction of small molecules at scale with RetroChimera",
+   "url": "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/",
+   "source": "msft-research",
+   "sourceName": "Microsoft Research",
+   "type": "lab",
+   "date": "2026-09-21T15:30:19Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Microsoft Research’s RetroChimera is a predictive model that accelerates chemical synthesis, allowing researchers to explore a broader range of molecules more efficiently.",
+   "why": "It speeds up drug and material discovery by reducing synthesis time.",
+   "topic": "research",
+   "tags": [
+    "chemoinformatics",
+    "synthesis",
+    "ai",
+    "predictive"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "c701b57089c5bf6a",
@@ -2822,11 +3786,18 @@
    "type": "lab",
    "date": "2026-09-21T13:44:34Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "",
-   "why": "",
-   "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "summary": "The blog post presents a physics‑inspired method for pruning large language models by framing block removal as an Ising optimization problem. This approach aims to identify redundant blocks efficiently while preserving model performance.",
+   "why": "It offers a principled way to reduce model size and computational cost, which is valuable for deploying LLMs in resource‑constrained environments.",
+   "topic": "research",
+   "tags": [
+    "pruning",
+    "ising",
+    "llm",
+    "physics"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "333806803f07a57e",
@@ -2924,18 +3895,24 @@
   },
   {
    "id": "eb792e0fc3420085",
-   "title": "tokenizers v1: encode, decode and scaling, measured",
+   "title": "Tokenizers v1: encode, decode and scaling, measured",
    "url": "https://huggingface.co/blog/tokenizers-v1",
    "source": "huggingface",
    "sourceName": "Hugging Face Blog",
    "type": "lab",
    "date": "2026-09-21T00:00:00Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "",
-   "why": "",
+   "summary": "Hugging Face releases version 1 of its tokenizers library, highlighting improvements in encoding, decoding, and scaling performance.",
+   "why": "Faster, more efficient tokenization speeds up model training and inference for developers.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "tokenizers",
+    "performance",
+    "huggingface"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "3efd50b3f92167cd",
@@ -3183,18 +4160,24 @@
   },
   {
    "id": "6483bdf27ddc8f36",
-   "title": "Release 5.17.0",
+   "title": "Transformers 5.17.0 adds HYV4 Hy4‑Preview 780B‑parameter MoE language model",
    "url": "https://github.com/huggingface/transformers/releases/tag/v5.17.0",
    "source": "gh-transformers",
    "sourceName": "GitHub: transformers releases",
    "type": "github",
    "date": "2026-09-10T12:03:18Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "Release v5.17.0 New Model additions HYV4 Hy4-Preview is a 780B-parameter mixture-of-experts language model that activates 49B parameters per token. Each MoE layer holds 256 routed experts plus one always-active shared expert and routes every token to 8 of them.",
-   "why": "",
-   "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "summary": "The Hugging Face Transformers library released version 5.17.0, introducing the HYV4 Hy4‑Preview mixture‑of‑experts model with 780 billion parameters (49 B active per token) and a 1 million‑token context window, featuring new attention mechanisms such as Multi‑head Latent Attention, DeepSeek Sparse Attention, gated MLA, and Independent Hyper‑Connections.",
+   "why": "It gives developers and researchers a powerful, efficient large‑scale model with unprecedented context length, expanding what can be built with open‑source LLMs.",
+   "topic": "models",
+   "tags": [
+    "moe",
+    "llm",
+    "long-context"
+   ],
+   "importance": 4,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "f7dd334d631adf7d",
@@ -3351,19 +4334,25 @@
   },
   {
    "id": "a9b9d17f3a5b6e12",
-   "title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+   "title": "Gemini 3.8 Flash and 3.8 Flash Cyber",
    "url": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/",
    "source": "deepmind",
    "sourceName": "Google DeepMind",
    "type": "lab",
    "date": "2026-09-02T16:18:31Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "",
-   "why": "",
+   "summary": "Google DeepMind has released Gemini 3.8 Flash and Gemini 3.8 Flash Cyber, new language model variants in the Gemini family.",
+   "why": "It provides developers with additional model options that may offer improved speed or efficiency.",
    "topic": "models",
-   "tags": [],
-   "importance": 2,
-   "ai": false
+   "tags": [
+    "gemini",
+    "flash",
+    "deepmind",
+    "llm"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "42b9316037196b31",
@@ -3402,6 +4391,28 @@
    ],
    "importance": 3,
    "ai": true
+  },
+  {
+   "id": "1e90334d4d649bed",
+   "title": "GigaPath-Flash and GigaTIME-Flash: Toward population-scale discovery with efficient pathology foundation models",
+   "url": "https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/",
+   "source": "msft-research",
+   "sourceName": "Microsoft Research",
+   "type": "lab",
+   "date": "2026-08-31T16:00:00Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Microsoft Research unveiled GigaPath-Flash and GigaTIME-Flash, two pathology foundation models that cut computational demands while preserving strong performance, enabling larger studies and broader exploration.",
+   "why": "It makes large-scale pathology research more computationally feasible.",
+   "topic": "research",
+   "tags": [
+    "pathology",
+    "foundation models",
+    "efficiency",
+    "computational"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "e83ff5faec702b5a",
@@ -3465,18 +4476,25 @@
   },
   {
    "id": "22af9dbf54d414fe",
-   "title": "Release: v5.16.0",
+   "title": "Transformers v5.16.0 adds Qwen4-Exp model",
    "url": "https://github.com/huggingface/transformers/releases/tag/v5.16.0",
    "source": "gh-transformers",
    "sourceName": "GitHub: transformers releases",
    "type": "github",
    "date": "2026-08-26T15:03:33Z",
    "addedAt": "2026-09-27T13:02:01Z",
-   "summary": "Release v5.16.0 New Model additions Qwen4-Exp Qwen4-Exp builds on Qwen3.5's hybrid text and multimodal architecture with three key components: GatedResidual (GR), Qwen Sparse Attention (QSA), and Per-Layer Embedding (PLE). GR is a Qwen-developed residual architecture that combines Hyper-Connection with GatedNorm.",
-   "why": "",
+   "summary": "The Hugging Face Transformers library released version 5.16.0, introducing the Qwen4-Exp model, which builds on Qwen3.5 with a hybrid text‑multimodal architecture featuring GatedResidual, Qwen Sparse Attention, and Per‑Layer Embedding to improve long‑context inference efficiency.",
+   "why": "It provides developers with a new, more efficient architecture for handling long‑context and multimodal tasks.",
    "topic": "dev",
-   "tags": [],
-   "importance": 2
+   "tags": [
+    "transformers",
+    "qwen4-exp",
+    "model",
+    "release"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   },
   {
    "id": "0c54f135033108d0",
@@ -3498,6 +4516,28 @@
    ],
    "importance": 3,
    "ai": true
+  },
+  {
+   "id": "ed976920bb9831e6",
+   "title": "Broadening access to Skala creates a faster path to predictive DFT",
+   "url": "https://www.microsoft.com/en-us/research/blog/broadening-access-to-skala-creates-a-faster-path-to-predictive-dft/",
+   "source": "msft-research",
+   "sourceName": "Microsoft Research",
+   "type": "lab",
+   "date": "2026-08-20T16:00:00Z",
+   "addedAt": "2026-09-29T06:47:41Z",
+   "summary": "Microsoft Research released Skala 1.1, an updated deep‑learning exchange‑correlation functional that improves accuracy and expands accessibility across the computational chemistry ecosystem. It also introduces a living benchmark for tracking computational performance.",
+   "why": "It accelerates predictive density functional theory calculations, helping computational chemists achieve more accurate results faster.",
+   "topic": "research",
+   "tags": [
+    "skala",
+    "dft",
+    "deep-learning",
+    "computational-chemistry"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq"
   }
  ]
 }
