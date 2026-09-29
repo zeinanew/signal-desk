@@ -1,6 +1,22 @@
 {
- "updated": "2026-09-29T05:08:17Z",
+ "updated": "2026-09-29T05:37:03Z",
  "items": [
+  {
+   "id": "a2410a708c1f7845",
+   "title": "Anthropic’s prospectus details losses, growth, and, yes, a warning that its AI could end humanity",
+   "url": "https://techcrunch.com/2026/09/28/anthropics-prospectus-details-losses-growth-and-yes-a-warning-that-its-ai-could-end-humanity/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-09-29T05:13:43Z",
+   "addedAt": "2026-09-29T05:37:03Z",
+   "summary": "In its prospectus, Anthropic just told investors it's losing tens of billions of dollars a year, but also growing like crazy, and — oh yeah — its own AI might pose an existential risk to humanity.",
+   "why": "",
+   "topic": "industry",
+   "tags": [],
+   "importance": 2,
+   "ai": false
+  },
   {
    "id": "597975da49400eea",
    "title": "Peak XV ups Surge seed investment ceiling to $5M, unveils 18-startup cohort",
