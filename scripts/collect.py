@@ -376,7 +376,7 @@ def main() -> None:
                 "date": iso(raw["date"] or NOW), "addedAt": (existing or {}).get("addedAt", iso(NOW)),
                 "summary": s.get("summary", ""), "why": s.get("why", ""),
                 "topic": s["topic"], "tags": s.get("tags", []), "importance": s.get("importance", 2),
-                "ai": s.get("ai", False),
+                "ai": s.get("ai", False), "provider": s.get("provider", ""),
                 **({"discussion": raw["discussion"]} if raw.get("discussion") else {}),
             }
             seen_titles.add(title_key(items[iid]["title"]))
