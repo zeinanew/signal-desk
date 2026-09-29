@@ -40,7 +40,7 @@ MAX_NEW_PER_RUN = int(os.getenv("MAX_NEW_PER_RUN", "80")) # cap on summarization
 MODELS = [m.strip() for m in (os.getenv("GEMINI_MODELS") or os.getenv("GEMINI_MODEL")
                                or "gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash").split(",") if m.strip()]
 GROQ_MODELS = [m.strip() for m in (os.getenv("GROQ_MODELS") or os.getenv("GROQ_MODEL")
-                                    or "llama-3.3-70b-versatile,llama-3.1-8b-instant").split(",") if m.strip()]
+                                    or "openai/gpt-oss-20b,openai/gpt-oss-120b,qwen/qwen3.6-27b").split(",") if m.strip()]
 TOPICS = ["models", "dev", "research", "industry"]
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
