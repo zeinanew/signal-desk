@@ -1,7 +1,7 @@
 """Signal Desk collector.
 
 Reads sources.json, pulls the newest items from each enabled source,
-skips anything already seen, asks Gemini (with Grok as a backup once
+skips anything already seen, asks Gemini (with Groq as a backup once
 Gemini's daily quota runs out) to summarize and tag the new items,
 and writes:
 
@@ -9,7 +9,7 @@ and writes:
   data/sources.json  - each source plus its last check result (Sources tab)
 
 Run locally:  GEMINI_API_KEY=... python scripts/collect.py
-Add XAI_API_KEY=... too to use Grok as a fallback once Gemini's quota runs out.
+Add GROQ_API_KEY=... too to use Groq as a fallback once Gemini's quota runs out.
 Without any key it still runs, using the feed's own description as the summary.
 """
 from __future__ import annotations
@@ -39,8 +39,8 @@ DEFAULT_LIMIT = int(os.getenv("PER_SOURCE_LIMIT", "8"))   # newest N per source 
 MAX_NEW_PER_RUN = int(os.getenv("MAX_NEW_PER_RUN", "80")) # cap on summarization calls
 MODELS = [m.strip() for m in (os.getenv("GEMINI_MODELS") or os.getenv("GEMINI_MODEL")
                                or "gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash").split(",") if m.strip()]
-XAI_MODELS = [m.strip() for m in (os.getenv("XAI_MODELS") or os.getenv("XAI_MODEL")
-                                   or "grok-4-fast").split(",") if m.strip()]
+GROQ_MODELS = [m.strip() for m in (os.getenv("GROQ_MODELS") or os.getenv("GROQ_MODEL")
+                                    or "llama-3.3-70b-versatile,llama-3.1-8b-instant").split(",") if m.strip()]
 TOPICS = ["models", "dev", "research", "industry"]
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
@@ -217,7 +217,7 @@ def fallback(raw: dict, src: dict) -> dict:
 
 
 _model_state = {"idx": 0}      # sticks with the first working Gemini model; only advances when it's unusable
-_xai_state = {"idx": 0}        # same, for the Grok backup
+_groq_state = {"idx": 0}       # same, for the Groq backup
 
 
 def _should_switch_model(text: str) -> bool:
@@ -244,12 +244,12 @@ def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:
     return None, False
 
 
-def _call_xai(api_key: str, model: str, msg: str) -> tuple[dict | None, bool]:
-    """Try one Grok model via xAI's OpenAI-compatible chat completions endpoint."""
+def _call_groq(api_key: str, model: str, msg: str) -> tuple[dict | None, bool]:
+    """Try one Groq model via its OpenAI-compatible chat completions endpoint."""
     for attempt in range(3):
         try:
             r = requests.post(
-                "https://api.x.ai/v1/chat/completions",
+                "https://api.groq.com/openai/v1/chat/completions",
                 headers={"Authorization": f"Bearer {api_key}"},
                 json={"model": model, "messages": [{"role": "user", "content": msg}], "temperature": 0.3},
                 timeout=30,
@@ -257,15 +257,15 @@ def _call_xai(api_key: str, model: str, msg: str) -> tuple[dict | None, bool]:
             if r.status_code >= 400:
                 # 4xx other than a transient rate limit means retrying the same request won't help
                 if r.status_code in (400, 401, 403, 404, 429):
-                    print(f"    {model} (xAI) unusable: {r.status_code} {r.text[:300]}", file=sys.stderr)
+                    print(f"    {model} (Groq) unusable: {r.status_code} {r.text[:300]}", file=sys.stderr)
                     return None, True
-                print(f"    {model} (xAI) retry {attempt + 1}: {r.status_code} {r.text[:300]}", file=sys.stderr)
+                print(f"    {model} (Groq) retry {attempt + 1}: {r.status_code} {r.text[:300]}", file=sys.stderr)
                 time.sleep(2 * (attempt + 1))
                 continue
             text = r.json()["choices"][0]["message"]["content"]
             return json.loads(re.search(r"\{.*\}", text, re.S).group(0)), False
         except Exception as exc:  # noqa: BLE001 - keep the run going
-            print(f"    {model} (xAI) retry {attempt + 1}: {exc}", file=sys.stderr)
+            print(f"    {model} (Groq) retry {attempt + 1}: {exc}", file=sys.stderr)
             time.sleep(2 * (attempt + 1))
     return None, False
 
@@ -279,8 +279,8 @@ def _finalize(data: dict, src: dict, provider: str) -> dict:
     return data
 
 
-def summarize(raw: dict, src: dict, client, xai_key: str | None) -> dict:
-    if client is None and not xai_key:
+def summarize(raw: dict, src: dict, client, groq_key: str | None) -> dict:
+    if client is None and not groq_key:
         return fallback(raw, src)
     msg = PROMPT.format(source=src["name"], stype=src["type"], title=raw["title"], url=raw["url"], desc=raw.get("desc") or "(none)")
 
@@ -296,17 +296,17 @@ def summarize(raw: dict, src: dict, client, xai_key: str | None) -> dict:
             if _model_state["idx"] < len(MODELS):
                 print(f"    switching to model {MODELS[_model_state['idx']]}", file=sys.stderr)
 
-    if xai_key:
-        while _xai_state["idx"] < len(XAI_MODELS):
-            model = XAI_MODELS[_xai_state["idx"]]
-            data, switch = _call_xai(xai_key, model, msg)
+    if groq_key:
+        while _groq_state["idx"] < len(GROQ_MODELS):
+            model = GROQ_MODELS[_groq_state["idx"]]
+            data, switch = _call_groq(groq_key, model, msg)
             if data is not None:
-                return _finalize(data, src, "xai")
+                return _finalize(data, src, "groq")
             if not switch:
                 break
-            _xai_state["idx"] += 1
-            if _xai_state["idx"] < len(XAI_MODELS):
-                print(f"    switching to Grok model {XAI_MODELS[_xai_state['idx']]}", file=sys.stderr)
+            _groq_state["idx"] += 1
+            if _groq_state["idx"] < len(GROQ_MODELS):
+                print(f"    switching to Groq model {GROQ_MODELS[_groq_state['idx']]}", file=sys.stderr)
 
     return fallback(raw, src)
 
@@ -326,10 +326,10 @@ def main() -> None:
         client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
     else:
         print("GEMINI_API_KEY not set - skipping Gemini.")
-    xai_key = os.getenv("XAI_API_KEY")
-    if not xai_key:
-        print("XAI_API_KEY not set - no Grok backup if Gemini's quota runs out.")
-    if client is None and not xai_key:
+    groq_key = os.getenv("GROQ_API_KEY")
+    if not groq_key:
+        print("GROQ_API_KEY not set - no Groq backup if Gemini's quota runs out.")
+    if client is None and not groq_key:
         print("No AI key set at all - using feed descriptions instead of AI summaries.")
 
     status, budget, added = [], MAX_NEW_PER_RUN, 0
@@ -365,8 +365,8 @@ def main() -> None:
             if existing and budget <= 0:
                 continue
             budget -= 1
-            s = summarize(raw, src, client, xai_key)
-            if client is not None or xai_key:
+            s = summarize(raw, src, client, groq_key)
+            if client is not None or groq_key:
                 time.sleep(4)  # stay well under the free-tier requests-per-minute limit
             if not s.get("relevant", True):
                 continue
@@ -392,8 +392,8 @@ def main() -> None:
     STATUS_FILE.write_text(json.dumps({"updated": iso(NOW), "sources": status}, indent=1, ensure_ascii=False), encoding="utf-8")
     fallback_count = sum(1 for it in kept if not it.get("ai"))
     gemini_count = sum(1 for it in kept if it.get("provider") == "gemini")
-    xai_count = sum(1 for it in kept if it.get("provider") == "xai")
-    print(f"Done: {added} new, {len(kept)} stories in feed - {gemini_count} via Gemini, {xai_count} via Grok, "
+    groq_count = sum(1 for it in kept if it.get("provider") == "groq")
+    print(f"Done: {added} new, {len(kept)} stories in feed - {gemini_count} via Gemini, {groq_count} via Groq, "
           f"{fallback_count} still on the raw-feed fallback.")
 
 

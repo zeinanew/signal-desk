@@ -31,9 +31,11 @@ The summaries are written by Gemini through the API. It costs a few cents a day 
 
 Without a key the site still works, but it uses each feed's own description in place of an AI summary.
 
-**Optional: add Grok as a backup.** Free-tier Gemini keys are capped at a small number of requests per day per model, so once that's used up the rest of that day's stories fall back to the raw feed text. Adding an xAI key lets the script fall through to Grok once Gemini's quota is exhausted, instead of giving up:
-1. Get a key at [console.x.ai](https://console.x.ai).
-2. Add it the same way as above, as a repository secret named `XAI_API_KEY`.
+**Optional: add Groq as a backup.** Free-tier Gemini keys are capped at a small number of requests per day per model, so once that's used up the rest of that day's stories fall back to the raw feed text. Adding a Groq key (free, no card needed) lets the script fall through to it once Gemini's quota is exhausted, instead of giving up:
+1. Get a key at [console.groq.com/keys](https://console.groq.com/keys).
+2. Add it the same way as above, as a repository secret named `GROQ_API_KEY`.
+
+(Don't mix this up with Grok/xAI - a similarly-named but different service that no longer has a free tier.)
 
 ### 3. Turn on the website
 1. **Settings → Pages**.
@@ -70,7 +72,7 @@ Every source also needs `id` (unique, lowercase), `name`, `type` (`news`, `lab`,
 Set these under **Settings → Secrets and variables → Actions → Variables**:
 
 - `GEMINI_MODELS`: a comma-separated list of Gemini models to try, in order (default `gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash`). If a model's quota runs out or it's been retired, the script moves on to the next one in the list. Google renames/retires these fairly often - if summaries stop working, check the Action log for the exact error and see [the models list](https://ai.google.dev/gemini-api/docs/models) for current names.
-- `XAI_MODELS`: same idea, for the Grok backup (default `grok-4-fast`). Only used once every model in `GEMINI_MODELS` has failed for an item. See [xAI's models list](https://docs.x.ai/docs/models) for current names.
+- `GROQ_MODELS`: same idea, for the Groq backup (default `llama-3.3-70b-versatile,llama-3.1-8b-instant`). Only used once every model in `GEMINI_MODELS` has failed for an item. See [Groq's models list](https://console.groq.com/docs/models) for current names.
 
 In `scripts/collect.py` you can also change `MAX_AGE_DAYS` (default 45: older stories drop off) and `PER_SOURCE_LIMIT` (default 8 new stories per source per day).
 
@@ -79,7 +81,7 @@ To change the time: edit the `cron` line in `.github/workflows/refresh.yml`. It'
 ## Run it on your own computer (optional)
 ```bash
 pip install -r requirements.txt
-GEMINI_API_KEY=... XAI_API_KEY=... python scripts/collect.py   # XAI_API_KEY is optional
+GEMINI_API_KEY=... GROQ_API_KEY=... python scripts/collect.py   # GROQ_API_KEY is optional
 python -m http.server 8000     # then open http://localhost:8000
 ```
 
