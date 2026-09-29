@@ -254,10 +254,14 @@ def _call_xai(api_key: str, model: str, msg: str) -> tuple[dict | None, bool]:
                 json={"model": model, "messages": [{"role": "user", "content": msg}], "temperature": 0.3},
                 timeout=30,
             )
-            if r.status_code in (404, 429):
-                print(f"    {model} (xAI) unusable: {r.status_code} {r.text[:200]}", file=sys.stderr)
-                return None, True
-            r.raise_for_status()
+            if r.status_code >= 400:
+                # 4xx other than a transient rate limit means retrying the same request won't help
+                if r.status_code in (400, 401, 403, 404, 429):
+                    print(f"    {model} (xAI) unusable: {r.status_code} {r.text[:300]}", file=sys.stderr)
+                    return None, True
+                print(f"    {model} (xAI) retry {attempt + 1}: {r.status_code} {r.text[:300]}", file=sys.stderr)
+                time.sleep(2 * (attempt + 1))
+                continue
             text = r.json()["choices"][0]["message"]["content"]
             return json.loads(re.search(r"\{.*\}", text, re.S).group(0)), False
         except Exception as exc:  # noqa: BLE001 - keep the run going
