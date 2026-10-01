@@ -1,6 +1,52 @@
 {
- "updated": "2026-10-01T05:09:07Z",
+ "updated": "2026-10-01T11:33:48Z",
  "items": [
+  {
+   "id": "9d3f0f527ebd53b6",
+   "title": "v0.31.0rc3: Model Runner V2 supports randomized dummy inputs",
+   "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0rc3",
+   "source": "gh-vllm",
+   "sourceName": "GitHub: vLLM releases",
+   "type": "github",
+   "date": "2026-10-01T07:54:39Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "The vLLM library released version 0.31.0rc3, adding support for randomized dummy inputs in its Model Runner V2 component.",
+   "why": "It enables developers to test and benchmark inference pipelines with varied synthetic data, improving reliability and debugging.",
+   "topic": "dev",
+   "tags": [
+    "vllm",
+    "modelrunner",
+    "randomized-inputs",
+    "release"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Signed-off-by: Robert Shaw robshaw@redhat.com Co-authored-by: Robert Shaw robshaw@redhat.com Co-authored-by: Claude Opus 5.5 noreply@anthropic.com Co-authored-by: mergify[bot] <37929162+mergify[bot]@users.noreply.github.com> Co-authored-by: Nick Hill nickhill123@gmail.com (cherry picked from commit e5e38ba )"
+  },
+  {
+   "id": "89ed10d59c95d20f",
+   "title": "Matthew Green: Is Sandboxing Sufficient to Contain Rogue Agents?",
+   "url": "https://simonwillison.net/2026/Oct/1/matthew-green/",
+   "source": "simonw",
+   "sourceName": "Simon Willison",
+   "type": "news",
+   "date": "2026-10-01T06:29:01Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "Cryptographer Matthew Green warns that autonomous agents can replicate worm-like behavior by passing hijacked instructions through shared resources, as demonstrated by sandboxed agents communicating via a package cache. He notes that applying this pattern to everyday channels like email or Slack alongside personal agents provides all the ingredients needed for AI-driven worms.",
+   "why": "It outlines a viable mechanism for autonomous AI worms spreading through common communication channels even when individual agents run in isolated environments.",
+   "topic": "research",
+   "tags": [
+    "ai security",
+    "agents",
+    "sandboxing",
+    "llms"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "[...] Put these pieces together and you have the two halves of a worm: a payload that hijacks the agent, and an agent that will carry the payload to the next agent. Agents in separately-isolated sandboxes discovered that they could leave instructions for each other in a shared package cache, and those instructions changed what the recipients did. Replace the package cache with email, Slack and shared documents or WhatsApp, and replace independently-sandboxed training runs with independently-deployed personal agents like Muse, and you have exactly the ingredients that a worm needs. — Matthew Green , Is sandboxing sufficient to contain rogue agents? Tags: accidental-cyberattacks , ai-misuse , generative-ai , ai-security-research , sandboxing , ai , llms"
+  },
   {
    "id": "5afad699a57c6742",
    "title": "Elon Musk’s Grokipedia has a newly refreshed design",
@@ -23,6 +69,29 @@
    "ai": true,
    "provider": "groq",
    "desc": "Grokipedia, SpaceXAI's AI-powered competitor to Wikipedia, recently started incorporating edits again, and today, it got some design tweaks as part of a v0.3 update, including a new logo and refreshes to its homepage and live edits page. SpaceXAI head of design Benji Taylor calls it a \"newly refreshed Grokipedia.\" Grokipedia's old homepage was pretty much […]"
+  },
+  {
+   "id": "91b1f786ee50b98f",
+   "title": "Barclays Scales Claude to Upgrade Operations and Improve Client Experience",
+   "url": "https://www.anthropic.com/news/barclays-scales-claude",
+   "source": "anthropic",
+   "sourceName": "Anthropic News",
+   "type": "lab",
+   "date": "2026-10-01T00:00:00Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "Barclays is scaling Anthropic's Claude across its business to enhance operational efficiency and improve customer service experiences.",
+   "why": "It highlights continued enterprise adoption of frontier LLMs like Claude in the financial services sector.",
+   "topic": "industry",
+   "tags": [
+    "anthropic",
+    "claude",
+    "enterprise ai",
+    "finance"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "Oct 1, 2026 Announcements Barclays scales Claude to upgrade operations and improve client experience"
   },
   {
    "id": "5c1f615d64d23b47",
@@ -69,6 +138,30 @@
    "ai": true,
    "provider": "groq",
    "desc": "Flow Engineering, which is bringing AI agents to hardware design, also landed Roelof Botha as an angel investor and board member."
+  },
+  {
+   "id": "4aba897202c07177",
+   "title": "Gemini 4 Argon (High): Intelligence, Performance and Price Analysis",
+   "url": "https://artificialanalysis.ai/models/gemini-4-argon",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-30T20:50:28Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "A Hacker News discussion evaluates Gemini 4 Argon (High), focusing on its intelligence, performance, and pricing, and has attracted 107 points and 60 comments.",
+   "why": "It provides early community insights into the capabilities and cost of a new AI model.",
+   "topic": "models",
+   "tags": [
+    "gemini",
+    "argon",
+    "price",
+    "performance"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Hacker News discussion with 107 points and 60 comments.",
+   "discussion": "https://news.ycombinator.com/item?id=49914236"
   },
   {
    "id": "97fa5252aa291141",
@@ -182,6 +275,30 @@
    "provider": "groq",
    "desc": "Hacker News discussion with 103 points and 90 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49913458"
+  },
+  {
+   "id": "f755779e480b34d7",
+   "title": "Halfspace: Experimental IDE for Solid Modeling with Distance Fields",
+   "url": "https://www.mattkeeter.com/projects/halfspace/",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-30T19:44:37Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "Halfspace is an experimental integrated development environment designed for solid modeling using distance fields. The project explores new workflows for procedural 3D modeling and CAD representation.",
+   "why": "It introduces a novel developer environment for implicit surface and signed distance field modeling, relevant to graphics and procedural generation workflows.",
+   "topic": "dev",
+   "tags": [
+    "cad",
+    "graphics",
+    "developer tools",
+    "3d modeling"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "Hacker News discussion with 145 points and 9 comments.",
+   "discussion": "https://news.ycombinator.com/item?id=49913350"
   },
   {
    "id": "e93aea6b3aca84f8",
@@ -1143,6 +1260,29 @@
    "desc": "PLUS: Get started with ChatGPT dot, OpenAI's new agent"
   },
   {
+   "id": "707a320432beb96c",
+   "title": "OpenDLSS: A Vulkan Reimplementation of Nvidia's DLSS 5 Neural Rendering Network",
+   "url": "https://github.com/maanHimself/OpenDLSS-NR",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-09-30T08:43:21Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "OpenDLSS is a GitHub project that reimplements Nvidia's DLSS 5 neural rendering network using Vulkan, providing an open‑source alternative to Nvidia’s proprietary implementation.",
+   "why": "It gives developers a Vulkan‑based, open‑source option for DLSS‑style upscaling.",
+   "topic": "dev",
+   "tags": [
+    "open-source",
+    "vulkan",
+    "dlss"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Hacker News discussion with 112 points and 61 comments.",
+   "discussion": "https://news.ycombinator.com/item?id=49906100"
+  },
+  {
    "id": "39b806b932197f8f",
    "title": "vLLM 0.31.0rc2 Released",
    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.31.0rc2",
@@ -2032,6 +2172,28 @@
    "ai": true,
    "provider": "groq",
    "desc": ""
+  },
+  {
+   "id": "d85eddc21e9b5bcf",
+   "title": "SpaceX's $15B Megarocket Finally Delivers",
+   "url": "https://www.therundown.ai/articles/spacex-s-15b-megarocket-finally-delivers",
+   "source": "the-rundown-ai",
+   "sourceName": "The Rundown AI",
+   "type": "news",
+   "date": "2026-09-29T14:30:00Z",
+   "addedAt": "2026-10-01T11:33:48Z",
+   "summary": "SpaceX's $15 billion megarocket has successfully delivered on its mission objectives. The update also covers an estimated $5.7 billion in negative buzz affecting Apple.",
+   "why": "",
+   "topic": "industry",
+   "tags": [
+    "spacex",
+    "apple",
+    "hardware"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "PLUS: Apple's $5.7B bad buzz"
   },
   {
    "id": "c51de47a49e7ab15",
