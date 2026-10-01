@@ -38,7 +38,7 @@ MAX_AGE_DAYS = int(os.getenv("MAX_AGE_DAYS", "45"))       # drop stories older t
 DEFAULT_LIMIT = int(os.getenv("PER_SOURCE_LIMIT", "8"))   # newest N per source per run
 MAX_NEW_PER_RUN = int(os.getenv("MAX_NEW_PER_RUN", "80")) # cap on summarization calls
 MODELS = [m.strip() for m in (os.getenv("GEMINI_MODELS") or os.getenv("GEMINI_MODEL")
-                               or "gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash").split(",") if m.strip()]
+                               or "gemini-3.8-flash").split(",") if m.strip()]
 GROQ_MODELS = [m.strip() for m in (os.getenv("GROQ_MODELS") or os.getenv("GROQ_MODEL")
                                     or "openai/gpt-oss-20b,openai/gpt-oss-120b,qwen/qwen3.6-27b").split(",") if m.strip()]
 TOPICS = ["models", "dev", "research", "industry"]
@@ -221,10 +221,14 @@ _groq_state = {"idx": 0}       # same, for the Groq backup
 
 
 def _should_switch_model(text: str) -> bool:
-    """True when retrying the same model won't help: quota exhausted, or the model
-    name itself is invalid/retired (so plain retries would just repeat the same error)."""
-    return ("RESOURCE_EXHAUSTED" in text or "429" in text or "quota" in text.lower()
-            or "NOT_FOUND" in text or "404" in text)
+    """True when retrying the same model later won't help: the model name itself
+    is invalid/retired. A 429/RESOURCE_EXHAUSTED is deliberately NOT switch-worthy -
+    Gemini's free tier enforces that per minute (the error gives a retryDelay of
+    well under a minute), so it clears up on its own; treating it like a dead model
+    used to permanently skip past gemini-3.8-flash onto two retired models that
+    always 404, which burned through the model list and killed Gemini for the
+    rest of the run."""
+    return "NOT_FOUND" in text or "404" in text
 
 
 def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:

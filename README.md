@@ -71,7 +71,7 @@ Every source also needs `id` (unique, lowercase), `name`, `type` (`news`, `lab`,
 ## Settings (optional)
 Set these under **Settings → Secrets and variables → Actions → Variables**:
 
-- `GEMINI_MODELS`: a comma-separated list of Gemini models to try, in order (default `gemini-3.8-flash,gemini-2.5-flash,gemini-2.0-flash`). If a model's quota runs out or it's been retired, the script moves on to the next one in the list. Google renames/retires these fairly often - if summaries stop working, check the Action log for the exact error and see [the models list](https://ai.google.dev/gemini-api/docs/models) for current names.
+- `GEMINI_MODELS`: a comma-separated list of Gemini models to try, in order (default `gemini-3.8-flash`). If a model's been retired, the script moves on to the next one in the list - a plain rate limit (the free tier allows a handful of requests per minute) doesn't advance the list, since that clears up on its own within the run. Google renames/retires these fairly often - if summaries stop working, check the Action log for the exact error and see [the models list](https://ai.google.dev/gemini-api/docs/models) for current names.
 - `GROQ_MODELS`: same idea, for the Groq backup (default `openai/gpt-oss-20b,openai/gpt-oss-120b,qwen/qwen3.6-27b`). Only used once every model in `GEMINI_MODELS` has failed for an item. Groq deprecates/renames models fairly often for the free tier - see [Groq's models list](https://console.groq.com/docs/models) for current names if summaries stop coming from it.
 
 In `scripts/collect.py` you can also change `MAX_AGE_DAYS` (default 45: older stories drop off) and `PER_SOURCE_LIMIT` (default 8 new stories per source per day).
