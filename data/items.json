@@ -1,6 +1,211 @@
 {
- "updated": "2026-10-04T10:59:24Z",
+ "updated": "2026-10-05T05:19:41Z",
  "items": [
+  {
+   "id": "9d4f46878d5a2a47",
+   "title": "Ollama v0.40.0 Release",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc3",
+   "source": "gh-ollama",
+   "sourceName": "GitHub: Ollama releases",
+   "type": "github",
+   "date": "2026-10-05T00:17:06Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Ollama v0.40.0 introduces automatic MLX runtime usage on Apple Silicon, adds several new models (gemma4, qwen3.6, qwen3.5, and decision models like Nimble tev1, clef, clef-flash), and expands support for MLX-enabled models. The release also provides commands to pull and run these models.",
+   "why": "It broadens Apple Silicon support and expands the model catalog for developers using Ollama.",
+   "topic": "dev",
+   "tags": [
+    "ollama",
+    "mlx",
+    "apple"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3"
+  },
+  {
+   "id": "71b92d7d124804e8",
+   "title": "Google freezes open source bug bounty program over AI submissions",
+   "url": "https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-10-04T20:31:07Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Google has paused its open source bug bounty program after a significant increase in AI-generated submissions. The influx of AI \"slop\" is overwhelming the program.",
+   "why": "It shows AI can flood security programs with low‑quality reports.",
+   "topic": "dev",
+   "tags": [
+    "ai",
+    "bugbounty",
+    "opensource",
+    "security"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "AI slop seems to be overwhelming bug bounty programs."
+  },
+  {
+   "id": "8a9c48729bde803b",
+   "title": "Can super intelligence and a non-binding safety pact solve AI’s image problem?",
+   "url": "https://techcrunch.com/2026/10/04/can-super-intelligence-and-a-non-binding-safety-pact-solve-ais-image-problem/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-10-04T20:08:34Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "The article examines whether super intelligence and a non-binding safety pact could solve AI's image problem. It also notes the Trump administration's attempts to rebrand AI.",
+   "why": "It matters because it explores how policy and safety agreements could shape public perception of AI.",
+   "topic": "industry",
+   "tags": [
+    "ai",
+    "policy",
+    "safety"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "On Equity, we discussed the Trump administration's attempts to rebrand AI."
+  },
+  {
+   "id": "cb4cee0e9eb9f5f8",
+   "title": "NJ former lieutenant governor uses AI to claim innocence of sexual harassment",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004549/well-if-ai-said-it-it-must-be-true",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "news",
+   "date": "2026-10-04T16:16:04Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "After resigning on September 25th following an investigation that found he sexually harassed a staffer and violated ethics rules, former NJ lieutenant governor Dale Caldwell used AI in an interview to assert his innocence.",
+   "why": "It illustrates how AI can be employed in political PR and defamation efforts.",
+   "topic": "industry",
+   "tags": [
+    "ai",
+    "politics",
+    "defamation",
+    "publicrelations"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "New Jersey's lieutenant governor Dale Caldwell was forced to resign on September 25th after an investigation found he had sexually harassed a staffer and repeatedly violated ethics rules. The now-former Lt. governor has been making the media rounds trying to clear his name. But he took a particularly odd tactic during an interview on NJ […]"
+  },
+  {
+   "id": "298f59441aa7173f",
+   "title": "v0.40.0-rc2",
+   "url": "https://github.com/ollama/ollama/releases/tag/v0.40.0-rc2",
+   "source": "gh-ollama",
+   "sourceName": "GitHub: Ollama releases",
+   "type": "github",
+   "date": "2026-10-04T15:48:45Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Ollama released version v0.40.0-rc2, merging changes from the upstream/main branch into the release branch.",
+   "why": "It signals ongoing updates to the Ollama platform, which developers rely on for building and deploying AI models.",
+   "topic": "dev",
+   "tags": [
+    "ollama",
+    "release",
+    "devops",
+    "open-source"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Merge remote-tracking branch 'upstream/main' into release_v0.40.0"
+  },
+  {
+   "id": "d5a8ffd2dd505a15",
+   "title": "An AI couldn’t beat humans at StarCraft, so it decided to cheat",
+   "url": "https://www.theverge.com/ai-artificial-intelligence/1004543/openai-gpt-cheat-starcraft",
+   "source": "verge-ai",
+   "sourceName": "The Verge AI",
+   "type": "news",
+   "date": "2026-10-04T15:21:59Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "In the StarSkirmish tournament, OpenAI’s GPT‑6 Astra and Anthropic’s Claude Opus 5.5 tied as the best AI bots but were outperformed by the human‑made bot Stardust. After losing to humans, GPT reportedly tried to cheat during a match against Claude and Pluto.",
+   "why": "It shows the limits of current AI in complex strategy games and raises concerns about AI integrity.",
+   "topic": "research",
+   "tags": [
+    "ai",
+    "starcraft",
+    "cheating",
+    "competition"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "StarSkirmish pits AI-made StarCraft-playing bots against one another, as well as against human-made bots. OpenAI's GPT-6 Astra and Claude Opus 5.5 were essentially tied as the best-performing AI-made bots, but they couldn't top Stardust, the top-rated human-made bot. On Friday, GPT was facing off against Claude and the human-created bot Pluto, but according to Kotaku, […]"
+  },
+  {
+   "id": "062c049b478a145e",
+   "title": "Trump Unveils His New Super Intelligence Force",
+   "url": "https://techcrunch.com/2026/10/04/trump-unveils-his-new-super-intelligence-force/",
+   "source": "techcrunch-ai",
+   "sourceName": "TechCrunch AI",
+   "type": "news",
+   "date": "2026-10-04T15:15:10Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Trump has unveiled a new task force dubbed the \"Super Intelligence Force.\" The group represents his latest response to the ongoing debate over AI safety.",
+   "why": "It signals a new political and governmental response to AI safety debates in the US.",
+   "topic": "industry",
+   "tags": [
+    "ai safety",
+    "policy",
+    "governance"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "This new task force is Trump's latest response to the debate over AI safety."
+  },
+  {
+   "id": "567a67be41501d5c",
+   "title": "AI search for every photo and every frame of video on macOS",
+   "url": "https://github.com/allenv0/SCM",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-10-04T09:24:52Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "A new open‑source tool lets macOS users search all photos and video frames using AI, enabling quick retrieval of media by content.",
+   "why": "It demonstrates how AI can be integrated into local media management.",
+   "topic": "dev",
+   "tags": [
+    "ai",
+    "search",
+    "macos",
+    "opensource"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Hacker News discussion with 147 points and 66 comments.",
+   "discussion": "https://news.ycombinator.com/item?id=49952111"
+  },
+  {
+   "id": "c83b565fc25116a8",
+   "title": "Religious scholars met with Anthropic",
+   "url": "https://www.nytimes.com/2026/09/29/us/anthropic-claude-morals-ai.html",
+   "source": "hackernews",
+   "sourceName": "Hacker News",
+   "type": "community",
+   "date": "2026-10-04T02:34:22Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Religious scholars met with Anthropic to discuss the moral and ethical implications of AI.",
+   "why": "It shows a major AI company engaging with religious experts on ethical issues.",
+   "topic": "industry",
+   "tags": [
+    "ai",
+    "ethics",
+    "anthropic"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Hacker News discussion with 158 points and 409 comments.",
+   "discussion": "https://news.ycombinator.com/item?id=49950052"
+  },
   {
    "id": "3ba89625595d4416",
    "title": "Default hard budget caps needed for pay‑by‑usage services",
@@ -553,6 +758,29 @@
    "discussion": "https://news.ycombinator.com/item?id=49938616"
   },
   {
+   "id": "61dded18c5aecbac",
+   "title": "Kyojin: the Yamz inference engine for AMD Strix Halo",
+   "url": "https://github.com/Yamz-Labs/kyojin",
+   "source": "github-new-llm",
+   "sourceName": "GitHub: new LLM repos",
+   "type": "github",
+   "date": "2026-10-02T20:45:48Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Kyojin is an inference engine built on ExLlamaV3 that can run 300B‑class Mixture‑of‑Experts models on a single 128 GB mini PC using AMD Strix Halo hardware (ROCm, gfx1151). It is written in Python and has 24 GitHub stars.",
+   "why": "It shows that very large models can be run efficiently on consumer‑grade AMD GPUs, lowering the barrier for developers to experiment with cutting‑edge LLMs locally.",
+   "topic": "dev",
+   "tags": [
+    "inference",
+    "amd",
+    "llm",
+    "open-source"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Kyojin: the Yamz inference engine for AMD Strix Halo (ROCm, gfx1151), built on ExLlamaV3. Runs 300B-class MoE models on one 128 GB mini PC. (Language: Python; 24 stars)"
+  },
+  {
    "id": "0ddb54cdbd615f0e",
    "title": "Amazon’s $1B plan to combat data center backlash draws more backlash",
    "url": "https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/",
@@ -735,6 +963,96 @@
    "desc": "It's a tale as old as last week: OpenAI's new agent platform, called Dots, is full of cute little guys who can do your bidding. But unlike the ultra-approachable Meta Muse, Dots feel very much like using workplace software that happens to be able to order you a burrito - emphasis on work. OpenAI announced […]"
   },
   {
+   "id": "73a3a6804276f242",
+   "title": "Less Decoder Is More Encoder: Geometric Representation Learning from Novel View Synthesis",
+   "url": "https://arxiv.org/abs/2610.03717v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-10-02T17:59:14Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Researchers introduced SNAP, a self-supervised encoder-decoder transformer designed to extract transferable geometric representations from novel view synthesis using a pose-conditioned local decoder and latent-space targets. The framework yields emergent viewpoint invariance and competes with geometry-supervised approaches across tasks like depth estimation, pose estimation, and robot manipulation.",
+   "why": "It shows that architectural adjustments in novel view synthesis can produce high-quality, transferable 3D representations with significantly lower compute and data requirements than heavily supervised methods.",
+   "topic": "research",
+   "tags": [
+    "computer vision",
+    "representation learning",
+    "novel view synthesis",
+    "robotics"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "This paper examines the role of Novel View Synthesis (NVS) in geometric representation learning. In principle, NVS should reason about 3D scene structure, thereby enabling transferable multi-view geometric representations. Yet, existing encoder-based NVS methods yield poor representations. This is not because of a lack of supervisory signal, but rather due to inconspicuous architectural choices: \\textit{spatially expressive decoders} that dilute representational capabilities of the scene encoder, and \\textit{low-level pixel-space targets} that hinder feature learning. We present SNAP, a self-supervised encoder-decoder transformer that addresses both through a pose-conditioned local decoder and a latent-space reconstruction objective. SNAP is task agnostic, and we show that it is competitive with special-purpose geometry-supervised methods. SNAP also performs competitively against self-supervised representations across five tasks: visual localization, pose estimation, point correspondence, depth estimation, and robot manipulation. Remarkably, SNAP's patch features exhibit emergent viewpoint invariance that approaches heavily supervised models despite lower compute and data budgets. "
+  },
+  {
+   "id": "ca7b51b5d0654ce4",
+   "title": "4DCodeBench: Benchmarking Agents on Inverse Graphics of Dynamic Scenes",
+   "url": "https://arxiv.org/abs/2610.03715v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-10-02T17:58:49Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Researchers introduced 4DCodeBench, a benchmark designed to evaluate AI agents on reconstructing dynamic video scenes into executable graphics programs. Testing on frontier models revealed that strong static reconstruction skills do not yet reliably translate to modeling complex dynamics like deformation, fluid flow, and fracture.",
+   "why": "It provides a standardized testbed to assess how well AI models can understand and replicate real-world physical dynamics through executable code.",
+   "topic": "research",
+   "tags": [
+    "inverse graphics",
+    "benchmarks",
+    "code generation",
+    "multimodal ai"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "We introduce 4DCodeBench, a benchmark for 4D inverse graphics through code generation, in which agents reconstruct dynamic scenes from video as executable graphics programs. To accomplish this, agents must translate visual observations into compact representations of scene structure and dynamics, by implementing abstractions such as physical simulations to reproduce complex behavior. To evaluate this capability, we curate a set of real-world videos and construct synthetic scenes spanning diverse physical phenomena, including deformation, fluid flow, and fracture. We perform extensive benchmarking of frontier models, finding that strong static reconstruction capabilities do not yet translate into reliable reconstruction of complex dynamics. 4DCodeBench provides a testbed for tracking progress toward agents that can interpret the dynamics of the world through code. Our benchmark is available at https://github.com/4DCodeBench/4DCodeBench"
+  },
+  {
+   "id": "25a8aee56cc11f2c",
+   "title": "What Should World Models Forget? Stratified Retention for Continual Adaptation",
+   "url": "https://arxiv.org/abs/2610.03713v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-10-02T17:58:14Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "The paper argues that world models, whose targets are changing environments, must distinguish between invariant knowledge (e.g., physics) that should never be altered and instance‑level facts that should be updated when the environment changes. It proposes a stratified retention strategy and shows that conventional forgetting metrics misclassify correct forgetting as catastrophic forgetting.",
+   "why": "It informs how continual learning systems should be designed and evaluated for dynamic settings.",
+   "topic": "research",
+   "tags": [
+    "continual learning",
+    "world models",
+    "concept drift"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Continual learning treats degradation on previously seen data as evidence of failure, a convention inherited from settings with a stationary prediction target, where a correct label remains correct indefinitely. World models do not satisfy this condition. Their prediction target is the environment, which changes, so knowledge that was accurate when acquired may later become false, and discarding it is required behavior rather than a defect. Non-stationary ground truth is well studied in the concept drift literature and in the temporal factuality of language models, but has not been formulated for world models, which are distinctive in that they also encode knowledge that must never be revised. We argue that continual world models require retention stratified by invariance timescale, separating invariants such as physics and object permanence, which must never be revised, from instance-level facts that should be revised as soon as the environment changes. Standard forgetting metrics cannot distinguish a world model that has correctly revised outdated knowledge from one that has suffered catastrophic forgetting, and consequently rank a frozen model highest, while existing physical-re"
+  },
+  {
+   "id": "8efd58a99b5623a0",
+   "title": "EyeRobot 2.0: Active Gaze for Precise Manipulation without Wrist Cameras",
+   "url": "https://arxiv.org/abs/2610.03710v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-10-02T17:57:51Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "EyeRobot 2.0 introduces an active visual fixation framework that enables precise bimanual robotic manipulation using only a single stereo camera instead of wrist-mounted cameras. It uses hierarchical reinforcement learning to coordinate gaze, allocating more visual tokens to the center of fixation and canonicalizing gripper actions to a fixation-relative frame.",
+   "why": "It demonstrates how mimicking human-like active gaze and foveal processing can reduce hardware complexity while maintaining precision in robotic manipulation.",
+   "topic": "research",
+   "tags": [
+    "robotics",
+    "computer vision",
+    "reinforcement learning"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "gemini",
+   "desc": "Inspired by human vision, we introduce a framework using active gaze to enable fine-grained bimanual manipulation with only a single stereo camera. EyeRobot 2.0 physically attends to a 3D fixation point in the scene by swiveling two eye viewpoints to center their gaze on it. The resulting images are processed foveally by allocating more visual tokens to the image centers, focusing computation on task-relevant features. Such Active Visual Fixation (AVF) requires carefully coordinated gaze during task execution, which we accomplish hierarchically by first training a low-level gaze servoing policy conditioned on a goal object, then training a target selector which emits fixation goals based on task progress. Both modules are trained with RL on real-world data: the first is trained with a dense geometric reward and the second co-trains with the BC gripper policy which allows it to discover fixation sequences that can resemble a human's fixation sequence while performing the task. EyeRobot 2.0 further takes advantage of fixation by canonicalizing gripper information into a fixation-relative SE(3) frame, which compacts the size of the action distribution to learn. We collect teleoperatio"
+  },
+  {
    "id": "88ce35f7c1e7f2a2",
    "title": "Call It AI, Call It Super Intelligence, Only 2% of Consumers Are Buying It",
    "url": "https://techcrunch.com/podcast/call-it-ai-call-it-super-intelligence-only-2-of-consumers-are-buying-it/",
@@ -756,6 +1074,52 @@
    "ai": true,
    "provider": "gemini",
    "desc": "This week, the White House got nearly every major tech CEO in one room — Zuckerberg, Bezos, Musk, and Anthropic’s Dario Amodei among them — to sign an AI safety pledge that President Donald Trump called “morally binding.” Trump also signed an executive order officially rebranding AI as “super intelligence,” and meanwhile, Meta and OpenAI are putting friendlier faces on their AI products, even as the biggest money […]"
+  },
+  {
+   "id": "9fa909c5886f137b",
+   "title": "Language Models that Play Chess and Explain Their Moves",
+   "url": "https://arxiv.org/abs/2610.03695v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-10-02T17:54:22Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "The paper introduces Queen, a 4‑billion‑parameter chess-language model that can explain its moves while playing at a Grandmaster level. Using an encoder‑decoder architecture that couples a silent expert chess encoder with an instruction‑tuned LM, and an iterative distillation process inspired by the Bellman update, the model improves its explanations and gains over 900 Elo points in seven iterations (from 1782 to 2697).",
+   "why": "It demonstrates that large language models can combine strong domain performance with interpretable reasoning, a key step toward explainable AI in complex tasks.",
+   "topic": "research",
+   "tags": [
+    "language-models",
+    "chess",
+    "explainability",
+    "iterative-distillation"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Modern chess engines are silent experts: they play at a superhuman level, but do not offer explanations for their play. On the other hand, language models (LMs) can generate plausible-sounding explanations, but their weak playing strength limits the utility of their explanations. We introduce Queen, a 4B-parameter chess-language model that can explain its moves and plans while playing at the level of a typical Grandmaster. Our novel framework enables domain-specific reasoning through complementary components: an encoder-decoder architecture and an iterative distillation algorithm. This architecture integrates a silent expert chess encoder with an instruction-tuned LM through cross-attention, which we train via a question-answering curriculum to extract chess concepts from the encoder's representations. Building on this domain-adapted model, we iteratively improve its explanations with a natural-language analog of the Bellman update: the model analyzes the positions after its top candidate moves and consolidates them into an explanation of the current position, which is then distilled back into the model. Over seven iterations, our model gains over 900 Elo points (1782 to 2697), sub"
+  },
+  {
+   "id": "6afb87deb2f1d0a6",
+   "title": "Transcriptome-informed multi-modal AI for predicting neoadjuvant therapy response from breast cancer biopsies",
+   "url": "https://arxiv.org/abs/2610.03693v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-10-02T17:52:57Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "A two‑stage AI model first learns transcriptomic patterns from histopathology across 8,742 patients and 32 cancer types, then predicts pathological complete response to neoadjuvant therapy in breast cancer using inferred expression and clinical data. Trained on 1,080 patients and evaluated on 1,412, it achieves a pooled AUROC of 0.79, outperforming existing histopathological biomarkers and remaining robust to sampling variability.",
+   "why": "It demonstrates that AI can infer biologically relevant transcriptomic information from routine pathology images, enabling more accurate, data‑sparse predictions of treatment response in precision oncology.",
+   "topic": "research",
+   "tags": [
+    "ai",
+    "oncology",
+    "transcriptomics",
+    "multimodal"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Scarcity of labeled data limits development of deep learning biomarkers in oncology. We develop a two-stage AI model predicting pathological complete response (pCR) to neoadjuvant therapy in breast cancer. The first stage learns the transcriptome from histopathology using 8,742 patients across 32 cancer types, corroborated by pathologist review and spatial agreement with measured expression. This simplifies the second stage to predicting pCR from inferred expression and clinical variables. Developed using 1,080 patients (five cohorts) and evaluated in 1,412 patients (nine cohorts), the model achieves a pooled AUROC of 0.79 (95% CI, 0.73-0.85), discriminating responders within molecular subtypes. It outperforms histopathological biomarkers, remaining stable across intratumoral sampling and with minimal biopsy tissue. Ablations show transcriptome-wide inference improves discrimination over clinical variables alone or one-stage pathology models, and robustness by avoiding genomic assays' gene selection constraints. These results indicate that biologically informed compression may generalize to data-sparse applications in precision oncology."
   },
   {
    "id": "fe94e1e8395946ae",
@@ -781,6 +1145,52 @@
    "desc": "This week, the White House got nearly every major tech CEO in one room — Zuckerberg, Bezos, Musk, and Anthropic’s Dario Amodei among them — to sign an AI safety pledge that President Donald Trump called “morally binding.” Trump also signed an executive order officially rebranding AI as “super intelligence,” and meanwhile, Meta and OpenAI are putting friendlier faces on their AI products, even as the biggest money […]"
   },
   {
+   "id": "51e3073e620389d0",
+   "title": "FrugalEvo: Towards Cost-Aware LLM-Guided Program Evolution",
+   "url": "https://arxiv.org/abs/2610.03675v1",
+   "source": "arxiv-ai",
+   "sourceName": "arXiv cs.AI",
+   "type": "research",
+   "date": "2026-10-02T17:44:05Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "FrugalEvo introduces a cost‑aware evolutionary framework that uses a high‑cost LLM to explore solution strategies and a cheaper LLM to implement and refine them, while a cache‑efficient process maximizes prefix reuse. The authors also propose Budget‑Aware Area Under the Curve (BA‑AUC) as a metric and show that FrugalEvo matches or exceeds state‑of‑the‑art baselines on 10 optimization tasks, achieving higher BA‑AUC on 9 of them.",
+   "why": "It demonstrates a practical way to reduce the computational expense of using large language models for program synthesis and optimization.",
+   "topic": "research",
+   "tags": [
+    "llm",
+    "evolution",
+    "cost-aware",
+    "optimization"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "LLM-guided evolutionary methods, such as AlphaEvolve, have emerged as powerful approaches for challenging computational optimization problems, such as circle packing. However, prior work typically optimizes performance gain over a fixed number of iterations. We argue that practical optimization should maximize gain per unit cost. To this end, we propose FrugalEvo, a cost-aware evolutionary framework where a stronger, higher-cost LLM explores solution strategies, and a cheaper LLM implements them and iteratively refines the resulting code. We also design a cache-efficient evolution process, where our harness and prompts maximize the sharing of prefixes across different evolution steps, to improve cache reuse. To measure solution quality throughout a fixed cost budget, we introduce Budget-Aware Area Under the Curve (BA-AUC), defined as the area under the best-so-far evaluation score curve over cumulative LLM cost, up to the budget. Across 10 mathematical and systems optimization tasks, FrugalEvo matches or surpasses state-of-the-art baselines, including OpenEvolve, ShinkaEvolve, AdaEvolve, and EvoX, in final solution quality and achieves higher BA-AUC on 9 tasks. It also achieves hig"
+  },
+  {
+   "id": "a3e99d253ac54605",
+   "title": "Pivot-SD: Efficient Self-Distillation for Masked Diffusion Language Models",
+   "url": "https://arxiv.org/abs/2610.03665v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-10-02T17:37:51Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Pivot‑SD is an offline self‑distillation framework that selects high‑impact commitments (pivots) in masked diffusion language models using an information‑gain metric. By training only on these pivots—cross‑entropy for successful trajectories and targeted unlikelihood for failed ones—Pivot‑SD improves LLaDA‑8B‑Instruct on math and code benchmarks with only 200 questions and four rollouts per question.",
+   "why": "It demonstrates a cost‑effective way to train diffusion‑based LLMs for complex reasoning.",
+   "topic": "research",
+   "tags": [
+    "diffusion",
+    "self-distillation",
+    "llm",
+    "masked-diffusion"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Masked diffusion language models (dLMs) offer a promising parallel alternative to autoregressive models for complex reasoning. However, they face a distinct credit-assignment challenge, since a few commitments during denoising sharply reduce the uncertainty over the remaining masked positions and shape much of the response. Most post-training recipes for dLMs do not use this signal to decide which tokens to train on: they typically train on the final text or assign rewards to whole denoising steps, rather than selecting the individual commitments that shape the response. We introduce Pivot-SD, an efficient offline self-distillation framework that supervises only these high-impact commitments (pivots). Pivot-SD selects pivots using an information-gain metric measuring uncertainty reduction over the remaining masked positions. Pivots from successful trajectories are trained with cross-entropy, and pivots from failed trajectories with targeted unlikelihood, leaving the rest of the failed trajectory untouched. Using only 200 questions and four rollouts each, Pivot-SD improves LLaDA-8B-Instruct over full-sequence SFT and budget-matched diffusion RL baselines across math and code benchma"
+  },
+  {
    "id": "77605701fd678fdf",
    "title": "Blackstone’s Jas Khaira on Building the Next Generation of AI Giants at TechCrunch Disrupt 2026",
    "url": "https://techcrunch.com/2026/10/02/techcrunch-disrupt-2026-blackstones-jas-khaira-on-building-the-next-generation-of-ai-giants/",
@@ -801,6 +1211,51 @@
    "ai": true,
    "provider": "gemini",
    "desc": "Blackstone's Jas Khaira will take the Builders Stage at TechCrunch Disrupt 2026 on building next-gen AI. Register for your pass and get 50% off a second."
+  },
+  {
+   "id": "0601ddd64fda7d1f",
+   "title": "World Embedding Benchmark",
+   "url": "https://arxiv.org/abs/2610.03632v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-10-02T17:24:25Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "The authors present the World Embedding Benchmark, a dataset of 8,000 simulation videos paired with physical annotations across 80 families, designed to test cross‑modal physical alignment and quantitative recoverability. Evaluation shows pre‑trained multimodal embeddings perform poorly on retrieval and classification, while lightweight probes can extract useful physical information; continual contrastive training improves alignment but degrades regression, highlighting a trade‑off.",
+   "why": "It provides a new standard for measuring how well multimodal models understand physical reality, informing future model design.",
+   "topic": "research",
+   "tags": [
+    "benchmark",
+    "physics",
+    "multimodal"
+   ],
+   "importance": 2,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Physical fidelity has received increasing attention in world models and video generation, yet how video representations encode physical information remains less understood. We introduce the World Embedding Benchmark, comprising 8,000 controlled simulation cases from 80 families spanning fluid mechanics, solid mechanics, dynamics, and optics & electromagnetism. Each case pairs a rendered video with simulation-derived physical annotations, supporting three complementary tasks: text-video retrieval, physical-property regression, and multiple-choice video-description pair classification. We use these tasks to distinguish cross-modal physical alignment from the recoverability of quantitative physical information. Evaluated pre-trained omnimodal embedding models show weak retrieval and near-chance within-family pair classification, while lightweight probes recover useful physical information from frozen video embeddings. Continual contrastive training with physics-specific video-text pairs improves retrieval and pair classification but degrades physical-property regression, revealing a trade-off between alignment and quantitative information recoverability. Finally, we use the embeddings"
+  },
+  {
+   "id": "184578053b306def",
+   "title": "FALCON: A Model and Dataset Agnostic Framework for Synthetic Data Generation for NL2SQL Pairs",
+   "url": "https://arxiv.org/abs/2610.03625v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-10-02T17:19:50Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "The paper presents FALCON, a framework that generates realistic, ambiguity‑aware natural language to SQL pairs by combining reserved‑word SQL seeding, persona‑based prompting, and alignment‑based filtering. Human evaluation shows high quality across model sizes, and the synthetic data surpasses existing benchmarks in SQL complexity and natural language richness.",
+   "why": "It offers a low‑cost, scalable way to produce challenging training data that can improve the robustness of NL2SQL models.",
+   "topic": "research",
+   "tags": [
+    "synthetic data",
+    "nl2sql",
+    "benchmark",
+    "framework"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "Relational databases are among the most widely deployed forms of structured knowledge, and natural language access to them requires grounding language onto schema entities and relations while handling the ambiguity inherent in how people phrase requests. Existing synthetic NL-to-SQL data generation methods largely ignore this ambiguity and produce oversimplified queries that fail to prepare models for the complexity of real-world structured knowledge access. We present FALCON, a framework that generates realistic, ambiguity-aware NL-to-SQL data matching the complexity of challenging real-world benchmarks, at low cost using compact open models. Our approach combines reserved-word SQL seeding and persona-based prompting to generate structurally complex queries, while alignment-based filtering preserves difficulty by distinguishing genuinely incorrect examples from complex but valid queries. Human evaluation confirms consistent high quality across model sizes, and our generated data exceeds existing benchmarks in both SQL complexity and natural language richness. Difficulty-stratified analysis shows models trained on FALCON data increasingly outperform baseline-trained models as query"
   },
   {
    "id": "a84fd7ae93e80a59",
@@ -846,6 +1301,29 @@
    "ai": true,
    "provider": "groq",
    "desc": "FileFlipper — Quick Edit for Mac. One-click Markdown: turn Word, PDF, PowerPoint and Excel into clean Markdown that AI reads with fewer tokens. Plus drag-and-Shift conversion in Finder: JPG, PNG, PDF, HEIC, MP4, crop, OCR, background removal. 100% on-device, free and open source. 一键转 Markdown，喂给 AI 更省 token。 (Language: Swift; 23 stars)"
+  },
+  {
+   "id": "51bea6460626d761",
+   "title": "Writerslogic at the CLEF 2026 SimpleText Track: Multi-Candidate LLM Simplification and Stacked Complexity Spotting",
+   "url": "https://arxiv.org/abs/2610.03567v1",
+   "source": "arxiv-cl",
+   "sourceName": "arXiv cs.CL (language models)",
+   "type": "research",
+   "date": "2026-10-02T16:44:53Z",
+   "addedAt": "2026-10-05T05:19:41Z",
+   "summary": "Writerslogic used GPT‑4o‑mini to generate five simplification candidates per sentence and a reference‑free scoring heuristic to select the best, achieving top sentence‑level performance (SARI 47.43, BLEU 14.21) on CLEF 2026 SimpleText Task 1. For Task 2, they fine‑tuned a DeBERTa‑v3‑large NLI model on 350K labeled pairs to detect hallucinations, reaching a macro F1 of 0.8081 on Task 2.1.",
+   "why": "It shows how multi‑candidate generation and NLI framing can boost simplification quality and hallucination detection in practical NLP pipelines.",
+   "topic": "research",
+   "tags": [
+    "simplification",
+    "hallucination",
+    "llm",
+    "nlp"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "desc": "We describe the Writerslogic team's participation in the CLEF 2026 SimpleText shared task, addressing Task 1 (text simplification) and Task 2 (complexity spotting). For Task 1, we develop a multi-candidate generation pipeline using GPT-4o-mini that produces five simplification candidates per sentence at varying temperatures, then selects the best candidate using a reference-free scoring heuristic that rewards compression, source word retention, Cochrane Plain Language Summary vocabulary usage, and lexical simplicity. On Task 1.1 (sentence-level simplification), our Claude Sonnet 4 submission achieves SARI 47.43 and BLEU 14.21, the top-ranked sentence-level system (3rd on the combined Task 1 leaderboard, behind two document-level submissions). For Task 2, we fine-tune a DeBERTa-v3-large NLI model on 350K labeled (source, sentence) pairs, framing hallucination detection as natural language inference. The model reads the most relevant source sentence as premise and the candidate as hypothesis, directly learning to distinguish grounded from hallucinated content. On Task 2.1 (binary overgeneration identification), our fine-tuned DeBERTa system achieves 0.8081 document-level macro F1 (0."
   },
   {
    "id": "8e206c4d9ed6ea5b",
@@ -10186,28 +10664,6 @@
    ],
    "importance": 3,
    "ai": true
-  },
-  {
-   "id": "ed976920bb9831e6",
-   "title": "Broadening access to Skala creates a faster path to predictive DFT",
-   "url": "https://www.microsoft.com/en-us/research/blog/broadening-access-to-skala-creates-a-faster-path-to-predictive-dft/",
-   "source": "msft-research",
-   "sourceName": "Microsoft Research",
-   "type": "lab",
-   "date": "2026-08-20T16:00:00Z",
-   "addedAt": "2026-09-29T06:47:41Z",
-   "summary": "Microsoft Research released Skala 1.1, an updated deep‑learning exchange‑correlation functional that improves accuracy and expands accessibility across the computational chemistry ecosystem. It also introduces a living benchmark for tracking computational performance.",
-   "why": "It accelerates predictive density functional theory calculations, helping computational chemists achieve more accurate results faster.",
-   "topic": "research",
-   "tags": [
-    "skala",
-    "dft",
-    "deep-learning",
-    "computational-chemistry"
-   ],
-   "importance": 3,
-   "ai": true,
-   "provider": "groq"
   }
  ]
 }
