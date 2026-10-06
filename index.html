@@ -118,6 +118,10 @@ nav.tabs .count{font-family:var(--mono);font-size:12px;font-weight:400;opacity:.
 .tnav:disabled{opacity:.3;cursor:default}
 .tnav:not(:disabled):hover{border-color:var(--c);color:var(--c)}
 .tcount{font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center}
+.tfactions{display:flex;align-items:center;gap:10px}
+.moretoggle{border:0;background:none;padding:0;font-size:11.5px;font-weight:600;color:var(--c,var(--accent));white-space:nowrap}
+.moretoggle:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.rfoot .moretoggle{margin-left:auto;font-size:12.5px}
 
 /* Panels shared by Search and Sources */
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 1px 2px rgba(40,34,20,.05)}
@@ -205,6 +209,13 @@ aside.filters{position:sticky;top:20px;display:grid;gap:28px;padding:24px}
 .btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line-2)}
 .btn.ghost:hover{border-color:var(--ink-2)}
 .more{display:flex;justify-content:center;margin-top:24px}
+
+/* Summary popover */
+.sumpop{position:fixed;z-index:60;width:320px;max-width:calc(100vw - 32px);padding:16px 40px 16px 18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:0 14px 34px var(--shadow);font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+.sumpop p{margin:0}
+.sumpop .why{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px}
+.sumpop-close{position:absolute;top:10px;right:10px;width:26px;height:26px;border-radius:50%;background:var(--surface-2);display:grid;place-items:center;border:0;color:var(--ink-2);padding:0}
+.sumpop-close:hover{background:var(--line)}
 
 /* Sources tab */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
@@ -347,6 +358,14 @@ aside.filters{position:sticky;top:20px;display:grid;gap:28px;padding:24px}
   </section>
 </div>
 
+<div class="sumpop" id="sumpop" role="dialog" aria-label="Full summary" hidden>
+  <button type="button" class="sumpop-close" id="sumpop-close" aria-label="Close">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <p id="sumpop-sum"></p>
+  <p class="why" id="sumpop-why" hidden></p>
+</div>
+
 <script>
 const TOPICS={models:"Models & LLMs",dev:"Dev tools",research:"Research",industry:"Industry & policy"};
 const TYPES={news:"News",lab:"Lab blog",research:"Papers",github:"GitHub",video:"Video",community:"Community"};
@@ -355,7 +374,7 @@ const STATUS={ok:"Working",error:"Failed",pending:"Not checked yet",off:"Off"};
 const PAGE=40;
 const S={items:[],sources:[],updated:null,loaded:false,error:false,
   topic:"all",types:[],range:"7",q:"",unread:false,limit:PAGE,srcQ:"",srcStatus:"all",
-  read:new Set(),tileIndex:{},_tileItems:{},_animSrc:{}};
+  read:new Set(),tileIndex:{},_tileItems:{},_animSrc:{},byId:new Map()};
 try{S.read=new Set(JSON.parse(localStorage.getItem("sd-read")||"[]"))}catch(e){}
 try{const f=JSON.parse(localStorage.getItem("sd-filters")||"{}");
   Object.assign(S,{topic:TOPICS[f.topic]?f.topic:"all",types:Array.isArray(f.types)?f.types.filter(t=>TYPES[t]):[],
@@ -370,6 +389,29 @@ function markRead(id){S.read.add(id);try{localStorage.setItem("sd-read",JSON.str
 function fmtAgo(iso){if(!iso)return"never";const d=new Date(iso);if(isNaN(d))return"—";const m=Math.round((Date.now()-d)/60000);
   if(m<1)return"just now";if(m<60)return m+" min ago";const h=Math.round(m/60);if(h<48)return h+" h ago";return d.toLocaleDateString(undefined,{month:"short",day:"numeric"})}
 
+/* ---------- Full-summary popover (the feed/search cards clamp to a couple of lines) ---------- */
+function closeSumPop(){const pop=$("sumpop");if(pop.hidden)return;pop.hidden=true;
+  const btn=document.querySelector('.moretoggle[aria-expanded="true"]');if(btn)btn.setAttribute("aria-expanded","false")}
+function openSumPop(btn){
+  const wasOpen=btn.getAttribute("aria-expanded")==="true";
+  closeSumPop();
+  if(wasOpen)return; // clicking the same toggle again just closes it
+  const it=S.byId.get(btn.dataset.id);if(!it)return;
+  $("sumpop-sum").textContent=it.summary||"";
+  $("sumpop-why").hidden=!it.why;
+  $("sumpop-why").textContent=it.why?"Why it matters: "+it.why:"";
+  const pop=$("sumpop");pop.hidden=false;btn.setAttribute("aria-expanded","true");
+  const r=btn.getBoundingClientRect();const pw=pop.offsetWidth;
+  pop.style.left=Math.min(Math.max(8,r.left),innerWidth-pw-8)+"px";
+  const ph=pop.offsetHeight;
+  pop.style.top=(r.bottom+8+ph>innerHeight-8?Math.max(8,r.top-ph-8):r.bottom+8)+"px";
+}
+$("sumpop-close").onclick=closeSumPop;
+document.addEventListener("click",e=>{if(!$("sumpop").hidden&&!e.target.closest(".moretoggle")&&!e.target.closest("#sumpop"))closeSumPop()});
+addEventListener("keydown",e=>{if(e.key==="Escape")closeSumPop()});
+addEventListener("scroll",closeSumPop,true);
+addEventListener("resize",closeSumPop);
+
 $("legend").innerHTML=Object.entries(TOPICS).map(([k,l])=>`<span class="${tp(k)}"><span class="dot"></span>${esc(l)}</span>`).join("");
 
 // Link to edit sources.json, worked out from the GitHub Pages address (user.github.io/repo)
@@ -378,6 +420,7 @@ $("legend").innerHTML=Object.entries(TOPICS).map(([k,l])=>`<span class="${tp(k)}
 
 const TABS=["feed","search","sources"];
 function setTab(t){if(!TABS.includes(t))t="feed";
+  closeSumPop();
   TABS.forEach(k=>{$("tab-"+k).setAttribute("aria-selected",k===t);$("view-"+k).hidden=k!==t});
   $("legend").hidden=t==="sources";
   try{history.replaceState(null,"","#"+t)}catch(e){}}
@@ -404,11 +447,14 @@ function tileHTML(srcId,items,top){
   <div class="tile-body"><a class="slide${read?" read":""}${dir?` dir-${dir>0?"down":"up"}`:""}" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener" data-id="${esc(it.id)}">
     <h2>${esc(it.title)}</h2>${it.summary?`<p class="sum">${esc(it.summary)}</p>`:""}</a></div>
   <footer class="tile-foot"><span>${esc(TYPES[it.type]||it.type||"")} · ${esc(fmtAgo(it.date))}</span>
-  ${items.length>1?`<span class="tnavs">
+  <span class="tfactions">
+    ${(it.summary||it.why)?`<button type="button" class="moretoggle" data-id="${esc(it.id)}" aria-haspopup="dialog" aria-expanded="false">More</button>`:""}
+    ${items.length>1?`<span class="tnavs">
     <button class="tnav" data-dir="-1" ${idx===0?"disabled":""} aria-label="Newer story from ${esc(it.sourceName)}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/></svg></button>
     <span class="tcount">${idx+1}/${items.length}</span>
     <button class="tnav" data-dir="1" ${idx===items.length-1?"disabled":""} aria-label="Older story from ${esc(it.sourceName)}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-  </span>`:""}</footer></article>`;
+  </span>`:""}
+  </span></footer></article>`;
 }
 
 function changeTile(srcId,dir){
@@ -423,6 +469,7 @@ function changeTile(srcId,dir){
 
 function renderFeed(){
   if(!S.loaded)return;
+  closeSumPop();
   const list=S.items.filter(it=>within(it,"7"));
   $("c-feed").textContent=list.length;
   const bySrc=new Map();
@@ -438,6 +485,8 @@ function renderFeed(){
 }
 
 $("days").addEventListener("click",e=>{
+  const more=e.target.closest(".moretoggle");
+  if(more){e.preventDefault();e.stopPropagation();openSumPop(more);return}
   const nav=e.target.closest(".tnav");
   if(nav){changeTile(nav.closest(".tile").dataset.source,+nav.dataset.dir);return}
   const slide=e.target.closest("a.slide");
@@ -512,6 +561,8 @@ $("r-active").addEventListener("click",e=>{const b=e.target.closest("[data-clear
   if(k==="topic")S.topic="all";if(k==="type")S.types=S.types.filter(x=>x!==v);if(k==="range")S.range="7";if(k==="unread")S.unread=false;
   saveFilters();renderSearch()});
 $("results").addEventListener("click",e=>{
+  const more=e.target.closest(".moretoggle");
+  if(more){e.preventDefault();e.stopPropagation();openSumPop(more);return}
   if(e.target.closest("#r-more")){S.limit+=PAGE;renderSearch();return}
   if(e.target.closest("#r-reset")){resetFilters();return}
   const a=e.target.closest("a.rcard");if(a){markRead(a.dataset.id);a.classList.add("read")}
@@ -519,6 +570,7 @@ $("results").addEventListener("click",e=>{
 
 function renderSearch(){
   if(!S.loaded)return;
+  closeSumPop();
   const ws=words();
   const pool=S.items.filter(it=>within(it,S.range)&&(!S.unread||!S.read.has(it.id))&&(!ws.length||ws.every(w=>hay(it).includes(w))));
   const typed=pool.filter(it=>!S.types.length||S.types.includes(it.type));
@@ -550,7 +602,9 @@ function renderSearch(){
     return `<a class="rcard ${tp(it.topic)}${read?" read":""}" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener" data-id="${esc(it.id)}">
       <div class="rmeta"><span class="chip">${esc(TOPICS[it.topic]||it.topic)}</span><span class="src">${hl(it.sourceName,ws)}</span><time datetime="${esc(it.date)}">${esc(fmtAgo(it.date))}</time></div>
       <h3>${hl(it.title,ws)}</h3>${it.summary?`<p>${hl(it.summary,ws)}</p>`:""}
-      <div class="rfoot"><span class="type">${esc(TYPES[it.type]||it.type||"")}</span>${read?"<span>Opened</span>":""}</div></a>`}).join("")}</div>
+      <div class="rfoot"><span class="type">${esc(TYPES[it.type]||it.type||"")}</span>${read?"<span>Opened</span>":""}
+        ${(it.summary||it.why)?`<button type="button" class="moretoggle" data-id="${esc(it.id)}" aria-haspopup="dialog" aria-expanded="false">More</button>`:""}
+      </div></a>`}).join("")}</div>
     ${list.length>S.limit?`<div class="more"><button type="button" class="btn ghost" id="r-more">Show more · ${list.length-S.limit} left</button></div>`:""}`
     :`<div class="noresults"><h3>No stories match</h3><p>Try a wider time range, another topic, or fewer words in your search.</p><button type="button" class="btn" id="r-reset">Reset filters</button></div>`;
 }
@@ -596,6 +650,7 @@ function renderStatus(){
 
 Promise.all([fetch("data/items.json",{cache:"no-cache"}).then(r=>r.json()),fetch("data/sources.json",{cache:"no-cache"}).then(r=>r.json())])
   .then(([items,sources])=>{S.items=items.items||[];S.sources=sources.sources||[];S.updated=items.updated||sources.updated;S.loaded=true;
+    S.byId=new Map(S.items.map(it=>[it.id,it]));
     renderFeed();renderSuggest();renderSearch();renderSources();renderStatus()})
   .catch(()=>{S.error=true;$("days").innerHTML=`<p class="empty">The feed data didn't load. If you opened this file directly from your computer, view it through GitHub Pages instead (or run <code>python -m http.server</code> in this folder).</p>`;renderStatus()});
 </script>
