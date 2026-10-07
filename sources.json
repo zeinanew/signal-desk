@@ -28,6 +28,10 @@
    "url": "https://www.microsoft.com/en-us/research/", "feed": "https://www.microsoft.com/en-us/research/feed/"},
   {"id": "nvidia-blog", "name": "NVIDIA Blog", "type": "lab", "kind": "rss", "topics": ["industry", "dev"], "enabled": true,
    "url": "https://blogs.nvidia.com/", "feed": "https://blogs.nvidia.com/feed/"},
+  {"id": "meta-ai", "name": "Meta AI Blog", "type": "lab", "kind": "html_links", "topics": ["models", "research"], "enabled": true,
+   "url": "https://ai.meta.com/blog/", "feed": "https://ai.meta.com/blog/", "link_pattern": "/blog/[a-z0-9-]+/?$", "base": "https://ai.meta.com"},
+  {"id": "xai", "name": "xAI News", "type": "lab", "kind": "html_links", "topics": ["models", "agents"], "enabled": true,
+   "url": "https://x.ai/news", "feed": "https://x.ai/news", "link_pattern": "^/news/[a-z0-9-]+$", "base": "https://x.ai"},
 
   {"id": "arxiv-ai", "name": "arXiv cs.AI", "type": "research", "kind": "rss", "topics": ["research"], "enabled": true, "limit": 6,
    "url": "https://arxiv.org/list/cs.AI/recent", "feed": "https://export.arxiv.org/api/query?search_query=cat:cs.AI&sortBy=submittedDate&sortOrder=descending&max_results=25"},
@@ -50,5 +54,21 @@
 
   {"id": "hackernews", "name": "Hacker News", "type": "community", "kind": "hn", "topics": ["dev", "models", "industry"], "enabled": true, "limit": 8,
    "url": "https://news.ycombinator.com/", "min_points": 100,
-   "keywords": ["ai", "llm", "gpt", "claude", "gemini", "openai", "anthropic", "deepmind", "model", "agent", "neural", "machine learning", "transformer", "inference", "gpu", "nvidia", "copilot", "codex", "diffusion", "rag", "fine-tun", "benchmark"]}
+   "keywords": ["ai", "llm", "gpt", "claude", "gemini", "openai", "anthropic", "deepmind", "model", "agent", "neural", "machine learning", "transformer", "inference", "gpu", "nvidia", "copilot", "codex", "diffusion", "rag", "fine-tun", "benchmark"]},
+
+  {"id": "x-elonmusk", "name": "X: Elon Musk", "type": "community", "kind": "rss", "topics": ["industry", "models"], "enabled": false, "limit": 5,
+   "url": "https://x.com/elonmusk", "feed": "REPLACE_WITH_YOUR_RSS_BRIDGE_URL_FOR_elonmusk",
+   "note": "X has no free RSS. Point 'feed' at your own RSSHub/RSS.app bridge route for this account, then set enabled to true - see README."},
+  {"id": "x-sama", "name": "X: Sam Altman", "type": "community", "kind": "rss", "topics": ["industry", "models"], "enabled": false, "limit": 5,
+   "url": "https://x.com/sama", "feed": "REPLACE_WITH_YOUR_RSS_BRIDGE_URL_FOR_sama",
+   "note": "X has no free RSS. Point 'feed' at your own RSSHub/RSS.app bridge route for this account, then set enabled to true - see README."},
+  {"id": "x-openai", "name": "X: OpenAI", "type": "community", "kind": "rss", "topics": ["models", "industry"], "enabled": false, "limit": 5,
+   "url": "https://x.com/OpenAI", "feed": "REPLACE_WITH_YOUR_RSS_BRIDGE_URL_FOR_OpenAI",
+   "note": "X has no free RSS. Point 'feed' at your own RSSHub/RSS.app bridge route for this account, then set enabled to true - see README."},
+  {"id": "x-anthropic", "name": "X: Anthropic", "type": "community", "kind": "rss", "topics": ["models", "industry"], "enabled": false, "limit": 5,
+   "url": "https://x.com/AnthropicAI", "feed": "REPLACE_WITH_YOUR_RSS_BRIDGE_URL_FOR_AnthropicAI",
+   "note": "X has no free RSS. Point 'feed' at your own RSSHub/RSS.app bridge route for this account, then set enabled to true - see README."},
+  {"id": "x-deepmind", "name": "X: Google DeepMind", "type": "community", "kind": "rss", "topics": ["models", "research"], "enabled": false, "limit": 5,
+   "url": "https://x.com/GoogleDeepMind", "feed": "REPLACE_WITH_YOUR_RSS_BRIDGE_URL_FOR_GoogleDeepMind",
+   "note": "X has no free RSS. Point 'feed' at your own RSSHub/RSS.app bridge route for this account, then set enabled to true - see README."}
 ]

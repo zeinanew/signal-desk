@@ -2,12 +2,17 @@
 
 A personal AI and tech news dashboard. Every morning at 8:00 (Riyadh time) GitHub:
 
-1. checks the sources in `sources.json` (news sites, AI lab blogs, arXiv, GitHub, YouTube, Hacker News),
+1. checks the sources in `sources.json` (news sites, AI lab blogs, arXiv, GitHub, YouTube, Hacker News, optionally X/Twitter),
 2. picks out stories it hasn't seen before,
-3. asks Gemini to write a short summary, a "why it matters" line and tags for each one,
-4. publishes the result as a website with two tabs: **Feed** (the stories) and **Sources** (how each source is doing).
+3. asks Gemini to write a short summary, a "why it matters" line, topic/tags and an importance score for each one,
+4. groups stories that are really the same underlying story (e.g. a model launch five outlets all cover) so it only needs to be read once,
+5. publishes the result as a website: a **Top stories** section you can skim in about two minutes, a tab per category (Models, Agents, Dev tools, Research, Industry) that follows the same "top of category, then everything else" pattern, plus **Feed**, **Search & filter** and **Sources** tabs for browsing everything.
 
-Click any story to open the original article, paper, repo or video.
+Click any story to open the original article, paper, repo or video. Where one's available, a small photo is pulled in alongside the story (an og:image from the article, GitHub's own repo preview image, a YouTube thumbnail, ...) - not every story has one, and that's fine, the card just stays text-only.
+
+**Top stories** is ranked by a "buzz score" - the AI's 1-5 importance rating, plus a bonus the more
+distinct sources are covering the same event - so the handful of things most worth knowing about
+surface at the very top of the page, above the tabs, every time you open it.
 
 The repo already contains stories collected on 27 Sep 2026, so the site has content as soon as it's published.
 
@@ -64,9 +69,26 @@ Edit `sources.json` on GitHub. There's a link to it on the site's Sources tab.
 | `hn` | Hacker News stories | `min_points`, `keywords` |
 | `html_links` | Sites with no feed (e.g. Anthropic) | `link_pattern`, `base` |
 
-Every source also needs `id` (unique, lowercase), `name`, `type` (`news`, `lab`, `research`, `github`, `video`, `community`), `topics` and `url` (the page people see).
+Every source also needs `id` (unique, lowercase), `name`, `type` (`news`, `lab`, `research`, `github`, `video`, `community`), `topics` (any of `models`, `agents`, `dev`, `research`, `industry`) and `url` (the page people see).
 
 **Finding feeds:** many sites have one at `/feed`, `/rss` or `/rss.xml`. Every YouTube channel has one at `https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID`. To find the channel ID, open the channel, click **More about this channel → Share channel → Copy channel ID**.
+
+### Following an X/Twitter account
+
+X doesn't offer a free RSS feed any more, and the official API's cheapest tier that can read a
+timeline costs real money. `sources.json` already includes a few disabled example entries (Elon
+Musk, Sam Altman, OpenAI, Anthropic, Google DeepMind) - to turn one on:
+
+1. Get an RSS URL for that account from a bridge service - either a self-hosted
+   [RSSHub](https://docs.rsshub.app/) instance (free, route looks like `/twitter/user/elonmusk`),
+   or a paid service like [RSS.app](https://rss.app/). **Both are third-party**: they can go down,
+   get rate-limited, or change behavior without notice, and an unofficial bridge may be against
+   X's terms of service - that's the tradeoff for not paying for the official API.
+2. Set that entry's `feed` to the bridge's RSS URL and `enabled` to `true`.
+3. It behaves exactly like any other `rss` source from then on - same dedupe, summarizing, and
+   per-source tile.
+
+To add a different account, copy one of the `x-*` blocks and change `id`, `name`, `url` and `feed`.
 
 ## Settings (optional)
 Set these under **Settings → Secrets and variables → Actions → Variables**:

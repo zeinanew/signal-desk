@@ -41,7 +41,12 @@ MODELS = [m.strip() for m in (os.getenv("GEMINI_MODELS") or os.getenv("GEMINI_MO
                                or "gemini-3.8-flash").split(",") if m.strip()]
 GROQ_MODELS = [m.strip() for m in (os.getenv("GROQ_MODELS") or os.getenv("GROQ_MODEL")
                                     or "openai/gpt-oss-20b,openai/gpt-oss-120b,qwen/qwen3.6-27b").split(",") if m.strip()]
-TOPICS = ["models", "dev", "research", "industry"]
+TOPICS = ["models", "agents", "dev", "research", "industry"]
+CLUSTER_WINDOW_DAYS = 4   # stories further apart than this are never clustered together
+CLUSTER_BUZZ_CAP = 3      # max bonus buzzScore gets from being covered by many sources
+ENGAGEMENT_REFRESH_DAYS = 3   # re-check HN points / GitHub stars for items at most this old
+ENGAGEMENT_BONUS_CAP = 3      # max bonus buzzScore gets from a single source's own engagement
+ENGAGEMENT_THRESHOLDS = [(1000, 3), (500, 2), (200, 1)]  # (points/stars >=, bonus), checked in order
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
 
@@ -79,6 +84,20 @@ def title_key(title: str) -> str:
     return re.sub(r"[^a-z0-9]+", "", title.lower())[:80]
 
 
+def slugify(text: str, limit: int = 60) -> str:
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", (text or "").lower())).strip("-")[:limit]
+
+
+_STOPWORDS = {
+    "a", "an", "the", "to", "of", "in", "on", "for", "and", "or", "is", "are", "with",
+    "at", "by", "from", "its", "it", "new", "now", "how", "why", "what",
+}
+
+
+def title_tokens(title: str) -> set[str]:
+    return {w for w in re.findall(r"[a-z0-9]+", title.lower()) if w not in _STOPWORDS and len(w) > 2}
+
+
 def strip_html(text: str, limit: int = 1200) -> str:
     text = re.sub(r"<[^>]+>", " ", text or "")
     text = html.unescape(re.sub(r"\s+", " ", text)).strip()
@@ -107,6 +126,38 @@ def load_json(path: Path, default):
         return default
 
 
+_META_IMAGE_RE = re.compile(
+    r'<meta[^>]+(?:property|name)=["\'](?:og|twitter):image(?::secure_url)?["\'][^>]+content=["\']([^"\']+)["\']'
+    r'|<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\'](?:og|twitter):image(?::secure_url)?["\']',
+    re.I,
+)
+
+
+def extract_meta_image(html_text: str) -> str | None:
+    m = _META_IMAGE_RE.search(html_text or "")
+    return html.unescape(m.group(1) or m.group(2)) if m else None
+
+
+def fetch_page_image(url: str) -> str | None:
+    """Best-effort og:image lookup for sources whose feed carries no photo of its own.
+    Never raises - a missing/unreachable photo should just mean no photo, not a failed run."""
+    try:
+        return extract_meta_image(get(url).text)
+    except Exception:
+        return None
+
+
+def feed_entry_image(e) -> str | None:
+    thumb = e.get("media_thumbnail")
+    if thumb and thumb[0].get("url"):
+        return thumb[0]["url"]
+    for m in e.get("media_content") or []:
+        if (m.get("type") or "").startswith("image") or not m.get("type"):
+            if m.get("url"):
+                return m["url"]
+    return None
+
+
 # ---------------------------------------------------------------- fetchers
 def fetch_rss(src: dict) -> list[dict]:
     feed = feedparser.parse(get(src["feed"]).content)
@@ -122,36 +173,58 @@ def fetch_rss(src: dict) -> list[dict]:
             "url": link,
             "date": parse_date(e.get("published_parsed") or e.get("updated_parsed")),
             "desc": strip_html(e.get("summary") or e.get("description") or ""),
+            "image": feed_entry_image(e),
         })
     return out
 
 
 def fetch_html_links(src: dict) -> list[dict]:
-    """For sites without a feed: collect links whose path matches a pattern."""
+    """For sites without a feed: collect links whose path matches a pattern. A given href
+    usually appears multiple times on a listing page (an image-only card wrapper, a title-only
+    heading, a "learn more" link, ...) - gather every occurrence of each href before picking a
+    title (first occurrence with real text) and an image (first occurrence with one), since
+    they're often on different occurrences of the same link rather than the same one."""
     page = get(src["feed"]).text
     pattern = re.compile(src["link_pattern"])
-    seen, out = set(), []
+    by_href: dict[str, list[str]] = {}
     for href, inner in re.findall(r'<a[^>]+href="([^"#?]+)"[^>]*>(.*?)</a>', page, flags=re.S | re.I):
-        if not pattern.search(href) or href in seen:
+        if pattern.search(href):
+            by_href.setdefault(href, []).append(inner)
+
+    out = []
+    for href, inners in by_href.items():
+        text, image = "", None
+        for inner in inners:
+            if not text:
+                candidate = strip_html(inner, 400)
+                if len(candidate) >= 12:
+                    text = candidate
+            if not image:
+                img_match = re.search(r'<img[^>]+src="([^"]+)"', inner, flags=re.I)
+                if img_match:
+                    image = html.unescape(img_match.group(1))
+        if not text:
             continue
-        text = strip_html(inner, 400)
-        if len(text) < 12:
-            continue
-        seen.add(href)
         url = href if href.startswith("http") else src["base"].rstrip("/") + href
         # Link text often runs together category + title + date; the summarizer cleans the title.
         date_match = re.search(r"([A-Z][a-z]{2} \d{1,2}, \d{4})", text)
         date = dt.datetime.strptime(date_match.group(1), "%b %d, %Y").replace(tzinfo=dt.timezone.utc) if date_match else None
-        out.append({"title": text[:200], "url": url, "date": date, "desc": text, "needs_title": True})
+        if image and not image.startswith("http"):
+            image = src["base"].rstrip("/") + image
+        out.append({"title": text[:200], "url": url, "date": date, "desc": text, "needs_title": True, "image": image})
     return out
+
+
+def github_headers() -> dict:
+    headers = {"Accept": "application/vnd.github+json"}
+    if os.getenv("GITHUB_TOKEN"):
+        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
+    return headers
 
 
 def fetch_github_search(src: dict) -> list[dict]:
     since = (NOW - dt.timedelta(days=src.get("since_days", 7))).date().isoformat()
-    headers = {"Accept": "application/vnd.github+json"}
-    if os.getenv("GITHUB_TOKEN"):
-        headers["Authorization"] = f"Bearer {os.environ['GITHUB_TOKEN']}"
-    r = get("https://api.github.com/search/repositories", headers=headers,
+    r = get("https://api.github.com/search/repositories", headers=github_headers(),
             params={"q": src["query"].format(since=since), "sort": "stars", "order": "desc", "per_page": 20})
     out = []
     for repo in r.json().get("items", []):
@@ -161,6 +234,8 @@ def fetch_github_search(src: dict) -> list[dict]:
             "date": parse_date(repo.get("created_at")),
             "desc": f"{repo.get('description') or ''} (Language: {repo.get('language') or 'n/a'}; "
                     f"{repo.get('stargazers_count', 0)} stars)",
+            "repoFullName": repo["full_name"], "stars": repo.get("stargazers_count", 0),
+            "image": f"https://opengraph.githubassets.com/1/{repo['full_name']}",
         })
     return out
 
@@ -181,7 +256,8 @@ def fetch_hn(src: dict) -> list[dict]:
         out.append({"title": title, "url": url, "date": parse_date(hit.get("created_at_i")),
                     "desc": f"Hacker News discussion with {hit.get('points')} points and "
                             f"{hit.get('num_comments', 0)} comments.",
-                    "discussion": f"https://news.ycombinator.com/item?id={hit['objectID']}"})
+                    "discussion": f"https://news.ycombinator.com/item?id={hit['objectID']}",
+                    "hnId": hit["objectID"], "points": hit.get("points"), "comments": hit.get("num_comments", 0)})
     return out
 
 
@@ -202,9 +278,10 @@ Return ONLY a JSON object with these keys:
 - "title": a clean headline in English (fix casing, remove site names, dates or category labels stuck to it; translate it if the source isn't in English). Keep the original wording where possible.
 - "summary": 1-2 plain sentences in English on what happened. Use only facts in the title and feed text; do not invent numbers or claims.
 - "why": one short sentence on why it matters to someone following AI, or "" if you can't say without guessing.
-- "topic": one of "models" (LLMs, model releases, AI products), "dev" (developer tools, open source, libraries), "research" (papers, science, benchmarks), "industry" (business, funding, policy, safety incidents, regulation, hardware).
+- "topic": one of "models" (LLMs, model releases, AI products), "agents" (AI agents, agentic coding tools, autonomous/multi-step systems), "dev" (developer tools, open source, libraries), "research" (papers, science, benchmarks), "industry" (business, funding, policy, safety incidents, regulation, hardware).
 - "tags": 2-4 short lowercase tags.
-- "importance": 1-5, where 5 is a major release or event most people in AI will hear about this week."""
+- "importance": 1-5, where 5 is a major release or event most people in AI will hear about this week.
+- "story_key": a short kebab-case slug identifying the underlying news event, e.g. "gpt-5-2-release" or "anthropic-claude-agent-sdk" - so the same event reported by different outlets gets the same slug. Keep it specific to the event, not the general topic."""
 
 
 def fallback(raw: dict, src: dict) -> dict:
@@ -213,22 +290,33 @@ def fallback(raw: dict, src: dict) -> dict:
     desc = raw.get("desc") or ""
     first = re.split(r"(?<=[.!?])\s", desc, maxsplit=2)
     return {"relevant": True, "title": raw["title"], "summary": " ".join(first[:2])[:320], "why": "",
-            "topic": src["topics"][0], "tags": [], "importance": 2, "ai": False}
+            "topic": src["topics"][0], "tags": [], "importance": 2, "ai": False,
+            "story_key": slugify(title_key(raw["title"])[:40])}
 
 
 _model_state = {"idx": 0}      # sticks with the first working Gemini model; only advances when it's unusable
 _groq_state = {"idx": 0}       # same, for the Groq backup
 
 
-def _should_switch_model(text: str) -> bool:
+def _should_switch_model(exc: Exception) -> bool:
     """True when retrying the same model later won't help: the model name itself
     is invalid/retired. A 429/RESOURCE_EXHAUSTED is deliberately NOT switch-worthy -
-    Gemini's free tier enforces that per minute (the error gives a retryDelay of
-    well under a minute), so it clears up on its own; treating it like a dead model
-    used to permanently skip past gemini-3.8-flash onto two retired models that
-    always 404, which burned through the model list and killed Gemini for the
-    rest of the run."""
-    return "NOT_FOUND" in text or "404" in text
+    whether it's a per-minute cap (clears up within the run) or a per-day cap
+    (doesn't, but Groq/fallback should take over for the rest of this run rather
+    than the model being marked permanently dead) - treating either like a dead
+    model used to permanently skip past gemini-3.8-flash onto two retired models
+    that always 404, which burned through the model list and killed Gemini for
+    the rest of the run.
+
+    Checks the SDK's structured code/status fields rather than substring-matching
+    the stringified error: a RESOURCE_EXHAUSTED error's retryDelay is a countdown
+    in seconds (e.g. "51404s") that can contain "404" purely by coincidence as it
+    ticks down, which used to false-positive this check."""
+    code = getattr(exc, "code", None)
+    status = getattr(exc, "status", None)
+    if code is not None or status is not None:
+        return code == 404 or status == "NOT_FOUND"
+    return "NOT_FOUND" in str(exc) or "404" in str(exc)
 
 
 def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:
@@ -240,7 +328,7 @@ def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:
             text = resp.text or ""
             return json.loads(re.search(r"\{.*\}", text, re.S).group(0)), False
         except Exception as exc:  # noqa: BLE001 - keep the run going
-            if _should_switch_model(str(exc)):
+            if _should_switch_model(exc):
                 print(f"    {model} unusable: {exc}", file=sys.stderr)
                 return None, True
             print(f"    {model} retry {attempt + 1}: {exc}", file=sys.stderr)
@@ -278,6 +366,7 @@ def _finalize(data: dict, src: dict, provider: str) -> dict:
     data["topic"] = data.get("topic") if data.get("topic") in TOPICS else src["topics"][0]
     data["tags"] = [str(t).lower()[:24] for t in (data.get("tags") or [])][:4]
     data["importance"] = max(1, min(5, int(data.get("importance") or 2)))
+    data["story_key"] = slugify(data.get("story_key") or "")
     data["ai"] = True
     data["provider"] = provider
     return data
@@ -313,6 +402,107 @@ def summarize(raw: dict, src: dict, client, groq_key: str | None) -> dict:
                 print(f"    switching to Groq model {GROQ_MODELS[_groq_state['idx']]}", file=sys.stderr)
 
     return fallback(raw, src)
+
+
+# ---------------------------------------------------------------- engagement
+def engagement_bonus(n: int | None) -> int:
+    if n is None:
+        return 0
+    for threshold, bonus in ENGAGEMENT_THRESHOLDS:
+        if n >= threshold:
+            return bonus
+    return 0
+
+
+def refresh_engagement(items: list[dict]) -> None:
+    """Re-checks current HN points / GitHub stars for recently-added items, so a story that
+    was quiet when we first saw it but picks up steam over the next day or two still shows
+    up as buzzy - otherwise these numbers are frozen at whatever they were the moment we
+    first fetched the item. Only items within ENGAGEMENT_REFRESH_DAYS are checked, which
+    keeps this to a handful of cheap follow-up requests per run (HN/github_search sources
+    already cap how many items they contribute via their own per-source `limit`)."""
+    cutoff = NOW - dt.timedelta(days=ENGAGEMENT_REFRESH_DAYS)
+    for it in items:
+        if (parse_date(it.get("date")) or NOW) < cutoff:
+            continue
+        try:
+            if it.get("hnId"):
+                r = get("https://hn.algolia.com/api/v1/search",
+                        params={"tags": f"story_{it['hnId']}", "hitsPerPage": 1})
+                hits = r.json().get("hits") or []
+                if hits:
+                    it["points"] = hits[0].get("points", it.get("points"))
+                    it["comments"] = hits[0].get("num_comments", it.get("comments"))
+                it["engagementBonus"] = engagement_bonus(it.get("points"))
+            elif it.get("repoFullName"):
+                r = get(f"https://api.github.com/repos/{it['repoFullName']}", headers=github_headers())
+                it["stars"] = r.json().get("stargazers_count", it.get("stars"))
+                it["engagementBonus"] = engagement_bonus(it.get("stars"))
+        except Exception as exc:  # noqa: BLE001 - one bad lookup shouldn't abort the run
+            print(f"    engagement refresh failed for {it.get('id')}: {exc}", file=sys.stderr)
+
+
+# ---------------------------------------------------------------- clustering
+def cluster_items(items: list[dict]) -> None:
+    """Groups items covering the same underlying story (e.g. a model launch reported by
+    five different outlets) so the frontend's Top Stories section can show it once instead
+    of five times. Pure heuristic, no extra LLM calls: two items cluster together when
+    they're within CLUSTER_WINDOW_DAYS of each other and either share a story_key or have
+    enough title words in common (Jaccard similarity on significant words). Mutates each
+    item in place with storyKey/clusterSize/clusterSources/isPrimary/buzzScore.
+
+    This is approximate, not perfect dedup - e.g. two outlets phrasing the same event with
+    very different wording and no matching story_key slug may end up in separate clusters.
+    Good enough for "don't show the same headline five times", not a general NLP solution.
+    """
+    by_date = sorted(items, key=lambda it: parse_date(it.get("date")) or NOW)
+    keys = [it.get("storyKey") or slugify(title_key(it["title"])[:40]) for it in by_date]
+    tokens = [title_tokens(it["title"]) for it in by_date]
+    dates = [parse_date(it.get("date")) or NOW for it in by_date]
+    window = dt.timedelta(days=CLUSTER_WINDOW_DAYS)
+
+    n = len(by_date)
+    parent = list(range(n))
+
+    def find(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    def union(i: int, j: int) -> None:
+        ri, rj = find(i), find(j)
+        if ri != rj:
+            parent[ri] = rj
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if abs((dates[j] - dates[i]).total_seconds()) > window.total_seconds():
+                continue
+            same_key = keys[i] and keys[i] == keys[j]
+            if not same_key and tokens[i] and tokens[j]:
+                overlap = len(tokens[i] & tokens[j]) / len(tokens[i] | tokens[j])
+                same_key = overlap >= 0.5
+            if same_key:
+                union(i, j)
+
+    groups: dict[int, list[int]] = {}
+    for i in range(n):
+        groups.setdefault(find(i), []).append(i)
+
+    for members in groups.values():
+        members.sort(key=lambda i: (-by_date[i].get("importance", 2), dates[i]))
+        primary = members[0]
+        size = len(members)
+        primary_sources = {by_date[i]["sourceName"] for i in members if i != primary}
+        for pos, i in enumerate(members):
+            it = by_date[i]
+            it["storyKey"] = keys[primary]
+            it["clusterSize"] = size
+            it["isPrimary"] = pos == 0
+            it["clusterSources"] = sorted(primary_sources) if pos == 0 else []
+            it["buzzScore"] = (it.get("importance", 2) + min(size - 1, CLUSTER_BUZZ_CAP)
+                                + it.get("engagementBonus", 0))
 
 
 # ---------------------------------------------------------------- main
@@ -367,15 +557,23 @@ def main() -> None:
                 time.sleep(4)  # stay well under the free-tier requests-per-minute limit
             if not s.get("relevant", True):
                 continue
+            image = raw.get("image")
+            if not image and src["type"] != "research":  # arXiv's og:image is the same stock logo on every paper
+                image = fetch_page_image(raw["url"])
             items[iid] = {
                 "id": iid, "title": s.get("title") or raw["title"], "url": raw["url"],
                 "source": src["id"], "sourceName": src["name"], "type": src["type"],
                 "date": iso(raw["date"] or NOW), "addedAt": iso(NOW),
                 "summary": s.get("summary", ""), "why": s.get("why", ""),
                 "topic": s["topic"], "tags": s.get("tags", []), "importance": s.get("importance", 2),
-                "ai": s.get("ai", False), "provider": s.get("provider", ""),
+                "ai": s.get("ai", False), "provider": s.get("provider", ""), "storyKey": s.get("story_key", ""),
                 "desc": (raw.get("desc") or "")[:1200],  # kept so a fallback item can be retried later
                 **({"discussion": raw["discussion"]} if raw.get("discussion") else {}),
+                **({"hnId": raw["hnId"], "points": raw.get("points"), "comments": raw.get("comments", 0)}
+                   if raw.get("hnId") else {}),
+                **({"repoFullName": raw["repoFullName"], "stars": raw.get("stars", 0)}
+                   if raw.get("repoFullName") else {}),
+                **({"image": image} if image else {}),
             }
             seen_titles.add(title_key(items[iid]["title"]))
             new_here += 1
@@ -409,12 +607,15 @@ def main() -> None:
                 "why": s.get("why", ""), "topic": s.get("topic", it["topic"]),
                 "tags": s.get("tags", it.get("tags", [])), "importance": s.get("importance", it.get("importance", 2)),
                 "ai": s.get("ai", False), "provider": s.get("provider", ""),
+                "storyKey": s.get("story_key", it.get("storyKey", "")),
             })
             retried += 1
     if retried:
         print(f"- Backlog retry: upgraded {retried} previously-fallback stories")
 
     kept = [it for it in items.values() if (parse_date(it.get("date")) or NOW) >= cutoff]
+    refresh_engagement(kept)
+    cluster_items(kept)
     kept.sort(key=lambda it: it.get("date") or "", reverse=True)
     ITEMS_FILE.write_text(json.dumps({"updated": iso(NOW), "items": kept}, indent=1, ensure_ascii=False), encoding="utf-8")
     STATUS_FILE.write_text(json.dumps({"updated": iso(NOW), "sources": status}, indent=1, ensure_ascii=False), encoding="utf-8")
