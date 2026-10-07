@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T05:09:58Z",
+ "updated": "2026-10-07T12:06:43Z",
  "sources": [
   {
    "id": "techcrunch-ai",
@@ -12,9 +12,9 @@
    "enabled": true,
    "url": "https://techcrunch.com/category/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 8
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "verge-ai",
@@ -27,9 +27,9 @@
    "enabled": true,
    "url": "https://www.theverge.com/ai-artificial-intelligence",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 4
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 2
   },
   {
    "id": "mit-tr-ai",
@@ -42,8 +42,8 @@
    "enabled": true,
    "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
    "lastNew": 0
   },
   {
@@ -57,9 +57,9 @@
    "enabled": true,
    "url": "https://arstechnica.com/ai/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 2
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "simonw",
@@ -72,9 +72,9 @@
    "enabled": true,
    "url": "https://simonwillison.net/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 6
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "the-rundown-ai",
@@ -87,8 +87,8 @@
    "enabled": true,
    "url": "https://www.therundown.ai/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
    "lastNew": 2
   },
   {
@@ -102,9 +102,9 @@
    "enabled": true,
    "url": "https://www.bensbites.com/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "openai",
@@ -117,9 +117,9 @@
    "enabled": true,
    "url": "https://openai.com/news/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 4
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "anthropic",
@@ -132,9 +132,9 @@
    "enabled": true,
    "url": "https://www.anthropic.com/news",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "deepmind",
@@ -147,9 +147,9 @@
    "enabled": true,
    "url": "https://deepmind.google/blog/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "huggingface",
@@ -162,8 +162,8 @@
    "enabled": true,
    "url": "https://huggingface.co/blog",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
    "lastNew": 0
   },
   {
@@ -176,8 +176,8 @@
    "enabled": true,
    "url": "https://www.langchain.com/blog",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
    "lastNew": 0
   },
   {
@@ -191,9 +191,9 @@
    "enabled": true,
    "url": "https://www.microsoft.com/en-us/research/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "nvidia-blog",
@@ -206,9 +206,39 @@
    "enabled": true,
    "url": "https://blogs.nvidia.com/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
+  },
+  {
+   "id": "meta-ai",
+   "name": "Meta AI Blog",
+   "type": "lab",
+   "topics": [
+    "models",
+    "research"
+   ],
+   "enabled": true,
+   "url": "https://ai.meta.com/blog/",
+   "status": "ok",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 5
+  },
+  {
+   "id": "xai",
+   "name": "xAI News",
+   "type": "lab",
+   "topics": [
+    "models",
+    "agents"
+   ],
+   "enabled": true,
+   "url": "https://x.ai/news",
+   "status": "ok",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 8
   },
   {
    "id": "arxiv-ai",
@@ -220,9 +250,9 @@
    "enabled": true,
    "url": "https://arxiv.org/list/cs.AI/recent",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 6
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "arxiv-cl",
@@ -234,9 +264,9 @@
    "enabled": true,
    "url": "https://arxiv.org/list/cs.CL/recent",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 3
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "github-new-llm",
@@ -248,9 +278,9 @@
    "enabled": true,
    "url": "https://github.com/topics/llm",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 3
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "gh-transformers",
@@ -262,9 +292,9 @@
    "enabled": true,
    "url": "https://github.com/huggingface/transformers/releases",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "gh-vllm",
@@ -276,9 +306,9 @@
    "enabled": true,
    "url": "https://github.com/vllm-project/vllm/releases",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 1
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "gh-ollama",
@@ -290,9 +320,9 @@
    "enabled": true,
    "url": "https://github.com/ollama/ollama/releases",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 2
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 0
   },
   {
    "id": "yt-two-minute-papers",
@@ -305,8 +335,8 @@
    "enabled": true,
    "url": "https://www.youtube.com/@TwoMinutePapers",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
    "lastNew": 0
   },
   {
@@ -319,8 +349,8 @@
    "enabled": true,
    "url": "https://www.youtube.com/@aiexplained-official",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
    "lastNew": 0
   },
   {
@@ -335,9 +365,79 @@
    "enabled": true,
    "url": "https://news.ycombinator.com/",
    "status": "ok",
-   "lastChecked": "2026-10-07T05:09:58Z",
-   "lastOk": "2026-10-07T05:09:58Z",
-   "lastNew": 4
+   "lastChecked": "2026-10-07T12:06:43Z",
+   "lastOk": "2026-10-07T12:06:43Z",
+   "lastNew": 2
+  },
+  {
+   "id": "x-elonmusk",
+   "name": "X: Elon Musk",
+   "type": "community",
+   "topics": [
+    "industry",
+    "models"
+   ],
+   "enabled": false,
+   "url": "https://x.com/elonmusk",
+   "status": "off",
+   "lastChecked": null,
+   "lastNew": 0
+  },
+  {
+   "id": "x-sama",
+   "name": "X: Sam Altman",
+   "type": "community",
+   "topics": [
+    "industry",
+    "models"
+   ],
+   "enabled": false,
+   "url": "https://x.com/sama",
+   "status": "off",
+   "lastChecked": null,
+   "lastNew": 0
+  },
+  {
+   "id": "x-openai",
+   "name": "X: OpenAI",
+   "type": "community",
+   "topics": [
+    "models",
+    "industry"
+   ],
+   "enabled": false,
+   "url": "https://x.com/OpenAI",
+   "status": "off",
+   "lastChecked": null,
+   "lastNew": 0
+  },
+  {
+   "id": "x-anthropic",
+   "name": "X: Anthropic",
+   "type": "community",
+   "topics": [
+    "models",
+    "industry"
+   ],
+   "enabled": false,
+   "url": "https://x.com/AnthropicAI",
+   "status": "off",
+   "lastChecked": null,
+   "lastNew": 0
+  },
+  {
+   "id": "x-deepmind",
+   "name": "X: Google DeepMind",
+   "type": "community",
+   "topics": [
+    "models",
+    "research"
+   ],
+   "enabled": false,
+   "url": "https://x.com/GoogleDeepMind",
+   "status": "off",
+   "lastChecked": null,
+   "lastNew": 0
   }
  ]
 }
