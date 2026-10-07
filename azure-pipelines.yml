@@ -1,0 +1,63 @@
+# Azure Pipelines equivalent of .github/workflows/refresh.yml - runs the collector on a daily
+# schedule and on pushes to main (except data-only pushes), then commits data/ back and deploys
+# the repo root as a static site via Azure Static Web Apps.
+#
+# One-time setup needed before this does anything - see ARCHITECTURE.md's
+# "Running this on Azure DevOps instead of GitHub" section for the full walkthrough:
+#   1. Pipelines -> New pipeline -> point at this file.
+#   2. Add Pipeline variables: GEMINI_API_KEY, GROQ_API_KEY, GITHUB_TOKEN (secret),
+#      GEMINI_MODELS, GROQ_MODELS (plain), AZURE_STATIC_WEB_APPS_API_TOKEN (secret).
+#   3. Grant this project's Build Service identity "Contribute" on this repo (Project Settings ->
+#      Repositories -> Security) so the "Save new data" step below can push.
+
+schedules:
+  - cron: "0 5 * * *" # 05:00 UTC = 08:00 Riyadh, every day
+    displayName: Daily refresh
+    branches:
+      include: [main]
+    always: true
+
+trigger:
+  branches:
+    include: [main]
+  paths:
+    exclude: [data/*]
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+  - checkout: self
+    persistCredentials: true # lets the push-back step below use the job's own access token
+
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: "3.12"
+
+  - script: pip install -r requirements.txt
+    displayName: Install dependencies
+
+  - script: python scripts/collect.py
+    displayName: Collect and summarize
+    env:
+      GEMINI_API_KEY: $(GEMINI_API_KEY)
+      GEMINI_MODELS: $(GEMINI_MODELS)
+      GROQ_API_KEY: $(GROQ_API_KEY)
+      GROQ_MODELS: $(GROQ_MODELS)
+      GITHUB_TOKEN: $(GITHUB_TOKEN)
+
+  - script: |
+      git config user.name "signal-desk-bot"
+      git config user.email "signal-desk-bot@users.noreply.github.com"
+      git add data
+      git diff --cached --quiet || git commit -m "Refresh feed $(date -u +%Y-%m-%d)"
+      git pull --rebase --autostash && git push origin HEAD:main
+    displayName: Save new data to the repo
+
+  - task: AzureStaticWebApp@0
+    displayName: Deploy static site
+    inputs:
+      app_location: "/"
+      output_location: ""
+      skip_app_build: true
+      azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN)

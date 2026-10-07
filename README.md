@@ -107,6 +107,13 @@ GEMINI_API_KEY=... GROQ_API_KEY=... python scripts/collect.py   # GROQ_API_KEY i
 python -m http.server 8000     # then open http://localhost:8000
 ```
 
+## Running on Azure DevOps instead of GitHub
+
+If this repo lives in Azure DevOps rather than GitHub, `azure-pipelines.yml` (repo root) replaces
+`.github/workflows/refresh.yml`, and Azure Static Web Apps replaces GitHub Pages as the live host.
+See `ARCHITECTURE.md`'s "Running this on Azure DevOps instead of GitHub" section for the one-time
+setup (creating the Static Web App, adding Pipeline variables, repo permissions).
+
 ## Files
 ```
 index.html                 the website (Feed + Sources tabs)
@@ -114,7 +121,8 @@ sources.json               the list of sources you control
 scripts/collect.py         fetches, removes duplicates, summarizes, writes data/
 data/items.json            the stories (written by the script)
 data/sources.json          each source's last check result (written by the script)
-.github/workflows/refresh.yml   the daily schedule
+.github/workflows/refresh.yml   the daily schedule (GitHub Actions)
+azure-pipelines.yml        the daily schedule (Azure Pipelines) - see "Running on Azure DevOps" above
 ```
 
 Summaries are short and always link to the original. Full articles are never copied.

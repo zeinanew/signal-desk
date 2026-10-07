@@ -218,6 +218,39 @@ overwritten in place: `data/items.json` (sorted newest-first) and `data/sources.
 - Deploys the whole repo as a GitHub Pages artifact (`actions/upload-pages-artifact`),
   since `index.html` fetches `data/*.json` as same-origin static files — no API, no CDN cache to invalidate.
 
+## Running this on Azure DevOps instead of GitHub
+
+`azure-pipelines.yml` (repo root) is the Azure Pipelines equivalent of `refresh.yml` above - same
+daily cron, same push trigger (minus data-only pushes), same `collect.py` run, same "commit
+`data/` back" step. The one structural difference: GitHub Pages serves a repo directly with no
+separate resource to create, while Azure's closest equivalent, **Azure Static Web Apps**, is its
+own resource that the pipeline deploys *into* (via the `AzureStaticWebApp@0` task) rather than
+something that just exists the moment the repo does.
+
+This is prepared but not yet active - it needs the repo to actually be hosted in Azure DevOps
+first. One-time setup once that's true:
+
+1. **Create the Static Web App.** Azure Portal → Create a resource → Static Web App → Free tier.
+   Skip its built-in "connect to a repo" wizard (that path assumes GitHub); create it standalone,
+   then open it → **Manage deployment token** → copy the token.
+2. **Create the pipeline.** Azure DevOps → Pipelines → New pipeline → Azure Repos Git →
+   `signal-desk` → Existing Azure Pipelines YAML file → `/azure-pipelines.yml`.
+3. **Add Pipeline variables** (Pipeline → Edit → Variables): `GEMINI_API_KEY`, `GROQ_API_KEY`,
+   `GITHUB_TOKEN` as **secret** (same three GitHub Actions secrets today - `GITHUB_TOKEN` here is
+   a GitHub PAT used only to raise the rate limit on GitHub's public Search API for
+   `github_search` sources, so it's still needed even though CI itself no longer runs on GitHub);
+   `GEMINI_MODELS`, `GROQ_MODELS` as plain variables; the Static Web Apps token from step 1 as
+   `AZURE_STATIC_WEB_APPS_API_TOKEN`, **secret**.
+4. **Grant push-back permission.** Project Settings → Repositories → `signal-desk` → Security →
+   find this project's **Build Service** identity → allow **Contribute**. Without this, the "Save
+   new data to the repo" step can authenticate (via `persistCredentials: true` in the checkout
+   step) but still gets rejected pushing.
+5. Run the pipeline once manually to confirm both the data commit and the Static Web Apps deploy
+   succeed, then let the daily schedule take over.
+
+`.github/workflows/refresh.yml` is left in place rather than deleted - once Azure DevOps is the
+only git remote, nothing pushes to GitHub any more, so it simply stops triggering on its own.
+
 ## `index.html` — the frontend
 
 One file, no build step: inline `<style>` and `<script>`, loaded straight by the browser.
