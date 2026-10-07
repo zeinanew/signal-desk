@@ -21,6 +21,7 @@ import json
 import os
 import re
 import sys
+import threading
 import time
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
@@ -47,6 +48,8 @@ CLUSTER_BUZZ_CAP = 3      # max bonus buzzScore gets from being covered by many 
 ENGAGEMENT_REFRESH_DAYS = 3   # re-check HN points / GitHub stars for items at most this old
 ENGAGEMENT_BONUS_CAP = 3      # max bonus buzzScore gets from a single source's own engagement
 ENGAGEMENT_THRESHOLDS = [(1000, 3), (500, 2), (200, 1)]  # (points/stars >=, bonus), checked in order
+GEMINI_CALL_TIMEOUT = 25  # seconds - the genai SDK sets no timeout of its own, so a dropped/stalled
+                          # connection to Gemini can otherwise hang a single call indefinitely
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
 
@@ -117,6 +120,30 @@ def get(url: str, **kw) -> requests.Response:
             if attempt == 2:
                 raise
             time.sleep(2 * (attempt + 1))
+
+
+def call_with_timeout(fn, timeout: float, *args, **kwargs):
+    """Runs fn(*args, **kwargs) with a hard wall-clock ceiling, raising TimeoutError if it's
+    not back by then. For SDK calls (like Gemini's) that set no timeout of their own and can
+    otherwise hang indefinitely on a stalled/dropped connection. The worker thread is a daemon
+    so an abandoned call that never returns doesn't keep the process alive waiting for it."""
+    result: list = []
+    error: list[BaseException] = []
+
+    def target():
+        try:
+            result.append(fn(*args, **kwargs))
+        except BaseException as exc:  # noqa: BLE001 - re-raised on the calling thread below
+            error.append(exc)
+
+    t = threading.Thread(target=target, daemon=True)
+    t.start()
+    t.join(timeout)
+    if t.is_alive():
+        raise TimeoutError(f"timed out after {timeout}s")
+    if error:
+        raise error[0]
+    return result[0]
 
 
 def load_json(path: Path, default):
@@ -324,7 +351,7 @@ def _call_model(client, model: str, msg: str) -> tuple[dict | None, bool]:
     means this model is unusable and the caller should move to the next one."""
     for attempt in range(3):
         try:
-            resp = client.models.generate_content(model=model, contents=msg)
+            resp = call_with_timeout(client.models.generate_content, GEMINI_CALL_TIMEOUT, model=model, contents=msg)
             text = resp.text or ""
             return json.loads(re.search(r"\{.*\}", text, re.S).group(0)), False
         except Exception as exc:  # noqa: BLE001 - keep the run going
