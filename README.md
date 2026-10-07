@@ -107,6 +107,29 @@ GEMINI_API_KEY=... GROQ_API_KEY=... python scripts/collect.py   # GROQ_API_KEY i
 python -m http.server 8000     # then open http://localhost:8000
 ```
 
+## Run the daily refresh locally (Windows Task Scheduler)
+
+As an alternative (or backup) to the cloud scheduler, `scripts/refresh_local.ps1` runs `collect.py`
+and then commits + pushes `data/` if anything changed - the same thing the GitHub Action/Azure
+Pipeline does, just from your own machine.
+
+1. **Set your API keys as permanent environment variables** (Task Scheduler doesn't inherit a
+   terminal session's env vars): **Start → "Edit the system environment variables" → Environment
+   Variables → New...** (under your user account) → add `GEMINI_API_KEY` and `GROQ_API_KEY` with
+   your key values. Close and reopen any terminal afterward for it to pick them up.
+2. The task is already registered (named `SignalDeskLocalRefresh`, daily at 8:00 AM, runs
+   `scripts\refresh_local.ps1`) - check/edit it any time in **Task Scheduler** (`taskschd.msc`), or
+   re-create it with:
+   ```
+   schtasks /Create /SC DAILY /ST 08:00 /TN "SignalDeskLocalRefresh" /TR "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"<repo path>\scripts\refresh_local.ps1\"" /RL LIMITED /F
+   ```
+3. Output from each run is appended to `refresh-local.log` in the repo root (gitignored) - check
+   it if a run doesn't seem to have done anything.
+
+This only runs while your machine is on and you're logged in - unlike the cloud schedulers, it
+won't fire if the laptop is off or asleep at 8:00. Fine as a personal/backup refresh; not a
+substitute for the cloud scheduler if you need it to run no matter what.
+
 ## Running on Azure DevOps instead of GitHub
 
 If this repo lives in Azure DevOps rather than GitHub, `azure-pipelines.yml` (repo root) replaces
