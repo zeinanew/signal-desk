@@ -218,6 +218,15 @@ def fetch_page_image(url: str) -> str | None:
         return None
 
 
+_GENERIC_IMAGE_HOSTS = ("avatars.githubusercontent.com", "opengraph.githubassets.com")
+
+
+def is_generic_image(url: str | None) -> bool:
+    """True for images that aren't real article photos - a GitHub user avatar or GitHub's
+    auto-generated repo social-card - so they don't get shown next to editorial photos."""
+    return bool(url) and any(host in url for host in _GENERIC_IMAGE_HOSTS)
+
+
 def feed_entry_image(e) -> str | None:
     thumb = e.get("media_thumbnail")
     if thumb and thumb[0].get("url"):
@@ -306,7 +315,6 @@ def fetch_github_search(src: dict) -> list[dict]:
             "desc": f"{repo.get('description') or ''} (Language: {repo.get('language') or 'n/a'}; "
                     f"{repo.get('stargazers_count', 0)} stars)",
             "repoFullName": repo["full_name"], "stars": repo.get("stargazers_count", 0),
-            "image": f"https://opengraph.githubassets.com/1/{repo['full_name']}",
         })
     return out
 
@@ -664,8 +672,12 @@ def main() -> None:
             if not s.get("relevant", True):
                 continue
             image = raw.get("image")
+            if image and is_generic_image(image):
+                image = None
             if not image and src["type"] != "research":  # arXiv's og:image is the same stock logo on every paper
                 image = fetch_page_image(raw["url"])
+                if image and is_generic_image(image):
+                    image = None
             items[iid] = {
                 "id": iid, "title": s.get("title") or raw["title"], "url": raw["url"],
                 "source": src["id"], "sourceName": src["name"], "type": src["type"],
