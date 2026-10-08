@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T06:54:26Z",
+ "updated": "2026-10-08T07:14:10Z",
  "items": [
   {
    "id": "cb26c4cd754cd4f7",
@@ -22,13 +22,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "ollama-v0-40-1-release",
+   "storyKey": "ollamav0350rc1released",
    "desc": "What's Changed server: proxy cloud usage and balance APIs by @drifkin in #18829 llama: fix clef head reads past 2GiB on windows by @Gigrise in #18777 cmd: remove account step from CLI onboarding by @hoyyeva in #18826 manifest: avoid symlinks on Windows by @dhiltgen in #18852 docs: fix 6 dead links in README community integrations list by @aniketkrs in #18814 docs: fix broken download links in app README by @chenlichao in #18233 mlx: drop carried metal residency patch now that it is upstream by @dhiltgen in #18854 New Contributors @Gigrise made their first contribution in #18777 @aniketkrs made their first contribution in #18814 @chenlichao made their first contribution in #18233 Full Changelog : v0.40.0...v0.40.1-rc0",
    "image": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "b7d1e3ccac451e40",
@@ -105,13 +105,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "ollamav0400release",
+   "storyKey": "ollamav0350rc1released",
    "desc": "mlx: drop carried metal residency patch now that it is upstream ( #18854 )",
    "image": "https://avatars.githubusercontent.com/u/4033016?s=60&v=4",
-   "clusterSize": 3,
+   "clusterSize": 14,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "a843173a5365ccbb",
@@ -624,12 +624,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "long-wam-context-robot-control",
+   "storyKey": "robovejpa-scaling-robotic-world-models",
    "desc": "Real-time robot control demands enough visual history to infer motion and task progress, but processing that history can delay action. We present Long-WAM, a model-system framework for scaling the context of causal world-action models under real-time control constraints. Our central finding is that access to history is not the same as using it: longer histories pay off far more when the video foundation is pretrained autoregressively (AR). We first learn causal prediction from robot and egocentric videos without action labels, then preserve this history-to-future structure during world-action adaptation. On RoboCasa GR-1, increasing context from 0.0 to 19.2 seconds raises success from 63.3% to 78.7%, whereas a bidirectionally pretrained initialization shows no net gain; robot-domain AR pretraining further raises peak success on GR-1 and LIBERO-Long. Long-WAM also achieves the best results among compared methods on LIBERO-Long, RoboTwin 2.0, and DOMINO. Streaming observation encoding, asynchronous execution, and hardware-specific acceleration enable deployment on RTX 5090, DGX Spark, and Jetson AGX Thor without dropping future prediction; on RTX 5090, each action chunk, including fu",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "d8f516d6f374c5d4",
@@ -710,10 +710,12 @@
    "provider": "groq",
    "storyKey": "robovejpa-scaling-robotic-world-models",
    "desc": "Latent world models have shown a remarkable ability to predict future states and to plan in the real world. In practice, however, we lack a principled way to estimate how their capabilities scale with model size, data, and compute, an open problem that slows progress in the field. In this work we present RoboJEPA, a world model based on the Joint Embedding Predictive Architecture (JEPA) and trained on a large-scale dataset spanning 12 robotic embodiments. We show that RoboJEPA's imagination error, the error of its latent rollouts, follows a second-order power law in compute, allowing us to predict model quality well beyond the scale at which the law is fit. We further show that downstream robotic planning performance improves predictably with compute, and that imagination error is strongly correlated with it, making it a reliable proxy for real-robot evaluation. Finally, we demonstrate that latent world models can be deployed zero-shot as robotic agents, planning toward a single goal image to solve tasks requiring long-horizon planning on real hardware. We release all model checkpoints together with our training and robot deployment code. To our knowledge, this is the first work to",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "arXiv cs.AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "36d0a2138528987a",
@@ -849,7 +851,7 @@
    "desc": "Hacker News discussion with 208 points and 97 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "hnId": "49996259",
-   "points": 215,
+   "points": 218,
    "comments": 101,
    "image": "https://opengraph.githubassets.com/8795647a382b256b628abf437fc3bb7858fca4f607a83ce94f6c8a6416abedc9/docker/docker-agent",
    "engagementBonus": 1,
@@ -1225,7 +1227,7 @@
    "desc": "Hacker News discussion with 113 points and 52 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49993121",
    "hnId": "49993121",
-   "points": 114,
+   "points": 115,
    "comments": 53,
    "image": "https://opengraph.githubassets.com/be5efb2d9e1053a59032b072ff7a7dbceab6abf56f57f9530f1bd681aaa05ad3/Queuingtheorydotcom/11SquaresFormalized",
    "engagementBonus": 0,
@@ -1343,10 +1345,12 @@
    "storyKey": "meta-muse-spark-1-1-release",
    "desc": "Introducing Muse Spark 1.1",
    "image": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.2365-6/741906678_873652302465180_7764547737953411008_n.png?_nc_cat=104&ccb=1-7&_nc_sid=e280be&_nc_ohc=Ag1jBdhsWOkQ7kNvwHzfho-&_nc_oc=AdqUXq83WXfppF5Q5tnGIutl0cmOXAi7enDfF327jNddxBSeeRB8B9Gd2ewo6LwlSwI&_nc_zt=14&_nc_ht=scontent-sjc6-1.xx&_nc_gid=01WK0u1LzDGCJqKW3L49Vw&_nc_ss=7b20f&oh=00_AQPlvt2QtupWhP9ELkVsBvP3wKrYkajYkWC_dJJ3GPeZUw&oe=6AE08DA6",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "Meta AI Blog"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "fc8c187b735b5bd9",
@@ -1426,13 +1430,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "meta-muse-image-video",
+   "storyKey": "meta-muse-spark-1-1-release",
    "desc": "Introducing Muse Image and Muse Video",
    "image": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2365-6/741068613_1340710804837358_5615612072287059343_n.png?_nc_cat=103&ccb=1-7&_nc_sid=e280be&_nc_ohc=-hoWpkBf53IQ7kNvwHMcixl&_nc_oc=Adp1Q7z-ENjMzJKYQ4JbdNgembQSMHv9bGhfoMMr00SpyVpER_gep4uPmPkD4f4TgHg&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=01WK0u1LzDGCJqKW3L49Vw&_nc_ss=7b20f&oh=00_AQMdBFk6cRP1hPbbg2hbGPXQYZP7eQ2t4ve-DQ9MHtOMvg&oe=6AE07DF2",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "86bc9e2813795f0f",
@@ -1653,7 +1657,7 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "strands-decider-2b",
+   "storyKey": "opentpuanopensourceaiaccelerator",
    "desc": "Hacker News discussion with 210 points and 56 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49987076",
    "hnId": "49987076",
@@ -1661,10 +1665,10 @@
    "comments": 78,
    "image": "https://strandsagents.com/blog/og/introducing-strands-decider.png",
    "engagementBonus": 1,
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 6
   },
   {
    "id": "0ca1450969b5beb5",
@@ -1770,11 +1774,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-decisions plugin inspired by llm-typesafe . Unlike Jev, the new gpt-6-luna decision model supports image input in addition to text. Both models charge for input it and not for output: OpenAI's is 10 cents per million input tokens, Jev's is 4.2 cents per million. Otherwise the API shape is very similar to Jev, at least conceptually. Jev supports three question types for yes/no, choices, or scores. OpenAI Decisions supports the same three types. Install the plugin like this: llm install llm-openai-decisions Here's an example query against an image attachment: llm -m openai-decisions/gpt-6-luna \\ -a https://static.simonwillison.net/static/2025/two-pelicans.jpg \\ -s ' Does this image contain any mammals? ' And example output: { \"type\" : \" predicate \" , \"name\" : \" evaluation \" , \"probability\" : 0.0 } Consult the README for full details of how to run the other types of questions. Tags: openai , llm , coding-agents",
-   "storyKey": "llmopenaidecisions01a0",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "introducingmistrallarge4lechonk",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "adc1cdfb48287d7f",
@@ -1826,11 +1830,11 @@
    "provider": "groq",
    "desc": "Hacker News discussion with 124 points and 52 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49984716",
-   "storyKey": "penguinmailopensourcerustemailclientforl",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "opentpuanopensourceaiaccelerator",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "224eb5aa6e6d8253",
@@ -1853,11 +1857,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning",
-   "storyKey": "llmmistral016",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "introducingmistrallarge4lechonk",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "ecc07393279513fe",
@@ -1964,10 +1968,12 @@
    "provider": "groq",
    "desc": "Introducing Mistral Large 4: Le chonk Mistral are back in the game. Today they're releasing a preview of Mistral Large 4, a 1 trillion parameter, 49 billion active parameter model trained on their own cluster of 3,800 NVIDIA Grace Blackwell GPUs. The preview is available via their API. They promise to release the open weights model at the \"end of this month\". The model only supports two reasoning levels - \"none\" and \"high\" - via the Mistral API. Here are both pelicans - the \"high\" one looks better, though surprisingly it only used 2,717 output tokens compared to \"none\" which used 3,275: On Artificial Analysis it scores 38 , just behind DeepSeek 4.1 Flash, which is a 552B model. It's a huge improvement on last December's Mistral Large 3, which drew this terrible pelican and scored 9 on AA . It's certainly not a Fable-class model, but it's great to see Mistral put out a model that's back to being maybe about 6 months behind the frontier. Via Hacker News Tags: ai , generative-ai , llms , mistral , pelican-riding-a-bicycle , llm-release",
    "storyKey": "introducingmistrallarge4lechonk",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "Simon Willison"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "43f8aab03973ba89",
@@ -2129,11 +2135,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash MLX now has support for an embedding model: embeddinggemma-2 We will continue testing and enabling additional models. Full Changelog : v0.35.1...v0.40.0",
-   "storyKey": "ollamav0400rc5releaseaddsmlxsupportonapp",
-   "clusterSize": 2,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 6
   },
   {
    "id": "d84a0a5ad3123c6d",
@@ -2524,11 +2530,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Release v5.19.0 New Model additions EmbeddingGemma2 EmbeddingGemma 2 is a multimodal embedding model from Google built on the Gemma 4 architecture. It encodes text, images, audio, and video, individually or combined in one input, into a shared 768-dimensional vector space for cross-modal retrieval, semantic similarity, clustering, and classification. It uses Matryoshka Representation Learning, so embeddings can be truncated to 512, 256, or 128 dimensions. It also offers configurable visual and video token budgets, and unused vision or audio towers can be disabled at load time to save memory. Links: Documentation Smthn smthn ( #49364 ) by @vasqu in #49364 Breaking changes All MoE models whose routers compute logits now return them when output_router_logits=True , following the Qwen3-MoE pattern (a router_logits recorder on the base model, MoeModelOutputWithPast from the backbone, and a MoE causal LM output from the head), so code that relied on the previous outputs or their absence should read the router logits from these output classes. 🚨 Return router logits from every MoE model that computes them ( #48920 ) by @qgallouedec Owlv2ForObjectDetection.embed_image_query now selects the",
-   "storyKey": "ollamav0400release",
-   "clusterSize": 3,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "7a12fe93b8a77091",
@@ -2607,10 +2613,12 @@
    "desc": "Hacker News discussion with 259 points and 321 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49980715",
    "storyKey": "opentpuanopensourceaiaccelerator",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "Hacker News"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "c2e7917438d64d4a",
@@ -3111,13 +3119,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3",
-   "storyKey": "ollamav0400rc5releaseaddsmlxsupportonapp",
-   "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "GitHub: Ollama releases"
-   ],
-   "buzzScore": 4
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
+   "clusterSources": [],
+   "buzzScore": 6
   },
   {
    "id": "031bdf2f5fd5dad0",
@@ -3173,11 +3179,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "MLX: version bump add scopes for unit tests to reduce memory usage",
-   "storyKey": "ollamav0400rc4mlxversionbump",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 2
+   "buzzScore": 5
   },
   {
    "id": "caef0d92a639ca50",
@@ -4555,14 +4561,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3",
-   "storyKey": "ollamav0400release",
-   "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "GitHub: Ollama releases",
-    "GitHub: transformers releases"
-   ],
-   "buzzScore": 5
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
+   "clusterSources": [],
+   "buzzScore": 6
   },
   {
    "id": "3bcfe2f4d2ef6b21",
@@ -4779,11 +4782,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Merge remote-tracking branch 'upstream/main' into release_v0.40.0",
-   "storyKey": "v0400rc2",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "d5a8ffd2dd505a15",
@@ -4834,11 +4837,11 @@
    "ai": true,
    "provider": "gemini",
    "desc": "This new task force is Trump's latest response to the debate over AI safety.",
-   "storyKey": "trumpunveilshisnewsuperintelligenceforce",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "callitaicallitsuperintelligenceonly2ofco",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "1491c2f1f36cea7d",
@@ -5005,10 +5008,12 @@
    "desc": "Hacker News discussion with 262 points and 3 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49948332",
    "storyKey": "openaisafetyleaderquitswarningaicompanys",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 5
+   "clusterSources": [
+    "Hacker News"
+   ],
+   "buzzScore": 6
   },
   {
    "id": "c25e6552df82ae8a",
@@ -5367,11 +5372,11 @@
    "provider": "groq",
    "desc": "Hacker News discussion with 220 points and 484 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49944227",
-   "storyKey": "iquitopenaibecauseitscultureisbroken",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaisafetyleaderquitswarningaicompanys",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 5
   },
   {
    "id": "9a14422b82b9b3e3",
@@ -5620,11 +5625,11 @@
    "ai": true,
    "provider": "gemini",
    "desc": "Meta now lets you make your own Muse gadgets that feature the company's new AI agent with code that the company open sourced. The company suggests projects like loading Muse on a color E Ink display to show reminders, adding it to an HDMI stick so you can display Muse on a big screen, or […]",
-   "storyKey": "metaopensourcescodetoletyoumakemuseaigad",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaisnewagentisashotatmetabutcanitcomp",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "8ae48c8dd8c51ab3",
@@ -5814,11 +5819,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Clef decision models Ollama now supports Clef and Clef Flash , Cloudflare's new open-source decision models, through /v1/systemone . Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it. curl http://localhost:11434/v1/systemone -d ' { \"model\": \"clef-flash\", \"state\": \"The user took this screenshot.\", \"images\": [\"<base64-encoded image>\"], \"questions\": { \"has_ollama\": {\"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\"} } } ' { \"model\": \"clef-flash\", \"answers\": { \"has_ollama\": { \"type\": \"noul\", \"noul\": 0.958 } }, \"usage\": { \"input_tokens\": 548, \"output_tokens\": 0 } } What's Changed Models using web search can now perform up to ten searches per response, up from three Modelfiles now support CAPABILITY declarations, so model creators can explicitly declare what a model can do. Declarations are preserved when creating from GGUF or safetensors, through model inheritance, and on Modelfile export ollama show and the model list now report only decision as the capability for decision models, so clients no longer offer them for general chat, tools, or thinking Updated llama.cpp",
-   "storyKey": "ollamav0351releaseaddsclefmodelsandenhan",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "39b9fbb58d7c1263",
@@ -6037,10 +6042,12 @@
    "provider": "gemini",
    "desc": "This week, the White House got nearly every major tech CEO in one room — Zuckerberg, Bezos, Musk, and Anthropic’s Dario Amodei among them — to sign an AI safety pledge that President Donald Trump called “morally binding.” Trump also signed an executive order officially rebranding AI as “super intelligence,” and meanwhile, Meta and OpenAI are putting friendlier faces on their AI products, even as the biggest money […]",
    "storyKey": "callitaicallitsuperintelligenceonly2ofco",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "TechCrunch AI"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "9fa909c5886f137b",
@@ -6176,11 +6183,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Masked diffusion language models (dLMs) offer a promising parallel alternative to autoregressive models for complex reasoning. However, they face a distinct credit-assignment challenge, since a few commitments during denoising sharply reduce the uncertainty over the remaining masked positions and shape much of the response. Most post-training recipes for dLMs do not use this signal to decide which tokens to train on: they typically train on the final text or assign rewards to whole denoising steps, rather than selecting the individual commitments that shape the response. We introduce Pivot-SD, an efficient offline self-distillation framework that supervises only these high-impact commitments (pivots). Pivot-SD selects pivots using an information-gain metric measuring uncertainty reduction over the remaining masked positions. Pivots from successful trajectories are trained with cross-entropy, and pivots from failed trajectories with targeted unlikelihood, leaving the rest of the failed trajectory untouched. Using only 200 questions and four rollouts each, Pivot-SD improves LLaDA-8B-Instruct over full-sequence SFT and budget-matched diffusion RL baselines across math and code benchma",
-   "storyKey": "pivotsdefficientselfdistillationformaske",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "hierarchicalcontinuousdiffusionlanguagem",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "77605701fd678fdf",
@@ -6705,10 +6712,12 @@
    "provider": "groq",
    "desc": "LTZY-API · Self-hosted LLM gateway & OpenAI-compatible API 网关：统一接入自有模型渠道，智能路由、精确计费、额度与分组、运营后台；下游 OpenAI / Anthropic / Gemini 三协议，上游 80 种渠道类型，单二进制零 CGO。 (Language: Go; 29 stars)",
    "storyKey": "ltzyapiselfhostedllmgatewayopenaicompati",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "GitHub: new LLM repos"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "39a6cfc0a703e394",
@@ -6787,11 +6796,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Your Claude, ChatGPT and Gemini subscriptions as one fast API. A single Rust binary with OpenAI, Anthropic and Gemini compatible endpoints, WebSockets and a built-in dashboard. (Language: Rust; 30 stars)",
-   "storyKey": "cliproxyapirustunifiedapiforclaudechatgp",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "aichatroomwebgroupchatfeaturingclaudecha",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 2
+   "buzzScore": 3
   },
   {
    "id": "b54bb27c0280be0a",
@@ -6927,11 +6936,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0",
-   "storyKey": "ollamareleasesv0351rc2",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 2
+   "buzzScore": 5
   },
   {
    "id": "87a7234dae36c1fa",
@@ -7067,11 +7076,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "models: add clef support ( #18741 )",
-   "storyKey": "ollamav0351rc1releaseaddsclefsupport",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "9995bf5b357f721c",
@@ -7288,11 +7297,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "OpenAI has parted ways with three safety researchers after an internal investigation found they mishandled sensitive company information, report says.",
-   "storyKey": "openaicutstieswith3safetyresearchers",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaireportedlyditchesmodeloversafetyco",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "e91e271ba7dc3762",
@@ -7456,11 +7465,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in",
-   "storyKey": "vistaavisualharnessforreasoninginaninter",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "worldauditbenchinteractive3dworldauditin",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "f9b7867d1a775084",
@@ -7485,10 +7494,12 @@
    "provider": "groq",
    "desc": "Discrete diffusion language models offer a compelling alternative to autoregressive generation for tasks demanding bidirectional reasoning and global constraint satisfaction. Yet they share a structural bottleneck: when decoding in parallel, each token is sampled independently from its marginal, severing the statistical dependencies among the tokens decoded together. Continuous diffusion language models avoid this by denoising a shared continuous state, but their denoiser sees only that state, so nothing ties it to a valid token configuration until it is finally decoded. To address this, we propose Hierarchical Continuous Diffusion Language Models (HC-DLM), which couple discrete token generation with a continuous latent trajectory in a single, principled denoising process, whose training objective is derived from a variational bound on the token likelihood. In contrast to recent methods that attach continuous context to a self-contained discrete chain, HC-DLM makes the latent the only persistent generative state: tokens are read out from it at every step and feed back as a scaffold for the next latent update. On structured reasoning (Sudoku), mathematical planning (Countdown) and l",
    "storyKey": "hierarchicalcontinuousdiffusionlanguagem",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "arXiv cs.CL (language models)"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "b6240196342066c1",
@@ -7984,10 +7995,12 @@
    "provider": "groq",
    "desc": "At OpenAI's annual DevDay conference, the company pulled out all the stops to compete with its rivals - primarily Meta, whose Muse AI agent platform has seen early runaway success. CEO Sam Altman walked onstage to cheers and announced Dots, a \"real-deal AI\" agent powered by GPT-6 Astra, \"inspired by the cool agents that we […]",
    "storyKey": "openaisnewagentisashotatmetabutcanitcomp",
-   "clusterSize": 1,
+   "clusterSize": 4,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 7
   },
   {
    "id": "88b87a710d3e6e15",
@@ -8347,10 +8360,12 @@
    "provider": "groq",
    "desc": "Grokipedia, SpaceXAI's AI-powered competitor to Wikipedia, recently started incorporating edits again, and today, it got some design tweaks as part of a v0.3 update, including a new logo and refreshes to its homepage and live edits page. SpaceXAI head of design Benji Taylor calls it a \"newly refreshed Grokipedia.\" Grokipedia's old homepage was pretty much […]",
    "storyKey": "elonmusksgrokipediahasanewlyrefresheddes",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "91b1f786ee50b98f",
@@ -8487,11 +8502,11 @@
    "provider": "groq",
    "desc": "Hacker News discussion with 107 points and 60 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49914236",
-   "storyKey": "gemini4argonhighintelligenceperformancea",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "gemini4argon",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "97fa5252aa291141",
@@ -8571,10 +8586,12 @@
    "desc": "Hacker News discussion with 1165 points and 769 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49913571",
    "storyKey": "gemini4argon",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "Hacker News"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "311e095023e6d9fd",
@@ -8989,10 +9006,12 @@
    "provider": "groq",
    "desc": "As interactive 3D worlds are increasingly used to study intelligent behavior, it becomes important to develop efficient pipelines for identifying anomalies in these simulated environments, such as floating objects, traversable walls, or objects inconsistent with the surrounding scene. Multimodal AI systems, including vision-language models (VLMs) and vision-language-action models (VLAs), have shown potential for automating this task. However, 3D world auditing is complex, requiring the close coupling of two distinct capabilities: action, to navigate the 3D world and search for anomalies systematically and efficiently; and visual reasoning, to understand the environment and identify anomalies from multimodal observations. It remains largely unexplored whether multimodal agents can effectively couple these two capabilities, using visual reasoning to identify potential anomalies while taking actions to validate them. In this paper, we introduce WorldAuditBench, a benchmark for 3D world auditing comprising 213 anomaly tasks across 13 environments built with Unreal Engine 5 and Three.js, spanning five anomaly families. We evaluate five frontier models under a fixed exploration budget us",
    "storyKey": "worldauditbenchinteractive3dworldauditin",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "arXiv cs.AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "4bf53d05f5992ac6",
@@ -9071,11 +9090,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient scaling: recurrence increases computational depth at fixed parameters, while MoE sparsity expands total capacity at fixed active compute. Yet existing scaling laws model recurrence or sparsity in isolation. In this work, we introduce Loop Scaling Laws, the first scaling law to jointly model recurrence and sparsity alongside model size and data. At its core is a bounded, sparsity-conditional recurrence mapping that characterizes the effective-parameter gain from looping and how sparsity raises this gain. The laws predict the held-out loss of looped models more accurately than prior alternatives, and recover the standard dense and MoE scaling laws as special cases. Beyond prediction, the fitted laws provide a principled foundation for designing looped MoE models under compute and memory constraints. Downstream evaluations further demonstrate the complementary benefits of the two axes: sparsity delivers ~3x active-parameter efficiency, recurrence yields ~2x total-parameter efficiency on reasoning, and joint scaling further advances the performance frontier. As a practical extension, we show these ",
-   "storyKey": "scalinglawsforloopedmixtureofexperts",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "improvingtesttimescalingwithadaptiveloop",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "ce91e7f9b4ac2dec",
@@ -9210,11 +9229,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "After hosting a meal with Big Tech leaders on Tuesday, President Donald Trump responded to journalist questions about his artificial intelligence announcements in typical fashion. He said his previous claims regarding fears around AI safety being a \"hoax\" cooked up by Democrats no longer apply now that he's renamed the technology to \"Super Intelligence.\" He […]",
-   "storyKey": "hereswhataileadersaresayingabouttrumpsne",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "howtechleaderswillselfpoliceaisafetyunde",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "9c3e64cf72537383",
@@ -9461,11 +9480,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Meta launched a new Muse AI agent it claims can help you with everything from firing off emails to buying stuff online. Muse can be surprisingly effective at delivering on those promises — if you’re willing to trust Meta with your data and hand Muse your credit card. Since the launch, Meta’s also announced plans […]",
-   "storyKey": "metasmuseaiagent",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaisnewagentisashotatmetabutcanitcomp",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "396b95f3429cd00b",
@@ -9740,10 +9759,12 @@
    "provider": "groq",
    "desc": "We now have the full details of the \"morally binding\" AI safety deal announced by President Trump yesterday, in which top executives agreed to self-regulate their artificial intelligence technology. The accord, officially titled the Joint Commitment on Frontier Responsibilities, was shared online by tech founder and presidential adviser David Sacks, and has been signed by […]",
    "storyKey": "howtechleaderswillselfpoliceaisafetyunde",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "803705924fa300df",
@@ -9879,11 +9900,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "PLUS: Get started with ChatGPT dot, OpenAI's new agent",
-   "storyKey": "openaiconnectsthedotsonalwaysonagents",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaisagentswentrogueonwashington",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "707a320432beb96c",
@@ -10187,11 +10208,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Grokipedia, the AI-powered online encyclopedia from SpaceXAI, appears to be updating articles once again after a months-long pause. In August, Lawfare reported that articles on Grokipedia hadn't reviewed edits since April, but the platform's live updates site is now showing various recent changes to pages - though as I write this, many are just a […]",
-   "storyKey": "elonmusksaipoweredgrokipediaisupdatingag",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "elonmusksgrokipediahasanewlyrefresheddes",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 2
+   "buzzScore": 3
   },
   {
    "id": "6da0f8a585ce634e",
@@ -10270,11 +10291,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0",
-   "storyKey": "ollamav0351release",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "9ce258e5a60bddae",
@@ -10355,11 +10376,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "OpenAI isn't a public supporter of Nvidia's Open Agent Safety Platform, but it is privately working with Nvidia, TechCrunch has learned.",
-   "storyKey": "openaiabsentfromnvidiasefforttoendroguea",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "nvidialaunchesnewplatformforreininginrog",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "cab141db60b60cd3",
@@ -10826,11 +10847,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "On Tuesday, OpenAI's annual DevDay event began with protests, flyers, and chants. \"Sam Altman, get off it, put people over profit,\" said a group of protesters marching in a circle in front of a series of signs that spelled out \"PEOPLE OVER PROFIT.\" More than a dozen organizations came together to sponsor a rally outside […]",
-   "storyKey": "protestersgatheratopenaidevday",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaidevdaythebiggestnewsandannouncemen",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "b3701a1b653f0a3b",
@@ -10940,10 +10961,12 @@
    "provider": "groq",
    "desc": "It’s OpenAI’s turn in the fall tech events calendar. The company is hosting its annual DevDay on September 29th in San Francisco, and during a live keynote featuring CEO Sam Altman, it revealed several notable updates, including Dots, its AI agent product that rivals Meta’s recently-launched Muse. However, unlike Muse, which is available for free, […]",
    "storyKey": "openaidevdaythebiggestnewsandannouncemen",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "f7665b70e425c2c0",
@@ -11051,10 +11074,12 @@
    "desc": "Hacker News discussion with 171 points and 143 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49893876",
    "storyKey": "claudepartialoutage",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "Hacker News"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "482046899a068e21",
@@ -11163,11 +11188,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Tech YouTuber Matt Robb says that Muse gave out his home address to a total stranger this weekend, after authorizing the bot to handle his Facebook Marketplace account. That's despite Meta placing great emphasis on the security features of Muse when it launched the personal AI agent earlier this month as it tries to catch […]",
-   "storyKey": "metasmuseaisentayoutubersaddresstoastran",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaisnewagentisashotatmetabutcanitcomp",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "37351544863bf9b6",
@@ -11300,11 +11325,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "OpenAI- and Anthropic-compatible API for Duck.ai, driven by a real Chrome browser via Playwright. Streaming chat, image generation, session reuse, and a web dashboard. (Language: Python; 31 stars)",
-   "storyKey": "duckapiopenaiandanthropiccompatibleapifo",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ltzyapiselfhostedllmgatewayopenaicompati",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 2
+   "buzzScore": 3
   },
   {
    "id": "ebdae3b9e4c9a6b6",
@@ -11329,11 +11354,11 @@
    "provider": "groq",
    "desc": "Hacker News discussion with 233 points and 89 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49891290",
-   "storyKey": "jeevesreasoningimprovesjevlikedecisionmo",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "asinglefunctionjevlikewrapperforllmsincl",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "93ea3aafd35e5803",
@@ -11384,11 +11409,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices.",
-   "storyKey": "introducinggpt61sol",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "introducingdots",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "19db7cc5ca5cc5ea",
@@ -11497,10 +11522,12 @@
    "provider": "groq",
    "desc": "A web group chat where Claude, ChatGPT, Grok and Gemini hang out and talk on their own, powered by your logged-in CLIs (no API keys). English / 한국어 / 日本語 (Language: JavaScript; 44 stars)",
    "storyKey": "aichatroomwebgroupchatfeaturingclaudecha",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 2
+   "clusterSources": [
+    "GitHub: new LLM repos"
+   ],
+   "buzzScore": 3
   },
   {
    "id": "5c506b1aae8be300",
@@ -11550,11 +11577,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "ollama0350addsdecisionmodelsupportviav1s",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 14,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "597975da49400eea",
@@ -11604,10 +11631,12 @@
    "provider": "groq",
    "desc": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
    "storyKey": "introducingdots",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "OpenAI News"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "3abc31c9034e0ad4",
@@ -11655,10 +11684,12 @@
    "importance": 3,
    "ai": true,
    "storyKey": "openaireportedlyditchesmodeloversafetyco",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "TechCrunch AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "6a443da468f0b563",
@@ -11893,10 +11924,13 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 1,
+   "clusterSize": 14,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "GitHub: Ollama releases",
+    "GitHub: transformers releases"
+   ],
+   "buzzScore": 6
   },
   {
    "id": "5e33c235053c0e89",
@@ -11919,11 +11953,11 @@
    "ai": true,
    "provider": "groq",
    "discussion": "https://news.ycombinator.com/item?id=49883844",
-   "storyKey": "jeffjevcompatible08bdecisionmodelstraine",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "asinglefunctionjevlikewrapperforllmsincl",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "a37b0826d6222c22",
@@ -12131,10 +12165,12 @@
    "importance": 4,
    "ai": true,
    "storyKey": "openaisaiagentsneedtocatchup",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "46fca61f4990eac9",
@@ -12157,10 +12193,12 @@
    "importance": 4,
    "ai": true,
    "storyKey": "nvidialaunchesnewplatformforreininginrog",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "TechCrunch AI"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "7c7b6ea24fb9b3a9",
@@ -12478,10 +12516,12 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "improvingtesttimescalingwithadaptiveloop",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "arXiv cs.CL (language models)"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "4d987bc13622185d",
@@ -12822,11 +12862,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "newinlangsmithenginev2manageddeepagentsf",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "introducinglangsmithfinetuning",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "2cd2afd12af2798b",
@@ -12955,10 +12995,12 @@
    "importance": 4,
    "ai": true,
    "storyKey": "openaisagentswentrogueonwashington",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "The Rundown AI"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "7361429108c28003",
@@ -13007,11 +13049,11 @@
    "discussion": "https://news.ycombinator.com/item?id=49874728",
    "ai": true,
    "provider": "groq",
-   "storyKey": "promptingclaudeopus55",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "claudepartialoutage",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 2
+   "buzzScore": 3
   },
   {
    "id": "216d56bba26ca458",
@@ -13429,11 +13471,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "openaiagentstriedtobruteforceaunwebsite",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaisaiagentsneedtocatchup",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "39e6d83733f34b5b",
@@ -13936,11 +13978,11 @@
    "discussion": "https://news.ycombinator.com/item?id=49857656",
    "ai": true,
    "provider": "groq",
-   "storyKey": "turningglm53flashintoajevlikedecisionmod",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "asinglefunctionjevlikewrapperforllmsincl",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "592647d5532426cf",
@@ -14126,10 +14168,12 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "asinglefunctionjevlikewrapperforllmsincl",
-   "clusterSize": 1,
+   "clusterSize": 4,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "Hacker News"
+   ],
+   "buzzScore": 6
   },
   {
    "id": "f9d621c2b15bc2e8",
@@ -14970,11 +15014,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "adwmactiondiscriminativeworldmodelsforco",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "rollingwamworldactionmodelswithrollingim",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "f39c2221f5095d00",
@@ -15154,11 +15198,11 @@
    ],
    "importance": 3,
    "ai": true,
-   "storyKey": "metasconnectturnsintoamusetakeover",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "amazonshutsoutmetasmuse",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "391cdb68232bd6e0",
@@ -15385,11 +15429,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "deepseekv4proapi",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "gemini3progemini3proapiwrapper",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "5645b933561f8e65",
@@ -15412,11 +15456,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "glm53flashapi",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "gemini3progemini3proapiwrapper",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "018657d1d58fc240",
@@ -15440,10 +15484,12 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "gemini3progemini3proapiwrapper",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "GitHub: new LLM repos"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "204ef99e7e6434c6",
@@ -15571,10 +15617,12 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "rollingwamworldactionmodelswithrollingim",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "arXiv cs.AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "1b037181a2d1b45f",
@@ -15833,10 +15881,12 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "introducinglangsmithfinetuning",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "LangChain Blog"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "f30dbc8d1456692a",
@@ -15859,11 +15909,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "manageddeepagentsdeliversabetteruserexpe",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "introducinglangsmithfinetuning",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "82e08ce6d6a85f19",
@@ -16568,11 +16618,11 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "thedeadlyfailuresofthevirtualborderwall",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "howwemadethefirstcomprehensivemapofdeath",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "0fe61bb2f2b71e93",
@@ -16674,10 +16724,12 @@
    "importance": 3,
    "ai": true,
    "storyKey": "amazonshutsoutmetasmuse",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "The Rundown AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "762e86c2a7cec2f5",
@@ -16998,10 +17050,12 @@
    "importance": 3,
    "ai": true,
    "storyKey": "howwemadethefirstcomprehensivemapofdeath",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "MIT Technology Review"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "f19c641f8d577f8c",
@@ -17023,11 +17077,11 @@
    ],
    "importance": 3,
    "ai": true,
-   "storyKey": "4waystoaddressthefailureswefoundalongthe",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "howwemadethefirstcomprehensivemapofdeath",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "c66c5cd73f996688",
@@ -17679,13 +17733,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "grok-bot-procurement-savings",
+   "storyKey": "xai-grok-bot-persistent-agent",
    "desc": "Setting Grok Bot loose on procurement We gave Grok Bot access to vendor spend, contracts, and usage data. It found more than $100,000 in direct savings. Sep 4, 2026",
    "image": "https://x.ai/images/news/grok-bot-procurement-og-split.webp",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "d75554c78e0fe54a",
@@ -17814,10 +17868,12 @@
    "storyKey": "xai-grok-bot-persistent-agent",
    "desc": "Designing Grok Bot for a world of persistent agents How we designed Grok Bot for agents that persist beyond a single session — from a chat history to a Bot roster, presence, a computer of the Bot’s own, and work that starts without a prompt. Sep 3, 2026",
    "image": "https://x.ai/images/news/designing-grok-bot-og.png",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "xAI News"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "f7e420ab15f7aa56",
@@ -17840,13 +17896,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "grok-bot-enterprise-release",
+   "storyKey": "xai-grok-bot-persistent-agent",
    "desc": "Grok Bot for Enterprise Grok Bot is now available for enterprises. Grok and Cursor Enterprise customers have free usage for the next two weeks, and can invite their whole organization, including people without an existing seat. Sep 3, 2026",
    "image": "https://x.ai/images/news/grok-bot-for-enterprise-og-split.webp",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "15c2cbe250fe5147",
