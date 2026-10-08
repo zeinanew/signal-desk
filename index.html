@@ -567,6 +567,19 @@ function topOfSet(items){
   if(list.length<4)list=items.filter(it=>within(it,"7")&&it.isPrimary!==false);
   return list.sort((a,b)=>(b.buzzScore??b.importance??0)-(a.buzzScore??a.importance??0));
 }
+// Picks the top n from a buzz-sorted list, allowing at most `cap` per source, so one prolific
+// source can't occupy every slot - backfills from the leftovers if there aren't enough distinct
+// sources to fill all n slots (a quiet day still gets a full Top Stories section).
+function capPerSource(list,n,cap){
+  const seen=new Map(),picked=[],leftover=[];
+  for(const it of list){
+    const c=seen.get(it.source)||0;
+    if(c<cap&&picked.length<n){picked.push(it);seen.set(it.source,c+1)}
+    else leftover.push(it);
+  }
+  for(const it of leftover){if(picked.length>=n)break;picked.push(it)}
+  return picked;
+}
 const CAT_TOP_N=4;
 function activeTab(){return TABS.find(k=>$("tab-"+k).getAttribute("aria-selected")==="true")||"feed"}
 function renderTopStories(){
@@ -575,7 +588,7 @@ function renderTopStories(){
   if(t==="search"||t==="sources"){$("topstories").hidden=true;return}
   const isCat=CATS.includes(t);
   const pool=isCat?S.items.filter(it=>it.topic===t):S.items;
-  const list=topOfSet(pool).slice(0,isCat?CAT_TOP_N:8);
+  const list=capPerSource(topOfSet(pool),isCat?CAT_TOP_N:8,1);
   $("ts-head").textContent=isCat?`Top in ${TOPICS[t]}`:"Top stories right now";
   $("topstories").hidden=!list.length;
   if(!list.length)return;
@@ -587,7 +600,7 @@ function renderTopStories(){
 function renderCategory(key){
   if(!S.loaded)return;
   const items=S.items.filter(it=>it.topic===key);
-  const top=topOfSet(items).slice(0,CAT_TOP_N);
+  const top=capPerSource(topOfSet(items),CAT_TOP_N,1);
   const topIds=new Set(top.map(it=>it.id));
   const rest=items.filter(it=>within(it,"30")&&!topIds.has(it.id)).sort(byDate);
   const limit=S.catLimit[key]||PAGE;

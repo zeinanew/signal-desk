@@ -181,17 +181,26 @@ story - a model launch five outlets all cover, say - using two cheap signals, no
 
 - an exact match on `story_key`, a short slug the summarizer prompt also asks the LLM for
   (e.g. `"gpt-5-2-release"`), **or**
-- Jaccard similarity ≥ 0.5 on each title's significant words,
+- Jaccard similarity ≥ `CLUSTER_JACCARD` (0.5) on each title's significant words - or, when both
+  items are from the *same* source, the much more lenient `SAME_SOURCE_JACCARD` (0.2). A
+  single-repo release feed (`gh-ollama`, `gh-vllm`, ...) only ever posts about one project, so even
+  a small shared-token signal ("ollama" in all of them) reliably means "same project, new release" -
+  this is what collapses a burst of `v0.40.0` / `v0.40.0-rc5` / `v0.40.1` releases into one cluster
+  instead of letting all three compete for a Top Stories slot,
 
 and only within `CLUSTER_WINDOW_DAYS` (4) of each other, so later unrelated follow-ups don't get
 swept in. Within a group, the item with the highest `importance` (earliest `date` as tie-break)
 becomes `isPrimary`; every item gets `clusterSize`, `buzzScore` (`importance`, plus a
 `min(clusterSize - 1, CLUSTER_BUZZ_CAP)` bonus for being corroborated by more sources, plus that
 item's own `engagementBonus` from the step above), and the primary item gets `clusterSources` (the
-other sources in its cluster). The frontend's Top Stories section only shows primary items, ranked
-by `buzzScore` - that's what keeps a single big story from appearing five times at the top of the
-page, while still letting a single-source story that's taking off on its own (HN points, GitHub
-stars) outrank a low-importance, single-source story that isn't.
+other sources in its cluster - empty for a same-source cluster, so no misleading "Covered by N
+sources" pill shows for what's really just one source's own release cadence). The frontend's Top
+Stories section only shows primary items, ranked by `buzzScore` and additionally capped to one item
+per source (`capPerSource()` in `index.html`) - belt-and-suspenders for same-source items that
+clustering didn't merge (different topics from a prolific source, or just outside the window) -
+that's what keeps a single big story, or a single prolific source, from occupying every Top
+Stories slot, while still letting a single-source story that's taking off on its own (HN points,
+GitHub stars) outrank a low-importance, single-source story that isn't.
 
 This is a heuristic, not real NLP dedup - two outlets covering the same event with very different
 wording and no matching `story_key` can end up in separate clusters. Good enough for "don't repeat
@@ -473,3 +482,12 @@ An optional `limit` caps how many of that source's newest items are considered p
   counts take months to show up, so there's no signal there that moves within the few days this
   matters for. A paper that's actually taking off is expected to surface indirectly, via a HN/blog
   pickup that clustering already catches.
+- **Why same-source flooding is fixed with a cheaper threshold + a selection cap, not
+  embeddings**: a single-repo release feed can post several real-but-incremental releases
+  (`v0.40.0`, `v0.40.0-rc5`, `v0.40.1`, ...) in a few days, each a technically-new item that still
+  crowded out every other topic's Top Stories slot. Embedding each new item and comparing by
+  cosine similarity (considered - `google-genai`'s `embed_content` would work with the same key)
+  would generalize further, but costs an extra API call per item for a problem that a same-source
+  Jaccard threshold plus a one-per-source display cap already solves for free. Revisit embeddings
+  if cross-source near-duplicates with very different wording turn out to be common in practice -
+  that's the case this heuristic can't catch.

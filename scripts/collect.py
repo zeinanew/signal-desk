@@ -45,6 +45,10 @@ GROQ_MODELS = [m.strip() for m in (os.getenv("GROQ_MODELS") or os.getenv("GROQ_M
 TOPICS = ["models", "agents", "dev", "research", "industry"]
 CLUSTER_WINDOW_DAYS = 4   # stories further apart than this are never clustered together
 CLUSTER_BUZZ_CAP = 3      # max bonus buzzScore gets from being covered by many sources
+CLUSTER_JACCARD = 0.5          # title-token overlap needed to cluster two different sources
+SAME_SOURCE_JACCARD = 0.2      # ...needed when both items are from the same source - a single-
+                                # repo release feed only ever posts about one project, so even a
+                                # small shared-token signal reliably means "same project, new release"
 ENGAGEMENT_REFRESH_DAYS = 3   # re-check HN points / GitHub stars for items at most this old
 ENGAGEMENT_BONUS_CAP = 3      # max bonus buzzScore gets from a single source's own engagement
 ENGAGEMENT_THRESHOLDS = [(1000, 3), (500, 2), (200, 1)]  # (points/stars >=, bonus), checked in order
@@ -472,11 +476,15 @@ def refresh_engagement(items: list[dict]) -> None:
 # ---------------------------------------------------------------- clustering
 def cluster_items(items: list[dict]) -> None:
     """Groups items covering the same underlying story (e.g. a model launch reported by
-    five different outlets) so the frontend's Top Stories section can show it once instead
-    of five times. Pure heuristic, no extra LLM calls: two items cluster together when
-    they're within CLUSTER_WINDOW_DAYS of each other and either share a story_key or have
-    enough title words in common (Jaccard similarity on significant words). Mutates each
-    item in place with storyKey/clusterSize/clusterSources/isPrimary/buzzScore.
+    five different outlets, or the same project's incremental releases from one source) so
+    the frontend's Top Stories section can show it once instead of several times. Pure
+    heuristic, no extra LLM calls (and no embeddings - considered, deferred as overkill for
+    what's actually been seen in practice): two items cluster together when they're within
+    CLUSTER_WINDOW_DAYS of each other and either share a story_key or have enough title
+    words in common (Jaccard similarity on significant words) - CLUSTER_JACCARD across
+    different sources, the much more lenient SAME_SOURCE_JACCARD when both items are from
+    the same source, since a single-repo release feed only ever posts about one project.
+    Mutates each item in place with storyKey/clusterSize/clusterSources/isPrimary/buzzScore.
 
     This is approximate, not perfect dedup - e.g. two outlets phrasing the same event with
     very different wording and no matching story_key slug may end up in separate clusters.
@@ -509,7 +517,8 @@ def cluster_items(items: list[dict]) -> None:
             same_key = keys[i] and keys[i] == keys[j]
             if not same_key and tokens[i] and tokens[j]:
                 overlap = len(tokens[i] & tokens[j]) / len(tokens[i] | tokens[j])
-                same_key = overlap >= 0.5
+                threshold = SAME_SOURCE_JACCARD if by_date[i]["source"] == by_date[j]["source"] else CLUSTER_JACCARD
+                same_key = overlap >= threshold
             if same_key:
                 union(i, j)
 
