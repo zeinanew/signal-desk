@@ -92,10 +92,10 @@ nav.tabs .count{font-family:var(--mono);font-size:11px;font-weight:400;opacity:.
 .legend span{display:flex;align-items:center;gap:7px}
 
 /* Top Stories / category "top of section" grid */
-.topstories{margin:22px 0 6px}
+.topstories{margin:22px 0 32px}
 .ts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin-top:14px;background:var(--line);border:1px solid var(--line)}
 @media (max-width:800px){.ts-grid{grid-template-columns:1fr}}
-.tscard{display:flex;gap:18px;padding:22px 24px;background:var(--surface);border-left:4px solid var(--c,var(--line-2));text-decoration:none;color:inherit;transition:background .1s}
+.tscard{display:flex;gap:18px;padding:22px 24px;background:var(--surface);border-left:4px solid var(--c,var(--line-2));text-decoration:none;color:inherit;transition:background .1s;overflow:hidden}
 .tscard:hover{background:var(--surface-2)}
 .tscard:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .tscard.read{opacity:.58}
@@ -106,8 +106,8 @@ nav.tabs .count{font-family:var(--mono);font-size:11px;font-weight:400;opacity:.
 .ts-meta time{font-family:var(--mono);font-size:11.5px;color:var(--muted)}
 .buzzpill{display:inline-flex;align-items:center;gap:3px;flex:none;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;color:var(--c,var(--ink-2));background:var(--c-bg,var(--surface-2))}
 .tscard h3{margin:0;font-weight:700;font-size:19px;line-height:1.3}
-.tscard p{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tscard .why{margin:0;font-size:12.5px;line-height:1.4;color:var(--muted);display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.tscard p{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink-2);max-height:65px;overflow:hidden}
+.tscard .why{margin:0;font-size:12.5px;line-height:1.4;color:var(--muted);max-height:38px;overflow:hidden}
 .tscard .why b{font-weight:600;color:var(--ink-2)}
 .ts-photo{width:104px;height:104px;object-fit:cover;flex:none;border-radius:3px;background:var(--surface-2)}
 @media (max-width:480px){.ts-photo{display:none}}
@@ -131,10 +131,10 @@ nav.tabs .count{font-family:var(--mono);font-size:11px;font-weight:400;opacity:.
 .slide-body{display:flex;flex-direction:column;gap:7px;min-width:0;flex:1}
 .slide-photo{width:60px;height:60px;object-fit:cover;flex:none;border-radius:3px;background:var(--surface-2)}
 .tile.top .slide-photo{width:84px;height:84px}
-.slide h2{font-weight:700;font-size:15px;line-height:1.3;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tile.top .slide h2{font-size:20px;line-height:1.3;-webkit-line-clamp:3}
-.slide .sum{margin:0;font-size:12.5px;line-height:1.4;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
-.tile.top .slide .sum{font-size:13.5px;-webkit-line-clamp:2}
+.slide h2{font-weight:700;font-size:15px;line-height:1.3;margin:0;max-height:41px;overflow:hidden}
+.tile.top .slide h2{font-size:20px;line-height:1.3;max-height:80px}
+.slide .sum{margin:0;font-size:12.5px;line-height:1.4;color:var(--ink-2);max-height:20px;overflow:hidden}
+.tile.top .slide .sum{font-size:13.5px;max-height:40px}
 .slide:hover h2{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .slide.dir-down{animation:slideDown .18s ease}
 .slide.dir-up{animation:slideUp .18s ease}
@@ -220,7 +220,7 @@ aside.filters{position:sticky;top:16px;display:grid;gap:22px;padding:18px}
 
 /* Dense article row list - used by Search results and category tabs */
 .reslist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-.resrow{display:flex;align-items:flex-start;gap:16px;padding:16px 10px 16px 14px;border-bottom:1px solid var(--line);border-left:4px solid var(--c,var(--line-2));text-decoration:none;color:inherit}
+.resrow{display:flex;align-items:flex-start;gap:16px;padding:16px 10px 16px 14px;border-bottom:1px solid var(--line);border-left:4px solid var(--c,var(--line-2));text-decoration:none;color:inherit;overflow:hidden}
 .resrow:hover{background:var(--surface-2)}
 .resrow:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .resrow.read{opacity:.55}
@@ -230,8 +230,8 @@ aside.filters{position:sticky;top:16px;display:grid;gap:22px;padding:18px}
 .res-meta{display:flex;align-items:center;gap:8px;min-width:0}
 .res-meta .src{flex:none;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
 .res-meta time{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap;flex:none}
-.resrow h3{margin:0;font-weight:700;font-size:16px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.resrow p{margin:0;font-size:13px;line-height:1.4;color:var(--muted);display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.resrow h3{margin:0;font-weight:700;font-size:16px;line-height:1.3;max-height:63px;overflow:hidden}
+.resrow p{margin:0;font-size:13px;line-height:1.4;color:var(--muted);max-height:38px;overflow:hidden}
 .res-actions{flex:none;display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);align-self:center}
 .noresults{display:grid;justify-items:center;gap:8px;padding:48px 20px;border:1px dashed var(--line-2);border-radius:4px;background:var(--surface);text-align:center}
 .noresults h3{margin:0;font-size:16px;font-weight:700}
@@ -242,7 +242,7 @@ aside.filters{position:sticky;top:16px;display:grid;gap:22px;padding:18px}
 .more{display:flex;justify-content:center;margin-top:16px}
 
 /* Category tabs (top-of-category + rest-of-articles) */
-.cat-top h2,.cat-rest h2{margin:0 0 0}
+.cat-rest h2{margin:0 0 14px}
 
 /* Summary popover */
 .sumpop{position:fixed;z-index:60;width:300px;max-width:calc(100vw - 32px);padding:14px 36px 14px 16px;border-radius:4px;background:var(--surface);border:1px solid var(--line);box-shadow:0 10px 26px var(--shadow);font-size:12.5px;line-height:1.5;color:var(--ink-2)}
@@ -336,23 +336,18 @@ aside.filters{position:sticky;top:16px;display:grid;gap:22px;padding:18px}
   </section>
 
   <section id="view-models" role="tabpanel" aria-labelledby="tab-models" hidden>
-    <div class="cat-top" id="cat-models-top"></div>
     <div class="cat-rest" id="cat-models-rest"></div>
   </section>
   <section id="view-agents" role="tabpanel" aria-labelledby="tab-agents" hidden>
-    <div class="cat-top" id="cat-agents-top"></div>
     <div class="cat-rest" id="cat-agents-rest"></div>
   </section>
   <section id="view-dev" role="tabpanel" aria-labelledby="tab-dev" hidden>
-    <div class="cat-top" id="cat-dev-top"></div>
     <div class="cat-rest" id="cat-dev-rest"></div>
   </section>
   <section id="view-research" role="tabpanel" aria-labelledby="tab-research" hidden>
-    <div class="cat-top" id="cat-research-top"></div>
     <div class="cat-rest" id="cat-research-rest"></div>
   </section>
   <section id="view-industry" role="tabpanel" aria-labelledby="tab-industry" hidden>
-    <div class="cat-top" id="cat-industry-top"></div>
     <div class="cat-rest" id="cat-industry-rest"></div>
   </section>
 
@@ -456,6 +451,11 @@ function markRead(id){S.read.add(id);try{localStorage.setItem("sd-read",JSON.str
 function fmtAgo(iso){if(!iso)return"never";const d=new Date(iso);if(isNaN(d))return"—";const m=Math.round((Date.now()-d)/60000);
   if(m<1)return"just now";if(m<60)return m+" min ago";const h=Math.round(m/60);if(h<48)return h+" h ago";return d.toLocaleDateString(undefined,{month:"short",day:"numeric"})}
 function fmtNum(n){return n>=1000?(n/1000).toFixed(n>=10000?0:1).replace(/\.0$/,"")+"k":String(n)}
+// Cuts at the last whole word at/before max chars and appends one "…" - so a short summary
+// always ends cleanly instead of trailing off mid-sentence or mid-word.
+function truncate(text,max){text=String(text??"");if(text.length<=max)return text;
+  const cut=text.slice(0,max);const lastSpace=cut.lastIndexOf(" ");
+  return (lastSpace>max*0.6?cut.slice(0,lastSpace):cut).trimEnd()+"…"}
 function buzzPills(it){
   const others=(it.clusterSources||[]).length;
   const engaged=it.engagementBonus>0&&(it.points||it.stars);
@@ -497,6 +497,7 @@ function setTab(t){if(!TABS.includes(t))t="feed";
   closeSumPop();
   TABS.forEach(k=>{$("tab-"+k).setAttribute("aria-selected",k===t);$("view-"+k).hidden=k!==t});
   $("legend").hidden=t==="sources";
+  renderTopStories();
   try{history.replaceState(null,"","#"+t)}catch(e){}}
 TABS.forEach(k=>$("tab-"+k).onclick=()=>setTab(k));
 $("tab-feed").parentElement.addEventListener("keydown",e=>{
@@ -522,8 +523,8 @@ function topStoryCard(it,rank){
       <div class="ts-meta"><span class="chip">${esc(TOPICS[it.topic]||it.topic)}</span><span class="src">${esc(it.sourceName)}</span><time datetime="${esc(it.date)}">${esc(fmtAgo(it.date))}</time>
         ${buzzPills(it)}</div>
       <h3>${esc(it.title)}</h3>
-      ${it.summary?`<p>${esc(it.summary)}</p>`:""}
-      ${it.why?`<p class="why"><b>Why it matters:</b> ${esc(it.why)}</p>`:""}
+      ${it.summary?`<p>${esc(truncate(it.summary,125))}</p>`:""}
+      ${it.why?`<p class="why"><b>Why it matters:</b> ${esc(truncate(it.why,75))}</p>`:""}
     </div>
     ${isImg(it.image)?`<img class="ts-photo" src="${esc(it.image)}" alt="" loading="lazy" onerror="this.remove()">`:""}
   </a>`;
@@ -536,7 +537,7 @@ function resultCard(it,ws){
     <div class="res-body">
       <div class="res-meta"><span class="chip">${esc(TOPICS[it.topic]||it.topic)}</span><span class="src">${hlFn(it.sourceName)}</span><time datetime="${esc(it.date)}">${esc(fmtAgo(it.date))}</time>${it.clusterSize>1?`<span class="srcmore">+${it.clusterSize-1} src</span>`:""}</div>
       <h3>${hlFn(it.title)}</h3>
-      ${it.summary?`<p>${hlFn(it.summary)}</p>`:""}
+      ${it.summary?`<p>${hlFn(truncate(it.summary,100))}</p>`:""}
     </div>
     <div class="res-actions">${read?"<span>Opened</span>":""}
       ${(it.summary||it.why)?`<button type="button" class="moretoggle" data-id="${esc(it.id)}" aria-haspopup="dialog" aria-expanded="false">More</button>`:""}
@@ -566,23 +567,30 @@ function topOfSet(items){
   if(list.length<4)list=items.filter(it=>within(it,"7")&&it.isPrimary!==false);
   return list.sort((a,b)=>(b.buzzScore??b.importance??0)-(a.buzzScore??a.importance??0));
 }
+const CAT_TOP_N=4;
+function activeTab(){return TABS.find(k=>$("tab-"+k).getAttribute("aria-selected")==="true")||"feed"}
 function renderTopStories(){
   if(!S.loaded)return;
-  const list=topOfSet(S.items).slice(0,8);
+  const t=activeTab();
+  if(t==="search"||t==="sources"){$("topstories").hidden=true;return}
+  const isCat=CATS.includes(t);
+  const pool=isCat?S.items.filter(it=>it.topic===t):S.items;
+  const list=topOfSet(pool).slice(0,isCat?CAT_TOP_N:8);
+  $("ts-head").textContent=isCat?`Top in ${TOPICS[t]}`:"Top stories right now";
   $("topstories").hidden=!list.length;
   if(!list.length)return;
   $("ts-grid").innerHTML=list.map((it,i)=>topStoryCard(it,i+1)).join("");
 }
 
-/* ---------- Category tabs: top-of-category, then the rest, same pattern as the homepage ---------- */
+/* ---------- Category tabs: the shared Top Stories section above covers "top of category" when
+   that tab is active; this just renders everything else in that topic below it. ---------- */
 function renderCategory(key){
   if(!S.loaded)return;
   const items=S.items.filter(it=>it.topic===key);
-  const top=topOfSet(items).slice(0,6);
+  const top=topOfSet(items).slice(0,CAT_TOP_N);
   const topIds=new Set(top.map(it=>it.id));
   const rest=items.filter(it=>within(it,"30")&&!topIds.has(it.id)).sort(byDate);
   const limit=S.catLimit[key]||PAGE;
-  $("cat-"+key+"-top").innerHTML=top.length?`<h2 class="mono-label">Top in ${esc(TOPICS[key])}</h2><div class="ts-grid">${top.map((it,i)=>topStoryCard(it,i+1)).join("")}</div>`:"";
   $("cat-"+key+"-rest").innerHTML=rest.length?
     `<h2 class="mono-label">More in ${esc(TOPICS[key])}</h2><div class="reslist">${rest.slice(0,limit).map(it=>resultCard(it,[])).join("")}</div>
      ${rest.length>limit?`<div class="more"><button type="button" class="btn ghost" data-cat-more="${key}">Show more · ${rest.length-limit} left</button></div>`:""}`
@@ -598,7 +606,7 @@ function tileHTML(srcId,items,top){
   <header class="tile-head"><span class="src">${esc(it.sourceName)}</span>${it.clusterSize>1?`<span class="srcmore">+${it.clusterSize-1} src</span>`:""}${top?`<span class="chip">${esc(TOPICS[it.topic]||it.topic)}</span>`:`<span class="dot" title="${esc(TOPICS[it.topic]||it.topic)}"></span>`}</header>
   <div class="tile-body"><a class="slide${read?" read":""}${dir?` dir-${dir>0?"down":"up"}`:""}" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener" data-id="${esc(it.id)}">
     ${isImg(it.image)?`<img class="slide-photo" src="${esc(it.image)}" alt="" loading="lazy" onerror="this.remove()">`:""}
-    <div class="slide-body"><h2>${esc(it.title)}</h2>${it.summary?`<p class="sum">${esc(it.summary)}</p>`:""}</div></a></div>
+    <div class="slide-body"><h2>${esc(it.title)}</h2>${it.summary?`<p class="sum">${esc(truncate(it.summary,top?130:90))}</p>`:""}</div></a></div>
   <footer class="tile-foot"><span>${esc(TYPES[it.type]||it.type||"")} · ${esc(fmtAgo(it.date))}</span>
   <span class="tfactions">
     ${(it.summary||it.why)?`<button type="button" class="moretoggle" data-id="${esc(it.id)}" aria-haspopup="dialog" aria-expanded="false">More</button>`:""}
