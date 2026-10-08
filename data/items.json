@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T07:48:04Z",
+ "updated": "2026-10-08T08:27:45Z",
  "items": [
   {
    "id": "cb26c4cd754cd4f7",
@@ -25,7 +25,7 @@
    "storyKey": "ollamav0350rc1released",
    "desc": "What's Changed server: proxy cloud usage and balance APIs by @drifkin in #18829 llama: fix clef head reads past 2GiB on windows by @Gigrise in #18777 cmd: remove account step from CLI onboarding by @hoyyeva in #18826 manifest: avoid symlinks on Windows by @dhiltgen in #18852 docs: fix 6 dead links in README community integrations list by @aniketkrs in #18814 docs: fix broken download links in app README by @chenlichao in #18233 mlx: drop carried metal residency patch now that it is upstream by @dhiltgen in #18854 New Contributors @Gigrise made their first contribution in #18777 @aniketkrs made their first contribution in #18814 @chenlichao made their first contribution in #18233 Full Changelog : v0.40.0...v0.40.1-rc0",
    "image": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -50,13 +50,13 @@
    "importance": 4,
    "ai": true,
    "provider": "groq",
-   "storyKey": "microsoft-ai-hardware-windows-update",
+   "storyKey": "nvidia-microsoft-windows-ai-agents-rtx-spark",
    "desc": "Get ready for more AI in your Windows and more AI on the desktop.",
    "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Surface-Laptop-Ultra-Opened-500x500.png",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 7
   },
   {
    "id": "ee58890d81f7a8ac",
@@ -108,7 +108,7 @@
    "storyKey": "ollamav0350rc1released",
    "desc": "mlx: drop carried metal residency patch now that it is upstream ( #18854 )",
    "image": "https://avatars.githubusercontent.com/u/4033016?s=60&v=4",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -221,13 +221,13 @@
    "importance": 4,
    "ai": true,
    "provider": "groq",
-   "storyKey": "microsoft-surface-laptop-ultra-nvidia-ai-pc",
+   "storyKey": "nvidia-microsoft-windows-ai-agents-rtx-spark",
    "desc": "Microsoft revealed the specs and price for its Surface Laptop Ultra, AI PCs that run on Nvidia chips that are designed to run AI models and agents.",
    "image": "https://techcrunch.com/wp-content/uploads/2026/10/Microsoft-Surface-Laptop-Ultra.png?resize=1200,677",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 7
   },
   {
    "id": "876648c3358ff5ff",
@@ -249,13 +249,13 @@
    "importance": 5,
    "ai": true,
    "provider": "groq",
-   "storyKey": "chatgpt-intelligent-ui-gpt-6",
+   "storyKey": "gpt-6-intelligent-ui-release",
    "desc": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms, tappable buttons, and more. In a blog post explaining the […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Intelligent-UI.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 7
   },
   {
    "id": "1b116c39a228fad1",
@@ -278,13 +278,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "langchain-deep-agents-skills-update",
+   "storyKey": "langchain-managed-deep-agents-updates",
    "desc": "Deep Agents now lets you bind tools to skills, pin skills at runtime, and reload skills mid-thread, so agents with expansive skill repositories stay context-efficient and effective.",
    "image": "https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6ac686acfa26e17ec695410d_revamping-skills-in-deep-agents-cover-v4.png",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "a3e9723993ae6e82",
@@ -311,8 +311,8 @@
    "desc": "Hacker News discussion with 325 points and 309 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49997161",
    "hnId": "49997161",
-   "points": 337,
-   "comments": 326,
+   "points": 339,
+   "comments": 330,
    "image": "https://cdn.rswebsols.com/wp-content/uploads/2025/10/otr1by4mkru.jpg",
    "engagementBonus": 1,
    "clusterSize": 1,
@@ -344,10 +344,14 @@
    "storyKey": "nvidia-microsoft-windows-ai-agents-rtx-spark",
    "desc": "At a Microsoft event in San Francisco on Wednesday, NVIDIA founder and CEO Jensen Huang and Microsoft CEO Satya Nadella outlined how NVIDIA and Microsoft are co-engineering hardware and software for AI agents to run on Windows PCs. NVIDIA was founded because of Windows, Huang said. Now AI agents are coming to Windows. “If you […]",
    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nvidia-rtx-spark-microsoft-event-3840x2160-1-842x450.png",
-   "clusterSize": 1,
+   "clusterSize": 6,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "Ars Technica AI",
+    "TechCrunch AI",
+    "The Verge AI"
+   ],
+   "buzzScore": 7
   },
   {
    "id": "a5b44d5e4c84e5df",
@@ -369,13 +373,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "microsoft-surface-laptop-ultra-announcement",
+   "storyKey": "nvidia-microsoft-windows-ai-agents-rtx-spark",
    "desc": "Microsoft just wrapped up a big Windows and Surface-focused keynote in San Francisco. The biggest announcement was arguably the release details about the Surface Laptop Ultra, its new laptop that’s powered by Nvidia’s RTX Spark Arm-based chip. The machine will start at $2,599 for a configuration with an 8-core CPU, 24GB of RAM, and 512GB […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/lc-img-639ce71c-4af9-43a1-b5a1-34b6d8db35cc.jpeg?quality=90&strip=all&crop=0%2C10.745251402131%2C100%2C78.509497195739&w=1200",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "36bf85cb54324cff",
@@ -398,13 +402,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "meta-muse-ipad-launch",
+   "storyKey": "meta-muse-spark-1-1-release",
    "desc": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
    "image": "https://techcrunch.com/wp-content/uploads/2026/09/meta-muse-app-GettyImages-2293792137.jpg?w=1024",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "610b12eb506990c2",
@@ -459,10 +463,12 @@
    "storyKey": "langchain-managed-deep-agents-updates",
    "desc": "LangChain just released new capabilities in Managed Deep Agents. Agents can now schedule follow-ups, reconfigure themselves on every run, and react to Slack messages.",
    "image": "https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6ac6882bdbe9afeb231b8b05_Introducing%20Managed%20Deep%20Agents%20v0.9.png",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "LangChain Blog"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "9c7dd462aa5ae2f1",
@@ -485,13 +491,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "microsoft-copilot-windows-control",
+   "storyKey": "nvidia-microsoft-windows-ai-agents-rtx-spark",
    "desc": "At today's Windows and Surface event, Microsoft showed off an upgrade to its Copilot AI system that will give it access to local files on your PC and the ability to take actions across the OS. It's part of an idea Microsoft is calling \"Hybrid Intelligence,\" where apps and tools rely on a mix of […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/lcimg-e4e44609-0bf6-40b2-8c24-2e8c3ce7cee8.jpeg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "4a32ff51ed082ec8",
@@ -513,13 +519,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "chatgpt-new-visual-interface",
+   "storyKey": "gpt-6-intelligent-ui-release",
    "desc": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
    "image": "https://techcrunch.com/wp-content/uploads/2026/10/Intelligent-UI.png?resize=1200,675",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "b88a33297d3d8a2a",
@@ -596,12 +602,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "engramedit-conditional-memory-knowledge-updates",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Conditional memory architectures such as DeepSeek Engram use input n-grams to look up learned embeddings, expanding the capacity of large language models (LLMs) with limited additional computation. Beyond model scaling, this architecture has demonstrated the potential to decouple factual knowledge storage from general-purpose computation, offering a promising route to updating factual knowledge while keeping the Transformer backbone fixed. Realizing this potential is challenging because different expressions of a fact may activate different n-gram embeddings, while updating shared embeddings can unintentionally change the model's predictions about other facts. We propose EngramEdit for decoupled knowledge updates through conditional memory. EngramEdit first computes target memory representations that make the model predict the updated fact across multiple expressions. It then jointly updates the shared n-gram embeddings to match these targets across expressions and edits, penalizing updates to frequently reused embeddings more strongly to preserve unrelated knowledge. Experiments show that EngramEdit enables independent factual knowledge updates through conditional memory, achievin",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "c7400614473c9601",
@@ -624,12 +630,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "robovejpa-scaling-robotic-world-models",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Real-time robot control demands enough visual history to infer motion and task progress, but processing that history can delay action. We present Long-WAM, a model-system framework for scaling the context of causal world-action models under real-time control constraints. Our central finding is that access to history is not the same as using it: longer histories pay off far more when the video foundation is pretrained autoregressively (AR). We first learn causal prediction from robot and egocentric videos without action labels, then preserve this history-to-future structure during world-action adaptation. On RoboCasa GR-1, increasing context from 0.0 to 19.2 seconds raises success from 63.3% to 78.7%, whereas a bidirectionally pretrained initialization shows no net gain; robot-domain AR pretraining further raises peak success on GR-1 and LIBERO-Long. Long-WAM also achieves the best results among compared methods on LIBERO-Long, RoboTwin 2.0, and DOMINO. Streaming observation encoding, asynchronous execution, and hardware-specific acceleration enable deployment on RTX 5090, DGX Spark, and Jetson AGX Thor without dropping future prediction; on RTX 5090, each action chunk, including fu",
-   "clusterSize": 2,
+   "clusterSize": 21,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 6
   },
   {
    "id": "d8f516d6f374c5d4",
@@ -680,12 +686,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "rephrase-before-you-act-vision-language-action-models",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Vision-language-action models (VLAs) are strikingly sensitive to instruction phrasing and do not inherit the language robustness of the vision-language models they are built on. A one-word edit can move success by tens of points: $π_{0.5}$ turns on a LIBERO stove 100% of the time for \"switch on the stove\" and 2% for \"switch on the hot plate\", and a $π_0$ checkpoint finetuned with rephrase augmentation still shows swings of up to 61 points. We characterize this sensitivity with statistically tested single-edit swings and an oracle phrase search, which shows that phrasing alone nearly closes the 21-point gap between in-distribution and out-of-distribution tasks. We then reduce it without modifying the policy. Because the sensitivity is systematic, it can be expressed as explicit rules: we score many phrasings of a few training tasks, have a large language model distill the evidence into ten to twenty rephrasing rules, and at deployment rewrite each incoming instruction once under these rules. The rules improve the frozen $π_0$ by 16 to 27% relative on twelve held-out tasks across adversarial, VLM-generated, and human-generated phrasings, with gains concentrated on out-of-distribution",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "b727f8333c70a797",
@@ -708,14 +714,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "robovejpa-scaling-robotic-world-models",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Latent world models have shown a remarkable ability to predict future states and to plan in the real world. In practice, however, we lack a principled way to estimate how their capabilities scale with model size, data, and compute, an open problem that slows progress in the field. In this work we present RoboJEPA, a world model based on the Joint Embedding Predictive Architecture (JEPA) and trained on a large-scale dataset spanning 12 robotic embodiments. We show that RoboJEPA's imagination error, the error of its latent rollouts, follows a second-order power law in compute, allowing us to predict model quality well beyond the scale at which the law is fit. We further show that downstream robotic planning performance improves predictably with compute, and that imagination error is strongly correlated with it, making it a reliable proxy for real-robot evaluation. Finally, we demonstrate that latent world models can be deployed zero-shot as robotic agents, planning toward a single goal image to solve tasks requiring long-horizon planning on real hardware. We release all model checkpoints together with our training and robot deployment code. To our knowledge, this is the first work to",
-   "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "arXiv cs.AI"
-   ],
-   "buzzScore": 4
+   "clusterSize": 21,
+   "isPrimary": false,
+   "clusterSources": [],
+   "buzzScore": 6
   },
   {
    "id": "36d0a2138528987a",
@@ -765,12 +769,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "prompt-should-do-more-retrieval-instructions",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Prompted embedding models have recently received increasing attention, particularly for retrieval, where detailed retrieval instructions are provided as part of the retrieval prompt. Several new datasets and studies have examined this setting, showing that the current embedding models often struggle to follow such instructions reliably. In this paper, we study the mechanism of how instructions actually affect the representations of retrieval queries in asymmetric retrieval tasks. We show that models can fail to follow even simple task instructions when query-side distractors are included in the evaluation. We hypothesize that this behavior is driven by the training setup of current embedding models and their evaluation, and show that fine-tuning with added query-side distractors leads to substantial improvements, with minimal effect on other tasks.",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "013f83fe432f9cb5",
@@ -792,12 +796,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "recast-adaptive-evidence-routing",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Large language models are increasingly applied to tasks grounded in long, heterogeneous information sources. Conventional Retrieval-Augmented Generation (RAG) relies on fixed similarity-based retrieval, while agentic variants adapt queries and tool use but remain largely retrieval-centric. However, in many tasks, the evidence required for a solution is not explicitly present in any single source item. Instead, it must be derived through filtering, aggregation, or computation across multiple source items. In this work, we introduce RECAST (Routing Evidence through Computation, Access, and Synthesized Tools), a learned framework that formulates evidence construction as a sequential decision process over heterogeneous retrieval and computation operations, allowing evidence to be actively derived rather than merely retrieved. A lightweight RouterLM iteratively selects and formulates primitive operations or specifies customized operations for a frozen CompilerLM to translate into executable code. Once it judges the evidence sufficient, RouterLM passes the accepted evidence to a frozen AnswerLM to produce the final solution. We train RouterLM with supervised fine-tuning (SFT) followed by",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "131174d6198feb86",
@@ -847,18 +851,18 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "docker-agent-discussion",
+   "storyKey": "opentpuanopensourceaiaccelerator",
    "desc": "Hacker News discussion with 208 points and 97 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "hnId": "49996259",
-   "points": 222,
-   "comments": 105,
+   "points": 227,
+   "comments": 106,
    "image": "https://opengraph.githubassets.com/8795647a382b256b628abf437fc3bb7858fca4f607a83ce94f6c8a6416abedc9/docker/docker-agent",
    "engagementBonus": 1,
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 7
   },
   {
    "id": "2c81a4fbc76bda68",
@@ -881,13 +885,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "surface-rtx-spark-dev-box-preorder",
+   "storyKey": "nvidia-microsoft-windows-ai-agents-rtx-spark",
    "desc": "Microsoft's Nvidia-powered Surface RTX Spark Dev Box is available for preorder now and is slated to ship in November for just about $6,000. It's pricier than the DGX Spark mini PC Nvidia launched last year, but PC prices have been climbing due to shortages of RAM and other components. The Dev Box's flat, 3D-printed anodized […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/microsoft-surface-rtx-spark-dev-box-promo-1.png?quality=90&strip=all&crop=0%2C30.391676058944%2C100%2C65.44502617801&w=1200",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "55aabb143e2e031d",
@@ -910,12 +914,12 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "phrbench-behavioral-evaluation-post-hallucination-reasoning",
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
    "desc": "Hallucinated information can propagate through multi-stage LLM systems and become part of the context for subsequent reasoning. Existing studies of post-hallucination reasoning (PHR) mainly characterize changes in final outcomes and aggregate reasoning dynamics, leaving how models resolve hallucinated premises at the response level insufficiently understood. In this work, we introduce PHRBench, a controlled benchmark for behaviorally structured PHR across four domains and 18 large language models. PHRBench characterizes each reasoning trajectory independently of final-answer correctness through Hallucination Compliance, Hallucination Avoidance, and Heuristic Correction, and defines an insightful trajectory as successful correction that ultimately reaches the correct answer. Across 4820 controlled instances, we find that successful recovery remains relatively rare and is associated with more frequent belief updates along the reasoning trajectory. We further find that properties of the hallucinated prompt contain substantial predictive signal for successful recovery, with a lightweight predictor achieving an AUROC of 0.847. These findings provide a behavioral view of post-hallucinati",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "0825a4897dea2e82",
@@ -938,13 +942,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "multimodal-open-d1-edge-models",
+   "storyKey": "opentpuanopensourceaiaccelerator",
    "desc": "",
    "image": "https://cdn-uploads.huggingface.co/production/uploads/644249b08443bce4c9890a0f/hLsllw4zhC04cVGiV69v0.png",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "b68f72604da4715c",
@@ -996,13 +1000,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "chatgpt-college-planning-tools",
+   "storyKey": "openai-teens-college-planner",
    "desc": "OpenAI is bringing new tools to ChatGPT for Teens, a mode for teens introduced in August with safeguards and break reminders, to help users with the college application process. \"College Planner brings together application requirements, deadlines, tasks, and financial-aid steps for schools on a student's list in one plan,\" OpenAI says. \"Students applying to several […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/College-planner_updated.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "c7de22c7db255c59",
@@ -1053,13 +1057,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "muse-ipad-launch",
+   "storyKey": "meta-muse-spark-1-1-release",
    "desc": "After launching nearly a month ago and spending several weeks as the top free app in Apple's App Store, the latest update to Meta's Muse iOS app introduces native support for the iPad. A Mac version of Meta's agentic AI tool (designed to compete with OpenClaw, ChatGPT's Dots, and Grok Bot) was released about a […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/musetop.jpg?quality=90&strip=all&crop=0,10.771144658312,100,78.457710683376",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "e8947d3adf72c0ca",
@@ -1194,13 +1198,13 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "mistral-le-chonk-release",
+   "storyKey": "ollamav0350rc1released",
    "desc": "Mistral says Le Chonk can rival top closed models while remaining open-weight.",
    "image": "https://cdn.arstechnica.net/wp-content/uploads/2025/12/mistral_header_2-500x500.jpg",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 23,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "5f65c4d68146dee7",
@@ -1223,7 +1227,7 @@
    "importance": 3,
    "ai": true,
    "provider": "groq",
-   "storyKey": "ai-assisted-proof-optimal-packing-11-squares",
+   "storyKey": "allthedramaaroundaistakeoverofmathematic",
    "desc": "Hacker News discussion with 113 points and 52 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49993121",
    "hnId": "49993121",
@@ -1231,10 +1235,10 @@
    "comments": 53,
    "image": "https://opengraph.githubassets.com/be5efb2d9e1053a59032b072ff7a7dbceab6abf56f57f9530f1bd681aaa05ad3/Queuingtheorydotcom/11SquaresFormalized",
    "engagementBonus": 0,
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 5,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "1c9558d381626972",
@@ -1345,12 +1349,14 @@
    "storyKey": "meta-muse-spark-1-1-release",
    "desc": "Introducing Muse Spark 1.1",
    "image": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.2365-6/741906678_873652302465180_7764547737953411008_n.png?_nc_cat=104&ccb=1-7&_nc_sid=e280be&_nc_ohc=Ag1jBdhsWOkQ7kNvwHzfho-&_nc_oc=AdqUXq83WXfppF5Q5tnGIutl0cmOXAi7enDfF327jNddxBSeeRB8B9Gd2ewo6LwlSwI&_nc_zt=14&_nc_ht=scontent-sjc6-1.xx&_nc_gid=01WK0u1LzDGCJqKW3L49Vw&_nc_ss=7b20f&oh=00_AQPlvt2QtupWhP9ELkVsBvP3wKrYkajYkWC_dJJ3GPeZUw&oe=6AE08DA6",
-   "clusterSize": 2,
+   "clusterSize": 4,
    "isPrimary": true,
    "clusterSources": [
-    "Meta AI Blog"
+    "Meta AI Blog",
+    "TechCrunch AI",
+    "The Verge AI"
    ],
-   "buzzScore": 4
+   "buzzScore": 6
   },
   {
    "id": "fc8c187b735b5bd9",
@@ -1433,10 +1439,10 @@
    "storyKey": "meta-muse-spark-1-1-release",
    "desc": "Introducing Muse Image and Muse Video",
    "image": "https://scontent-sjc3-1.xx.fbcdn.net/v/t39.2365-6/741068613_1340710804837358_5615612072287059343_n.png?_nc_cat=103&ccb=1-7&_nc_sid=e280be&_nc_ohc=-hoWpkBf53IQ7kNvwHMcixl&_nc_oc=Adp1Q7z-ENjMzJKYQ4JbdNgembQSMHv9bGhfoMMr00SpyVpER_gep4uPmPkD4f4TgHg&_nc_zt=14&_nc_ht=scontent-sjc3-1.xx&_nc_gid=01WK0u1LzDGCJqKW3L49Vw&_nc_ss=7b20f&oh=00_AQMdBFk6cRP1hPbbg2hbGPXQYZP7eQ2t4ve-DQ9MHtOMvg&oe=6AE07DF2",
-   "clusterSize": 2,
+   "clusterSize": 4,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 6
   },
   {
    "id": "86bc9e2813795f0f",
@@ -1519,10 +1525,12 @@
    "storyKey": "openai-teens-college-planner",
    "desc": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
    "image": "https://images.ctfassets.net/kftzwdyauwt9/48q2nDNP9Gj81cxL5sCOFv/e0692d4bcad2b81fad9b62b5bea904b7/teens-learn-and-plan-social.png?w=1600&h=900&fit=fill",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "3b4bc6509f94c034",
@@ -1630,12 +1638,12 @@
    "importance": 3,
    "ai": true,
    "provider": "gemini",
-   "storyKey": "openai-math-barnette-conjecture",
+   "storyKey": "allthedramaaroundaistakeoverofmathematic",
    "desc": "I was a graph theory junkie long ago and even moved to Budapest for awhile to study among the greats. While I was there I started working on Barnette's Conjecture which came to occupy my thoughts over the next 24 years of my life, on and off as I worked in many different fields. Last summer I even thought for a few days that I had actually solved it. But it's supposedly proven here - problem 180 . I don't know what to think exactly. I spent thousands of hours on that problem. I really enjoyed it. Hearing that it is solved somehow makes me sad in a far-off way, like hearing an ex-girlfriend died suddenly in a car crash. I don't know, there's probably a lot of people feeling odd emotions tonight. — Jake Boggan , Hacker News comment on openai/math Tags: openai , mathematics , deep-blue , llms , ai , generative-ai",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "clusterSize": 5,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "865c9186faadde13",
@@ -1661,14 +1669,14 @@
    "desc": "Hacker News discussion with 210 points and 56 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49987076",
    "hnId": "49987076",
-   "points": 277,
+   "points": 278,
    "comments": 78,
    "image": "https://strandsagents.com/blog/og/introducing-strands-decider.png",
    "engagementBonus": 1,
-   "clusterSize": 3,
+   "clusterSize": 6,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 6
+   "buzzScore": 7
   },
   {
    "id": "0ca1450969b5beb5",
@@ -1693,10 +1701,13 @@
    "storyKey": "gpt-6-intelligent-ui-release",
    "desc": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
    "image": "https://images.ctfassets.net/kftzwdyauwt9/5frqtUAWccstAbVrCFraH6/5ae9b6bfbc3f3dff8001ed249812f97d/Intelligent-UI_Art-Card_16x9.png?w=1600&h=900&fit=fill",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 5
+   "clusterSources": [
+    "TechCrunch AI",
+    "The Verge AI"
+   ],
+   "buzzScore": 7
   },
   {
    "id": "fd7b29632bdc8c65",
@@ -1747,11 +1758,11 @@
    "ai": true,
    "provider": "gemini",
    "desc": "OpenAI has revealed solutions to a number of long-standing mathematics problems produced by an unreleased frontier model in a batch of 722 manuscripts, covering 372 result families that group related papers. It extends a run of breakthroughs that have both impressed and unsettled parts of the mathematical community while raising questions about research ethics and […]",
-   "storyKey": "openaidropsanotherbatchofmathematicalbre",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "allthedramaaroundaistakeoverofmathematic",
+   "clusterSize": 5,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 7
   },
   {
    "id": "38f8cbc7334120ae",
@@ -1774,11 +1785,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-decisions plugin inspired by llm-typesafe . Unlike Jev, the new gpt-6-luna decision model supports image input in addition to text. Both models charge for input it and not for output: OpenAI's is 10 cents per million input tokens, Jev's is 4.2 cents per million. Otherwise the API shape is very similar to Jev, at least conceptually. Jev supports three question types for yes/no, choices, or scores. OpenAI Decisions supports the same three types. Install the plugin like this: llm install llm-openai-decisions Here's an example query against an image attachment: llm -m openai-decisions/gpt-6-luna \\ -a https://static.simonwillison.net/static/2025/two-pelicans.jpg \\ -s ' Does this image contain any mammals? ' And example output: { \"type\" : \" predicate \" , \"name\" : \" evaluation \" , \"probability\" : 0.0 } Consult the README for full details of how to run the other types of questions. Tags: openai , llm , coding-agents",
-   "storyKey": "introducingmistrallarge4lechonk",
-   "clusterSize": 3,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "adc1cdfb48287d7f",
@@ -1831,10 +1842,10 @@
    "desc": "Hacker News discussion with 124 points and 52 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49984716",
    "storyKey": "opentpuanopensourceaiaccelerator",
-   "clusterSize": 3,
+   "clusterSize": 6,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "224eb5aa6e6d8253",
@@ -1857,11 +1868,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning",
-   "storyKey": "introducingmistrallarge4lechonk",
-   "clusterSize": 3,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "ecc07393279513fe",
@@ -1885,11 +1896,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Like other solutions, it is not especially reliable, and it's easy to circumvent.",
-   "storyKey": "openaiwillwatermarkchatgptoutputsbydefau",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaiwillstartwatermarkingchatgptstexti",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "fef1d0f443914bd4",
@@ -1940,11 +1951,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "On Tuesday, Musubi announced a lightweight decision model made for real-time moderation called PolicyLM-1.7B, released with open weights.",
-   "storyKey": "howaidecisionmodelscouldchangecontentmod",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "opentpuanopensourceaiaccelerator",
+   "clusterSize": 6,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "0522fc02b69ef4b7",
@@ -1967,13 +1978,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Introducing Mistral Large 4: Le chonk Mistral are back in the game. Today they're releasing a preview of Mistral Large 4, a 1 trillion parameter, 49 billion active parameter model trained on their own cluster of 3,800 NVIDIA Grace Blackwell GPUs. The preview is available via their API. They promise to release the open weights model at the \"end of this month\". The model only supports two reasoning levels - \"none\" and \"high\" - via the Mistral API. Here are both pelicans - the \"high\" one looks better, though surprisingly it only used 2,717 output tokens compared to \"none\" which used 3,275: On Artificial Analysis it scores 38 , just behind DeepSeek 4.1 Flash, which is a 552B model. It's a huge improvement on last December's Mistral Large 3, which drew this terrible pelican and scored 9 on AA . It's certainly not a Fable-class model, but it's great to see Mistral put out a model that's back to being maybe about 6 months behind the frontier. Via Hacker News Tags: ai , generative-ai , llms , mistral , pelican-riding-a-bicycle , llm-release",
-   "storyKey": "introducingmistrallarge4lechonk",
-   "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "Simon Willison"
-   ],
-   "buzzScore": 5
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
+   "isPrimary": false,
+   "clusterSources": [],
+   "buzzScore": 6
   },
   {
    "id": "43f8aab03973ba89",
@@ -2024,11 +2033,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "",
-   "storyKey": "embeddinggemma2anopenlightweightmultimod",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "fe89f2d659e01683",
@@ -2107,11 +2116,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Signed-off-by: Cam Quilici cjquilici@gmail.com Signed-off-by: Cam Quilici cameron@semianalysis.com Co-authored-by: Cam Quilici cameron@semianalysis.com Co-authored-by: Nick Hill nickhill123@gmail.com Co-authored-by: Yifan Qiao yifanqiao@inferact.ai",
-   "storyKey": "v0311rc0exposecachedprompttokensbycachet",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "153354950d88cd41",
@@ -2136,7 +2145,7 @@
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash MLX now has support for an embedding model: embeddinggemma-2 We will continue testing and enabling additional models. Full Changelog : v0.35.1...v0.40.0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2251,11 +2260,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Existing methods for 4D hand-object reconstruction often rely on costly per-sequence optimization, while generative approaches typically synthesize interactions from random noise, which can lead to unstable interaction prediction. We introduce 4D-HOF, a feed-forward framework that reconstructs 4D hand-object interactions from coarse but informative estimates produced by vision foundation models. Concretely, we learn a conditional flow matching model that transports foundation-model-derived hand-object states toward an interaction manifold, allowing the model to correct errors in translation, rotation, and alignment in a feed-forward manner. A key advantage of our generative formulation is that it naturally enables test-time guidance within the transport process. Rather than applying a separate post-hoc optimization after reconstruction, we directly steer the evolving generative states using physical interaction constraints and observed 2D evidence, allowing the reconstruction to be refined as part of the generative process itself. By training the generative model on diverse datasets, 4D-HOF generalizes robustly to challenging in-the-wild scenarios. Experiments on out-of-domain benc",
-   "storyKey": "4dhofhandobjectflowmatchingforfeedforwar",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "affb881774c11107",
@@ -2279,11 +2288,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Scientific research often begins by synthesizing ideas from a set of related papers to identify gaps and formulate new directions. However, training language models to perform this form of literature-grounded ideation remains challenging, as existing approaches based on prompting or feedback lack structured supervision for how papers should be synthesized. We introduce IdeaAnchor, a paradigm for training LLMs to perform research ideation using structured specifications as privileged signals. Each IdeaAnchor instance encodes how each input paper should be synthesized into a successful idea, including their functional roles, relationships, and target synthesis criteria. We build this paradigm by mining instances from published papers, capturing how real ideas emerge from prior literature. We then train models via demonstration, self-distillation, and reinforcement learning, and further enhance generation with retrieval at inference time. Experiments show consistent improvements in ideation quality. Our analysis reveals a functional decomposition: anchor-based training strengthens creative synthesis, retrieval enhances detail elaboration, and combining both yields the best performance",
-   "storyKey": "ideaanchorteachingllmstoturnliteraturein",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "learningtoreadthecontextualtokensindiffu",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "f2b503bafe57ef99",
@@ -2307,11 +2316,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "World models offer a data-driven alternative to traditional simulators for robotics, with applications spanning policy evaluation, improvement, and planning. All of these uses depend on faithful 3D geometry, yet current video-based world models are trained on RGB alone and produce rollouts that look correct frame-by-frame but do not compose into a consistent 3D world. Closing this gap requires progress on two fronts: large-scale 3D supervision for manipulation, and an architecture that can absorb it without disturbing strong pretrained video priors. We introduce a calibration pipeline that combines learned stereo depth with a joint factor graph, pooling all episodes collected from the same physical robot to recover its shared kinematic parameters alongside per-scene extrinsics. Applied to the DROID dataset, this yields DROID-3D, a calibrated 3D dataset providing dense metric depth and recalibrated multi-view extrinsics (achieving <0.7 px reprojection error on 90% of episodes for external cameras). We then train DepthWorld, a Stable Video Diffusion-based world model that jointly predicts multi-view RGB and depth via spatial latent tiling, leaving the pretrained Variational Autoencod",
-   "storyKey": "depthworld3dworldmodelforrobotmanipulati",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "f7ddaebe2f74f34b",
@@ -2335,11 +2344,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Large language models (LLMs) have become increasingly capable problem solvers, but being able to solve a problem is not the same as being able to teach it. Existing approaches to training LLMs as teachers rely on demonstrations, preference data, or predefined pedagogical criteria that specify what good teaching looks like. However, these signals are often not grounded in individual student learning outcomes, where effective teaching strategies can vary substantially across learners. To address this, we introduce Sherpa, a multi-turn reinforcement learning framework that instantiates multiple student archetypes with LLMs conditioned on distinct learning preferences and trains a teacher model to adapt its instruction by directly maximizing their learning outcomes. Teacher LLMs trained with Sherpa improve instructed students' performance across all archetypes by an average of 20.5 percentage points. Under MathTutorBench's evaluation, Sherpa raises the overall pedagogy score from 52.5% to 79.2%, indicating better teaching responses. Our human studies show that the trained teacher is preferred over the base model in 79.6% of pairwise comparisons. Together, Sherpa trains LLM teachers to ",
-   "storyKey": "sherpateachingllmstoteachadaptively",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "f995cd3882081852",
@@ -2363,11 +2372,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Large language models (LLMs) can solve many narrow tasks, but querying them separately for millions of related instances can be prohibitively expensive. Can LLM agents autonomously create cheaper solutions for such workloads? We call this ability \"bottling\": the ability to turn general capabilities into task-specific solutions that balance answer quality and amortised cost. We introduce BOTTLED, a benchmark in which agents receive an entire unlabelled workload and must complete it under fixed time, compute and LLM API budgets. Agents choose their own approach, such as training a small model or writing a reusable program. Across ten models and three tasks, we find that strong zero-shot task performance does not reliably translate into strong bottling capabilities. Models with similar zero-shot scores can differ substantially after bottling, and 48 of 60 bottling runs score below the lower bound of the 95% confidence interval of their model's zero-shot performance. Moreover, 31 of 60 runs underperform the stronger of two small-model distillation baselines with the same token budget. Nevertheless, bottling can yield substantial savings: on query-product relevance classification, Opus ",
-   "storyKey": "agentinabottlecanllmagentsturntheircapab",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "ac321abfb351e2e9",
@@ -2391,10 +2400,14 @@
    "provider": "groq",
    "desc": "Web agents complete user requests by reading and acting on pages that third parties write, so an instruction planted on a page can redirect the agent away from the user's goal. The agent cannot simply ignore the page, because the page also holds the values and controls the task requires. Current defenses fine-tune the agent on injections fixed before training, and attackers that adapt to the trained model bypass them. Adversarial training lets the attacker adapt but keeps the tasks fixed, so a task stops teaching once the agent solves it. We introduce AdvSim2Real, which co-evolves a task curriculum, an injection adversary, and the agent inside a frozen web world model. The curriculum is rewarded for tasks the agent solves about half of the time, and the adversary only for a success flip, an injection that turns a judged success into a failure. Training in the simulator makes a 4B agent both more capable and more robust: its completion rises with and without attacks, holds against a frontier-model adversary it never trained against, and its capability gain carries over to a real browser. On 150 web tasks, AdvSim2Real raises completion under this unseen adversary by 33.6\\% relative t",
    "storyKey": "advsim2realtrainingwebagentsagainstadapt",
-   "clusterSize": 1,
+   "clusterSize": 21,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "OpenAI News",
+    "arXiv cs.AI",
+    "arXiv cs.CL (language models)"
+   ],
+   "buzzScore": 7
   },
   {
    "id": "9444cd566aa31f19",
@@ -2446,11 +2459,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Diffusion Language Models (DLMs) hold the promise of order-agnostic, parallel text generation. Recently, continuous diffusion and flow matching models have seen substantial gains, driven by carefully crafted token representations and diffusion/flow spaces. In this work, we introduce Hierarchical Continuous Diffusion Language Models (H-CDLMs), a simple framework that further improves continuous DLMs with minimal compute and parameter overhead. Drawing on the discrete DLM and continuous image diffusion literature on joint diffusion, we diffuse multiple modalities in parallel. These modalities represent tokens at different semantic granularities: in our instantiation, the tokens themselves and coarser clusters obtained by clustering pretrained token embeddings. We propose a general setup that allows per-modality samplers and schedules to enhance the interplay between modalities. Applied to CoBit, this yields H-CoBit, which delivers large empirical gains across benchmarks. At dataset entropy, H-CoBit improves MAUVE and reaches a generative perplexity (GenPPL) of 49.4 on LM1B and 50.4 on OWT, improving on the baseline by 24.2 and 20.7 points and surpassing even discrete DLMs of comparab",
-   "storyKey": "denoisinghierarchicalrepresentationsjoin",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "learningtoreadthecontextualtokensindiffu",
+   "clusterSize": 3,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 5
   },
   {
    "id": "eb10db562964dbc7",
@@ -2473,11 +2486,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Generative Information Retrieval (GIR) has emerged as a transformative paradigm, shifting document retrieval from a traditional \"retrieve-and-rank\" workflow to sequence-to-sequence generation, where a model directly predicts document identifiers (DocIDs). While the semantic design of these DocIDs is known to be critical for performance, a fundamental question remains under-explored: what makes a good DocID? Current approaches rely heavily on computationally expensive downstream evaluations, hindering systematic analysis and rapid iteration. In this work, we address this challenge by presenting a comprehensive study on the properties, metrics, and trade-offs that define effective numerical DocIDs. Specifically, our contributions are threefold: First, we propose a unified framework that unifies Product Quantization (PQ) and Residual Quantization (RQ), and their hybrid variants within a single design space. This enables us to systematically study key DocID properties, such as hierarchy versus parallelism, as well as the impact of hyperparameters like DocID length and codebook size. Second, we define a suite of training-free, intrinsic metrics, to quantify DocID quality and evaluate st",
-   "storyKey": "asystematicstudyofsemanticidspacesforgen",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "627d31f34b3ae9c2",
@@ -2503,10 +2516,12 @@
    "desc": "Hacker News discussion with 119 points and 118 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49981197",
    "storyKey": "utahtoletaiexaminepatientsandprescribeme",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 4
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "7e8592c04878b888",
@@ -2531,7 +2546,7 @@
    "provider": "groq",
    "desc": "Release v5.19.0 New Model additions EmbeddingGemma2 EmbeddingGemma 2 is a multimodal embedding model from Google built on the Gemma 4 architecture. It encodes text, images, audio, and video, individually or combined in one input, into a shared 768-dimensional vector space for cross-modal retrieval, semantic similarity, clustering, and classification. It uses Matryoshka Representation Learning, so embeddings can be truncated to 512, 256, or 128 dimensions. It also offers configurable visual and video token budgets, and unused vision or audio towers can be disabled at load time to save memory. Links: Documentation Smthn smthn ( #49364 ) by @vasqu in #49364 Breaking changes All MoE models whose routers compute logits now return them when output_router_logits=True , following the Qwen3-MoE pattern (a router_logits recorder on the base model, MoeModelOutputWithPast from the backbone, and a MoE causal LM output from the head), so code that relied on the previous outputs or their absence should read the router logits from these output classes. 🚨 Return router logits from every MoE model that computes them ( #48920 ) by @qgallouedec Owlv2ForObjectDetection.embed_image_query now selects the",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2613,12 +2628,14 @@
    "desc": "Hacker News discussion with 259 points and 321 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49980715",
    "storyKey": "opentpuanopensourceaiaccelerator",
-   "clusterSize": 3,
+   "clusterSize": 6,
    "isPrimary": true,
    "clusterSources": [
-    "Hacker News"
+    "Hacker News",
+    "Hugging Face Blog",
+    "TechCrunch AI"
    ],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "c2e7917438d64d4a",
@@ -2698,11 +2715,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Atlassian and OpenAI are expanding their partnership to connect frontier models with enterprise knowledge and help teams plan, build, and deliver work.",
-   "storyKey": "atlassianandopenaiexpandpartnershiptotur",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "f2c9898c912c2a73",
@@ -2752,11 +2769,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Implements the EmbeddingGemma2Model architecture on the MLX runner: 24-layer bidirectional text encoder with PLE, shared gemma4 vision/audio towers, mean-pool + L2 output. /api/embed accepts per-item media via input dicts.",
-   "storyKey": "v0400rc6modeladdmultimodalembeddings",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "48de41187a53abd4",
@@ -2979,11 +2996,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "OpenAI publishes new results on open problems in mathematics from an internal frontier model and shares Lean proof formalizations and research details on GitHub.",
-   "storyKey": "sharingaiprogressinmathematics",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "allthedramaaroundaistakeoverofmathematic",
+   "clusterSize": 5,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "9f54e4bc2e92628f",
@@ -3035,11 +3052,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Learn how OpenAI and Ironclad are training and evaluating AI agents on complex contracting workflows to advance computer use for professional work.",
-   "storyKey": "advancingcomputerusewithironclad",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "aa8d5b36acc272f4",
@@ -3120,7 +3137,7 @@
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -3180,7 +3197,7 @@
    "provider": "groq",
    "desc": "MLX: version bump add scopes for unit tests to reduce memory usage",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 5
@@ -3404,12 +3421,14 @@
    "provider": "gemini",
    "desc": "OpenAI will watermark ChatGPT and Codex text in the EU to comply with the AI Act. Editing can make the invisible marks harder to detect, it says.",
    "storyKey": "openaiwillstartwatermarkingchatgptstexti",
-   "clusterSize": 2,
+   "clusterSize": 4,
    "isPrimary": true,
    "clusterSources": [
+    "Ars Technica AI",
+    "OpenAI News",
     "The Verge AI"
    ],
-   "buzzScore": 5
+   "buzzScore": 7
   },
   {
    "id": "5bc9d1f4735012c9",
@@ -3432,11 +3451,11 @@
    "ai": true,
    "provider": "gemini",
    "desc": "People in Utah can now use AI to get a prescription for acne treatment. On Monday, healthcare startup Nolla Health announced that users in the state can scan their faces using its app, allowing its AI system to analyze acne severity and autonomously write a prescription, as reported earlier by Bloomberg. The service is launching […]",
-   "storyKey": "thisstartupisissuingaigeneratedacnepresc",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "utahtoletaiexaminepatientsandprescribeme",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "668fcb6077120c20",
@@ -3459,11 +3478,11 @@
    "ai": true,
    "provider": "gemini",
    "desc": "Reflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI system by training Reflection’s AI models on their own proprietary data.",
-   "storyKey": "reflectiondebutsbeamanopenweightaimodelt",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "ba6c5da9a8807f4f",
@@ -3487,10 +3506,15 @@
    "provider": "groq",
    "desc": "This past year, OpenAI, Anthropic, and other labs have announced breakthroughs on numerous long-standing mathematical problems, in some cases pushing well beyond what researchers expected current systems to be capable of — including resolving one of the famous Millennium Prize problems. But in classic Silicon Valley style, AI labs are moving fast and breaking things, […]",
    "storyKey": "allthedramaaroundaistakeoverofmathematic",
-   "clusterSize": 1,
+   "clusterSize": 5,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 5
+   "clusterSources": [
+    "Hacker News",
+    "OpenAI News",
+    "Simon Willison",
+    "The Verge AI"
+   ],
+   "buzzScore": 8
   },
   {
    "id": "7ded5c03aba57f68",
@@ -3514,11 +3538,11 @@
    "provider": "groq",
    "desc": "Hacker News discussion with 381 points and 115 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49969183",
-   "storyKey": "beamreflections501bopenweightmodel",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "ollamav0350rc1released",
+   "clusterSize": 23,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "badaf2352f42b97a",
@@ -3570,11 +3594,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it \"can confirm that we have discovered some activity\" by \"rogue\" OpenAI agents on Wikimedia platforms. The activity includes edits to Wikimedia wikis, \"unsuccessful attempts\" to \"exploit\" the Etherpad note-taking tool that the Wikimedia Foundation […]",
-   "storyKey": "wikipediaoperatorsaysopenaisroguebotsmay",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openairogueagentactivitiesfoundonwikimed",
+   "clusterSize": 2,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 4
   },
   {
    "id": "68c547b79ee7e9cf",
@@ -3654,10 +3678,10 @@
    "provider": "groq",
    "desc": "An invisible, machine-readable watermark in text output is rolling out to ChatGPT and Codex, but only for users in the European Union at first. OpenAI says its textGrain watermarking \"matched or exceeded\" other approaches like Google DeepMind's SynthID for text, which is also the basis for the watermarking Anthropic announced in August. Like OpenAI, Anthropic […]",
    "storyKey": "openaiwillstartwatermarkingchatgptstexti",
-   "clusterSize": 2,
+   "clusterSize": 4,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 4
+   "buzzScore": 6
   },
   {
    "id": "99e793ca69d95e70",
@@ -3681,11 +3705,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Pipeline figures in ML papers must be repurposed across many canvases, including paper columns, 16:9 slides, portrait posters, 1:1 social teasers, 9:16 phone previews. Each format imposes a different aspect ratio on the same computational graph, where any silently broken connection misrepresents the method. We formulate aspect-ratio-adaptive flowchart relayout as a distinct task: given a raster flowchart and a target ratio, produce a structurally faithful, hallucination-free, editable layout. Existing methods fail characteristically: image-to-image models stretch blocks and reject extreme ratios, text-to-image agentic systems hallucinate content, and parse-then-render systems mis-route edges. We propose an agentic pipeline factored into Parse, Style, and Layout stages, each pairing a main agent with a critic that combines deterministic constraint checks with VLM visual feedback so connectivity is explicitly checked and prevented from being silently broken. Outputs are draw.io-editable mxGraph XML. On a curated benchmark of 100 flowcharts at five aspect ratios, evaluated by Gemini 3.1 Pro and validated against human judgments, our method reaches 68.6% Content Fidelity versus 11.2-41",
-   "storyKey": "onefigureeverycanvaseditableflowchartrel",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "c70a159273aa85ba",
@@ -3708,11 +3732,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "In this paper, we study how training data creates associations between the tokens at the start of a base model's response and the reasoning behavior that follows. First, we demonstrate that fixing particular starting token cues makes a base model's performance competitive with that of its reinforcement learning (RL)-trained counterparts on math and coding. For instance, the cue \".\\n\\nOkay\" raises Olmo-3-7B's MATH-500 pass@1 accuracy from 42% to 78%, while \"Alright,\" raises Qwen3-14B's from 72% to 87%. Second, RL makes these cues more likely, while fixing them recovers much of its performance gain over the base model. Third, we trace the reasoning effects of token cues to the training data. We perform causal data interventions to turn an arbitrary word, such as \"chicken\", into an effective reasoning cue, or remove an existing cue's effect. A similar edit makes the prompt instruction \"Think duck duck goose\" as effective as \"Think step by step\" at eliciting reasoning. We also find that the hidden state representations induced by different cues correlate with different document types from the training set. Finally, we extend our study of token cues with a case study in language model s",
-   "storyKey": "basemodelscanreasonbytakingacuefromtrain",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "bd542ab392b38243",
@@ -3763,10 +3787,13 @@
    "provider": "groq",
    "desc": "Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representations throughout generation. These models repeatedly update the text tokens through multimodal attention, forming dynamic contextual tokens whose function is not well understood. In this work, we introduce a framework for reading this contextual space through natural-language interrogation. We train a lightweight bottleneck network that maps intermediate contextual tokens into the input space of a frozen Large Language Model (LLM), allowing the LLM to answer questions about the emerging image directly from these hidden representations. Our reader reveals that contextual tokens encode a rich, global representation of the emerging scene: generation-specific semantics, including attributes left underspecified by the prompt, are accessible surprisingly early in denoising, while increasingly fine-grained details become readable over time. Remarkably, this information remains decodable even when the MM-DiT receives an empty prompt, showing that contextual tokens accumulate substantial image-specific information from the evolving visual representation itself. We further find that generations with more",
    "storyKey": "learningtoreadthecontextualtokensindiffu",
-   "clusterSize": 1,
+   "clusterSize": 3,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "arXiv cs.AI",
+    "arXiv cs.CL (language models)"
+   ],
+   "buzzScore": 5
   },
   {
    "id": "ee9c08dede0179ea",
@@ -3789,11 +3816,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "LLM agents that orchestrate frozen vision-language-action (VLA) policies improve across episodes through text memory, which records what the agent did but not how the task is done. A demonstration video shows it, but fits poorly into an agent's context. The full video slows every turn, fixed keyframes lose the contact detail that decides whether a grasp holds, and what the agent needs shifts from the task's structure while planning to the frames around each contact. We introduce Recursive Video In-Context Learning (RV-ICL), a training-free method that turns a demonstration into a hierarchy the agent navigates rather than a prompt it receives. The hierarchy is built from the sub-events of the demonstration, such as grasps and releases. Its levels grow finer, from keyframes of the whole task to phases, moments and short clips, and are exposed through read-only tools. The agent reads the coarse levels before planning. During execution it re-enters the hierarchy whenever a step needs more detail and loads only the clip of its current sub-goal. One demonstration per task is enough. Built on RPent, RV-ICL raises success from 92.6% to 96.5% on LIBERO-PRO and from 86.7% to 95.8% on LIBERO-",
-   "storyKey": "recursivevideoincontextlearningforagenti",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "d05f8a5d2c4a3eaa",
@@ -3845,11 +3872,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Memory has become integral to the LLM agent ecosystem, supporting information retention and reuse across interactions. However, most existing agent memory systems construct memory in a query-agnostic manner, which can incur unnecessary preprocessing cost and discard details that later prove essential. Recent studies have begun shifting memory processing toward runtime adaptation, but typically specialize in particular operations or fixed processing schemes, leaving flexible control over performance, cost, and latency largely underexplored. To address this challenge, we present \\textbf{MemPilot}, a flexible framework that orchestrates on-demand memory curation under different performance--cost--latency preferences. Specifically, we optimize a multi-step LLM policy via reinforcement learning to iteratively choose between retrieving from query-agnostic memory and delegating query-specific curation of raw multimodal history to heterogeneous LLMs and VLMs. The policy jointly controls evidence amount, curation instructions, model selection, and visual access, enabling fine-grained allocation of runtime computation. To optimize this policy under competing objectives, we adapt objective-wi",
-   "storyKey": "mempilotorchestratingondemandmultimodalm",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "a79e6cb2ba00c1a4",
@@ -3873,11 +3900,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Open-source web agents are now strong enough to execute realistic browser tasks, but training them with reinforcement learning still depends on weak supervision: binary task success is too sparse for credit assignment, while frontier-language-model judges are too expensive to call at every step and cannot be assumed available at deployment. We introduce CLIFT, a training and test-time scaling method built around conformal self-verification. During training, the agent answers natural-language verification questions about its own rollouts; a Compositional Conformal Certifier keeps only question signals whose URL-conditional evidence agrees with a training-time judge, assigns signed trust weights through polarity-aware lift, and blends the resulting verifier score into per-step rewards in a way that never subtracts from the judge baseline. At test time, the same certified bank is frozen and reused as structured evidence for Conformal Trajectory Selection (CTS): the agent samples a greedy rollout and one or more diverse retries, the self-verifier summarises each URL trace, and a conservative majority-vote rule chooses whether to swap away from the current incumbent without calling any ",
-   "storyKey": "cliftconformalselfverificationforwebagen",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "c9cbe5bbac8a078e",
@@ -3900,11 +3927,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "Scientific figures often encode quantitative results that are not readily available in machine-readable form, making accurate plot digitization important for verifying and reusing published findings. Yet it remains unclear how accurately current models recover plotted values from real scientific figures, as existing benchmarks rely largely on synthetic charts or cover only a limited range of chart types. We introduce PlotGround, an automated pipeline for building plot digitization benchmarks from real scientific figures and their author-released source data. PlotGround maps figures to source tables, identifies reconstructable panels, and generates quantitative questions with source-grounded reference values. We use PlotGround to construct PlotGround-1k, a human-verified benchmark of 1,119 questions from 1,066 bioRxiv preprints. Across sixteen multimodal models, the best reaches 87.5% accuracy at a $\\pm 5\\%$ relative-error tolerance. Tightening the tolerance to $\\pm 2\\%$ lowers every model's accuracy by 11-24 percentage points, revealing a gap between approximate visual reading and precise quantitative recovery. PlotGround's paired figure-source structure lets us compare how accurat",
-   "storyKey": "plotgroundgroundingplotdigitizationinrea",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "advsim2realtrainingwebagentsagainstadapt",
+   "clusterSize": 21,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "a7bef4b5f66d77a7",
@@ -3958,10 +3985,12 @@
    "desc": "Hacker News discussion with 268 points and 180 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49968105",
    "storyKey": "openairogueagentactivitiesfoundonwikimed",
-   "clusterSize": 1,
+   "clusterSize": 2,
    "isPrimary": true,
-   "clusterSources": [],
-   "buzzScore": 3
+   "clusterSources": [
+    "The Verge AI"
+   ],
+   "buzzScore": 4
   },
   {
    "id": "88b687652847060d",
@@ -4204,11 +4233,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "How OpenAI is approaching text watermarking under EU rules. Learn where watermarks apply, how detection works, and why access starts with researchers.",
-   "storyKey": "ourapproachtoeutextprovenancerules",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "openaiwillstartwatermarkingchatgptstexti",
+   "clusterSize": 4,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "b48158e5ab87dd61",
@@ -4562,7 +4591,7 @@
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -4783,7 +4812,7 @@
    "provider": "groq",
    "desc": "Merge remote-tracking branch 'upstream/main' into release_v0.40.0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -5820,7 +5849,7 @@
    "provider": "groq",
    "desc": "Clef decision models Ollama now supports Clef and Clef Flash , Cloudflare's new open-source decision models, through /v1/systemone . Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it. curl http://localhost:11434/v1/systemone -d ' { \"model\": \"clef-flash\", \"state\": \"The user took this screenshot.\", \"images\": [\"<base64-encoded image>\"], \"questions\": { \"has_ollama\": {\"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\"} } } ' { \"model\": \"clef-flash\", \"answers\": { \"has_ollama\": { \"type\": \"noul\", \"noul\": 0.958 } }, \"usage\": { \"input_tokens\": 548, \"output_tokens\": 0 } } What's Changed Models using web search can now perform up to ten searches per response, up from three Modelfiles now support CAPABILITY declarations, so model creators can explicitly declare what a model can do. Declarations are preserved when creating from GGUF or safetensors, through model inheritance, and on Modelfile export ollama show and the model list now report only decision as the capability for decision models, so clients no longer offer them for general chat, tools, or thinking Updated llama.cpp",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -6937,7 +6966,7 @@
    "provider": "groq",
    "desc": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 5
@@ -7077,7 +7106,7 @@
    "provider": "groq",
    "desc": "models: add clef support ( #18741 )",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -10292,7 +10321,7 @@
    "provider": "groq",
    "desc": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -11578,7 +11607,7 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -11924,11 +11953,17 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 14,
+   "clusterSize": 23,
    "isPrimary": true,
    "clusterSources": [
+    "Ars Technica AI",
     "GitHub: Ollama releases",
-    "GitHub: transformers releases"
+    "GitHub: transformers releases",
+    "GitHub: vLLM releases",
+    "Google DeepMind",
+    "Hacker News",
+    "Simon Willison",
+    "TechCrunch AI"
    ],
    "buzzScore": 6
   },
