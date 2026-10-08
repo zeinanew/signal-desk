@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-08T05:10:07Z",
+ "updated": "2026-10-08T05:47:47Z",
  "items": [
   {
    "id": "cb26c4cd754cd4f7",
@@ -311,8 +311,8 @@
    "desc": "Hacker News discussion with 325 points and 309 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49997161",
    "hnId": "49997161",
-   "points": 325,
-   "comments": 309,
+   "points": 330,
+   "comments": 316,
    "image": "https://cdn.rswebsols.com/wp-content/uploads/2025/10/otr1by4mkru.jpg",
    "engagementBonus": 1,
    "clusterSize": 1,
@@ -849,7 +849,7 @@
    "desc": "Hacker News discussion with 208 points and 97 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "hnId": "49996259",
-   "points": 208,
+   "points": 210,
    "comments": 97,
    "image": "https://opengraph.githubassets.com/8795647a382b256b628abf437fc3bb7858fca4f607a83ce94f6c8a6416abedc9/docker/docker-agent",
    "engagementBonus": 1,
