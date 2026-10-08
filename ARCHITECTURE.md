@@ -12,7 +12,8 @@ There is no backend, database, or build step.
 |---|---|
 | Collector | Python 3.12, `feedparser`, `requests` |
 | Summarization | Google Gemini (`google-genai`), with Groq's OpenAI-compatible chat API as a fallback |
-| Scheduling / CI | GitHub Actions (`.github/workflows/refresh.yml`) |
+| Scheduling | Windows Task Scheduler (`scripts/refresh_local.ps1`), daily - GitHub Actions no longer runs on a cron (see below) |
+| CI | GitHub Actions: `refresh.yml` (manual/`sources.json`-edit-triggered collect) + `deploy.yml` (publish on every push) |
 | Hosting | GitHub Pages (static files served as-is) |
 | Frontend | Single HTML file: vanilla JS, no framework, no bundler; `fetch` + `localStorage` |
 | Data store | Two JSON files committed to the repo (`data/items.json`, `data/sources.json`) — the "database" is git itself |
@@ -29,7 +30,9 @@ scripts/collect.py              the collector/summarizer — the only backend lo
 data/items.json                 generated: the stories shown on the Feed/Search tabs
 data/sources.json               generated: per-source health/status for the Sources tab
 index.html                      the entire frontend (HTML + CSS + JS in one file)
-.github/workflows/refresh.yml   cron job that runs the collector and deploys the site
+scripts/refresh_local.ps1       what Windows Task Scheduler runs daily - collector + commit + push
+.github/workflows/refresh.yml   manual/sources.json-edit-triggered collector run, commits data/
+.github/workflows/deploy.yml    publishes the repo to GitHub Pages on every push
 requirements.txt                Python dependencies for the collector
 ```
 
@@ -39,38 +42,50 @@ requirements.txt                Python dependencies for the collector
 ## End-to-end flow
 
 ```
-+-------------------+
-| GitHub Actions    |  cron "0 5 * * *" (08:00 Riyadh) or manual "Run workflow"
-| refresh.yml       |  also triggers on push to main (except changes under data/)
-+---------+---------+
-          | pip install -r requirements.txt
-          v
-+-------------------+
-| scripts/          |  reads sources.json + existing data/items.json
-| collect.py        |  fetches each enabled source, dedupes, summarizes new items
-+---------+---------+
-          | writes
-          v
-+-------------------+
-| data/items.json   |---+
-| data/sources.json |   |  git commit "Refresh feed YYYY-MM-DD" + push
-+-------------------+   |
-                        v
-               +--------------------+
-               | GitHub Pages       |  upload-pages-artifact (whole repo) + deploy-pages
-               | (static hosting)   |
-               +---------+----------+
-                         |
-                         v
-               +--------------------+
-               | index.html         |  fetch()'s data/items.json + data/sources.json
-               | (browser)          |  client-side render, filter, search
-               +--------------------+
++----------------------+     +-------------------------+
+| Windows Task         |     | GitHub Actions          |
+| Scheduler, 8am daily |     | refresh.yml - manual, or|
+| refresh_local.ps1    |     | push touching non-data/ |
++----------+-----------+     +------------+------------+
+           |  pip install -r requirements.txt           |
+           v                                             v
+          +---------------------------------------------+
+          | scripts/collect.py                           |
+          | reads sources.json + existing data/items.json|
+          | fetches each enabled source, dedupes,        |
+          | summarizes new items                         |
+          +---------------------+-------------------------+
+                                | writes
+                                v
+                      +-------------------+
+                      | data/items.json   |---+
+                      | data/sources.json |   |  git commit "Refresh feed YYYY-MM-DD" + push
+                      +-------------------+   |
+                                              v
+                                   +--------------------------+
+                                   | GitHub Actions deploy.yml |  any push to main triggers this
+                                   | upload-pages-artifact +   |  (data-only pushes included)
+                                   | deploy-pages               |
+                                   +-------------+--------------+
+                                                 |
+                                                 v
+                                   +--------------------------+
+                                   | GitHub Pages             |
+                                   | (static hosting)         |
+                                   +-------------+--------------+
+                                                 |
+                                                 v
+                                   +--------------------------+
+                                   | index.html (browser)     |
+                                   | fetch()'s the two JSON   |
+                                   | files, client-side render|
+                                   +--------------------------+
 ```
 
 Nothing is dynamic at request time — the browser only ever fetches two static JSON
 files. All the work (fetching feeds, calling the LLM, deduplicating) happens once a
-day in CI, not per page view.
+day, either on the user's own machine (Task Scheduler) or in CI (a manual/`sources.json`-edit
+run of `refresh.yml`), not per page view.
 
 ## `scripts/collect.py` — the collector
 
@@ -206,17 +221,27 @@ overwritten in place: `data/items.json` (sorted newest-first) and `data/sources.
 | `MAX_AGE_DAYS`, `PER_SOURCE_LIMIT`, `MAX_NEW_PER_RUN` | env or edit the script constants | retention window, per-source fetch cap, per-run summarization budget |
 | `GITHUB_TOKEN` | auto-provided in Actions | raises the GitHub Search API rate limit for `github_search` sources |
 
-## `.github/workflows/refresh.yml` — scheduling & deploy
+## `.github/workflows/` — collect/refresh and deploy are two separate workflows
 
-- Triggers: daily cron, manual `workflow_dispatch`, or a push to `main` that touches
-  anything outside `data/` (so editing `sources.json` triggers an immediate refresh,
-  but the bot's own data-only commits don't re-trigger themselves).
-- `concurrency: { group: refresh, cancel-in-progress: false }` — queues runs instead of
-  cancelling, so a manual run and the nightly cron can't race and corrupt `data/*.json`.
-- Runs `collect.py`, then commits `data/` back to `main` as `signal-desk-bot`
-  (`git pull --rebase --autostash && git push` guards against a concurrent commit).
-- Deploys the whole repo as a GitHub Pages artifact (`actions/upload-pages-artifact`),
-  since `index.html` fetches `data/*.json` as same-origin static files — no API, no CDN cache to invalidate.
+Split into two files on purpose, and **neither one runs on a schedule any more** — the daily
+collect+commit now happens from a local Windows Task Scheduler job instead (see "Run the daily
+refresh locally" in README.md). Running GitHub's cron *and* a local scheduler at the same time
+used to cause unresolvable merge conflicts: two independently-regenerated `data/*.json` snapshots
+rarely line-merge cleanly, so whichever push landed second would fail to rebase.
+
+- **`refresh.yml`** ("Collect and refresh"): triggers on manual `workflow_dispatch` or a push to
+  `main` that touches anything outside `data/` (so editing `sources.json` still triggers an
+  immediate refresh, but a data-only commit doesn't re-trigger itself). Runs `collect.py`, then
+  commits `data/` back to `main` as `signal-desk-bot` (`git pull --rebase --autostash && git push`
+  guards against a concurrent commit). `concurrency: { group: refresh, cancel-in-progress: false }`
+  queues runs instead of cancelling, so two manual/push-triggered runs can't race each other.
+- **`deploy.yml`** ("Deploy to Pages"): triggers on *every* push to `main`, no path exclusion -
+  deliberately so, since this is what actually needs to fire after the local job's data-only push
+  (or after `refresh.yml`'s own commit, or a manual edit) for the live site to catch up. Just
+  publishes the repo root as a GitHub Pages artifact (`actions/upload-pages-artifact`) - no
+  `collect.py` run, nothing that could conflict with anything. `concurrency: { group: pages,
+  cancel-in-progress: true }` - fine to cancel an in-progress deploy in favor of a newer one, since
+  a deploy doesn't write anything back to the repo the way the collect step does.
 
 ## Running this on Azure DevOps instead of GitHub
 

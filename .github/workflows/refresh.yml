@@ -1,8 +1,11 @@
-name: Refresh and publish
+name: Collect and refresh
 
+# No schedule trigger: the daily collect+commit now runs from a local Windows Task Scheduler job
+# (scripts/refresh_local.ps1) instead, to avoid two independent schedulers racing to regenerate
+# and push data/*.json at the same time (which produces unresolvable merge conflicts, since two
+# independently-regenerated JSON snapshots rarely line-merge cleanly). This workflow still runs
+# on demand and whenever sources.json (or any non-data file) changes.
 on:
-  schedule:
-    - cron: "0 5 * * *"   # 05:00 UTC = 08:00 Riyadh, every day
   workflow_dispatch:       # "Run workflow" button on the Actions tab
   push:
     branches: [main]
@@ -10,8 +13,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: refresh
@@ -20,9 +21,6 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -49,10 +47,3 @@ jobs:
           git add data
           git diff --cached --quiet || git commit -m "Refresh feed $(date -u +%Y-%m-%d)"
           git pull --rebase --autostash && git push
-
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - id: deploy
-        uses: actions/deploy-pages@v4

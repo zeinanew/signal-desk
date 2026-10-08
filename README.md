@@ -1,6 +1,6 @@
 # Signal Desk
 
-A personal AI and tech news dashboard. Every morning at 8:00 (Riyadh time) GitHub:
+A personal AI and tech news dashboard. Every morning at 8:00 (Riyadh time), the collector:
 
 1. checks the sources in `sources.json` (news sites, AI lab blogs, arXiv, GitHub, YouTube, Hacker News, optionally X/Twitter),
 2. picks out stories it hasn't seen before,
@@ -48,10 +48,15 @@ Without a key the site still works, but it uses each feed's own description in p
 
 ### 4. Run it once
 1. Open the **Actions** tab. If asked, click **I understand my workflows, go ahead and enable them**.
-2. Click **Refresh and publish** → **Run workflow**.
-3. After 1–2 minutes your site is live at `https://YOUR-USERNAME.github.io/signal-desk/`.
+2. Click **Collect and refresh** → **Run workflow**.
+3. After 1–2 minutes your site is live at `https://YOUR-USERNAME.github.io/signal-desk/` (the
+   separate **Deploy to Pages** workflow publishes it automatically whenever `data/` changes).
 
-After that it runs by itself every morning.
+By itself, that workflow only runs again when you edit `sources.json` or click **Run workflow**
+yourself - there's no cron in GitHub any more. For a hands-off daily refresh, either set up the
+Windows Task Scheduler job below (runs on your own machine) or add a `schedule:` trigger back into
+`.github/workflows/refresh.yml` if you'd rather it run in the cloud (just don't run both on the
+same schedule - see "Run the daily refresh locally" for why).
 
 ---
 
@@ -98,7 +103,9 @@ Set these under **Settings → Secrets and variables → Actions → Variables**
 
 In `scripts/collect.py` you can also change `MAX_AGE_DAYS` (default 45: older stories drop off) and `PER_SOURCE_LIMIT` (default 8 new stories per source per day).
 
-To change the time: edit the `cron` line in `.github/workflows/refresh.yml`. It's in UTC, so 8am Riyadh is `0 5 * * *`.
+To change the daily time: the schedule now lives in the Windows Task Scheduler job described
+below (GitHub Actions no longer runs on a cron, to avoid it and the local job racing each other -
+see "Run the daily refresh locally").
 
 ## Run it on your own computer (optional)
 ```bash
@@ -144,7 +151,9 @@ sources.json               the list of sources you control
 scripts/collect.py         fetches, removes duplicates, summarizes, writes data/
 data/items.json            the stories (written by the script)
 data/sources.json          each source's last check result (written by the script)
-.github/workflows/refresh.yml   the daily schedule (GitHub Actions)
+scripts/refresh_local.ps1  what Task Scheduler runs daily (the actual schedule now lives here)
+.github/workflows/refresh.yml   collects on demand / when sources.json changes (GitHub Actions)
+.github/workflows/deploy.yml    publishes to Pages on every push (GitHub Actions)
 azure-pipelines.yml        the daily schedule (Azure Pipelines) - see "Running on Azure DevOps" above
 ```
 
