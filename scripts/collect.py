@@ -65,6 +65,9 @@ EMBED_SIMILARITY_THRESHOLD = 0.88  # calibrated on real items: same-story pairs 
 EMBED_CACHE_FILE = DATA / "embeddings_cache.json"  # not used by the frontend - collect.py's own
                           # cross-run cache so new items can be compared against recent ones
                           # without re-embedding them every run
+EMBED_BACKFILL_CAP = 150  # per-run safety cap on backfilling embeddings for pre-existing recent
+                          # items that predate this feature (or just missed it) - only matters on
+                          # the first run or two; after that, almost everything is already cached
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
 
@@ -708,6 +711,26 @@ def main() -> None:
 
     kept = [it for it in items.values() if (parse_date(it.get("date")) or NOW) >= cutoff]
     refresh_engagement(kept)
+
+    # Backfill embeddings for recent items that predate this feature (or whose embed call
+    # failed earlier) - only items still within the clustering window matter for comparison,
+    # so this is naturally small after the first run or two, not a re-embed of the whole feed.
+    if client is not None:
+        cluster_cutoff_now = NOW - dt.timedelta(days=CLUSTER_WINDOW_DAYS)
+        backfilled = 0
+        for it in kept:
+            if backfilled >= EMBED_BACKFILL_CAP:
+                break
+            if it["id"] in embed_cache or (parse_date(it.get("date")) or NOW) < cluster_cutoff_now:
+                continue
+            vec = embed_text(client, f"{it['title']}. {it.get('summary', '')}")
+            if vec:
+                embed_cache[it["id"]] = vec
+            time.sleep(1)
+            backfilled += 1
+        if backfilled:
+            print(f"- Backfilled embeddings for {backfilled} pre-existing recent stories")
+
     cluster_items(kept, embed_cache)
     kept.sort(key=lambda it: it.get("date") or "", reverse=True)
     ITEMS_FILE.write_text(json.dumps({"updated": iso(NOW), "items": kept}, indent=1, ensure_ascii=False), encoding="utf-8")
