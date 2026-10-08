@@ -1,6 +1,34 @@
 {
- "updated": "2026-10-08T08:50:07Z",
+ "updated": "2026-10-08T09:11:13Z",
  "items": [
+  {
+   "id": "dcd9f5d91c1182c4",
+   "title": "AI breakthroughs in robotics won’t change your life any time soon",
+   "url": "https://www.technologyreview.com/2026/10/08/1145923/ai-breakthroughs-in-robotics-wont-change-your-life-any-time-soon/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-10-08T09:00:00Z",
+   "addedAt": "2026-10-08T09:11:13Z",
+   "summary": "A humanoid robot has been appearing in video feeds, but the technology is not yet life‑changing.",
+   "why": "It indicates robotics AI is still far from mainstream impact.",
+   "topic": "research",
+   "tags": [
+    "robotics",
+    "ai",
+    "humanoid"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "storyKey": "humanoid-robot-appearance",
+   "desc": "The story is a collaboration between MIT Technology Review and Aventine, a non-profit research foundation that creates and supports content about how technology and science are changing the way we live. A robot shaped like a human—white with a black head and torso—has been popping up on video feeds. Perhaps you’ve seen it dance or…",
+   "image": "https://wp.technologyreview.com/wp-content/uploads/2026/10/fin1a_updated.jpg?resize=1200,600",
+   "clusterSize": 1,
+   "isPrimary": true,
+   "clusterSources": [],
+   "buzzScore": 3
+  },
   {
    "id": "8a6d8ab89e40e870",
    "title": "Building a safer path to autonomous industrial AI",
@@ -53,9 +81,18 @@
    "storyKey": "ollamav0350rc1released",
    "desc": "What's Changed server: proxy cloud usage and balance APIs by @drifkin in #18829 llama: fix clef head reads past 2GiB on windows by @Gigrise in #18777 cmd: remove account step from CLI onboarding by @hoyyeva in #18826 manifest: avoid symlinks on Windows by @dhiltgen in #18852 docs: fix 6 dead links in README community integrations list by @aniketkrs in #18814 docs: fix broken download links in app README by @chenlichao in #18233 mlx: drop carried metal residency patch now that it is upstream by @dhiltgen in #18854 New Contributors @Gigrise made their first contribution in #18777 @aniketkrs made their first contribution in #18814 @chenlichao made their first contribution in #18233 Full Changelog : v0.40.0...v0.40.1-rc0",
    "image": "https://avatars.githubusercontent.com/in/15368?s=60&v=4",
-   "clusterSize": 23,
-   "isPrimary": false,
-   "clusterSources": [],
+   "clusterSize": 17,
+   "isPrimary": true,
+   "clusterSources": [
+    "Ars Technica AI",
+    "GitHub: Ollama releases",
+    "GitHub: transformers releases",
+    "GitHub: vLLM releases",
+    "Google DeepMind",
+    "Hacker News",
+    "Simon Willison",
+    "TechCrunch AI"
+   ],
    "buzzScore": 6
   },
   {
@@ -82,8 +119,12 @@
    "desc": "Get ready for more AI in your Windows and more AI on the desktop.",
    "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/10/Surface-Laptop-Ultra-Opened-500x500.png",
    "clusterSize": 6,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "NVIDIA Blog",
+    "TechCrunch AI",
+    "The Verge AI"
+   ],
    "buzzScore": 7
   },
   {
@@ -136,7 +177,7 @@
    "storyKey": "ollamav0350rc1released",
    "desc": "mlx: drop carried metal residency patch now that it is upstream ( #18854 )",
    "image": "https://avatars.githubusercontent.com/u/4033016?s=60&v=4",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -281,8 +322,11 @@
    "desc": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms, tappable buttons, and more. In a blog post explaining the […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Intelligent-UI.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
    "clusterSize": 5,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "OpenAI News",
+    "TechCrunch AI"
+   ],
    "buzzScore": 8
   },
   {
@@ -310,8 +354,10 @@
    "desc": "Deep Agents now lets you bind tools to skills, pin skills at runtime, and reload skills mid-thread, so agents with expansive skill repositories stay context-efficient and effective.",
    "image": "https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6ac686acfa26e17ec695410d_revamping-skills-in-deep-agents-cover-v4.png",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "LangChain Blog"
+   ],
    "buzzScore": 4
   },
   {
@@ -339,8 +385,8 @@
    "desc": "Hacker News discussion with 325 points and 309 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49997161",
    "hnId": "49997161",
-   "points": 339,
-   "comments": 334,
+   "points": 340,
+   "comments": 336,
    "image": "https://cdn.rswebsols.com/wp-content/uploads/2025/10/otr1by4mkru.jpg",
    "engagementBonus": 1,
    "clusterSize": 1,
@@ -373,12 +419,8 @@
    "desc": "At a Microsoft event in San Francisco on Wednesday, NVIDIA founder and CEO Jensen Huang and Microsoft CEO Satya Nadella outlined how NVIDIA and Microsoft are co-engineering hardware and software for AI agents to run on Windows PCs. NVIDIA was founded because of Windows, Huang said. Now AI agents are coming to Windows. “If you […]",
    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nvidia-rtx-spark-microsoft-event-3840x2160-1-842x450.png",
    "clusterSize": 6,
-   "isPrimary": true,
-   "clusterSources": [
-    "Ars Technica AI",
-    "TechCrunch AI",
-    "The Verge AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 7
   },
   {
@@ -434,8 +476,11 @@
    "desc": "Meta’s AI agent Muse is now available on iPad, just a month after its mobile debut, as the company rapidly expands the assistant’s reach and integrations.",
    "image": "https://techcrunch.com/wp-content/uploads/2026/09/meta-muse-app-GettyImages-2293792137.jpg?w=1024",
    "clusterSize": 4,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "Meta AI Blog",
+    "The Verge AI"
+   ],
    "buzzScore": 6
   },
   {
@@ -492,10 +537,8 @@
    "desc": "LangChain just released new capabilities in Managed Deep Agents. Agents can now schedule follow-ups, reconfigure themselves on every run, and react to Slack messages.",
    "image": "https://cdn.prod.website-files.com/65c81e88c254bb0f97633a71/6ac6882bdbe9afeb231b8b05_Introducing%20Managed%20Deep%20Agents%20v0.9.png",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "LangChain Blog"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -883,13 +926,17 @@
    "desc": "Hacker News discussion with 208 points and 97 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "hnId": "49996259",
-   "points": 230,
-   "comments": 107,
+   "points": 232,
+   "comments": 109,
    "image": "https://opengraph.githubassets.com/8795647a382b256b628abf437fc3bb7858fca4f607a83ce94f6c8a6416abedc9/docker/docker-agent",
    "engagementBonus": 1,
    "clusterSize": 6,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "Hacker News",
+    "Hugging Face Blog",
+    "TechCrunch AI"
+   ],
    "buzzScore": 7
   },
   {
@@ -1032,8 +1079,10 @@
    "desc": "OpenAI is bringing new tools to ChatGPT for Teens, a mode for teens introduced in August with safeguards and break reminders, to help users with the college application process. \"College Planner brings together application requirements, deadlines, tasks, and financial-aid steps for schools on a student's list in one plan,\" OpenAI says. \"Students applying to several […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/College-planner_updated.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "OpenAI News"
+   ],
    "buzzScore": 4
   },
   {
@@ -1229,7 +1278,7 @@
    "storyKey": "ollamav0350rc1released",
    "desc": "Mistral says Le Chonk can rival top closed models while remaining open-weight.",
    "image": "https://cdn.arstechnica.net/wp-content/uploads/2025/12/mistral_header_2-500x500.jpg",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -1378,12 +1427,8 @@
    "desc": "Introducing Muse Spark 1.1",
    "image": "https://scontent-sjc6-1.xx.fbcdn.net/v/t39.2365-6/741906678_873652302465180_7764547737953411008_n.png?_nc_cat=104&ccb=1-7&_nc_sid=e280be&_nc_ohc=Ag1jBdhsWOkQ7kNvwHzfho-&_nc_oc=AdqUXq83WXfppF5Q5tnGIutl0cmOXAi7enDfF327jNddxBSeeRB8B9Gd2ewo6LwlSwI&_nc_zt=14&_nc_ht=scontent-sjc6-1.xx&_nc_gid=01WK0u1LzDGCJqKW3L49Vw&_nc_ss=7b20f&oh=00_AQPlvt2QtupWhP9ELkVsBvP3wKrYkajYkWC_dJJ3GPeZUw&oe=6AE08DA6",
    "clusterSize": 4,
-   "isPrimary": true,
-   "clusterSources": [
-    "Meta AI Blog",
-    "TechCrunch AI",
-    "The Verge AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 6
   },
   {
@@ -1554,10 +1599,8 @@
    "desc": "College Planner is coming to ChatGPT for Teens to help students manage college applications, alongside new flashcards, quizzes, and a teen AI council.",
    "image": "https://images.ctfassets.net/kftzwdyauwt9/48q2nDNP9Gj81cxL5sCOFv/e0692d4bcad2b81fad9b62b5bea904b7/teens-learn-and-plan-social.png?w=1600&h=900&fit=fill",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "The Verge AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -1730,12 +1773,8 @@
    "desc": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
    "image": "https://images.ctfassets.net/kftzwdyauwt9/5frqtUAWccstAbVrCFraH6/5ae9b6bfbc3f3dff8001ed249812f97d/Intelligent-UI_Art-Card_16x9.png?w=1600&h=900&fit=fill",
    "clusterSize": 5,
-   "isPrimary": true,
-   "clusterSources": [
-    "OpenAI News",
-    "TechCrunch AI",
-    "The Verge AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 8
   },
   {
@@ -1815,7 +1854,7 @@
    "provider": "groq",
    "desc": "Release: llm-openai-decisions 0.1a0 OpenAI released their new Jev-style Decisions API , as previously announced at last week's DevDay. Since I already have an llm-typesafe plugin for talking to Jev, I had GPT-6 Astra read the new OpenAI API documentation and build an llm-openai-decisions plugin inspired by llm-typesafe . Unlike Jev, the new gpt-6-luna decision model supports image input in addition to text. Both models charge for input it and not for output: OpenAI's is 10 cents per million input tokens, Jev's is 4.2 cents per million. Otherwise the API shape is very similar to Jev, at least conceptually. Jev supports three question types for yes/no, choices, or scores. OpenAI Decisions supports the same three types. Install the plugin like this: llm install llm-openai-decisions Here's an example query against an image attachment: llm -m openai-decisions/gpt-6-luna \\ -a https://static.simonwillison.net/static/2025/two-pelicans.jpg \\ -s ' Does this image contain any mammals? ' And example output: { \"type\" : \" predicate \" , \"name\" : \" evaluation \" , \"probability\" : 0.0 } Consult the README for full details of how to run the other types of questions. Tags: openai , llm , coding-agents",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -1898,7 +1937,7 @@
    "provider": "groq",
    "desc": "Release: llm-mistral 0.16 Adds support for reasoning models, such as the newly released Mistral Large 4 . Tags: llm , mistral , llm-reasoning",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2008,7 +2047,7 @@
    "provider": "groq",
    "desc": "Introducing Mistral Large 4: Le chonk Mistral are back in the game. Today they're releasing a preview of Mistral Large 4, a 1 trillion parameter, 49 billion active parameter model trained on their own cluster of 3,800 NVIDIA Grace Blackwell GPUs. The preview is available via their API. They promise to release the open weights model at the \"end of this month\". The model only supports two reasoning levels - \"none\" and \"high\" - via the Mistral API. Here are both pelicans - the \"high\" one looks better, though surprisingly it only used 2,717 output tokens compared to \"none\" which used 3,275: On Artificial Analysis it scores 38 , just behind DeepSeek 4.1 Flash, which is a 552B model. It's a huge improvement on last December's Mistral Large 3, which drew this terrible pelican and scored 9 on AA . It's certainly not a Fable-class model, but it's great to see Mistral put out a model that's back to being maybe about 6 months behind the frontier. Via Hacker News Tags: ai , generative-ai , llms , mistral , pelican-riding-a-bicycle , llm-release",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2063,7 +2102,7 @@
    "provider": "groq",
    "desc": "",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2146,7 +2185,7 @@
    "provider": "groq",
    "desc": "Signed-off-by: Cam Quilici cjquilici@gmail.com Signed-off-by: Cam Quilici cameron@semianalysis.com Co-authored-by: Cam Quilici cameron@semianalysis.com Co-authored-by: Nick Hill nickhill123@gmail.com Co-authored-by: Yifan Qiao yifanqiao@inferact.ai",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2174,7 +2213,7 @@
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash MLX now has support for an embedding model: embeddinggemma-2 We will continue testing and enabling additional models. Full Changelog : v0.35.1...v0.40.0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2319,8 +2358,11 @@
    "desc": "Scientific research often begins by synthesizing ideas from a set of related papers to identify gaps and formulate new directions. However, training language models to perform this form of literature-grounded ideation remains challenging, as existing approaches based on prompting or feedback lack structured supervision for how papers should be synthesized. We introduce IdeaAnchor, a paradigm for training LLMs to perform research ideation using structured specifications as privileged signals. Each IdeaAnchor instance encodes how each input paper should be synthesized into a successful idea, including their functional roles, relationships, and target synthesis criteria. We build this paradigm by mining instances from published papers, capturing how real ideas emerge from prior literature. We then train models via demonstration, self-distillation, and reinforcement learning, and further enhance generation with retrieval at inference time. Experiments show consistent improvements in ideation quality. Our analysis reveals a functional decomposition: anchor-based training strengthens creative synthesis, retrieval enhances detail elaboration, and combining both yields the best performance",
    "storyKey": "learningtoreadthecontextualtokensindiffu",
    "clusterSize": 3,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "arXiv cs.AI",
+    "arXiv cs.CL (language models)"
+   ],
    "buzzScore": 5
   },
   {
@@ -2575,7 +2617,7 @@
    "provider": "groq",
    "desc": "Release v5.19.0 New Model additions EmbeddingGemma2 EmbeddingGemma 2 is a multimodal embedding model from Google built on the Gemma 4 architecture. It encodes text, images, audio, and video, individually or combined in one input, into a shared 768-dimensional vector space for cross-modal retrieval, semantic similarity, clustering, and classification. It uses Matryoshka Representation Learning, so embeddings can be truncated to 512, 256, or 128 dimensions. It also offers configurable visual and video token budgets, and unused vision or audio towers can be disabled at load time to save memory. Links: Documentation Smthn smthn ( #49364 ) by @vasqu in #49364 Breaking changes All MoE models whose routers compute logits now return them when output_router_logits=True , following the Qwen3-MoE pattern (a router_logits recorder on the base model, MoeModelOutputWithPast from the backbone, and a MoE causal LM output from the head), so code that relied on the previous outputs or their absence should read the router logits from these output classes. 🚨 Return router logits from every MoE model that computes them ( #48920 ) by @qgallouedec Owlv2ForObjectDetection.embed_image_query now selects the",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -2658,12 +2700,8 @@
    "discussion": "https://news.ycombinator.com/item?id=49980715",
    "storyKey": "opentpuanopensourceaiaccelerator",
    "clusterSize": 6,
-   "isPrimary": true,
-   "clusterSources": [
-    "Hacker News",
-    "Hugging Face Blog",
-    "TechCrunch AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 6
   },
   {
@@ -2799,7 +2837,7 @@
    "provider": "groq",
    "desc": "Implements the EmbeddingGemma2Model architecture on the MLX runner: 24-layer bidirectional text encoder with PLE, shared gemma4 vision/audio towers, mean-pool + L2 output. /api/embed accepts per-item media via input dicts.",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -3166,7 +3204,7 @@
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -3226,7 +3264,7 @@
    "provider": "groq",
    "desc": "MLX: version bump add scopes for unit tests to reduce memory usage",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 5
@@ -3508,7 +3546,7 @@
    "provider": "gemini",
    "desc": "Reflection is aiming Beam and future models at enterprises and sovereign nations. The pitch is to build “AI factories,” a product that would let institutions build their own customized, local AI system by training Reflection’s AI models on their own proprietary data.",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -3568,7 +3606,7 @@
    "desc": "Hacker News discussion with 381 points and 115 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49969183",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -3625,8 +3663,10 @@
    "desc": "Following many recent disclosures about AI agents accessing third-party websites and services, the Wikimedia Foundation, which hosts Wikipedia, says that it \"can confirm that we have discovered some activity\" by \"rogue\" OpenAI agents on Wikimedia platforms. The activity includes edits to Wikimedia wikis, \"unsuccessful attempts\" to \"exploit\" the Etherpad note-taking tool that the Wikimedia Foundation […]",
    "storyKey": "openairogueagentactivitiesfoundonwikimed",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "Hacker News"
+   ],
    "buzzScore": 4
   },
   {
@@ -3817,11 +3857,8 @@
    "desc": "Multimodal Diffusion Transformers (MM-DiTs) jointly process visual and textual representations throughout generation. These models repeatedly update the text tokens through multimodal attention, forming dynamic contextual tokens whose function is not well understood. In this work, we introduce a framework for reading this contextual space through natural-language interrogation. We train a lightweight bottleneck network that maps intermediate contextual tokens into the input space of a frozen Large Language Model (LLM), allowing the LLM to answer questions about the emerging image directly from these hidden representations. Our reader reveals that contextual tokens encode a rich, global representation of the emerging scene: generation-specific semantics, including attributes left underspecified by the prompt, are accessible surprisingly early in denoising, while increasingly fine-grained details become readable over time. Remarkably, this information remains decodable even when the MM-DiT receives an empty prompt, showing that contextual tokens accumulate substantial image-specific information from the evolving visual representation itself. We further find that generations with more",
    "storyKey": "learningtoreadthecontextualtokensindiffu",
    "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "arXiv cs.AI",
-    "arXiv cs.CL (language models)"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 5
   },
   {
@@ -4015,10 +4052,8 @@
    "discussion": "https://news.ycombinator.com/item?id=49968105",
    "storyKey": "openairogueagentactivitiesfoundonwikimed",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "The Verge AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -4620,7 +4655,7 @@
    "provider": "groq",
    "desc": "What's Changed Models run on MLX on Apple Silicon by default In this release, on Apple Silicon devices, model architectures supported by the MLX runtime will automatically run on MLX. ollama pull qwen3.8 ollama run qwen3.8 Additional models include gemma4 , qwen3.6 and qwen3.5 Decision models are now available on MLX as well: Nimble tev1 clef clef-flash We will continue testing and enabling additional models. Full Changelog : v0.34.4...v0.40.0-rc3",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -4841,7 +4876,7 @@
    "provider": "groq",
    "desc": "Merge remote-tracking branch 'upstream/main' into release_v0.40.0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 17,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -5878,9 +5913,11 @@
    "provider": "groq",
    "desc": "Clef decision models Ollama now supports Clef and Clef Flash , Cloudflare's new open-source decision models, through /v1/systemone . Clef (27B) and Clef Flash (9B) are multimodal: requests can now include images alongside the text state, shared by all questions and scored jointly with it. curl http://localhost:11434/v1/systemone -d ' { \"model\": \"clef-flash\", \"state\": \"The user took this screenshot.\", \"images\": [\"<base64-encoded image>\"], \"questions\": { \"has_ollama\": {\"type\": \"noul\", \"instructions\": \"Does this image contain Ollama?\"} } } ' { \"model\": \"clef-flash\", \"answers\": { \"has_ollama\": { \"type\": \"noul\", \"noul\": 0.958 } }, \"usage\": { \"input_tokens\": 548, \"output_tokens\": 0 } } What's Changed Models using web search can now perform up to ten searches per response, up from three Modelfiles now support CAPABILITY declarations, so model creators can explicitly declare what a model can do. Declarations are preserved when creating from GGUF or safetensors, through model inheritance, and on Modelfile export ollama show and the model list now report only decision as the capability for decision models, so clients no longer offer them for general chat, tools, or thinking Updated llama.cpp",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
-   "isPrimary": false,
-   "clusterSources": [],
+   "clusterSize": 6,
+   "isPrimary": true,
+   "clusterSources": [
+    "GitHub: Ollama releases"
+   ],
    "buzzScore": 6
   },
   {
@@ -6243,8 +6280,10 @@
    "desc": "Masked diffusion language models (dLMs) offer a promising parallel alternative to autoregressive models for complex reasoning. However, they face a distinct credit-assignment challenge, since a few commitments during denoising sharply reduce the uncertainty over the remaining masked positions and shape much of the response. Most post-training recipes for dLMs do not use this signal to decide which tokens to train on: they typically train on the final text or assign rewards to whole denoising steps, rather than selecting the individual commitments that shape the response. We introduce Pivot-SD, an efficient offline self-distillation framework that supervises only these high-impact commitments (pivots). Pivot-SD selects pivots using an information-gain metric measuring uncertainty reduction over the remaining masked positions. Pivots from successful trajectories are trained with cross-entropy, and pivots from failed trajectories with targeted unlikelihood, leaving the rest of the failed trajectory untouched. Using only 200 questions and four rollouts each, Pivot-SD improves LLaDA-8B-Instruct over full-sequence SFT and budget-matched diffusion RL baselines across math and code benchma",
    "storyKey": "hierarchicalcontinuousdiffusionlanguagem",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "arXiv cs.CL (language models)"
+   ],
    "buzzScore": 4
   },
   {
@@ -6856,8 +6895,10 @@
    "desc": "Your Claude, ChatGPT and Gemini subscriptions as one fast API. A single Rust binary with OpenAI, Anthropic and Gemini compatible endpoints, WebSockets and a built-in dashboard. (Language: Rust; 30 stars)",
    "storyKey": "aichatroomwebgroupchatfeaturingclaudecha",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "GitHub: new LLM repos"
+   ],
    "buzzScore": 3
   },
   {
@@ -6995,7 +7036,7 @@
    "provider": "groq",
    "desc": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 6,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 5
@@ -7135,7 +7176,7 @@
    "provider": "groq",
    "desc": "models: add clef support ( #18741 )",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 6,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -7357,8 +7398,10 @@
    "desc": "OpenAI has parted ways with three safety researchers after an internal investigation found they mishandled sensitive company information, report says.",
    "storyKey": "openaireportedlyditchesmodeloversafetyco",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "TechCrunch AI"
+   ],
    "buzzScore": 4
   },
   {
@@ -7525,8 +7568,10 @@
    "desc": "We show that multimodal models possess strong reasoning abilities and that an appropriate harness can unlock their potential to solve tasks across diverse interactive environments. We introduce VISTA, a visual harness that gives a general-purpose multimodal model long-horizon vision. VISTA allows the model to directly perceive the environment through visual observations and maintains a lossless visual memory that preserves past observations in their original form. The model can actively retrieve these observations and reorganize its visual input as it reasons. On ARC-AGI-3, VISTA improves Claude Opus 5.0's Relative Human Action Efficiency score from 40.68 to a perfect 100.00, with the model completing all 25 public games using 57.4% fewer actions than first-time human participants. VISTA's simple design also allows it to extend naturally to diverse visual environments with minimal adaptation. Across three additional benchmarks covering a diverse range of visual games and puzzles, it substantially outperforms baselines using the same underlying model with minimal harnesses. Our results highlight VISTA's potential as a general-purpose visual harness for advancing multimodal agents in",
    "storyKey": "worldauditbenchinteractive3dworldauditin",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "arXiv cs.AI"
+   ],
    "buzzScore": 4
   },
   {
@@ -7553,10 +7598,8 @@
    "desc": "Discrete diffusion language models offer a compelling alternative to autoregressive generation for tasks demanding bidirectional reasoning and global constraint satisfaction. Yet they share a structural bottleneck: when decoding in parallel, each token is sampled independently from its marginal, severing the statistical dependencies among the tokens decoded together. Continuous diffusion language models avoid this by denoising a shared continuous state, but their denoiser sees only that state, so nothing ties it to a valid token configuration until it is finally decoded. To address this, we propose Hierarchical Continuous Diffusion Language Models (HC-DLM), which couple discrete token generation with a continuous latent trajectory in a single, principled denoising process, whose training objective is derived from a variational bound on the token likelihood. In contrast to recent methods that attach continuous context to a self-contained discrete chain, HC-DLM makes the latent the only persistent generative state: tokens are read out from it at every step and feed back as a scaffold for the next latent update. On structured reasoning (Sudoku), mathematical planning (Countdown) and l",
    "storyKey": "hierarchicalcontinuousdiffusionlanguagem",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "arXiv cs.CL (language models)"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -9065,10 +9108,8 @@
    "desc": "As interactive 3D worlds are increasingly used to study intelligent behavior, it becomes important to develop efficient pipelines for identifying anomalies in these simulated environments, such as floating objects, traversable walls, or objects inconsistent with the surrounding scene. Multimodal AI systems, including vision-language models (VLMs) and vision-language-action models (VLAs), have shown potential for automating this task. However, 3D world auditing is complex, requiring the close coupling of two distinct capabilities: action, to navigate the 3D world and search for anomalies systematically and efficiently; and visual reasoning, to understand the environment and identify anomalies from multimodal observations. It remains largely unexplored whether multimodal agents can effectively couple these two capabilities, using visual reasoning to identify potential anomalies while taking actions to validate them. In this paper, we introduce WorldAuditBench, a benchmark for 3D world auditing comprising 213 anomaly tasks across 13 environments built with Unreal Engine 5 and Three.js, spanning five anomaly families. We evaluate five frontier models under a fixed exploration budget us",
    "storyKey": "worldauditbenchinteractive3dworldauditin",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "arXiv cs.AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -9150,8 +9191,10 @@
    "desc": "Looped transformers and Mixture-of-Experts (MoE) offer complementary routes to efficient scaling: recurrence increases computational depth at fixed parameters, while MoE sparsity expands total capacity at fixed active compute. Yet existing scaling laws model recurrence or sparsity in isolation. In this work, we introduce Loop Scaling Laws, the first scaling law to jointly model recurrence and sparsity alongside model size and data. At its core is a bounded, sparsity-conditional recurrence mapping that characterizes the effective-parameter gain from looping and how sparsity raises this gain. The laws predict the held-out loss of looped models more accurately than prior alternatives, and recover the standard dense and MoE scaling laws as special cases. Beyond prediction, the fitted laws provide a principled foundation for designing looped MoE models under compute and memory constraints. Downstream evaluations further demonstrate the complementary benefits of the two axes: sparsity delivers ~3x active-parameter efficiency, recurrence yields ~2x total-parameter efficiency on reasoning, and joint scaling further advances the performance frontier. As a practical extension, we show these ",
    "storyKey": "improvingtesttimescalingwithadaptiveloop",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "arXiv cs.CL (language models)"
+   ],
    "buzzScore": 4
   },
   {
@@ -9289,8 +9332,10 @@
    "desc": "After hosting a meal with Big Tech leaders on Tuesday, President Donald Trump responded to journalist questions about his artificial intelligence announcements in typical fashion. He said his previous claims regarding fears around AI safety being a \"hoax\" cooked up by Democrats no longer apply now that he's renamed the technology to \"Super Intelligence.\" He […]",
    "storyKey": "howtechleaderswillselfpoliceaisafetyunde",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "The Verge AI"
+   ],
    "buzzScore": 4
   },
   {
@@ -9763,8 +9808,10 @@
    "desc": "Release vllm-proto 0.4.0",
    "storyKey": "vllm0310rc2released",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "GitHub: vLLM releases"
+   ],
    "buzzScore": 4
   },
   {
@@ -9818,10 +9865,8 @@
    "desc": "We now have the full details of the \"morally binding\" AI safety deal announced by President Trump yesterday, in which top executives agreed to self-regulate their artificial intelligence technology. The accord, officially titled the Joint Commitment on Frontier Responsibilities, was shared online by tech founder and presidential adviser David Sacks, and has been signed by […]",
    "storyKey": "howtechleaderswillselfpoliceaisafetyunde",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "The Verge AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -10016,10 +10061,8 @@
    "desc": "[Bugfix][Mamba] Keep the prompt-end prefill checkpoint under sparse r…",
    "storyKey": "vllm0310rc2released",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "GitHub: vLLM releases"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -10350,7 +10393,7 @@
    "provider": "groq",
    "desc": "What's Changed feat: allow ten web searches per response by @ParthSareen in #18602 MLX: version bump by @dhiltgen in #18651 llama.cpp: version bump b11232 by @dhiltgen in #18652 create: support explicit model capabilities by @dhiltgen in #18708 Full Changelog : v0.35.0...v0.35.1-rc0",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 6,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -11414,8 +11457,10 @@
    "discussion": "https://news.ycombinator.com/item?id=49891290",
    "storyKey": "asinglefunctionjevlikewrapperforllmsincl",
    "clusterSize": 4,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "Hacker News"
+   ],
    "buzzScore": 6
   },
   {
@@ -11469,8 +11514,10 @@
    "desc": "Meet GPT-6.1 Sol: near-Astra intelligence for coding, computer use, and professional work at one-fifth of Astra’s standard API input and output token prices.",
    "storyKey": "introducingdots",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "OpenAI News"
+   ],
    "buzzScore": 4
   },
   {
@@ -11581,10 +11628,8 @@
    "desc": "A web group chat where Claude, ChatGPT, Grok and Gemini hang out and talk on their own, powered by your logged-in CLIs (no API keys). English / 한국어 / 日本語 (Language: JavaScript; 44 stars)",
    "storyKey": "aichatroomwebgroupchatfeaturingclaudecha",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "GitHub: new LLM repos"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 3
   },
   {
@@ -11636,7 +11681,7 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
+   "clusterSize": 6,
    "isPrimary": false,
    "clusterSources": [],
    "buzzScore": 6
@@ -11690,10 +11735,8 @@
    "desc": "Dots by OpenAI are proactive assistants that can keep working across complex projects and everyday tasks. Learn how dots help you stay in control while work moves forward.",
    "storyKey": "introducingdots",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "OpenAI News"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -11743,10 +11786,8 @@
    "ai": true,
    "storyKey": "openaireportedlyditchesmodeloversafetyco",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "TechCrunch AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -11982,18 +12023,9 @@
    "ai": true,
    "provider": "groq",
    "storyKey": "ollamav0350rc1released",
-   "clusterSize": 23,
-   "isPrimary": true,
-   "clusterSources": [
-    "Ars Technica AI",
-    "GitHub: Ollama releases",
-    "GitHub: transformers releases",
-    "GitHub: vLLM releases",
-    "Google DeepMind",
-    "Hacker News",
-    "Simon Willison",
-    "TechCrunch AI"
-   ],
+   "clusterSize": 6,
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 6
   },
   {
@@ -12581,10 +12613,8 @@
    "provider": "groq",
    "storyKey": "improvingtesttimescalingwithadaptiveloop",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "arXiv cs.CL (language models)"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -12928,8 +12958,10 @@
    "provider": "groq",
    "storyKey": "introducinglangsmithfinetuning",
    "clusterSize": 3,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "LangChain Blog"
+   ],
    "buzzScore": 5
   },
   {
@@ -14233,10 +14265,8 @@
    "provider": "groq",
    "storyKey": "asinglefunctionjevlikewrapperforllmsincl",
    "clusterSize": 4,
-   "isPrimary": true,
-   "clusterSources": [
-    "Hacker News"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 6
   },
   {
@@ -15080,8 +15110,10 @@
    "provider": "groq",
    "storyKey": "rollingwamworldactionmodelswithrollingim",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "arXiv cs.AI"
+   ],
    "buzzScore": 4
   },
   {
@@ -15264,8 +15296,10 @@
    "ai": true,
    "storyKey": "amazonshutsoutmetasmuse",
    "clusterSize": 2,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "The Rundown AI"
+   ],
    "buzzScore": 4
   },
   {
@@ -15495,8 +15529,10 @@
    "provider": "groq",
    "storyKey": "gemini3progemini3proapiwrapper",
    "clusterSize": 3,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "GitHub: new LLM repos"
+   ],
    "buzzScore": 5
   },
   {
@@ -15549,10 +15585,8 @@
    "provider": "groq",
    "storyKey": "gemini3progemini3proapiwrapper",
    "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "GitHub: new LLM repos"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 5
   },
   {
@@ -15682,10 +15716,8 @@
    "provider": "groq",
    "storyKey": "rollingwamworldactionmodelswithrollingim",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "arXiv cs.AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -15946,10 +15978,8 @@
    "provider": "groq",
    "storyKey": "introducinglangsmithfinetuning",
    "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "LangChain Blog"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 5
   },
   {
@@ -16684,8 +16714,10 @@
    "provider": "groq",
    "storyKey": "howwemadethefirstcomprehensivemapofdeath",
    "clusterSize": 3,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "MIT Technology Review"
+   ],
    "buzzScore": 5
   },
   {
@@ -16789,10 +16821,8 @@
    "ai": true,
    "storyKey": "amazonshutsoutmetasmuse",
    "clusterSize": 2,
-   "isPrimary": true,
-   "clusterSources": [
-    "The Rundown AI"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 4
   },
   {
@@ -17115,10 +17145,8 @@
    "ai": true,
    "storyKey": "howwemadethefirstcomprehensivemapofdeath",
    "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "MIT Technology Review"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 5
   },
   {
@@ -17801,8 +17829,10 @@
    "desc": "Setting Grok Bot loose on procurement We gave Grok Bot access to vendor spend, contracts, and usage data. It found more than $100,000 in direct savings. Sep 4, 2026",
    "image": "https://x.ai/images/news/grok-bot-procurement-og-split.webp",
    "clusterSize": 3,
-   "isPrimary": false,
-   "clusterSources": [],
+   "isPrimary": true,
+   "clusterSources": [
+    "xAI News"
+   ],
    "buzzScore": 5
   },
   {
@@ -17933,10 +17963,8 @@
    "desc": "Designing Grok Bot for a world of persistent agents How we designed Grok Bot for agents that persist beyond a single session — from a chat history to a Bot roster, presence, a computer of the Bot’s own, and work that starts without a prompt. Sep 3, 2026",
    "image": "https://x.ai/images/news/designing-grok-bot-og.png",
    "clusterSize": 3,
-   "isPrimary": true,
-   "clusterSources": [
-    "xAI News"
-   ],
+   "isPrimary": false,
+   "clusterSources": [],
    "buzzScore": 5
   },
   {
