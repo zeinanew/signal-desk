@@ -1,6 +1,34 @@
 {
- "updated": "2026-10-08T08:27:45Z",
+ "updated": "2026-10-08T08:41:04Z",
  "items": [
+  {
+   "id": "8a6d8ab89e40e870",
+   "title": "Building a safer path to autonomous industrial AI",
+   "url": "https://www.technologyreview.com/2026/10/08/1144020/building-a-safer-path-to-autonomous-industrial-ai/",
+   "source": "mit-tr-ai",
+   "sourceName": "MIT Technology Review",
+   "type": "news",
+   "date": "2026-10-08T08:17:32Z",
+   "addedAt": "2026-10-08T08:41:04Z",
+   "summary": "Advances in foundation models, physical AI, and agentic AI enable more complex automation in industrial environments.",
+   "why": "It expands AI into physical systems, raising safety and operational implications for industry.",
+   "topic": "industry",
+   "tags": [
+    "industrial-ai",
+    "agentic-ai",
+    "foundation-models"
+   ],
+   "importance": 3,
+   "ai": true,
+   "provider": "groq",
+   "storyKey": "safer-path-autonomous-industrial-ai",
+   "desc": "Industrial AI is entering a new phase. After decades of predictive analytics and other specialized applications, advances in foundation models, physical AI, and agentic AI are making it possible to automate more complex tasks across industrial environments. But unlike AI that operates purely in the digital world, industrial AI can interact directly with physical systems,…",
+   "image": "https://wp.technologyreview.com/wp-content/uploads/2026/10/MITTR-AVEVA-podcast-social-card-v2-1.png?resize=1200,600",
+   "clusterSize": 1,
+   "isPrimary": true,
+   "clusterSources": [],
+   "buzzScore": 3
+  },
   {
    "id": "cb26c4cd754cd4f7",
    "title": "Ollama releases v0.40.1",
@@ -252,10 +280,10 @@
    "storyKey": "gpt-6-intelligent-ui-release",
    "desc": "OpenAI is launching a new Intelligent UI feature in ChatGPT that allows the chatbot to answer your questions with interactive visuals. The update, which is rolling out to all users alongside GPT-6, gives ChatGPT the ability to combine a text response with diagrams, charts, forms, tappable buttons, and more. In a blog post explaining the […]",
    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2026/10/Intelligent-UI.png?quality=90&strip=all&crop=0%2C3.4613147178592%2C100%2C93.077370564282&w=1200",
-   "clusterSize": 3,
+   "clusterSize": 5,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 7
+   "buzzScore": 8
   },
   {
    "id": "1b116c39a228fad1",
@@ -312,7 +340,7 @@
    "discussion": "https://news.ycombinator.com/item?id=49997161",
    "hnId": "49997161",
    "points": 339,
-   "comments": 330,
+   "comments": 333,
    "image": "https://cdn.rswebsols.com/wp-content/uploads/2025/10/otr1by4mkru.jpg",
    "engagementBonus": 1,
    "clusterSize": 1,
@@ -522,10 +550,10 @@
    "storyKey": "gpt-6-intelligent-ui-release",
    "desc": "OpenAI is launching a new user interface that will bring interactive visuals to ChatGPT.",
    "image": "https://techcrunch.com/wp-content/uploads/2026/10/Intelligent-UI.png?resize=1200,675",
-   "clusterSize": 3,
+   "clusterSize": 5,
    "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 5
+   "buzzScore": 6
   },
   {
    "id": "b88a33297d3d8a2a",
@@ -855,8 +883,8 @@
    "desc": "Hacker News discussion with 208 points and 97 comments.",
    "discussion": "https://news.ycombinator.com/item?id=49996259",
    "hnId": "49996259",
-   "points": 227,
-   "comments": 106,
+   "points": 229,
+   "comments": 107,
    "image": "https://opengraph.githubassets.com/8795647a382b256b628abf437fc3bb7858fca4f607a83ce94f6c8a6416abedc9/docker/docker-agent",
    "engagementBonus": 1,
    "clusterSize": 6,
@@ -1701,13 +1729,14 @@
    "storyKey": "gpt-6-intelligent-ui-release",
    "desc": "GPT‑6 is rolling out globally in ChatGPT with Intelligent UI, delivering faster responses with visuals and interactive experiences you can explore and use directly.",
    "image": "https://images.ctfassets.net/kftzwdyauwt9/5frqtUAWccstAbVrCFraH6/5ae9b6bfbc3f3dff8001ed249812f97d/Intelligent-UI_Art-Card_16x9.png?w=1600&h=900&fit=fill",
-   "clusterSize": 3,
+   "clusterSize": 5,
    "isPrimary": true,
    "clusterSources": [
+    "OpenAI News",
     "TechCrunch AI",
     "The Verge AI"
    ],
-   "buzzScore": 7
+   "buzzScore": 8
   },
   {
    "id": "fd7b29632bdc8c65",
@@ -4179,11 +4208,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "The new ads will begin to appear later this month in the U.S. only for now, and will feature products and services from an initial test group of advertisers.",
-   "storyKey": "openailaunchesvisualadsalongsideimagegen",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "gpt-6-intelligent-ui-release",
+   "clusterSize": 5,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "33d81eb1e819fe5d",
@@ -4398,11 +4427,11 @@
    "ai": true,
    "provider": "groq",
    "desc": "OpenAI introduces a new visual ad format in ChatGPT and expands measurement tools, attribution partnerships, and brand suitability for advertisers.",
-   "storyKey": "buildingadvertisingforthewaypeopleuseai",
-   "clusterSize": 1,
-   "isPrimary": true,
+   "storyKey": "gpt-6-intelligent-ui-release",
+   "clusterSize": 5,
+   "isPrimary": false,
    "clusterSources": [],
-   "buzzScore": 3
+   "buzzScore": 6
   },
   {
    "id": "bd6c6dc0e05fe72b",
