@@ -527,6 +527,15 @@ def cluster_items(items: list[dict], embeddings: dict[str, list[float]] | None =
       this is what catches two outlets covering the same event in very different words, which
       the title-overlap checks above miss on their own (see embed_text()'s docstring for a
       concrete example and the calibration behind the threshold).
+
+    A cluster's *total* date span is also capped at CLUSTER_WINDOW_DAYS, not just each pairwise
+    link - otherwise a continuously-active source (daily Ollama releases, say) can transitively
+    chain A-B-C-D... into one cluster spanning weeks, even though no single pair is more than a
+    few days apart. Within a cluster, the *most recent* item (not earliest) becomes primary when
+    importance ties, so the cluster's representative is always its freshest development - an old
+    cluster anchor would otherwise make an actively-updated story vanish from every recency-based
+    view (Top Stories, category tabs, the Feed tab) once its original item ages out of range.
+
     Mutates each item in place with storyKey/clusterSize/clusterSources/isPrimary/buzzScore.
 
     Even with the embedding check, this is approximate, not perfect dedup - an item with no
@@ -543,6 +552,7 @@ def cluster_items(items: list[dict], embeddings: dict[str, list[float]] | None =
 
     n = len(by_date)
     parent = list(range(n))
+    span = {i: (dates[i], dates[i]) for i in range(n)}  # root -> (earliest, latest) in that cluster
 
     def find(i: int) -> int:
         while parent[i] != i:
@@ -553,7 +563,10 @@ def cluster_items(items: list[dict], embeddings: dict[str, list[float]] | None =
     def union(i: int, j: int) -> None:
         ri, rj = find(i), find(j)
         if ri != rj:
+            lo = min(span[ri][0], span[rj][0])
+            hi = max(span[ri][1], span[rj][1])
             parent[ri] = rj
+            span[rj] = (lo, hi)
 
     for i in range(n):
         for j in range(i + 1, n):
@@ -568,15 +581,22 @@ def cluster_items(items: list[dict], embeddings: dict[str, list[float]] | None =
                 va, vb = embeddings.get(by_date[i]["id"]), embeddings.get(by_date[j]["id"])
                 if va and vb:
                     same_key = cosine(va, vb) >= EMBED_SIMILARITY_THRESHOLD
-            if same_key:
-                union(i, j)
+            if not same_key:
+                continue
+            ri, rj = find(i), find(j)
+            if ri != rj:
+                lo = min(span[ri][0], span[rj][0])
+                hi = max(span[ri][1], span[rj][1])
+                if hi - lo > window:
+                    continue  # merging would stretch this cluster's overall span too far
+            union(i, j)
 
     groups: dict[int, list[int]] = {}
     for i in range(n):
         groups.setdefault(find(i), []).append(i)
 
     for members in groups.values():
-        members.sort(key=lambda i: (-by_date[i].get("importance", 2), dates[i]))
+        members.sort(key=lambda i: (-by_date[i].get("importance", 2), -dates[i].timestamp()))
         primary = members[0]
         size = len(members)
         primary_sources = {by_date[i]["sourceName"] for i in members if i != primary}

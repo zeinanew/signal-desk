@@ -644,7 +644,10 @@ function changeTile(srcId,dir){
 function renderFeed(){
   if(!S.loaded)return;
   closeSumPop();
-  const list=S.items.filter(it=>within(it,"7"));
+  // Only each cluster's primary item pages through a source's tile - a burst of near-identical
+  // releases (five Ollama release candidates, say) shows once here instead of flooding the tile's
+  // paging. Every item is still fully browsable, unfiltered, via Search & filter.
+  const list=S.items.filter(it=>within(it,"7")&&it.isPrimary!==false);
   $("c-feed").textContent=list.length;
   const bySrc=new Map();
   list.forEach(it=>{if(!bySrc.has(it.source))bySrc.set(it.source,[]);bySrc.get(it.source).push(it)});

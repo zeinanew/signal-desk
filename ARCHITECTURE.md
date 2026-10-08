@@ -200,8 +200,15 @@ story - a model launch five outlets all cover, say - using three signals:
   (requires `GEMINI_API_KEY`; a failed/missing embedding just means that item falls back to the
   text-based signals above, same as always).
 
-and only within `CLUSTER_WINDOW_DAYS` (4) of each other, so later unrelated follow-ups don't get
-swept in. Within a group, the item with the highest `importance` (earliest `date` as tie-break)
+and only within `CLUSTER_WINDOW_DAYS` (4) of each other - **and this is enforced on the cluster's
+total span, not just each pairwise link**. Without that, a continuously-active single-repo release
+feed (daily Ollama releases, say) could transitively chain A↔B↔C↔D... into one cluster spanning
+two weeks, even though no individual pair was more than a few days apart - confirmed this actually
+happening in production, with a 23-item, 2-week-wide cluster whose primary (picked by earliest
+date, the original tie-break) was 10 days old, making an actively-updated story invisible from
+every recency-based view (Top Stories, category tabs, Feed tab tiles) the moment its anchor item
+aged out of range. Within a group, the item with the highest `importance` (**most recent** `date`
+as tie-break, not earliest - so a cluster's representative is always its freshest development)
 becomes `isPrimary`; every item gets `clusterSize`, `buzzScore` (`importance`, plus a
 `min(clusterSize - 1, CLUSTER_BUZZ_CAP)` bonus for being corroborated by more sources, plus that
 item's own `engagementBonus` from the step above), and the primary item gets `clusterSources` (the
@@ -360,10 +367,13 @@ it did, not just that it did.
 `nav.tabs` scrolls horizontally on narrow viewports (`overflow-x:auto`) rather than shrinking each
 button, since 8 tabs no longer fit by shrinking alone.
 
-- **Feed** (`renderFeed`) — stories from the last 7 days, grouped by source into
-  "tiles". Each source gets one tile that pages through its items (arrow keys,
+- **Feed** (`renderFeed`) — stories from the last 7 days with `isPrimary !== false`, grouped by
+  source into "tiles". Each source gets one tile that pages through its items (arrow keys,
   scroll-wheel, swipe) rather than listing every item flatly — `S.tileIndex` tracks
-  per-source position, `changeTile()` moves it.
+  per-source position, `changeTile()` moves it. Filtering to primary items means a tile only
+  pages through distinct stories, not every release-candidate in an Ollama-style cluster - the
+  full, unfiltered history of a source (including non-primary cluster members) is still fully
+  browsable via Search & filter, which applies no such filter.
 - **Models / Agents / Dev tools / Research / Industry** (`renderCategory(key)`) — filters
   `S.items` to that one topic, then mirrors the homepage's own pattern: `topOfSet()` again for a
   small "top of category" row (`topStoryCard`), followed by every other story in that topic from
