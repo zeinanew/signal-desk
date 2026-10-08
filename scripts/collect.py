@@ -303,7 +303,7 @@ Feed text: {desc}
 Return ONLY a JSON object with these keys:
 - "relevant": true if this is about AI, machine learning, developer tools, open source software, tech industry or tech policy; false for anything else (celebrity events, unrelated consumer news, sponsored posts).
 - "title": a clean headline in English (fix casing, remove site names, dates or category labels stuck to it; translate it if the source isn't in English). Keep the original wording where possible.
-- "summary": 1-2 plain sentences in English on what happened. Use only facts in the title and feed text; do not invent numbers or claims.
+- "summary": ONE short, plain sentence in English stating just the key finding or fact - what was actually released, found, or announced. No preamble, no scene-setting, no filler words. Use only facts in the title and feed text; do not invent numbers or claims.
 - "why": one short sentence on why it matters to someone following AI, or "" if you can't say without guessing.
 - "topic": one of "models" (LLMs, model releases, AI products), "agents" (AI agents, agentic coding tools, autonomous/multi-step systems), "dev" (developer tools, open source, libraries), "research" (papers, science, benchmarks), "industry" (business, funding, policy, safety incidents, regulation, hardware).
 - "tags": 2-4 short lowercase tags.
