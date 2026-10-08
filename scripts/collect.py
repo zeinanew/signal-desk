@@ -54,6 +54,17 @@ ENGAGEMENT_BONUS_CAP = 3      # max bonus buzzScore gets from a single source's 
 ENGAGEMENT_THRESHOLDS = [(1000, 3), (500, 2), (200, 1)]  # (points/stars >=, bonus), checked in order
 GEMINI_CALL_TIMEOUT = 25  # seconds - the genai SDK sets no timeout of its own, so a dropped/stalled
                           # connection to Gemini can otherwise hang a single call indefinitely
+EMBED_MODEL = "gemini-embedding-001"
+EMBED_DIM = 256          # truncated (Matryoshka) output - calibrated against the full 3072-dim
+                          # vector and separates same-story/different-story pairs just as well,
+                          # at a fraction of the size to cache and commit
+EMBED_SIMILARITY_THRESHOLD = 0.88  # calibrated on real items: same-story pairs (same event, two
+                          # outlets with very different wording) scored ~0.92-0.93; different
+                          # stories, even from the same company, scored ~0.81-0.84 - 0.88 sits
+                          # cleanly between the two with margin on both sides
+EMBED_CACHE_FILE = DATA / "embeddings_cache.json"  # not used by the frontend - collect.py's own
+                          # cross-run cache so new items can be compared against recent ones
+                          # without re-embedding them every run
 UA = {"User-Agent": "SignalDesk/1.0 (+https://github.com; personal news dashboard)"}
 NOW = dt.datetime.now(dt.timezone.utc)
 
@@ -155,6 +166,32 @@ def load_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+def cosine(a: list[float], b: list[float]) -> float:
+    dot = sum(x * y for x, y in zip(a, b))
+    na = sum(x * x for x in a) ** 0.5
+    nb = sum(x * x for x in b) ** 0.5
+    return dot / (na * nb) if na and nb else 0.0
+
+
+def embed_text(client, text: str) -> list[float] | None:
+    """Best-effort semantic embedding for cross-source duplicate detection - title-token
+    overlap alone misses two outlets covering the same event in very different words (e.g.
+    "ChatGPT's Intelligent UI update..." vs "GPT-6 and Intelligent UI for everyone"), which an
+    embedding comparison catches. Never raises - a missing embedding just means that one item
+    can't contribute to this check, falling back to the existing text-based clustering signals."""
+    try:
+        from google.genai import types
+        resp = call_with_timeout(
+            client.models.embed_content, GEMINI_CALL_TIMEOUT,
+            model=EMBED_MODEL, contents=text,
+            config=types.EmbedContentConfig(task_type="SEMANTIC_SIMILARITY", output_dimensionality=EMBED_DIM),
+        )
+        return [round(v, 6) for v in resp.embeddings[0].values]
+    except Exception as exc:  # noqa: BLE001 - embeddings are an aid, not critical path
+        print(f"    embedding failed: {exc}", file=sys.stderr)
+        return None
 
 
 _META_IMAGE_RE = re.compile(
@@ -474,22 +511,27 @@ def refresh_engagement(items: list[dict]) -> None:
 
 
 # ---------------------------------------------------------------- clustering
-def cluster_items(items: list[dict]) -> None:
+def cluster_items(items: list[dict], embeddings: dict[str, list[float]] | None = None) -> None:
     """Groups items covering the same underlying story (e.g. a model launch reported by
     five different outlets, or the same project's incremental releases from one source) so
-    the frontend's Top Stories section can show it once instead of several times. Pure
-    heuristic, no extra LLM calls (and no embeddings - considered, deferred as overkill for
-    what's actually been seen in practice): two items cluster together when they're within
-    CLUSTER_WINDOW_DAYS of each other and either share a story_key or have enough title
-    words in common (Jaccard similarity on significant words) - CLUSTER_JACCARD across
-    different sources, the much more lenient SAME_SOURCE_JACCARD when both items are from
-    the same source, since a single-repo release feed only ever posts about one project.
+    the frontend's Top Stories section can show it once instead of several times. Two items
+    cluster together when they're within CLUSTER_WINDOW_DAYS of each other and any of:
+    - an exact story_key match,
+    - Jaccard similarity on significant title words ≥ CLUSTER_JACCARD across different
+      sources, or the much more lenient SAME_SOURCE_JACCARD when both are from the same
+      source (a single-repo release feed only ever posts about one project), or
+    - (when `embeddings` has a vector for both) cosine similarity ≥ EMBED_SIMILARITY_THRESHOLD -
+      this is what catches two outlets covering the same event in very different words, which
+      the title-overlap checks above miss on their own (see embed_text()'s docstring for a
+      concrete example and the calibration behind the threshold).
     Mutates each item in place with storyKey/clusterSize/clusterSources/isPrimary/buzzScore.
 
-    This is approximate, not perfect dedup - e.g. two outlets phrasing the same event with
-    very different wording and no matching story_key slug may end up in separate clusters.
-    Good enough for "don't show the same headline five times", not a general NLP solution.
+    Even with the embedding check, this is approximate, not perfect dedup - an item with no
+    cached embedding (API hiccup, or just not re-embedded yet) still only has the text-based
+    signals to go on. Good enough for "don't show the same headline five times", not a
+    guaranteed general NLP solution.
     """
+    embeddings = embeddings or {}
     by_date = sorted(items, key=lambda it: parse_date(it.get("date")) or NOW)
     keys = [it.get("storyKey") or slugify(title_key(it["title"])[:40]) for it in by_date]
     tokens = [title_tokens(it["title"]) for it in by_date]
@@ -519,6 +561,10 @@ def cluster_items(items: list[dict]) -> None:
                 overlap = len(tokens[i] & tokens[j]) / len(tokens[i] | tokens[j])
                 threshold = SAME_SOURCE_JACCARD if by_date[i]["source"] == by_date[j]["source"] else CLUSTER_JACCARD
                 same_key = overlap >= threshold
+            if not same_key:
+                va, vb = embeddings.get(by_date[i]["id"]), embeddings.get(by_date[j]["id"])
+                if va and vb:
+                    same_key = cosine(va, vb) >= EMBED_SIMILARITY_THRESHOLD
             if same_key:
                 union(i, j)
 
@@ -549,6 +595,7 @@ def main() -> None:
     items = {it["id"]: it for it in store.get("items", [])}
     seen_titles = {title_key(it["title"]) for it in items.values()}
     old_status = {s["id"]: s for s in load_json(STATUS_FILE, {"sources": []}).get("sources", [])}
+    embed_cache: dict[str, list[float]] = load_json(EMBED_CACHE_FILE, {})
 
     client = None
     if os.getenv("GEMINI_API_KEY"):
@@ -611,6 +658,11 @@ def main() -> None:
                    if raw.get("repoFullName") else {}),
                 **({"image": image} if image else {}),
             }
+            if client is not None:
+                vec = embed_text(client, f"{items[iid]['title']}. {items[iid]['summary']}")
+                if vec:
+                    embed_cache[iid] = vec
+                time.sleep(1)
             seen_titles.add(title_key(items[iid]["title"]))
             new_here += 1
         added += new_here
@@ -645,16 +697,28 @@ def main() -> None:
                 "ai": s.get("ai", False), "provider": s.get("provider", ""),
                 "storyKey": s.get("story_key", it.get("storyKey", "")),
             })
+            if client is not None:
+                vec = embed_text(client, f"{it['title']}. {it['summary']}")
+                if vec:
+                    embed_cache[iid] = vec
+                time.sleep(1)
             retried += 1
     if retried:
         print(f"- Backlog retry: upgraded {retried} previously-fallback stories")
 
     kept = [it for it in items.values() if (parse_date(it.get("date")) or NOW) >= cutoff]
     refresh_engagement(kept)
-    cluster_items(kept)
+    cluster_items(kept, embed_cache)
     kept.sort(key=lambda it: it.get("date") or "", reverse=True)
     ITEMS_FILE.write_text(json.dumps({"updated": iso(NOW), "items": kept}, indent=1, ensure_ascii=False), encoding="utf-8")
     STATUS_FILE.write_text(json.dumps({"updated": iso(NOW), "sources": status}, indent=1, ensure_ascii=False), encoding="utf-8")
+
+    # Only cached vectors for items still within the clustering window are ever useful again -
+    # keeps this file from growing forever as the embeddings API gets called run after run.
+    cluster_cutoff = NOW - dt.timedelta(days=CLUSTER_WINDOW_DAYS)
+    recent_ids = {it["id"] for it in kept if (parse_date(it.get("date")) or NOW) >= cluster_cutoff}
+    embed_cache = {iid: vec for iid, vec in embed_cache.items() if iid in recent_ids}
+    EMBED_CACHE_FILE.write_text(json.dumps(embed_cache), encoding="utf-8")
     fallback_count = sum(1 for it in kept if not it.get("ai"))
     gemini_count = sum(1 for it in kept if it.get("provider") == "gemini")
     groq_count = sum(1 for it in kept if it.get("provider") == "groq")

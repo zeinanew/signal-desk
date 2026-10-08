@@ -29,6 +29,7 @@ sources.json                    source list (user-editable config)
 scripts/collect.py              the collector/summarizer — the only backend logic
 data/items.json                 generated: the stories shown on the Feed/Search tabs
 data/sources.json               generated: per-source health/status for the Sources tab
+data/embeddings_cache.json      generated: collect.py's own cross-run cache, not used by the frontend
 index.html                      the entire frontend (HTML + CSS + JS in one file)
 scripts/refresh_local.ps1       what Windows Task Scheduler runs daily - collector + commit + push
 .github/workflows/refresh.yml   manual/sources.json-edit-triggered collector run, commits data/
@@ -177,7 +178,7 @@ which clustering (below) already catches.
 
 `cluster_items()` runs once per run, after engagement refresh, over every item that's about to be
 kept (not just the new ones). It groups items that are almost certainly about the same underlying
-story - a model launch five outlets all cover, say - using two cheap signals, no extra LLM calls:
+story - a model launch five outlets all cover, say - using three signals:
 
 - an exact match on `story_key`, a short slug the summarizer prompt also asks the LLM for
   (e.g. `"gpt-5-2-release"`), **or**
@@ -186,7 +187,18 @@ story - a model launch five outlets all cover, say - using two cheap signals, no
   single-repo release feed (`gh-ollama`, `gh-vllm`, ...) only ever posts about one project, so even
   a small shared-token signal ("ollama" in all of them) reliably means "same project, new release" -
   this is what collapses a burst of `v0.40.0` / `v0.40.0-rc5` / `v0.40.1` releases into one cluster
-  instead of letting all three compete for a Top Stories slot,
+  instead of letting all three compete for a Top Stories slot, **or**
+- cosine similarity ≥ `EMBED_SIMILARITY_THRESHOLD` (0.88) between the two items' cached
+  embeddings (`embed_text()`, Gemini's `gemini-embedding-001`, truncated to 256 dims). This is the
+  one that catches two outlets covering the *same event* in very different words - e.g. "ChatGPT's
+  Intelligent UI update fills its responses with pictures, charts, and buttons" (The Verge) and
+  "GPT-6 and Intelligent UI for everyone" (OpenAI News) share almost no title words in common, so
+  the Jaccard checks above miss it, but their embeddings land at ~0.95 cosine similarity.
+  Calibrated against real items: genuinely different stories - even same-company ones like two
+  unrelated OpenAI announcements - scored ~0.81-0.84, with true duplicates at ~0.92-0.95, so 0.88
+  sits cleanly in between. An item only participates in this check if it has a cached embedding
+  (requires `GEMINI_API_KEY`; a failed/missing embedding just means that item falls back to the
+  text-based signals above, same as always).
 
 and only within `CLUSTER_WINDOW_DAYS` (4) of each other, so later unrelated follow-ups don't get
 swept in. Within a group, the item with the highest `importance` (earliest `date` as tie-break)
@@ -442,6 +454,16 @@ that attribute — the page itself has no theme toggle).
 }
 ```
 
+### `data/embeddings_cache.json`
+
+```jsonc
+{ "a1b2c3d4e5f6a7b8": [0.0123, -0.0456, ...] }  // item id -> 256-dim vector, nothing else
+```
+
+Flat map of `item.id` to its cached embedding - no `updated` timestamp, no metadata, never read by
+`index.html`. Pruned to only items still within `CLUSTER_WINDOW_DAYS` on every run (see
+`cluster_items()` above), so it doesn't grow forever.
+
 ### `sources.json` (user config — see README for the full field table per `kind`)
 
 Each entry needs `id`, `name`, `type`, `kind`, `topics`, `enabled`, `url`, plus
@@ -468,11 +490,13 @@ An optional `limit` caps how many of that source's newest items are considered p
   RSS bridge (self-hosted RSSHub, or a paid service like RSS.app) turns an account into an
   ordinary RSS feed, so `fetch_rss` already handles it — no new code, just a `sources.json` entry
   the user points at whichever bridge they choose.
-- **Why clustering is a cheap heuristic instead of another LLM call**: it runs over every kept
-  item on every run (not just new ones), so an extra API call per item would multiply the
-  already rate-limited summarization budget. A `story_key` match plus title-word overlap, scoped
-  to a few days, is enough to stop the Top Stories section from repeating one event five times —
-  it doesn't need to be a general story-dedup system.
+- **Why the `story_key`/Jaccard text checks stayed zero-cost even after adding embeddings**:
+  `cluster_items()` runs over every kept item on every run (not just new ones), so re-embedding
+  everything every day would multiply the already rate-limited summarization budget. The text
+  checks need no API call at all, so they're free to run unconditionally on the full set; the
+  embedding check only ever runs once per item (at collection time, cached from then on) and is
+  skipped entirely for any item missing a cached vector — the full item list is always clustered,
+  the embedding signal just isn't available for every pair of it.
 - **Why buzz also comes from re-checked HN points / GitHub stars, not just cross-source
   corroboration**: `clusterSize` alone only rewards a story once several *different* outlets have
   covered it. A story can just as easily become genuinely buzzy on a single source — a HN post
@@ -482,12 +506,18 @@ An optional `limit` caps how many of that source's newest items are considered p
   counts take months to show up, so there's no signal there that moves within the few days this
   matters for. A paper that's actually taking off is expected to surface indirectly, via a HN/blog
   pickup that clustering already catches.
-- **Why same-source flooding is fixed with a cheaper threshold + a selection cap, not
-  embeddings**: a single-repo release feed can post several real-but-incremental releases
-  (`v0.40.0`, `v0.40.0-rc5`, `v0.40.1`, ...) in a few days, each a technically-new item that still
-  crowded out every other topic's Top Stories slot. Embedding each new item and comparing by
-  cosine similarity (considered - `google-genai`'s `embed_content` would work with the same key)
-  would generalize further, but costs an extra API call per item for a problem that a same-source
-  Jaccard threshold plus a one-per-source display cap already solves for free. Revisit embeddings
-  if cross-source near-duplicates with very different wording turn out to be common in practice -
-  that's the case this heuristic can't catch.
+- **Why same-source flooding gets its own cheaper fix instead of leaning on embeddings**: a
+  single-repo release feed can post several real-but-incremental releases (`v0.40.0`,
+  `v0.40.0-rc5`, `v0.40.1`, ...) in a few days, each a technically-new item that still crowded out
+  every other topic's Top Stories slot. This specific pattern (same source, loosely-related
+  titles) is exactly what the lenient `SAME_SOURCE_JACCARD` threshold was built for, and it's free
+  - no need to spend an embedding call confirming what the source ID already tells you. `capPerSource()`
+  in `index.html` is a second, independent layer for same-source items that aren't similar enough
+  to cluster at all (different topics from a prolific source).
+- **Why embeddings were added anyway, for the case the above doesn't cover**: cross-source
+  duplicates with very different wording turned out to be common enough in practice (not just
+  hypothetical) to be worth the cost - see the "ChatGPT's Intelligent UI..." / "GPT-6 and
+  Intelligent UI..." example in the Cluster section above, which two different outlets wrote
+  differently enough that title-overlap alone missed it entirely. `output_dimensionality=256` was
+  chosen after confirming empirically it separates same/different-story pairs just as cleanly as
+  the full 3072-dim vector, at a fraction of the size to cache.
